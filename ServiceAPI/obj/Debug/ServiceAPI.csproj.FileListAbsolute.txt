@@ -105,6 +105,5 @@ A:\GIT\ServiceAPI\bin\Newtonsoft.Json.xml
 A:\GIT\ServiceAPI\bin\System.Net.Http.Formatting.xml
 A:\GIT\ServiceAPI\bin\System.Web.Http.xml
 A:\GIT\ServiceAPI\bin\System.Web.Http.WebHost.xml
-A:\GIT\ServiceAPI\obj\Debug\ServiceAPI.csprojResolveAssemblyReference.cache
 A:\GIT\ServiceAPI\obj\Debug\Nepflex.ServiceAPI.dll
 A:\GIT\ServiceAPI\obj\Debug\Nepflex.ServiceAPI.pdb

@@ -1,7 +1,7 @@
 ﻿using System.Web;
 using System.Web.Optimization;
 
-namespace WebUI
+namespace NepFlex.WebUI
 {
     public class BundleConfig
     {

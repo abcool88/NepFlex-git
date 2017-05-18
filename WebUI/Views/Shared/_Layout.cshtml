@@ -1,19 +1,22 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
+  <base href="/">
     <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title</title>
-    @Styles.Render("~/Content/css")
-    @Scripts.Render("~/bundles/modernizr")
 </head>
 <body>
-    <div class="container body-content">
-        @RenderBody()
-    </div>
+   @RenderBody()
 
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
-    @RenderSection("scripts", required: false)
+@{ 
+    var version = typeof(NepFlex.WebUI.Controllers.HomeController).Assembly.GetName().Version;
+}
+  <script type="text/javascript" src="~/dist/inline.bundle.js?v=@version"></script>
+  <script type="text/javascript" src="~/dist/polyfills.bundle.js?v=@version"></script>
+  <script type="text/javascript" src="~/dist/styles.bundle.js?v=@version"></script>
+  <script type="text/javascript" src="~/dist/vendor.bundle.js?v=@version"></script>
+  <script type="text/javascript" src="~/dist/main.bundle.js?v=@version"></script>
 </body>
 </html>

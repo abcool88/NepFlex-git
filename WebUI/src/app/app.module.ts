@@ -1,4 +1,4 @@
-import { BrowserModule } from '@angular/platform-browser';
+﻿import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
@@ -7,7 +7,7 @@ import { HomeComponent } from './home/home.component';
 import { AppComponent } from './app.component';
 
 // Routes
-import { routes } from './app.routes';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -15,10 +15,11 @@ import { routes } from './app.routes';
     AppComponent
   ],
   imports: [
-    RouterModule.forRoot(routes),
     BrowserModule,
     FormsModule,
-    HttpModule
+      HttpModule,
+      RouterModule,
+      AppRoutingModule
   ],
   providers: [],
   bootstrap: [HomeComponent]

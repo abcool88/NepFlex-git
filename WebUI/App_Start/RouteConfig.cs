@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
 
-namespace WebUI
+namespace NepFlex.WebUI
 {
     public class RouteConfig
     {
@@ -14,8 +14,8 @@ namespace WebUI
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             routes.MapRoute(
-                name: "Default",
-                url: "{controller}/{action}/{id}",
+                name: "angular-2-routing-fallback",
+                url: "{*url}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
             );
         }
