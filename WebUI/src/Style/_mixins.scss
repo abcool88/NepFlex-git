@@ -1,0 +1,11 @@
+@mixin display-flex{
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    align-content: flex-start;
+    align-self: auto;
+    order:0;
+}

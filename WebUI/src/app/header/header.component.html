@@ -1,0 +1,37 @@
+<div class="container">
+  <div class="header-container">
+    <div class="header-logo">NepFlex</div>
+    <ul class="nav-header">
+      <li *ngFor="let nav of navList" class="list-nav-header">
+        {{nav.name}}
+      </li>
+      <input data-test-id="searchbox" class="input-box form-control" placeholder="Search Products">
+      <div class="user-and-cart">
+        <li class="list-nav-header" (click)="UserStatus($event)">
+          <span class="glyphicon glyphicon-user"></span>
+        </li>
+        <li class="list-nav-header">
+          <div class="btn btn-info btn-lg" (click)="shoppingCartExpand($event)">
+            <span class="glyphicon glyphicon-shopping-cart"></span>
+          </div>
+        </li>
+      </div>
+    </ul>
+
+  </div>
+</div>
+<!--user-login-->
+<div *ngIf="expandUserStatus" class="shoppingcart-expand">
+  <ul class="userStatus-shoppingCart">
+    <li class="login-register">Login</li>
+    <li class="login-register">Register</li>
+  </ul>
+</div>
+<!--shopping cart-->
+<div *ngIf="expandNoItem" class="shoppingcart-expand">
+  <ul class="userStatus-shoppingCart">
+    <li>
+      you have 0 item.
+    </li>
+  </ul>
+</div>

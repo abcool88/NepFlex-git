@@ -1,0 +1,65 @@
+@import '../../Style/styles.scss';
+.header-container {
+  @include display-flex();
+  background: $backgropund-header-color;
+  border-bottom: 1px solid #f0f0f0; //position: fixed;
+  //z-index: 10;
+  width: 100%;
+  margin-bottom: 0%;
+  height: 20%;
+  align-items: center;
+}
+
+s .header-logo {
+  font-weight: $font-wight-normal;
+  color: $font-color-red;
+}
+
+.container {
+  @include display-flex();
+  color: white;
+  width: 100%;
+  padding: 0%;
+}
+
+.nav-header {
+  @include display-flex();
+  align-items: baseline;
+  margin-top: 1%;
+}
+
+.list-nav-header {
+  margin-right: 2%;
+  list-style: none;
+}
+
+.input-box {
+  width: 33%;
+  outline: none;
+  margin-right: 2%;
+}
+
+.user-and-cart {
+  @include display-flex();
+  justify-content: flex-end;
+  align-items: baseline;
+}
+
+.shoppingcart-expand {
+  border: solid 1px #d4d4d4;
+  border-radius: 7px;
+  width: 25%;
+  float: right;
+}
+
+.userStatus-shoppingCart {
+  @include display-flex();
+  list-style: none;
+  border-bottom: solid 2px #e2e2e2;
+}
+
+.login-register {
+  @include display-flex();
+  margin-right: 2%;
+  list-style: none;
+}
