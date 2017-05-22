@@ -1,0 +1,6 @@
+@import '../../Style/styles.scss';
+
+.right-container{
+    border:1px solid red;
+    @include display-flex();
+}

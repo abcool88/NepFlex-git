@@ -6,11 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./banner.component.scss']
 })
 export class BannerComponent implements OnInit {
-
+  checkIfBanner: boolean = true;
   constructor() { }
 
   ngOnInit() {
   }
-  
+
 
 }

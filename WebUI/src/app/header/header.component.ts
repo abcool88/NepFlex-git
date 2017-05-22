@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
+//load component
+import {BannerComponent} from  '../banner/banner.component';
+
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -7,6 +10,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
   navList: any;
+  topNav:any;
   expandNoItem: boolean = false;
   expandUserStatus:boolean=false;
 
@@ -14,8 +18,17 @@ export class HeaderComponent implements OnInit {
     this.navList = [
       { id: '1', name: 'Men' },
       { id: '2', name: 'Women' },
-      { id: '3', name: 'Latest Arrival' },
-      { id: '4', name: 'Electronics' }
+      { id: '3', name: 'Baby & Kids' },
+      { id: '4', name: 'Books & More' },
+      { id: '5', name: 'Latest Arrival' },
+      { id: '6', name: 'Electronics' }
+    ];
+
+    this.topNav = [
+      { id: '1', name: 'Sell-On-Nepflex' },
+      { id: '2', name: 'Create Gift card' },
+      { id: '3', name: 'Redeem Gift' },
+      { id: '4', name: 'Contact' },
     ];
 
   }

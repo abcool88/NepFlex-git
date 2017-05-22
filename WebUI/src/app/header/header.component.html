@@ -1,25 +1,51 @@
 <div class="container">
-  <div class="header-container">
-    <div class="header-logo">NepFlex</div>
-    <ul class="nav-header">
-      <li *ngFor="let nav of navList" class="list-nav-header">
-        {{nav.name}}
+  <div class="top-nav-bar">
+    <ul class="nav-top-header">
+      <li *ngFor="let topnav of topNav; let a=index;" class="list-nav-header">
+        {{topnav.name}}
       </li>
-      <input data-test-id="searchbox" class="input-box form-control" placeholder="Search Products">
-      <div class="user-and-cart">
-        <li class="list-nav-header" (click)="UserStatus($event)">
-          <span class="glyphicon glyphicon-user"></span>
-        </li>
-        <li class="list-nav-header">
-          <div class="btn btn-info btn-lg" (click)="shoppingCartExpand($event)">
-            <span class="glyphicon glyphicon-shopping-cart"></span>
-          </div>
-        </li>
-      </div>
     </ul>
-
   </div>
 </div>
+
+<div class="container">
+  <ul class="nav-medium-header">
+    <li class="list-nav-header">
+      <div class="header-logo">NepFlex</div>
+    </li>
+    <div class="col-lg-6">
+      <div class="input-group input-group-lg">
+        <span class="input-group-addon search-btn" id="sizing-addon1">
+             <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+        </span>
+        <input data-test-id="inputbox_Searchbar" type="text" class="input-box form-control" placeholder="search products" aria-describedby="sizing-addon1">
+      </div>
+      <!--<div class="input-group-lg">
+      <input type="text" class="input-box form-control" placeholder="Search for...">
+      <span class="input-group-btn">
+        <button class="btn btn-default search-btn" type="button">
+          <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+        </button>
+      </span>
+    </div>-->
+    </div>
+    <div class="btn shoppingcart-btn btn-lg" (click)="shoppingCartExpand($event)">
+      <span class="glyphicon glyphicon-shopping-cart"></span> Shopping Cart
+    </div>
+  </ul>
+</div>
+
+<div class="menu-container">
+  <ul class="nav-medium-header">
+    <li *ngFor="let nav of navList" class="list-nav-header">
+      {{nav.name}}
+    </li>
+    <li class="list-nav-header" (click)="UserStatus($event)">
+      <span class="glyphicon glyphicon-user"></span>
+    </li>
+  </ul>
+</div>
+
 <!--user-login-->
 <div *ngIf="expandUserStatus" class="shoppingcart-expand">
   <ul class="userStatus-shoppingCart">
@@ -27,6 +53,7 @@
     <li class="login-register">Register</li>
   </ul>
 </div>
+
 <!--shopping cart-->
 <div *ngIf="expandNoItem" class="shoppingcart-expand">
   <ul class="userStatus-shoppingCart">
