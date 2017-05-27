@@ -1,5 +1,11 @@
 import { Component, OnInit } from '@angular/core';
+
+
+//load component
 import { HeaderComponent } from '../header/header.component';
+import {BannerComponent} from  '../banner/banner.component';
+import { CarouselComponent } from  '../carousel/carousel.component';
+
 
 @Component({
   selector: 'app-home',

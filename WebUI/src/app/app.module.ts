@@ -10,13 +10,15 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HeaderComponent } from './header/header.component';
 import { BannerComponent } from './banner/banner.component';
+import { CarouselComponent } from './carousel/carousel.component';
 
 @NgModule({
   declarations: [
     HomeComponent,
     AppComponent,
     HeaderComponent,
-    BannerComponent
+    BannerComponent,
+    CarouselComponent
   ],
   imports: [
     BrowserModule,
