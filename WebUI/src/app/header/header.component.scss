@@ -8,8 +8,8 @@
 
 .nav-top-header {
   @include display-flex();
-  justify-content: flex-end;
-  align-items: flex-end;
+  justify-content: flex-start;
+  align-items: flex-start;
   box-shadow: 5px 2px 7px rgba(33, 33, 33, 0.7);
 }
 
@@ -102,3 +102,5 @@
 .shopping-bag {
   background-image: url("/dist/assets/images/cartbag.jpg"); 
 }
+
+

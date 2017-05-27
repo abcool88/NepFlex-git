@@ -1,5 +1,13 @@
 ﻿<app-header></app-header>
 <app-banner></app-banner>
 
-
-
+<div class="limitedDeal-container">
+  <ul class="limitedDeal-medium-header">
+    <li *ngFor="let offer of limitedOffer" class="list-nav-header">
+      {{offer.offerTitle | uppercase}}
+      <div class="limitedDeal-endDate">
+        <span class="glyphicon glyphicon-time"></span>Ends: {{offer.dateEnds | uppercase}}
+      </div>
+    </li>  
+  </ul>
+</div>

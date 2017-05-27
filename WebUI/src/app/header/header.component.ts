@@ -29,6 +29,8 @@ export class HeaderComponent implements OnInit {
       { id: '2', name: 'Create Gift card' },
       { id: '3', name: 'Redeem Gift' },
       { id: '4', name: 'Contact' },
+      { id: '5', name: 'Deals & Promotions' },
+      { id: '6', name: 'Customer Service' }
     ];
 
   }

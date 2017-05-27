@@ -13,8 +13,13 @@ import { CarouselComponent } from  '../carousel/carousel.component';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
+ limitedOffer:any;
 
-  constructor() { }
+  constructor() { 
+    this.limitedOffer=[
+      { id:'1',offerTitle:'Limited Offer',dateEnds:'05/27/2017'  }
+      ];
+  }
 
   ngOnInit() {
   }
