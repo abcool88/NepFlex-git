@@ -10,7 +10,8 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HeaderComponent } from './header/header.component';
 import { BannerComponent } from './banner/banner.component';
-import { CarouselComponent } from './carousel/carousel.component';
+import { CarouselComponent} from './carousel/carousel.component';
+import { LimitedOfferComponent } from './banner/limited-offer/limited-offer.component';
 
 @NgModule({
   declarations: [
@@ -18,14 +19,16 @@ import { CarouselComponent } from './carousel/carousel.component';
     AppComponent,
     HeaderComponent,
     BannerComponent,
-    CarouselComponent
+    CarouselComponent,
+    LimitedOfferComponent
+
   ],
   imports: [
     BrowserModule,
     FormsModule,
-      HttpModule,
-      RouterModule,
-      AppRoutingModule
+    HttpModule,
+    RouterModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
