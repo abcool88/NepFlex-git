@@ -1,16 +1,10 @@
 @import '../../Style/styles.scss';
-.container {
-  // border: 2px solid;
-  // border-color: red;
-  border-radius: 33px;
-  justify-content: flex-start;
-  flex: 1 1 auto;
-  display: flex;
-  align-content: center;
-  align-items: center;
+.fancy-box {
+  @include custom-fancy-box();
   height: auto;
-  width: 100%;
-  padding: 0;
+  border: 0;
+  box-shadow: 0 0 10px 1px rgba(255, 255, 255, 0.45);
+  -webkit-box-shadow: 0 0 10px 1px rgba(255, 255, 255, 0.45);
 }
 
 .home-banner {
@@ -62,10 +56,20 @@ img {
 //custom banner
 .main-text {
   position: absolute;
-  top: 183px;
-  width: 100%;
+  top: 209px;
+  width: 47%;
   color: #FFF;
   background: #d6002a;
+  opacity: 0.6;
+}
+
+.grocery-fixed {
+  position: absolute;
+  top: 208px;
+  width: 47%;
+  word-wrap: break-word;
+  color: #FFF;
+  background: #000000;
   opacity: 0.6;
 }
 
@@ -99,10 +103,11 @@ img {
   width: 100%;
   overflow: hidden;
   height: 100%;
+  @include display-flex();
 }
 
 .backgroundimg {
-  background-color: rgba(167, 14, 179, 0.63);
+  background-color: #f1f1f1;
 }
 
 .actual-custom-design {
@@ -124,12 +129,6 @@ img {
   width: 100%;
   color: #FFF;
   opacity: 3.1;
-  flex: 1 1 auto;
-  display: flex;
-  justify-content: space-around;
-  align-content: space-around;
-  align-items: center;
-  align-self: auto;
+  @include display-flex();
+  justify-content: flex-start;
 }
-
-

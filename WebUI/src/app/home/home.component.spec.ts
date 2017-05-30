@@ -6,6 +6,8 @@ import { HeaderComponent } from '../header/header.component';
 import { BannerComponent } from '../banner/banner.component';
 import { CarouselComponent } from '../carousel/carousel.component';
 import { LimitedOfferComponent } from '../banner/limited-offer/limited-offer.component';
+import { NewArrivalComponent } from '../banner/new-arrival/new-arrival.component';
+
 describe('HomeComponent', () => {
   let component: HomeComponent;
   let fixture: ComponentFixture<HomeComponent>;
@@ -17,7 +19,8 @@ describe('HomeComponent', () => {
         HeaderComponent,
         BannerComponent,
         CarouselComponent,
-        LimitedOfferComponent]
+        LimitedOfferComponent,
+        NewArrivalComponent]
     })
       .compileComponents();
   }));

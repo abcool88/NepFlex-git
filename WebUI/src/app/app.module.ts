@@ -12,6 +12,7 @@ import { HeaderComponent } from './header/header.component';
 import { BannerComponent } from './banner/banner.component';
 import { CarouselComponent} from './carousel/carousel.component';
 import { LimitedOfferComponent } from './banner/limited-offer/limited-offer.component';
+import { NewArrivalComponent } from './banner/new-arrival/new-arrival.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { LimitedOfferComponent } from './banner/limited-offer/limited-offer.comp
     HeaderComponent,
     BannerComponent,
     CarouselComponent,
-    LimitedOfferComponent
+    LimitedOfferComponent,
+    NewArrivalComponent
 
   ],
   imports: [
