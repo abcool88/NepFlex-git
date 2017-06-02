@@ -10,6 +10,18 @@
   order: 0;
 }
 
+@mixin display-flex-center {
+  display: flex;
+  flex: 1 1 auto;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  align-self: auto;
+  order: 0;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+
 @mixin custom-fancy-box {
   width: 100%;
   height: 49%;

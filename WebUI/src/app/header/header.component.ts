@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 //load component
-import {BannerComponent} from  '../banner/banner.component';
+import { BannerComponent } from '../banner/banner.component';
 
 @Component({
   selector: 'app-header',
@@ -10,9 +10,9 @@ import {BannerComponent} from  '../banner/banner.component';
 })
 export class HeaderComponent implements OnInit {
   navList: any;
-  topNav:any;
+  topNav: any;
   expandNoItem: boolean = false;
-  expandUserStatus:boolean=false;
+  expandUserStatus: boolean = false;
 
   constructor() {
     this.navList = [
@@ -40,10 +40,14 @@ export class HeaderComponent implements OnInit {
 
   shoppingCartExpand(event) {
     this.expandNoItem = !this.expandNoItem;
-      this.expandUserStatus=false;
+    this.expandUserStatus = false;
   }
-  UserStatus(event){
-    this.expandUserStatus=!this.expandUserStatus;
-    this.expandNoItem=false;
+  noExpandCart(event) {
+  this.expandNoItem = !this.expandNoItem;
+  this.expandUserStatus = false;
+  }
+  UserStatus(event) {
+    this.expandUserStatus = !this.expandUserStatus;
+    this.expandNoItem = false;
   }
 }

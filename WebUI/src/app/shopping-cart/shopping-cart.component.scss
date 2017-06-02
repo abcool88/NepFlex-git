@@ -1,0 +1,36 @@
+@import '../../Style/styles.scss';
+.shopping-body {
+  @include display-flex();
+  flex-direction: column;
+  width: 48%;
+  height: 64%;
+  margin-left: 1%;
+}
+
+.border-cart-status {
+  @include display-flex();
+  flex-direction: column;
+  border: 2px solid #d6002a;
+  //border-radius: 2%;
+  height: 100%;
+  width: 100%;
+}
+
+.title-shopping-bag {
+  //  @include display-flex();
+  background-color: $background-color-red;
+  width: 100%;
+  height: 8%;
+  margin-bottom: 1%;
+  color: $font-color-white;
+  font-size: x-large;
+  font-family: $font-family;
+}
+
+.empty-cart {
+  background-image: url($empty-cart);
+  background-repeat: no-repeat;
+  width: 95%;
+  height: 88%;
+  margin-left: 2%;
+}

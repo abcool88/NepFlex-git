@@ -31,7 +31,8 @@
   color: white;
   width: 100%;
   padding: 0%;
-  background-color: black;
+  background-color: $backgropund-header-color;
+  margin-bottom: 1%;
 }
 
 .nav-header {
@@ -100,7 +101,7 @@
 }
 
 .shopping-bag {
-  background-image: url("/dist/assets/images/cartbag.jpg"); 
+  background-image: url("/dist/assets/images/cartbag.jpg");
 }
 
 

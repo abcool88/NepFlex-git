@@ -21,8 +21,8 @@
         <input data-test-id="inputbox_Searchbar" type="text" class="input-box form-control" placeholder="search products" aria-describedby="sizing-addon1">
       </div>
     </div>
-    
-    <div class="btn shoppingcart-btn btn-lg" (click)="shoppingCartExpand($event)">
+
+    <div [routerLink]="['./shoppingbag']" class="btn shoppingcart-btn btn-lg" (mouseover)="shoppingCartExpand($event)" (mouseleave)="noExpandCart($event)">
       <span class="glyphicon glyphicon-shopping-cart"></span> Shopping Cart
     </div>
   </ul>

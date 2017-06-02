@@ -13,6 +13,7 @@ import { BannerComponent } from './banner/banner.component';
 import { CarouselComponent} from './carousel/carousel.component';
 import { LimitedOfferComponent } from './banner/limited-offer/limited-offer.component';
 import { NewArrivalComponent } from './banner/new-arrival/new-arrival.component';
+import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { NewArrivalComponent } from './banner/new-arrival/new-arrival.component'
     BannerComponent,
     CarouselComponent,
     LimitedOfferComponent,
-    NewArrivalComponent
+    NewArrivalComponent,
+    ShoppingCartComponent
 
   ],
   imports: [
