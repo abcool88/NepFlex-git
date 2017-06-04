@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-//load component
+// load component
 import { BannerComponent } from '../banner/banner.component';
 
 @Component({
@@ -43,8 +43,8 @@ export class HeaderComponent implements OnInit {
     this.expandUserStatus = false;
   }
   noExpandCart(event) {
-  this.expandNoItem = !this.expandNoItem;
-  this.expandUserStatus = false;
+    this.expandNoItem = !this.expandNoItem;
+    this.expandUserStatus = false;
   }
   UserStatus(event) {
     this.expandUserStatus = !this.expandUserStatus;

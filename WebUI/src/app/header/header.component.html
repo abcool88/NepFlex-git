@@ -10,8 +10,8 @@
 
 <div class="container">
   <ul class="nav-medium-header">
-    <li class="list-nav-header">
-      <div class="header-logo" [routerLink]="['']">NepFlex</div>
+    <li class="list-nav-header" [routerLink]="['']">
+      <div class="header-logo">NepFlex</div>
     </li>
     <div class="col-lg-6">
       <div class="input-group input-group-lg">
@@ -22,7 +22,7 @@
       </div>
     </div>
 
-    <div [routerLink]="['./shoppingbag']" class="btn shoppingcart-btn btn-lg" (mouseover)="shoppingCartExpand($event)" (mouseleave)="noExpandCart($event)">
+    <div [routerLink]="['/shoppingbag']" class="btn shoppingcart-btn btn-lg" (mouseover)="shoppingCartExpand($event)" (mouseleave)="noExpandCart($event)">
       <span class="glyphicon glyphicon-shopping-cart"></span> Shopping Cart
     </div>
   </ul>

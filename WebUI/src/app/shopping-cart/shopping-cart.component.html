@@ -9,28 +9,27 @@
   <div class="order-summary">
     <div class="title-shopping-bag">Order Summary</div>
     <div class="on-empty-cart" [hidden]="!isEmpty">
-      <div class="order-summary-item">
-        <div class="order-summary-label">Price Before</div>
-        <div class="order-summary-value">$100</div>
-      </div>
-      <div class="order-summary-item">
-        <div class="order-summary-label">Discount</div>
-        <div class="order-summary-value">$50</div>
-      </div>
-      <div class="order-summary-item">
-        <div class="order-summary-label">Shipping Fee</div>
-        <div class="order-summary-value">$5</div>
-      </div>
-      <div class="order-summary-item">
-        <div class="order-summary-label">Total Amount</div>
-        <div class="order-summary-value">$55</div>
+      <div class="order-summary-item" *ngFor="let emptyOrder of emptyOrderDetail;let i=index;">
+        <div class="order-summary-label">{{emptyOrder.label}}</div>
+        <div class="order-summary-value">{{emptyOrder.value}}</div>
       </div>
     </div>
     <div class="apply-code">
       <div class="order-summary-item">
-        <div class="order-summary-label">Promotion Code</div>
-        <div class="order-summary-value">Apply Code</div>
+        <div class="order-summary-label">Promotion Code ?</div>
+        <div class="order-summary-value" [hidden]="!showApplyCode" (click)="applyCode($event)">Apply Code
+          <div class="order-summary-value" [hidden]="!showAppliedCode">{{this.appliedCode}}</div>
+        </div>
+        <div class="order-summary-value" [hidden]="showApplyCode">
+          <form [formGroup]="form">
+            <input type="text" placeholder="enter code" formControlName="code">
+            <div class="btn applycode-btn btn-lg" (click)="afterApplyCode($event)">Done</div>
+          </form>
+        </div>
       </div>
     </div>
   </div>
+</div>
+<div class="you-may-like">
+<div class="title-shopping-bag">You May Like This</div>
 </div>

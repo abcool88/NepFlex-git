@@ -7,7 +7,7 @@ import { ShoppingCartComponent } from '../app/shopping-cart/shopping-cart.compon
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: '', component: HomeComponent },
-  { path: 'shoppingbag', component: ShoppingCartComponent}
+  { path: 'shoppingbag', component: ShoppingCartComponent, pathMatch: 'full' }
   // { path: 'home', component: HomeComponent },
   // { path: '', component: HomeComponent },
   // { path: '**', redirectTo: 'pagenotfound', pathMatch: 'full' },
