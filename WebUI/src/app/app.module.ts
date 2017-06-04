@@ -14,6 +14,7 @@ import { CarouselComponent } from './carousel/carousel.component';
 import { LimitedOfferComponent } from './banner/limited-offer/limited-offer.component';
 import { NewArrivalComponent } from './banner/new-arrival/new-arrival.component';
 import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
+import { BillingShippingComponent } from './billing-shipping/billing-shipping.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
     CarouselComponent,
     LimitedOfferComponent,
     NewArrivalComponent,
-    ShoppingCartComponent
+    ShoppingCartComponent,
+    BillingShippingComponent
 
   ],
   imports: [

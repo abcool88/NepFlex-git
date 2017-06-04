@@ -1,0 +1,36 @@
+<app-header></app-header>
+<h2 class="total-Price bg-success">your total price:</h2>
+<div class="billing-shipping-body">
+  <div class="billing-and-shipping">
+    <div class="title-billing-shipping">Billing</div>
+    <div class="billing-shipping-container">
+      <div class="order-summary-item" *ngFor="let billing of billingCheckout;let i=index;">
+        <div class="order-summary-label">{{billing.label}}</div>
+        <div class="order-summary-value">
+          <input type="text" class="form-control textbox-input" placeholder="{{billing.value}}">
+        </div>
+      </div>
+      <div class="btn applycode-btn btn-lg" [routerLink]="['/billingandshipping']">Pay</div>
+    </div>
+  </div>
+  <div class="billing-and-shipping">
+    <div class="title-billing-shipping">shipping</div>
+    <form [formGroup]="form">
+      <input id="chkToUseDifferentAddr" type="radio" formControlName="differentShippingAddress" (change)="checkedOrNot($event,differentShippingAddress)"
+        value="yes">
+      <label for="chkToUseDifferentAddr" class="choose-shipping-label">use different shipping address</label>
+      <input id="chkToUseSameAddr" type="radio" formControlName="differentShippingAddress" (change)="checkedOrNot($event,differentShippingAddress)" value="no">
+      <label for="chkToUseSameAddr" class="choose-shipping-label"> use same as billing address</label>
+    </form>
+
+    <div class="billing-shipping-container" [hidden]="!differentShipping">
+      <div class="order-summary-item" *ngFor="let billing of billingCheckout;let i=index;">
+        <div class="order-summary-label">{{billing.label}}</div>
+        <div class="order-summary-value">
+          <input type="text" class="form-control textbox-input" placeholder="{{billing.value}}">
+        </div>
+      </div>
+      <div class="btn applycode-btn btn-lg" [routerLink]="['/billingandshipping']">confirm</div>
+    </div>
+  </div>
+</div>
