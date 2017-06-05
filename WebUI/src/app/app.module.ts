@@ -16,6 +16,7 @@ import { NewArrivalComponent } from './banner/new-arrival/new-arrival.component'
 import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
 import { BillingShippingComponent } from './billing-shipping/billing-shipping.component';
 
+import { ModalComponent } from './shared/modal/modal.component';
 @NgModule({
   declarations: [
     HomeComponent,
@@ -26,7 +27,8 @@ import { BillingShippingComponent } from './billing-shipping/billing-shipping.co
     LimitedOfferComponent,
     NewArrivalComponent,
     ShoppingCartComponent,
-    BillingShippingComponent
+    BillingShippingComponent,
+    ModalComponent
 
   ],
   imports: [
@@ -35,7 +37,7 @@ import { BillingShippingComponent } from './billing-shipping/billing-shipping.co
     ReactiveFormsModule,
     HttpModule,
     RouterModule,
-    AppRoutingModule
+    AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
