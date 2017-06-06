@@ -13,7 +13,7 @@
 }
 
 .border-cart-status {
-  border: 2px solid $background-color-red; //border-radius: 2%;
+  border: $border-gray; //border-radius: 2%;
   height: 100%;
   width: 59%;
   order: 0;
@@ -58,7 +58,7 @@
 }
 
 .order-summary {
-  border: 2px solid #d6002a; //border-radius: 2%;
+  border: $border-gray; //border-radius: 2%;
   height: 100%; // width: 100%;
   order: 0;
   flex: 1 1 auto;
@@ -123,6 +123,12 @@
 }
 
 .applycode-btn {
+  color: #fff;
+  background-color: $background-color-red;
+  border-color: #ffffff;
+  border-radius: 0%;
+}
+.checkout-btn {
   color: #fff;
   background-color: $background-color-red;
   border-color: #ffffff;

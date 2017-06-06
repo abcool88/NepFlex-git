@@ -53,9 +53,9 @@
 
         <input id="chkToReview" type="radio" formControlName="reviewBeforeConfirm" data-toggle="modal" data-target="#myModal" (change)="reviewOrConfirm($event)"
           value="yes">
-        <label for="chkToReview" class="choose-shipping-label">Review before confirm</label>
+        <label for="chkToReview" class="choose-shipping-label">Review before pay</label>
         <input id="chkToConfirmPay" type="radio" formControlName="reviewBeforeConfirm" (change)="reviewOrConfirm($event)" value="no">
-        <label for="chkToConfirmPay" class="choose-shipping-label">Confirm</label>
+        <label for="chkToConfirmPay" class="choose-shipping-label">pay now</label>
         <!--[hidden]="showPopUpModel"-->
         <app-modal></app-modal>
       </div>
