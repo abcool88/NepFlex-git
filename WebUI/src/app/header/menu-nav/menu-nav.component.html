@@ -3,8 +3,12 @@
     <li *ngFor="let nav of navList" class="list-nav-header">
       {{nav.name}}
       <div class="pop-over">
-        <div class="custom-rows pops">
-
+        <div class="menu-pop-container">
+          <ul class="custom-rows">
+            <li class="title-group" *ngFor="let navItem of womenMenuPopContainer; let i=index;">
+              <a [routerLink]="navItem.url">{{navItem.label}}</a>
+            </li>
+          </ul>s
         </div>
       </div>
     </li>

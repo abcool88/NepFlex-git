@@ -46,22 +46,40 @@
   background-image: linear-gradient(#999, #fff 18%);
   & .pop-over {
     display: block;
-  }
-  & div {
-    box-shadow: 0 0px 1px rgba(1, 29, 51, 0.2);
-    min-height: 417px;
-    background-color: #fff;
-    width: 980px;
-    position: absolute;
-    z-index: 9999;
-    padding-bottom: 15px;
-    left: 50%;
-    margin-left: -480px;
-  }
-  & .custom-rows {
-    padding-left: 0;
-    min-height: 390px;
-    margin-top: 16px;
-    width: 23.25%;
+    & .menu-pop-container {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      justify-content: flex-start;
+      align-content: stretch;
+      align-items: flex-start;
+      top: 179px;
+      & .custom-rows {
+        order: 0;
+        flex: 0 1 auto;
+        align-self: auto;
+        border-right: $border-gray; //width: 20%;
+        list-style: none;
+        margin-left: 1%;
+        width: 17%;
+      }
+    }
+    & div {
+      box-shadow: 0 0px 1px rgba(1, 29, 51, 0.2);
+      min-height: 417px;
+      background-color: #fff;
+      width: 980px;
+      position: absolute;
+      z-index: 9999;
+      padding-bottom: 15px;
+      left: 50%;
+      margin-left: -480px;
+    }
+    & .custom-rows {
+      padding-left: 0;
+      min-height: 390px;
+      margin-top: 16px;
+      width: 23.25%;
+    }
   }
 }
