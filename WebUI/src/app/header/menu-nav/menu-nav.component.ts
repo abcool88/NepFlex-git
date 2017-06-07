@@ -7,16 +7,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MenuNavComponent implements OnInit {
   navList: any;
-  expandNoItem: boolean = false;
-  expandUserStatus: boolean = false;
+  expandNoItem: boolean;
+  expandUserStatus: boolean;
   constructor() {
+    this.expandNoItem = false;
+    this.expandUserStatus = false;
     this.navList = [
-      { id: '1', name: 'Men' },
-      { id: '2', name: 'Women' },
-      { id: '3', name: 'Baby & Kids' },
-      { id: '4', name: 'Books & More' },
-      { id: '5', name: 'Latest Arrival' },
-      { id: '6', name: 'Electronics' }
+      { id: '1', name: 'WOMEN' },
+      { id: '2', name: 'MEN' },
+      { id: '3', name: 'BABY & KIDS' },
+      { id: '4', name: 'BOOKS & MORE' },
+      { id: '5', name: 'LATEST ARRIVAL' },
+      { id: '6', name: 'ELECTRONICS' }
     ];
   }
 
