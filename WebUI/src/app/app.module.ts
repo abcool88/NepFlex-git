@@ -17,6 +17,7 @@ import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
 import { BillingShippingComponent } from './billing-shipping/billing-shipping.component';
 
 import { ModalComponent } from './shared/modal/modal.component';
+import { MenuNavComponent } from './header/menu-nav/menu-nav.component';
 @NgModule({
   declarations: [
     HomeComponent,
@@ -28,7 +29,8 @@ import { ModalComponent } from './shared/modal/modal.component';
     NewArrivalComponent,
     ShoppingCartComponent,
     BillingShippingComponent,
-    ModalComponent
+    ModalComponent,
+    MenuNavComponent
 
   ],
   imports: [

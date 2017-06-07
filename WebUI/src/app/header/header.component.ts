@@ -9,20 +9,12 @@ import { BannerComponent } from '../banner/banner.component';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-  navList: any;
+  // navList: any;
   topNav: any;
   expandNoItem: boolean = false;
   expandUserStatus: boolean = false;
 
   constructor() {
-    this.navList = [
-      { id: '1', name: 'Men' },
-      { id: '2', name: 'Women' },
-      { id: '3', name: 'Baby & Kids' },
-      { id: '4', name: 'Books & More' },
-      { id: '5', name: 'Latest Arrival' },
-      { id: '6', name: 'Electronics' }
-    ];
 
     this.topNav = [
       { id: '1', name: 'Sell-On-Nepflex' },
@@ -35,7 +27,7 @@ export class HeaderComponent implements OnInit {
 
   }
   ngOnInit() {
-    console.log(this.navList);
+    // console.log(this.navList);
   }
 
   shoppingCartExpand(event) {
@@ -46,8 +38,5 @@ export class HeaderComponent implements OnInit {
     this.expandNoItem = !this.expandNoItem;
     this.expandUserStatus = false;
   }
-  UserStatus(event) {
-    this.expandUserStatus = !this.expandUserStatus;
-    this.expandNoItem = false;
-  }
+
 }

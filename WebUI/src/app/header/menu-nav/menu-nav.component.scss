@@ -1,0 +1,20 @@
+@import '../../../Style/styles.scss';
+
+.menu-container {
+  @include display-flex();
+  color: white;
+  width: 100%;
+  padding: 0%;
+  background-color: $backgropund-header-color;
+  margin-bottom: 1%;
+}
+.nav-medium-header {
+  @include display-flex();
+  align-items: center;
+  margin-top: 1%;
+  justify-content: center;
+}
+.list-nav-header {
+  margin-right: 2%;
+  list-style: none;
+}

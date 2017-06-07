@@ -28,16 +28,8 @@
   </ul>
 </div>
 
-<div class="menu-container">
-  <ul class="nav-medium-header">
-    <li *ngFor="let nav of navList" class="list-nav-header">
-      {{nav.name}}
-    </li>
-    <li class="list-nav-header" (click)="UserStatus($event)">
-      <span class="glyphicon glyphicon-user"></span>
-    </li>
-  </ul>
-</div>
+<!--menu-nav-->
+<app-menu-nav></app-menu-nav>
 
 <!--user-login-->
 <div *ngIf="expandUserStatus" class="shoppingcart-expand">
