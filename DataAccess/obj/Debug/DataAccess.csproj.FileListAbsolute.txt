@@ -1,0 +1,4 @@
+A:\GIT\DataAccess\bin\Debug\DataAccess.dll
+A:\GIT\DataAccess\bin\Debug\DataAccess.pdb
+A:\GIT\DataAccess\obj\Debug\DataAccess.dll
+A:\GIT\DataAccess\obj\Debug\DataAccess.pdb

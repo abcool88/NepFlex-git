@@ -1,0 +1,4 @@
+A:\GIT\DependencyResolution\bin\Debug\DependencyResolution.dll
+A:\GIT\DependencyResolution\bin\Debug\DependencyResolution.pdb
+A:\GIT\DependencyResolution\obj\Debug\DependencyResolution.dll
+A:\GIT\DependencyResolution\obj\Debug\DependencyResolution.pdb

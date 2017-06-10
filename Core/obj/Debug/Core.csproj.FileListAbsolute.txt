@@ -1,0 +1,4 @@
+A:\GIT\Core\bin\Debug\Core.dll
+A:\GIT\Core\bin\Debug\Core.pdb
+A:\GIT\Core\obj\Debug\Core.dll
+A:\GIT\Core\obj\Debug\Core.pdb
