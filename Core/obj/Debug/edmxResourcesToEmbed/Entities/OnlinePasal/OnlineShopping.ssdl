@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="OnlinePasalModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="MenuNavigation">
+    <Key>
+      <PropertyRef Name="MenuID" />
+    </Key>
+    <Property Name="MenuID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MenuName" Type="nvarchar" MaxLength="50" />
+    <Property Name="MenuUrl" Type="nvarchar" MaxLength="200" />
+    <Property Name="Active" Type="bit" />
+  </EntityType>
+  <EntityType Name="MenuPopContainer">
+    <Key>
+      <PropertyRef Name="MenuPopID" />
+    </Key>
+    <Property Name="MenuPopID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MenuPopContainer" Type="nvarchar" MaxLength="100" />
+    <Property Name="MenuPopUrl" Type="nvarchar" MaxLength="500" />
+    <Property Name="MenuID" Type="int" />
+    <Property Name="Active" Type="bit" Nullable="false" />
+    <Property Name="DateInserted" Type="datetime" Nullable="false" />
+    <Property Name="DateUpdated" Type="datetime" />
+    <Property Name="Validity" Type="datetime" />
+    <Property Name="MultipleMenuID" Type="int" />
+  </EntityType>
+  <Association Name="MenuIDMenuTable_FK">
+    <End Role="MenuNavigation" Type="Self.MenuNavigation" Multiplicity="0..1" />
+    <End Role="MenuPopContainer" Type="Self.MenuPopContainer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MenuNavigation">
+        <PropertyRef Name="MenuID" />
+      </Principal>
+      <Dependent Role="MenuPopContainer">
+        <PropertyRef Name="MenuID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="OnlinePasalModelStoreContainer">
+    <EntitySet Name="MenuNavigation" EntityType="Self.MenuNavigation" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MenuPopContainer" EntityType="Self.MenuPopContainer" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="MenuIDMenuTable_FK" Association="Self.MenuIDMenuTable_FK">
+      <End Role="MenuNavigation" EntitySet="MenuNavigation" />
+      <End Role="MenuPopContainer" EntitySet="MenuPopContainer" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

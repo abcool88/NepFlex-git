@@ -96,6 +96,8 @@ A:\GIT\WebUI\bin\NepFlex.WebUI.dll.config
 A:\GIT\WebUI\bin\NepFlex.WebUI.dll
 A:\GIT\WebUI\bin\NepFlex.WebUI.pdb
 A:\GIT\WebUI\bin\Antlr3.Runtime.dll
+A:\GIT\WebUI\bin\EntityFramework.dll
+A:\GIT\WebUI\bin\EntityFramework.SqlServer.dll
 A:\GIT\WebUI\bin\Microsoft.AI.Agent.Intercept.dll
 A:\GIT\WebUI\bin\Microsoft.AI.DependencyCollector.dll
 A:\GIT\WebUI\bin\Microsoft.AI.PerfCounterCollector.dll
@@ -114,6 +116,8 @@ A:\GIT\WebUI\bin\System.Web.WebPages.Deployment.dll
 A:\GIT\WebUI\bin\System.Web.WebPages.dll
 A:\GIT\WebUI\bin\System.Web.WebPages.Razor.dll
 A:\GIT\WebUI\bin\WebGrease.dll
+A:\GIT\WebUI\bin\EntityFramework.xml
+A:\GIT\WebUI\bin\EntityFramework.SqlServer.xml
 A:\GIT\WebUI\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
 A:\GIT\WebUI\bin\System.Web.Helpers.xml
 A:\GIT\WebUI\bin\System.Web.Mvc.xml

@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="OnlinePasalModelStoreContainer" CdmEntityContainer="OnlinePasalModels">
+    <EntitySetMapping Name="MenuNavigations">
+      <EntityTypeMapping TypeName="OnlinePasalModel.MenuNavigation">
+        <MappingFragment StoreEntitySet="MenuNavigation">
+          <ScalarProperty Name="MenuID" ColumnName="MenuID" />
+          <ScalarProperty Name="MenuName" ColumnName="MenuName" />
+          <ScalarProperty Name="MenuUrl" ColumnName="MenuUrl" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MenuPopContainers">
+      <EntityTypeMapping TypeName="OnlinePasalModel.MenuPopContainer">
+        <MappingFragment StoreEntitySet="MenuPopContainer">
+          <ScalarProperty Name="MenuPopID" ColumnName="MenuPopID" />
+          <ScalarProperty Name="MenuPopContainer1" ColumnName="MenuPopContainer" />
+          <ScalarProperty Name="MenuPopUrl" ColumnName="MenuPopUrl" />
+          <ScalarProperty Name="MenuID" ColumnName="MenuID" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="DateInserted" ColumnName="DateInserted" />
+          <ScalarProperty Name="DateUpdated" ColumnName="DateUpdated" />
+          <ScalarProperty Name="Validity" ColumnName="Validity" />
+          <ScalarProperty Name="MultipleMenuID" ColumnName="MultipleMenuID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

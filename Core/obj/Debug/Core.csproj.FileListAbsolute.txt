@@ -1,4 +1,9 @@
+A:\GIT\Core\bin\Debug\Core.dll.config
 A:\GIT\Core\bin\Debug\Core.dll
 A:\GIT\Core\bin\Debug\Core.pdb
+A:\GIT\Core\bin\Debug\EntityFramework.dll
+A:\GIT\Core\bin\Debug\EntityFramework.SqlServer.dll
+A:\GIT\Core\bin\Debug\EntityFramework.xml
+A:\GIT\Core\bin\Debug\EntityFramework.SqlServer.xml
 A:\GIT\Core\obj\Debug\Core.dll
 A:\GIT\Core\obj\Debug\Core.pdb

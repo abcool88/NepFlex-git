@@ -82,6 +82,8 @@ A:\GIT\ServiceAPI\bin\roslyn\VBCSCompiler.exe.config
 A:\GIT\ServiceAPI\bin\Nepflex.ServiceAPI.dll.config
 A:\GIT\ServiceAPI\bin\Nepflex.ServiceAPI.dll
 A:\GIT\ServiceAPI\bin\Nepflex.ServiceAPI.pdb
+A:\GIT\ServiceAPI\bin\EntityFramework.dll
+A:\GIT\ServiceAPI\bin\EntityFramework.SqlServer.dll
 A:\GIT\ServiceAPI\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
 A:\GIT\ServiceAPI\bin\Microsoft.Web.Infrastructure.dll
 A:\GIT\ServiceAPI\bin\Newtonsoft.Json.dll
@@ -94,6 +96,8 @@ A:\GIT\ServiceAPI\bin\System.Web.Razor.dll
 A:\GIT\ServiceAPI\bin\System.Web.Webpages.Deployment.dll
 A:\GIT\ServiceAPI\bin\System.Web.Webpages.dll
 A:\GIT\ServiceAPI\bin\System.Web.Webpages.Razor.dll
+A:\GIT\ServiceAPI\bin\EntityFramework.xml
+A:\GIT\ServiceAPI\bin\EntityFramework.SqlServer.xml
 A:\GIT\ServiceAPI\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
 A:\GIT\ServiceAPI\bin\System.Web.Razor.xml
 A:\GIT\ServiceAPI\bin\System.Web.Webpages.xml
@@ -105,5 +109,6 @@ A:\GIT\ServiceAPI\bin\Newtonsoft.Json.xml
 A:\GIT\ServiceAPI\bin\System.Net.Http.Formatting.xml
 A:\GIT\ServiceAPI\bin\System.Web.Http.xml
 A:\GIT\ServiceAPI\bin\System.Web.Http.WebHost.xml
+A:\GIT\ServiceAPI\obj\Debug\ServiceAPI.csprojResolveAssemblyReference.cache
 A:\GIT\ServiceAPI\obj\Debug\Nepflex.ServiceAPI.dll
 A:\GIT\ServiceAPI\obj\Debug\Nepflex.ServiceAPI.pdb

@@ -1,4 +1,9 @@
+A:\GIT\DependencyResolution\bin\Debug\DependencyResolution.dll.config
 A:\GIT\DependencyResolution\bin\Debug\DependencyResolution.dll
 A:\GIT\DependencyResolution\bin\Debug\DependencyResolution.pdb
+A:\GIT\DependencyResolution\bin\Debug\EntityFramework.dll
+A:\GIT\DependencyResolution\bin\Debug\EntityFramework.SqlServer.dll
+A:\GIT\DependencyResolution\bin\Debug\EntityFramework.xml
+A:\GIT\DependencyResolution\bin\Debug\EntityFramework.SqlServer.xml
 A:\GIT\DependencyResolution\obj\Debug\DependencyResolution.dll
 A:\GIT\DependencyResolution\obj\Debug\DependencyResolution.pdb

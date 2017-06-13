@@ -1,4 +1,9 @@
+A:\GIT\DataAccess\bin\Debug\DataAccess.dll.config
 A:\GIT\DataAccess\bin\Debug\DataAccess.dll
 A:\GIT\DataAccess\bin\Debug\DataAccess.pdb
+A:\GIT\DataAccess\bin\Debug\EntityFramework.dll
+A:\GIT\DataAccess\bin\Debug\EntityFramework.SqlServer.dll
+A:\GIT\DataAccess\bin\Debug\EntityFramework.xml
+A:\GIT\DataAccess\bin\Debug\EntityFramework.SqlServer.xml
 A:\GIT\DataAccess\obj\Debug\DataAccess.dll
 A:\GIT\DataAccess\obj\Debug\DataAccess.pdb

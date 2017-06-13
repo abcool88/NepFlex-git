@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="OnlinePasalModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="MenuNavigation">
+    <Key>
+      <PropertyRef Name="MenuID" />
+    </Key>
+    <Property Name="MenuID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MenuName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MenuUrl" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Active" Type="Boolean" />
+    <NavigationProperty Name="MenuPopContainers" Relationship="Self.MenuIDMenuTable_FK" FromRole="MenuNavigation" ToRole="MenuPopContainer" />
+  </EntityType>
+  <EntityType Name="MenuPopContainer">
+    <Key>
+      <PropertyRef Name="MenuPopID" />
+    </Key>
+    <Property Name="MenuPopID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MenuPopContainer1" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="MenuPopUrl" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="MenuID" Type="Int32" />
+    <Property Name="Active" Type="Boolean" Nullable="false" />
+    <Property Name="DateInserted" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="DateUpdated" Type="DateTime" Precision="3" />
+    <Property Name="Validity" Type="DateTime" Precision="3" />
+    <Property Name="MultipleMenuID" Type="Int32" />
+    <NavigationProperty Name="MenuNavigation" Relationship="Self.MenuIDMenuTable_FK" FromRole="MenuPopContainer" ToRole="MenuNavigation" />
+  </EntityType>
+  <Association Name="MenuIDMenuTable_FK">
+    <End Role="MenuNavigation" Type="Self.MenuNavigation" Multiplicity="0..1" />
+    <End Role="MenuPopContainer" Type="Self.MenuPopContainer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MenuNavigation">
+        <PropertyRef Name="MenuID" />
+      </Principal>
+      <Dependent Role="MenuPopContainer">
+        <PropertyRef Name="MenuID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="OnlinePasalModels" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="MenuNavigations" EntityType="Self.MenuNavigation" />
+    <EntitySet Name="MenuPopContainers" EntityType="Self.MenuPopContainer" />
+    <AssociationSet Name="MenuIDMenuTable_FK" Association="Self.MenuIDMenuTable_FK">
+      <End Role="MenuNavigation" EntitySet="MenuNavigations" />
+      <End Role="MenuPopContainer" EntitySet="MenuPopContainers" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
