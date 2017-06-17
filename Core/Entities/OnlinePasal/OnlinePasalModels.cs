@@ -27,7 +27,7 @@
 #pragma warning disable 1591    //  Ignore "Missing XML Comment" warning
 
 
-namespace Core.Entities.OnlinePasal
+namespace NepFlex.Core.Entities.OnlinePasal
 {
     using System.Linq;
 

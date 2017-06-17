@@ -27,7 +27,7 @@
 #pragma warning disable 1591    //  Ignore "Missing XML Comment" warning
 
 
-namespace DataAccess.Mapping
+namespace NepFlex.DataAccess.Mapping
 {
     using System.Linq;
 
