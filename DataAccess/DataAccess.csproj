@@ -94,10 +94,6 @@
       <Project>{8ace2a2a-3e7f-40aa-84a6-02b496efdebe}</Project>
       <Name>Core</Name>
     </ProjectReference>
-    <ProjectReference Include="..\DependencyResolution\DependencyResolution.csproj">
-      <Project>{7a178838-82e7-4955-b9b8-8d87a4c2ca7d}</Project>
-      <Name>DependencyResolution</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

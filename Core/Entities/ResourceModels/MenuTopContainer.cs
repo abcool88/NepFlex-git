@@ -8,7 +8,7 @@ namespace Core.Entities.ResourceModels
 {
     public class MenuTopContainer
     {
-        //public int MenuPopID { get; }
+        public int MenuPopID { get; }
         public string MenuPopContainer { get; set; }
         public string MenuPopUrl  { get; set; }
         public int? MenuID { get; set; }

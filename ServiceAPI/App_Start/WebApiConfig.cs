@@ -11,7 +11,7 @@ namespace ServiceAPI
         public static void Register(HttpConfiguration config)
         {
             // Web API configuration and services
-
+            Nepflex.ServiceAPI.App_Start.UnityWebApiActivator.Start();
             // Web API routes
             config.MapHttpAttributeRoutes();
 

@@ -1,7 +1,6 @@
 using System.Linq;
 using System.Web.Mvc;
 using Microsoft.Practices.Unity.Mvc;
-using DependencyResolution;
 
 [assembly: WebActivatorEx.PreApplicationStartMethod(typeof(Nepflex.ServiceAPI.App_Start.UnityWebActivator), "Start")]
 [assembly: WebActivatorEx.ApplicationShutdownMethod(typeof(Nepflex.ServiceAPI.App_Start.UnityWebActivator), "Shutdown")]

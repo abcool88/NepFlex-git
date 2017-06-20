@@ -1,15 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using NepFlex.Core;
-using Core.Interfaces;
+using System;
+using Microsoft.Practices.Unity;
+using Microsoft.Practices.Unity.Configuration;
 using Core.Interfaces.Services;
 using Core.Services;
-using System.ComponentModel;
 using Core.Interfaces.Repositories;
-using Microsoft.Practices.Unity;
+using DataAccess.Repositories;
+using NepFlex.DataAccess.Context;
+using Core.Interfaces;
+using DataAccess;
 
 namespace DependencyResolution
 {
@@ -17,6 +15,8 @@ namespace DependencyResolution
     {
         public static void RegisterTypes(IUnityContainer container)
         {
+            container.RegisterType<IOnlinePasalContext, OnlinePasalContext>(new TransientLifetimeManager(), new InjectionConstructor());
+            container.RegisterType<IUnitOfWork, UnitOfWork>(new PerRequestLifetimeManager());
             container.RegisterType<IMenuTopService, MenuTopService>();
         }
     }

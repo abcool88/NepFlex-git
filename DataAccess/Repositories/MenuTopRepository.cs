@@ -10,10 +10,10 @@ using NepFlex.Core.Entities.OnlinePasal;
 
 namespace DataAccess.Repositories
 {
-    public class MenuTopRepository : IMenuTopRepository
+    public class MenuTopRepository : Repository<MenuTopContainer, int>,IMenuTopRepository
     {
         private readonly IOnlinePasalContext _context;
-        public MenuTopRepository(IOnlinePasalContext context)
+        public MenuTopRepository(IOnlinePasalContext context):base(context)
         {
             _context = context;
         }
