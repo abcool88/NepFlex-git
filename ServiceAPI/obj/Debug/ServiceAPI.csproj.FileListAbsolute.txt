@@ -97,7 +97,9 @@ A:\GIT\ServiceAPI\bin\NepFlex.Core.dll
 A:\GIT\ServiceAPI\bin\NepFlex.DataAccess.dll
 A:\GIT\ServiceAPI\bin\Newtonsoft.Json.dll
 A:\GIT\ServiceAPI\bin\System.Net.Http.Formatting.dll
+A:\GIT\ServiceAPI\bin\System.Web.Cors.dll
 A:\GIT\ServiceAPI\bin\System.Web.Helpers.dll
+A:\GIT\ServiceAPI\bin\System.Web.Http.Cors.dll
 A:\GIT\ServiceAPI\bin\System.Web.Http.dll
 A:\GIT\ServiceAPI\bin\System.Web.Http.WebHost.dll
 A:\GIT\ServiceAPI\bin\System.Web.Mvc.dll
@@ -123,6 +125,7 @@ A:\GIT\ServiceAPI\bin\Microsoft.Practices.Unity.Mvc.xml
 A:\GIT\ServiceAPI\bin\Microsoft.Practices.Unity.RegistrationByConvention.xml
 A:\GIT\ServiceAPI\bin\Microsoft.Practices.Unity.WebApi.xml
 A:\GIT\ServiceAPI\bin\Newtonsoft.Json.xml
+A:\GIT\ServiceAPI\bin\System.Web.Http.Cors.xml
 A:\GIT\ServiceAPI\bin\System.Web.Razor.xml
 A:\GIT\ServiceAPI\bin\System.Web.Webpages.xml
 A:\GIT\ServiceAPI\bin\System.Web.Webpages.Deployment.xml

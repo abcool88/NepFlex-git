@@ -18,6 +18,8 @@ import { BillingShippingComponent } from './billing-shipping/billing-shipping.co
 
 import { ModalComponent } from './shared/modal/modal.component';
 import { MenuNavComponent } from './header/menu-nav/menu-nav.component';
+
+import { HomeService } from './shared/services/home.service';
 @NgModule({
   declarations: [
     HomeComponent,
@@ -41,7 +43,7 @@ import { MenuNavComponent } from './header/menu-nav/menu-nav.component';
     RouterModule,
     AppRoutingModule,
   ],
-  providers: [],
+  providers: [HomeService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
