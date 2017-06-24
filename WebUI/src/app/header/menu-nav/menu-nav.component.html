@@ -1,14 +1,14 @@
 <div class="menu-container">
   <ul class="nav-medium-header">
     <li *ngFor="let nav of navList" class="list-nav-header">
-      {{nav.name}}
+      {{nav.menuName}}
       <div class="pop-over">
         <div class="menu-pop-container">
           <ul class="custom-rows">
             <li class="title-group" *ngFor="let navItem of womenMenuPopContainer; let i=index;">
-              <a [routerLink]="navItem.url">{{navItem.label}}</a>
+              <a [routerLink]="navItem.menuPopUrl">{{navItem.menuPopContainer}}</a>
             </li>
-          </ul>s
+          </ul>
         </div>
       </div>
     </li>

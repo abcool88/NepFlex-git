@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Core.Entities.ResourceModels
+namespace NepFlex.Core.Entities.ResourceModels
 {
     public class MenuTopContainer
     {

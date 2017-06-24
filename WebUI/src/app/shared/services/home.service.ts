@@ -4,23 +4,37 @@ import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';
 
-import { MenuTop } from '../interfaces/header';
+import { MenuContainer, MenuTopNav } from '../interfaces/header';
 
 @Injectable()
 export class HomeService {
-  private apiUrl = 'https://localhost/ServiceAPI/api/menuTopContainer';
-  MenuTop: Observable<MenuTop>;
+
+  private apiUrl_getMenuContainer = 'https://localhost/ServiceAPI/api/menuTop/getMenuContainer';
+  private apiUrl_getMenuNav = 'https://localhost/ServiceAPI/api/menuTop/getMenu';
+
+  MenuTop: Observable<MenuContainer>;
   constructor(private http: Http) { }
 
-  getMenuTopItems(): Observable<MenuTop[]> {
-    return this.http.get(this.apiUrl)
-      .map(this.extractData);
+ getMenuNav(): Observable<MenuTopNav[]> {
+    return this.http.get(this.apiUrl_getMenuNav)
+      .map(this.extractMenuTopNav);
   }
 
-  private extractData(res: Response): MenuTop[] {
+  private extractMenuTopNav(res: Response): MenuTopNav[] {
     const body = res.json();
     console.log(body);
-    return <MenuTop[]>body || <MenuTop[]>[];
+    return <MenuTopNav[]>body || <MenuTopNav[]>[];
+  }
+
+  getMenuContainer(): Observable<MenuContainer[]> {
+    return this.http.get(this.apiUrl_getMenuContainer)
+      .map(this.extractMenuContainer);
+  }
+
+  private extractMenuContainer(res: Response): MenuContainer[] {
+    const body = res.json();
+    console.log(body);
+    return <MenuContainer[]>body || <MenuContainer[]>[];
   }
 
 }

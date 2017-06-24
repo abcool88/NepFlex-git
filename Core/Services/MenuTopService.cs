@@ -1,11 +1,7 @@
-﻿using Core.Entities.ResourceModels;
-using Core.Interfaces;
+﻿using Core.Interfaces;
 using Core.Interfaces.Services;
-using System;
+using NepFlex.Core.Entities.ResourceModels;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Core.Services
 {
@@ -19,6 +15,10 @@ namespace Core.Services
         public List<MenuTopContainer> GetMenuTopItems()
         {
             return _unitOfWork.MenuTopRepository.GetMenuTopItems();
+        }
+        public List<MenuTopNav> GetMenuNav()
+        {
+            return _unitOfWork.MenuTopRepository.GetMenuNav();
         }
     }
 }

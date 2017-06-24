@@ -1,14 +1,12 @@
-﻿using Core.Entities.ResourceModels;
-using System;
+﻿using NepFlex.Core.Entities.OnlinePasal;
+using NepFlex.Core.Entities.ResourceModels;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Core.Interfaces.Services
 {
     public interface IMenuTopService
     {
        List<MenuTopContainer> GetMenuTopItems();
+       List<MenuTopNav> GetMenuNav();
     }
 }

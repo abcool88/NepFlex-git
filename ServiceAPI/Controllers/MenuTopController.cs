@@ -11,7 +11,7 @@ using Core.Interfaces;
 
 namespace Nepflex.ServiceAPI.Controllers
 {
-    [RoutePrefix("api/menuTopContainer")]
+    [RoutePrefix("api/menuTop")]
     //[Authorize]
     public class MenuTopController : ApiController
     {
@@ -21,14 +21,28 @@ namespace Nepflex.ServiceAPI.Controllers
         public MenuTopController(IMenuTopService menuTopService)
         {
             _menuTopService = menuTopService;
-            Console.WriteLine("came in controller");
         }
 
-        [Route("")]
+        [Route("getMenu")]
         [HttpGet]
-        public IHttpActionResult Get()
+        public IHttpActionResult GetMenuNav()
         {
-            Console.WriteLine("came here in get");
+            Console.WriteLine("came here in GetMenuNav");
+            try
+            {
+                var menuNavList = _menuTopService.GetMenuNav();
+                return Ok(menuNavList);
+            }
+            catch (Exception ex)
+            {
+                return InternalServerError(ex);
+            }
+        }
+
+        [Route("getMenuContainer")]
+        [HttpGet]
+        public IHttpActionResult GetMenuContainer()
+        {
             try
             {
                 var menuTopList = _menuTopService.GetMenuTopItems();

@@ -1,4 +1,12 @@
-export interface MenuTop {
+
+export interface MenuTopNav {
+  MenuId: number;
+  MenuName: string;
+  MenuUrl: string;
+  Active: boolean;
+}
+
+export interface MenuContainer {
   MenuPopID: number;
   MenuPopContainer: string;
   MenuPopUrl: string;

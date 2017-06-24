@@ -57,6 +57,7 @@
       <DependentUpon>OnlinePasalModels.tt</DependentUpon>
     </Compile>
     <Compile Include="Entities\ResourceModels\MenuTopContainer.cs" />
+    <Compile Include="Entities\ResourceModels\MenuTopNav.cs" />
     <Compile Include="Interfaces\IUnitOfWork.cs" />
     <Compile Include="Interfaces\Repositories\IMenuTopRepository.cs" />
     <Compile Include="Interfaces\Repositories\IRepository.cs" />
