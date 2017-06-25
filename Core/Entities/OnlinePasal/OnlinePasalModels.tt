@@ -176,7 +176,7 @@
 			List<string>includedTables=new List<string>{
 				//tables name here
 				"MenuNavigation",
-				"MenuPopContainer"
+				""
 		};
 
         // Example: Exclude any table in dbo schema with "order" in its name.
@@ -202,7 +202,7 @@
     {
 			List<string> includedStoredProcs=new List<string>{
 			//all stored procs here
-				""
+				"SP_MenuContainer"
 			};
        
 	   // Example: Exclude any stored procedure in dbo schema with "order" in its name.

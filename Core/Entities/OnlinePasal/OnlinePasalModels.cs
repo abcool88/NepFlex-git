@@ -36,7 +36,6 @@ namespace NepFlex.Core.Entities.OnlinePasal
     public interface IMyDbContext : System.IDisposable
     {
         System.Data.Entity.DbSet<MenuNavigation> MenuNavigations { get; set; } // MenuNavigation
-        System.Data.Entity.DbSet<MenuPopContainer> MenuPopContainers { get; set; } // MenuPopContainer
 
         int SaveChanges();
         System.Threading.Tasks.Task<int> SaveChangesAsync();
@@ -50,6 +49,12 @@ namespace NepFlex.Core.Entities.OnlinePasal
         System.Data.Entity.DbSet Set(System.Type entityType);
         System.Data.Entity.DbSet<TEntity> Set<TEntity>() where TEntity : class;
         string ToString();
+
+        // Stored Procedures
+        System.Collections.Generic.List<SpMenuContainerReturnModel> SpMenuContainer(int? menuId);
+        System.Collections.Generic.List<SpMenuContainerReturnModel> SpMenuContainer(int? menuId, out int procResult);
+        System.Threading.Tasks.Task<System.Collections.Generic.List<SpMenuContainerReturnModel>> SpMenuContainerAsync(int? menuId);
+
     }
 
     #endregion
@@ -60,7 +65,6 @@ namespace NepFlex.Core.Entities.OnlinePasal
     public class MyDbContext : System.Data.Entity.DbContext, IMyDbContext
     {
         public System.Data.Entity.DbSet<MenuNavigation> MenuNavigations { get; set; } // MenuNavigation
-        public System.Data.Entity.DbSet<MenuPopContainer> MenuPopContainers { get; set; } // MenuPopContainer
 
         static MyDbContext()
         {
@@ -111,15 +115,45 @@ namespace NepFlex.Core.Entities.OnlinePasal
             base.OnModelCreating(modelBuilder);
 
             modelBuilder.Configurations.Add(new MenuNavigationConfiguration());
-            modelBuilder.Configurations.Add(new MenuPopContainerConfiguration());
         }
 
         public static System.Data.Entity.DbModelBuilder CreateModel(System.Data.Entity.DbModelBuilder modelBuilder, string schema)
         {
             modelBuilder.Configurations.Add(new MenuNavigationConfiguration(schema));
-            modelBuilder.Configurations.Add(new MenuPopContainerConfiguration(schema));
             return modelBuilder;
         }
+
+        // Stored Procedures
+        public System.Collections.Generic.List<SpMenuContainerReturnModel> SpMenuContainer(int? menuId)
+        {
+            int procResult;
+            return SpMenuContainer(menuId, out procResult);
+        }
+
+        public System.Collections.Generic.List<SpMenuContainerReturnModel> SpMenuContainer(int? menuId, out int procResult)
+        {
+            var menuIdParam = new System.Data.SqlClient.SqlParameter { ParameterName = "@MenuID", SqlDbType = System.Data.SqlDbType.Int, Direction = System.Data.ParameterDirection.Input, Value = menuId.GetValueOrDefault(), Precision = 10, Scale = 0 };
+            if (!menuId.HasValue)
+                menuIdParam.Value = System.DBNull.Value;
+
+            var procResultParam = new System.Data.SqlClient.SqlParameter { ParameterName = "@procResult", SqlDbType = System.Data.SqlDbType.Int, Direction = System.Data.ParameterDirection.Output };
+            var procResultData = Database.SqlQuery<SpMenuContainerReturnModel>("EXEC @procResult = [dbo].[SP_MenuContainer] @MenuID", menuIdParam, procResultParam).ToList();
+
+            procResult = (int) procResultParam.Value;
+            return procResultData;
+        }
+
+        public async System.Threading.Tasks.Task<System.Collections.Generic.List<SpMenuContainerReturnModel>> SpMenuContainerAsync(int? menuId)
+        {
+            var menuIdParam = new System.Data.SqlClient.SqlParameter { ParameterName = "@MenuID", SqlDbType = System.Data.SqlDbType.Int, Direction = System.Data.ParameterDirection.Input, Value = menuId.GetValueOrDefault(), Precision = 10, Scale = 0 };
+            if (!menuId.HasValue)
+                menuIdParam.Value = System.DBNull.Value;
+
+            var procResultData = await Database.SqlQuery<SpMenuContainerReturnModel>("EXEC [dbo].[SP_MenuContainer] @MenuID", menuIdParam).ToListAsync();
+
+            return procResultData;
+        }
+
     }
     #endregion
 
@@ -129,12 +163,10 @@ namespace NepFlex.Core.Entities.OnlinePasal
     public class FakeMyDbContext : IMyDbContext
     {
         public System.Data.Entity.DbSet<MenuNavigation> MenuNavigations { get; set; }
-        public System.Data.Entity.DbSet<MenuPopContainer> MenuPopContainers { get; set; }
 
         public FakeMyDbContext()
         {
             MenuNavigations = new FakeDbSet<MenuNavigation>("MenuId");
-            MenuPopContainers = new FakeDbSet<MenuPopContainer>("MenuPopId");
         }
 
         public int SaveChangesCount { get; private set; }
@@ -194,6 +226,27 @@ namespace NepFlex.Core.Entities.OnlinePasal
         public override string ToString()
         {
             throw new System.NotImplementedException();
+        }
+
+
+        // Stored Procedures
+        public System.Collections.Generic.List<SpMenuContainerReturnModel> SpMenuContainer(int? menuId)
+        {
+            int procResult;
+            return SpMenuContainer(menuId, out procResult);
+        }
+
+        public System.Collections.Generic.List<SpMenuContainerReturnModel> SpMenuContainer(int? menuId, out int procResult)
+        {
+
+            procResult = 0;
+            return new System.Collections.Generic.List<SpMenuContainerReturnModel>();
+        }
+
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<SpMenuContainerReturnModel>> SpMenuContainerAsync(int? menuId)
+        {
+            int procResult;
+            return System.Threading.Tasks.Task.FromResult(SpMenuContainer(menuId, out procResult));
         }
 
     }
@@ -462,45 +515,6 @@ namespace NepFlex.Core.Entities.OnlinePasal
         public string MenuName { get; set; } // MenuName (length: 50)
         public string MenuUrl { get; set; } // MenuUrl (length: 200)
         public bool? Active { get; set; } // Active
-
-        // Reverse navigation
-
-        /// <summary>
-        /// Child MenuPopContainers where [MenuPopContainer].[MenuID] point to this entity (MenuIDMenuTable_FK)
-        /// </summary>
-        public virtual System.Collections.Generic.ICollection<MenuPopContainer> MenuPopContainers { get; set; } // MenuPopContainer.MenuIDMenuTable_FK
-
-        public MenuNavigation()
-        {
-            MenuPopContainers = new System.Collections.Generic.List<MenuPopContainer>();
-        }
-    }
-
-    // MenuPopContainer
-    [System.CodeDom.Compiler.GeneratedCode("EF.Reverse.POCO.Generator", "2.31.1.0")]
-    public class MenuPopContainer
-    {
-        public int MenuPopId { get; set; } // MenuPopID (Primary key)
-        public string MenuPopContainer_ { get; set; } // MenuPopContainer (length: 100)
-        public string MenuPopUrl { get; set; } // MenuPopUrl (length: 500)
-        public int? MenuId { get; set; } // MenuID
-        public bool Active { get; set; } // Active
-        public System.DateTime DateInserted { get; set; } // DateInserted
-        public System.DateTime? DateUpdated { get; set; } // DateUpdated
-        public System.DateTime? Validity { get; set; } // Validity
-        public int? MultipleMenuId { get; set; } // MultipleMenuID
-
-        // Foreign keys
-
-        /// <summary>
-        /// Parent MenuNavigation pointed by [MenuPopContainer].([MenuId]) (MenuIDMenuTable_FK)
-        /// </summary>
-        public virtual MenuNavigation MenuNavigation { get; set; } // MenuIDMenuTable_FK
-
-        public MenuPopContainer()
-        {
-            DateInserted = System.DateTime.Now;
-        }
     }
 
     #endregion
@@ -528,33 +542,27 @@ namespace NepFlex.Core.Entities.OnlinePasal
         }
     }
 
-    // MenuPopContainer
+    #endregion
+
+    #region Stored procedure return models
+
     [System.CodeDom.Compiler.GeneratedCode("EF.Reverse.POCO.Generator", "2.31.1.0")]
-    public class MenuPopContainerConfiguration : System.Data.Entity.ModelConfiguration.EntityTypeConfiguration<MenuPopContainer>
+    public class SpMenuContainerReturnModel
     {
-        public MenuPopContainerConfiguration()
-            : this("dbo")
-        {
-        }
-
-        public MenuPopContainerConfiguration(string schema)
-        {
-            ToTable("MenuPopContainer", schema);
-            HasKey(x => x.MenuPopId);
-
-            Property(x => x.MenuPopId).HasColumnName(@"MenuPopID").HasColumnType("int").IsRequired().HasDatabaseGeneratedOption(System.ComponentModel.DataAnnotations.Schema.DatabaseGeneratedOption.Identity);
-            Property(x => x.MenuPopContainer_).HasColumnName(@"MenuPopContainer").HasColumnType("nvarchar").IsOptional().HasMaxLength(100);
-            Property(x => x.MenuPopUrl).HasColumnName(@"MenuPopUrl").HasColumnType("nvarchar").IsOptional().HasMaxLength(500);
-            Property(x => x.MenuId).HasColumnName(@"MenuID").HasColumnType("int").IsOptional();
-            Property(x => x.Active).HasColumnName(@"Active").HasColumnType("bit").IsRequired();
-            Property(x => x.DateInserted).HasColumnName(@"DateInserted").HasColumnType("datetime").IsRequired();
-            Property(x => x.DateUpdated).HasColumnName(@"DateUpdated").HasColumnType("datetime").IsOptional();
-            Property(x => x.Validity).HasColumnName(@"Validity").HasColumnType("datetime").IsOptional();
-            Property(x => x.MultipleMenuId).HasColumnName(@"MultipleMenuID").HasColumnType("int").IsOptional();
-
-            // Foreign keys
-            HasOptional(a => a.MenuNavigation).WithMany(b => b.MenuPopContainers).HasForeignKey(c => c.MenuId).WillCascadeOnDelete(false); // MenuIDMenuTable_FK
-        }
+        public System.Int32 MenuPopID { get; set; }
+        public System.String MenuPopContainer { get; set; }
+        public System.String MenuPopUrl { get; set; }
+        public System.Boolean MenuStillActive { get; set; }
+        public System.DateTime? MenuContainerValidity { get; set; }
+        public System.Int32? BrandID { get; set; }
+        public System.String BrandName { get; set; }
+        public System.String BrandUrl { get; set; }
+        public System.Boolean? BrandStillActive { get; set; }
+        public System.String BrandRemarks { get; set; }
+        public System.Int32? ClearenceID { get; set; }
+        public System.String ClearenceUrl { get; set; }
+        public System.DateTime? ClearenceCalidity { get; set; }
+        public System.String ClearenceRemarks { get; set; }
     }
 
     #endregion

@@ -23,18 +23,20 @@ export class MenuNavComponent implements OnInit {
 
   ngOnInit() {
     this.getMenu();
-    this.getMenuTopItems();
+    //this.getMenuTopItems();
   }
   getMenu() {
     this.homeService.getMenuNav()
       .subscribe(navList => {
         this.navList = navList;
-        console.log('navList' + this.navList);
+        console.log('navList' + this.navList.menuId);
       });
   }
-
-  getMenuTopItems() {
-    this.homeService.getMenuContainer()
+  onclick(event, id: string) {
+    console.log('MenuPopID : ' + id);
+  }
+  getMenuTopItems(event, id: number) {
+    this.homeService.getMenuContainer(id)
       .subscribe(result => {
         this.womenMenuPopContainer = result;
         console.log('WOMEN' + this.womenMenuPopContainer);

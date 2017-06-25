@@ -13,17 +13,25 @@ namespace DataAccess.Repositories
         {
             _context = context;
         }
-        public List<MenuTopContainer> GetMenuTopItems()
+        public List<MenuTopContainer> GetMenuTopItems(int id)
         {
-            var results = _context.MenuPopContainers;
+            var results = _context.SpMenuContainer(id);
             return results.Select(a => new MenuTopContainer()
             {
-                MenuID = a.MenuId,
-                MenuPopContainer = a.MenuPopContainer_,
+                MenuPopID = a.MenuPopID,
+                MenuPopContainer = a.MenuPopContainer,
                 MenuPopUrl = a.MenuPopUrl,
-                Active = a.Active,
-                MultipleMenuID = a.MultipleMenuId,
-                DateInserted = a.DateInserted
+                MenuStillActive = a.MenuStillActive,
+                MenuContainerValidity = a.MenuContainerValidity,
+                BrandID = a.BrandID,
+                BrandName = a.BrandName,
+                BrandUrl = a.BrandUrl,
+                BrandStillActive = a.BrandStillActive,
+                BrandRemarks = a.BrandRemarks,
+                ClearenceID = a.ClearenceID,
+                ClearenceUrl = a.ClearenceUrl,
+                ClearenceCalidity = a.ClearenceCalidity,
+                ClearenceRemarks = a.ClearenceRemarks,
             }).ToList();
         }
 

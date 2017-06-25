@@ -1,7 +1,7 @@
 <div class="menu-container">
   <ul class="nav-medium-header">
-    <li *ngFor="let nav of navList" class="list-nav-header">
-      {{nav.menuName}}
+    <li *ngFor="let nav of navList" (click)="getMenuTopItems($event, nav.menuId)" class="list-nav-header">
+      <div >{{nav.menuName}}</div>
       <div class="pop-over">
         <div class="menu-pop-container">
           <ul class="custom-rows">
