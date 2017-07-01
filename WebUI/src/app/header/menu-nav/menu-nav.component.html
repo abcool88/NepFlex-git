@@ -1,11 +1,11 @@
 <div class="menu-container">
   <ul class="nav-medium-header">
-    <li *ngFor="let nav of navList" (click)="getMenuTopItems($event, nav.menuId)" class="list-nav-header">
+    <li *ngFor="let nav of navList" class="list-nav-header">
       <div >{{nav.menuName}}</div>
       <div class="pop-over">
         <div class="menu-pop-container">
           <ul class="custom-rows">
-            <li class="title-group" *ngFor="let navItem of womenMenuPopContainer; let i=index;">
+            <li class="title-group" *ngFor="let navItem of (womenMenuPopContainer | filterBy : field : sortBy); let i=index;">
               <a [routerLink]="navItem.menuPopUrl">{{navItem.menuPopContainer}}</a>
             </li>
           </ul>

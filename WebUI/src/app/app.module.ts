@@ -6,6 +6,13 @@ import { RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { AppComponent } from './app.component';
 
+// pipes
+import { DefaultValuePipe } from './shared/pipes/default-value.pipe';
+import { FilterByPipe } from './shared/pipes/filter-by.pipe';
+import { OrderByNestedPipe } from './shared/pipes/order-by-nested.pipe';
+import { OrderByPipe } from './shared/pipes/order-by.pipe';
+import { UniqueValuePipe } from './shared/pipes/unique-value.pipe';
+
 // Routes
 import { AppRoutingModule } from './app-routing.module';
 import { HeaderComponent } from './header/header.component';
@@ -22,6 +29,7 @@ import { MenuNavComponent } from './header/menu-nav/menu-nav.component';
 import { HomeService } from './shared/services/home.service';
 @NgModule({
   declarations: [
+    // components
     HomeComponent,
     AppComponent,
     HeaderComponent,
@@ -32,7 +40,14 @@ import { HomeService } from './shared/services/home.service';
     ShoppingCartComponent,
     BillingShippingComponent,
     ModalComponent,
-    MenuNavComponent
+    MenuNavComponent,
+
+    // pipes
+    DefaultValuePipe,
+    FilterByPipe,
+    OrderByNestedPipe,
+    OrderByPipe,
+    UniqueValuePipe
 
   ],
   imports: [

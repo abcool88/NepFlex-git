@@ -17,6 +17,7 @@ namespace NepFlex.Core.Entities.ResourceModels
         //public DateTime? DateUpdated { get; set; }
         //public string Validity { get; set; }
         //public int? MultipleMenuID { get; set; }
+        public int? MenuID { get; set; }
         public int MenuPopID { get; set; }
         public String MenuPopContainer { get; set; }
         public String MenuPopUrl { get; set; }

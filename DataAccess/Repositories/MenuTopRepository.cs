@@ -13,11 +13,12 @@ namespace DataAccess.Repositories
         {
             _context = context;
         }
-        public List<MenuTopContainer> GetMenuTopItems(int id)
+        public List<MenuTopContainer> GetMenuTopItems()
         {
-            var results = _context.SpMenuContainer(id);
+            var results = _context.SpMenuContainer();
             return results.Select(a => new MenuTopContainer()
             {
+                MenuID=a.MenuID,
                 MenuPopID = a.MenuPopID,
                 MenuPopContainer = a.MenuPopContainer,
                 MenuPopUrl = a.MenuPopUrl,

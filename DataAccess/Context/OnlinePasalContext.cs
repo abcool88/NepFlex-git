@@ -51,9 +51,9 @@ namespace NepFlex.DataAccess.Context
         string ToString();
 
         // Stored Procedures
-        System.Collections.Generic.List<SpMenuContainerReturnModel> SpMenuContainer(int? menuId);
-        System.Collections.Generic.List<SpMenuContainerReturnModel> SpMenuContainer(int? menuId, out int procResult);
-        System.Threading.Tasks.Task<System.Collections.Generic.List<SpMenuContainerReturnModel>> SpMenuContainerAsync(int? menuId);
+        System.Collections.Generic.List<SpMenuContainerReturnModel> SpMenuContainer();
+        System.Collections.Generic.List<SpMenuContainerReturnModel> SpMenuContainer(out int procResult);
+        System.Threading.Tasks.Task<System.Collections.Generic.List<SpMenuContainerReturnModel>> SpMenuContainerAsync();
 
     }
 
@@ -124,32 +124,24 @@ namespace NepFlex.DataAccess.Context
         }
 
         // Stored Procedures
-        public System.Collections.Generic.List<SpMenuContainerReturnModel> SpMenuContainer(int? menuId)
+        public System.Collections.Generic.List<SpMenuContainerReturnModel> SpMenuContainer()
         {
             int procResult;
-            return SpMenuContainer(menuId, out procResult);
+            return SpMenuContainer(out procResult);
         }
 
-        public System.Collections.Generic.List<SpMenuContainerReturnModel> SpMenuContainer(int? menuId, out int procResult)
+        public System.Collections.Generic.List<SpMenuContainerReturnModel> SpMenuContainer(out int procResult)
         {
-            var menuIdParam = new System.Data.SqlClient.SqlParameter { ParameterName = "@MenuID", SqlDbType = System.Data.SqlDbType.Int, Direction = System.Data.ParameterDirection.Input, Value = menuId.GetValueOrDefault(), Precision = 10, Scale = 0 };
-            if (!menuId.HasValue)
-                menuIdParam.Value = System.DBNull.Value;
-
             var procResultParam = new System.Data.SqlClient.SqlParameter { ParameterName = "@procResult", SqlDbType = System.Data.SqlDbType.Int, Direction = System.Data.ParameterDirection.Output };
-            var procResultData = Database.SqlQuery<SpMenuContainerReturnModel>("EXEC @procResult = [dbo].[SP_MenuContainer] @MenuID", menuIdParam, procResultParam).ToList();
+            var procResultData = Database.SqlQuery<SpMenuContainerReturnModel>("EXEC @procResult = [dbo].[SP_MenuContainer] ", procResultParam).ToList();
 
             procResult = (int) procResultParam.Value;
             return procResultData;
         }
 
-        public async System.Threading.Tasks.Task<System.Collections.Generic.List<SpMenuContainerReturnModel>> SpMenuContainerAsync(int? menuId)
+        public async System.Threading.Tasks.Task<System.Collections.Generic.List<SpMenuContainerReturnModel>> SpMenuContainerAsync()
         {
-            var menuIdParam = new System.Data.SqlClient.SqlParameter { ParameterName = "@MenuID", SqlDbType = System.Data.SqlDbType.Int, Direction = System.Data.ParameterDirection.Input, Value = menuId.GetValueOrDefault(), Precision = 10, Scale = 0 };
-            if (!menuId.HasValue)
-                menuIdParam.Value = System.DBNull.Value;
-
-            var procResultData = await Database.SqlQuery<SpMenuContainerReturnModel>("EXEC [dbo].[SP_MenuContainer] @MenuID", menuIdParam).ToListAsync();
+            var procResultData = await Database.SqlQuery<SpMenuContainerReturnModel>("EXEC [dbo].[SP_MenuContainer] ").ToListAsync();
 
             return procResultData;
         }
@@ -230,23 +222,23 @@ namespace NepFlex.DataAccess.Context
 
 
         // Stored Procedures
-        public System.Collections.Generic.List<SpMenuContainerReturnModel> SpMenuContainer(int? menuId)
+        public System.Collections.Generic.List<SpMenuContainerReturnModel> SpMenuContainer()
         {
             int procResult;
-            return SpMenuContainer(menuId, out procResult);
+            return SpMenuContainer(out procResult);
         }
 
-        public System.Collections.Generic.List<SpMenuContainerReturnModel> SpMenuContainer(int? menuId, out int procResult)
+        public System.Collections.Generic.List<SpMenuContainerReturnModel> SpMenuContainer(out int procResult)
         {
 
             procResult = 0;
             return new System.Collections.Generic.List<SpMenuContainerReturnModel>();
         }
 
-        public System.Threading.Tasks.Task<System.Collections.Generic.List<SpMenuContainerReturnModel>> SpMenuContainerAsync(int? menuId)
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<SpMenuContainerReturnModel>> SpMenuContainerAsync()
         {
             int procResult;
-            return System.Threading.Tasks.Task.FromResult(SpMenuContainer(menuId, out procResult));
+            return System.Threading.Tasks.Task.FromResult(SpMenuContainer(out procResult));
         }
 
     }
@@ -549,6 +541,7 @@ namespace NepFlex.DataAccess.Context
     [System.CodeDom.Compiler.GeneratedCode("EF.Reverse.POCO.Generator", "2.31.1.0")]
     public class SpMenuContainerReturnModel
     {
+        public System.Int32? MenuID { get; set; }
         public System.Int32 MenuPopID { get; set; }
         public System.String MenuPopContainer { get; set; }
         public System.String MenuPopUrl { get; set; }

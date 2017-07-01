@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { MenuContainer } from '../../shared/interfaces/header';
 import { HomeService } from '../../shared/services/home.service';
+import { FilterBy } from '../../shared/pipes/filter-by.pipe';
 @Component({
   selector: 'app-menu-nav',
   templateUrl: './menu-nav.component.html',
@@ -13,9 +14,11 @@ export class MenuNavComponent implements OnInit {
   expandNoItem: boolean;
   expandUserStatus: boolean;
 
-  menuTopItem: string[];
+  menuTopItem: any;
   errorMessage: string;
   MenuContainer: Observable<MenuContainer[]>;
+  field: string;
+  sortBy: string;
   constructor(private homeService: HomeService) {
     this.expandNoItem = false;
     this.expandUserStatus = false;
@@ -23,24 +26,27 @@ export class MenuNavComponent implements OnInit {
 
   ngOnInit() {
     this.getMenu();
-    //this.getMenuTopItems();
+    this.field = 'MenuPopContainer';
+    this.sortBy = '1';
+
+    this.getMenuTopItems();
   }
   getMenu() {
     this.homeService.getMenuNav()
       .subscribe(navList => {
         this.navList = navList;
-        console.log('navList' + this.navList.menuId);
+        this.navList.filter(element => {
+          const resultx = element.menuId;
+        });
       });
+
   }
-  onclick(event, id: string) {
-    console.log('MenuPopID : ' + id);
-  }
-  getMenuTopItems(event, id: number) {
-    this.homeService.getMenuContainer(id)
+  getMenuTopItems() {
+    this.homeService.getMenuContainer()
       .subscribe(result => {
         this.womenMenuPopContainer = result;
-        console.log('WOMEN' + this.womenMenuPopContainer);
       });
+    return this.womenMenuPopContainer;
   }
   UserStatus(event) {
     this.expandUserStatus = !this.expandUserStatus;

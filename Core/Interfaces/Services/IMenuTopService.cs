@@ -6,7 +6,7 @@ namespace Core.Interfaces.Services
 {
     public interface IMenuTopService
     {
-       List<MenuTopContainer> GetMenuTopItems(int id);
+       List<MenuTopContainer> GetMenuTopItems();
        List<MenuTopNav> GetMenuNav();
     }
 }

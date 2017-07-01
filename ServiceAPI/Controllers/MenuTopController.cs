@@ -39,13 +39,13 @@ namespace Nepflex.ServiceAPI.Controllers
             }
         }
 
-        [Route("getMenuContainer/{id}")]
+        [Route("getMenuContainer")]
         [HttpGet]
-        public IHttpActionResult GetMenuContainer(int id)
+        public IHttpActionResult GetMenuContainer()
         {
             try
             {
-                var menuTopList = _menuTopService.GetMenuTopItems(id);
+                var menuTopList = _menuTopService.GetMenuTopItems();
                     return Ok(menuTopList);
             }
             catch(Exception ex)

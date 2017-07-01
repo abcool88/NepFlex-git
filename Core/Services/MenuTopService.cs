@@ -12,9 +12,9 @@ namespace Core.Services
         {
             _unitOfWork = unitOfWork;
         }
-        public List<MenuTopContainer> GetMenuTopItems(int id)
+        public List<MenuTopContainer> GetMenuTopItems()
         {
-            return _unitOfWork.MenuTopRepository.GetMenuTopItems(id);
+            return _unitOfWork.MenuTopRepository.GetMenuTopItems();
         }
         public List<MenuTopNav> GetMenuNav()
         {

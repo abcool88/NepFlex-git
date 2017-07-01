@@ -9,7 +9,7 @@ import { MenuContainer, MenuTopNav } from '../interfaces/header';
 @Injectable()
 export class HomeService {
 
-  private apiUrl_getMenuContainer = 'https://localhost/ServiceAPI/api/menuTop/getMenuContainer/';
+  private apiUrl_getMenuContainer = 'https://localhost/ServiceAPI/api/menuTop/getMenuContainer';
   private apiUrl_getMenuNav = 'https://localhost/ServiceAPI/api/menuTop/getMenu';
 
   MenuTop: Observable<MenuContainer>;
@@ -22,12 +22,11 @@ export class HomeService {
 
   private extractMenuTopNav(res: Response): MenuTopNav[] {
     const body = res.json();
-    console.log(body);
     return <MenuTopNav[]>body || <MenuTopNav[]>[];
   }
 
-  getMenuContainer(menuID: number): Observable<MenuContainer[]> {
-    return this.http.get(this.apiUrl_getMenuContainer + menuID)
+  getMenuContainer(): Observable<MenuContainer[]> {
+    return this.http.get(this.apiUrl_getMenuContainer)
       .map(this.extractMenuContainer);
   }
 
