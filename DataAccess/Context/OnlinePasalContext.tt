@@ -174,7 +174,9 @@
 				//tables name here
 				"Clothing_Brand",
 				"MenuNavigation",
-				""
+				"Clearence",
+				"NewArrival",
+				"Fashion"
 		};
 
         // Example: Exclude any table in dbo schema with "order" in its name.

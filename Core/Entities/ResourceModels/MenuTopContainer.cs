@@ -47,9 +47,9 @@ namespace NepFlex.Core.Entities.ResourceModels
         public string BrandUrl { get; set; }
         public bool? BrandStillActive { get; set; }
         public string BrandRemarks { get; set; }
-        public int? ClearenceID { get; set; }
-        public string ClearenceUrl { get; set; }
-        public DateTime? ClearenceCalidity { get; set; }
-        public string ClearenceRemarks { get; set; }
+        //public int? ClearenceID { get; set; }
+        //public string ClearenceUrl { get; set; }
+        //public DateTime? ClearenceCalidity { get; set; }
+        //public string ClearenceRemarks { get; set; }
     }
 }

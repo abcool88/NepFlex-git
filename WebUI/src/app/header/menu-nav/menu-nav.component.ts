@@ -12,7 +12,11 @@ import { FilterByPipe } from '../../shared/pipes/filter-by.pipe';
 export class MenuNavComponent implements OnInit {
   navList: any;
   clothingBrands: any;
+  ClearenceList: any;
   womenMenuPopContainer: any;
+  newArrivalList: any;
+  fashionList: any;
+
   expandNoItem: boolean;
   expandUserStatus: boolean;
 
@@ -56,7 +60,19 @@ export class MenuNavComponent implements OnInit {
     this.homeService.getClothingBrand()
       .subscribe(resultClothingBrand => {
         this.sortClothingBrandBy = value;
-        this.clothingBrands = resultClothingBrand.filter(itemx => itemx.menuId.toLocaleString().indexOf(value) !== -1);
+        this.clothingBrands = resultClothingBrand.filter(itemx => itemx.menuId.toPrecision().indexOf(value) !== -1);
+      });
+    this.homeService.getClearence()
+      .subscribe(resultClearence => {
+        this.ClearenceList = resultClearence.filter(itemx => itemx.menuId.toPrecision().indexOf(value) !== -1);
+      });
+    this.homeService.getFashion()
+      .subscribe(resultFashion => {
+        this.fashionList = resultFashion.filter(itemx => itemx.menuId.toPrecision().indexOf(value) !== -1);
+      });
+    this.homeService.getNewArrivals()
+      .subscribe(resultNewArrival => {
+        this.newArrivalList = resultNewArrival.filter(itemx => itemx.menuId.toPrecision().indexOf(value) !== -1);
       });
   }
 

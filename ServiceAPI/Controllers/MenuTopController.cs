@@ -68,5 +68,49 @@ namespace Nepflex.ServiceAPI.Controllers
                 return InternalServerError(ex);
             }
         }
+
+        [Route("clearenceList")]
+        [HttpGet]
+        public IHttpActionResult GetMenuClearence()
+        {
+            try
+            {
+                var clearence = _menuTopService.GetMenuClearence();
+                return Ok(clearence);
+            }
+            catch (Exception ex)
+            {
+                return InternalServerError(ex);
+            }
+        }
+        [Route("fashion")]
+        [HttpGet]
+        public IHttpActionResult GetFashion()
+        {
+            try
+            {
+                var fashion = _menuTopService.GetFashion();
+                return Ok(fashion);
+            }
+            catch (Exception ex)
+            {
+                return InternalServerError(ex);
+            }
+        }
+
+        [Route("getNewArrival")]
+        [HttpGet]
+        public IHttpActionResult GetNewArrival()
+        {
+            try
+            {
+                var newArrival = _menuTopService.GetNewArrival();
+                return Ok(newArrival);
+            }
+            catch (Exception ex)
+            {
+                return InternalServerError(ex);
+            }
+        }
     }
 }

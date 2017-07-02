@@ -53,7 +53,7 @@
       justify-content: flex-start;
       align-content: stretch;
       align-items: flex-start;
-      top: 179px;
+      top: 182px;
       & .custom-rows {
         order: 0;
         flex: 0 1 auto;
@@ -73,7 +73,7 @@
       z-index: 9999;
       padding-bottom: 15px;
       left: 50%;
-      margin-left: -480px;
+      margin-left: -486px;
     }
     & .custom-rows {
       padding-left: 0;
@@ -90,10 +90,18 @@
   .li-data-container {
     flex: 1 1 auto;
     display: flex;
+    margin-bottom: 1%;
   }
   .title-container {
     margin: 0 0 10px;
     background: black;
     color: white;
+  }
+  .clearence-highlight {
+    flex: 1 1 auto;
+    display: flex;
+    margin-bottom: 1%;
+    color: #ff0000;
+    text-decoration: none;
   }
 }

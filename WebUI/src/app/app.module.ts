@@ -12,7 +12,7 @@ import { FilterByPipe } from './shared/pipes/filter-by.pipe';
 import { OrderByNestedPipe } from './shared/pipes/order-by-nested.pipe';
 import { OrderByPipe } from './shared/pipes/order-by.pipe';
 import { UniqueValuePipe } from './shared/pipes/unique-value.pipe';
-
+import { CamelCase } from './shared/pipes/camelcase.pipe';
 // Routes
 import { AppRoutingModule } from './app-routing.module';
 import { HeaderComponent } from './header/header.component';
@@ -47,7 +47,8 @@ import { HomeService } from './shared/services/home.service';
     FilterByPipe,
     OrderByNestedPipe,
     OrderByPipe,
-    UniqueValuePipe
+    UniqueValuePipe,
+    CamelCase
 
   ],
   imports: [

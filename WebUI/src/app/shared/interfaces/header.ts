@@ -30,3 +30,38 @@ export interface ClothingBrand {
   dateUpdated: Date;
   remarks: string;
 }
+
+export interface ClearenceList {
+  clearenceId: number;
+  clearenceName: string;
+  clearenceUrl: string;
+  clearencePercent: string;
+  menuId: number;
+  dateInserted: Date;
+  active: boolean;
+  dateUpdate: Date;
+  dateValidity: Date;
+  remarks: string;
+}
+export interface Fashion {
+  fashionId: number;
+  fashionName: string;
+  fashionUrl: string;
+  active: boolean;
+  dateInserted: Date;
+  menuId: number;
+  remarks: string;
+  dateValidity: Date;
+  dateUpdate: Date;
+}
+export interface NewArrivals {
+  newArrivalId: number;
+  newArivalBrand: string;
+  url: string;
+  active: boolean;
+  dateInserted: Date;
+  menuId: number;
+  remarks: string;
+  dateUpdated: Date;
+}
+

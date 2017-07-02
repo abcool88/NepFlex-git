@@ -26,5 +26,17 @@ namespace Core.Services
         {
             return _unitOfWork.MenuTopRepository.GetClothingBrands();
         }
+        public List<MenuClearence> GetMenuClearence()
+        {
+            return _unitOfWork.MenuTopRepository.GetMenuClearence();
+        }
+        public List<Fashion> GetFashion()
+        {
+            return _unitOfWork.MenuTopRepository.GetFashion();
+        }
+        public List<NewArrival> GetNewArrival()
+        {
+            return _unitOfWork.MenuTopRepository.GetNewArrival();
+        }
     }
 }

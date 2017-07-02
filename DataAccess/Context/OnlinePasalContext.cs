@@ -35,8 +35,11 @@ namespace NepFlex.DataAccess.Context
 
     public interface IOnlinePasalContext : System.IDisposable
     {
+        System.Data.Entity.DbSet<Clearence> Clearences { get; set; } // Clearence
         System.Data.Entity.DbSet<ClothingBrand> ClothingBrands { get; set; } // Clothing_Brand
+        System.Data.Entity.DbSet<Fashion> Fashions { get; set; } // Fashion
         System.Data.Entity.DbSet<MenuNavigation> MenuNavigations { get; set; } // MenuNavigation
+        System.Data.Entity.DbSet<NewArrival> NewArrivals { get; set; } // NewArrival
 
         int SaveChanges();
         System.Threading.Tasks.Task<int> SaveChangesAsync();
@@ -65,8 +68,11 @@ namespace NepFlex.DataAccess.Context
     [System.CodeDom.Compiler.GeneratedCode("EF.Reverse.POCO.Generator", "2.31.1.0")]
     public class OnlinePasalContext : System.Data.Entity.DbContext, IOnlinePasalContext
     {
+        public System.Data.Entity.DbSet<Clearence> Clearences { get; set; } // Clearence
         public System.Data.Entity.DbSet<ClothingBrand> ClothingBrands { get; set; } // Clothing_Brand
+        public System.Data.Entity.DbSet<Fashion> Fashions { get; set; } // Fashion
         public System.Data.Entity.DbSet<MenuNavigation> MenuNavigations { get; set; } // MenuNavigation
+        public System.Data.Entity.DbSet<NewArrival> NewArrivals { get; set; } // NewArrival
 
         static OnlinePasalContext()
         {
@@ -116,14 +122,20 @@ namespace NepFlex.DataAccess.Context
         {
             base.OnModelCreating(modelBuilder);
 
+            modelBuilder.Configurations.Add(new ClearenceConfiguration());
             modelBuilder.Configurations.Add(new ClothingBrandConfiguration());
+            modelBuilder.Configurations.Add(new FashionConfiguration());
             modelBuilder.Configurations.Add(new MenuNavigationConfiguration());
+            modelBuilder.Configurations.Add(new NewArrivalConfiguration());
         }
 
         public static System.Data.Entity.DbModelBuilder CreateModel(System.Data.Entity.DbModelBuilder modelBuilder, string schema)
         {
+            modelBuilder.Configurations.Add(new ClearenceConfiguration(schema));
             modelBuilder.Configurations.Add(new ClothingBrandConfiguration(schema));
+            modelBuilder.Configurations.Add(new FashionConfiguration(schema));
             modelBuilder.Configurations.Add(new MenuNavigationConfiguration(schema));
+            modelBuilder.Configurations.Add(new NewArrivalConfiguration(schema));
             return modelBuilder;
         }
 
@@ -158,13 +170,19 @@ namespace NepFlex.DataAccess.Context
     [System.CodeDom.Compiler.GeneratedCode("EF.Reverse.POCO.Generator", "2.31.1.0")]
     public class FakeOnlinePasalContext : IOnlinePasalContext
     {
+        public System.Data.Entity.DbSet<Clearence> Clearences { get; set; }
         public System.Data.Entity.DbSet<ClothingBrand> ClothingBrands { get; set; }
+        public System.Data.Entity.DbSet<Fashion> Fashions { get; set; }
         public System.Data.Entity.DbSet<MenuNavigation> MenuNavigations { get; set; }
+        public System.Data.Entity.DbSet<NewArrival> NewArrivals { get; set; }
 
         public FakeOnlinePasalContext()
         {
+            Clearences = new FakeDbSet<Clearence>("ClearenceId", "Active", "DateInserted");
             ClothingBrands = new FakeDbSet<ClothingBrand>("BrandId", "Active", "DateInserted");
+            Fashions = new FakeDbSet<Fashion>("FashionId");
             MenuNavigations = new FakeDbSet<MenuNavigation>("MenuId");
+            NewArrivals = new FakeDbSet<NewArrival>("NewArrivalId", "Active", "DateInserted");
         }
 
         public int SaveChangesCount { get; private set; }
@@ -505,6 +523,34 @@ namespace NepFlex.DataAccess.Context
 
     #region POCO classes
 
+    // Clearence
+    [System.CodeDom.Compiler.GeneratedCode("EF.Reverse.POCO.Generator", "2.31.1.0")]
+    public class Clearence
+    {
+        public int ClearenceId { get; set; } // ClearenceID (Primary key)
+        public int? MenuId { get; set; } // MenuID
+        public string ClearenceName { get; set; } // ClearenceName (length: 150)
+        public string ClearenceUrl { get; set; } // ClearenceUrl (length: 500)
+        public bool Active { get; set; } // Active (Primary key)
+        public System.DateTime DateInserted { get; set; } // DateInserted (Primary key)
+        public System.DateTime? DateUpdate { get; set; } // DateUpdate
+        public System.DateTime? DateValidity { get; set; } // DateValidity
+        public string Remarks { get; set; } // Remarks (length: 10)
+        public int? ClearencePercent { get; set; } // ClearencePercent
+
+        // Foreign keys
+
+        /// <summary>
+        /// Parent MenuNavigation pointed by [Clearence].([MenuId]) (FK_Clearence_MenuNavigation)
+        /// </summary>
+        public virtual MenuNavigation MenuNavigation { get; set; } // FK_Clearence_MenuNavigation
+
+        public Clearence()
+        {
+            DateInserted = System.DateTime.Now;
+        }
+    }
+
     // Clothing_Brand
     [System.CodeDom.Compiler.GeneratedCode("EF.Reverse.POCO.Generator", "2.31.1.0")]
     public class ClothingBrand
@@ -531,6 +577,33 @@ namespace NepFlex.DataAccess.Context
         }
     }
 
+    // Fashion
+    [System.CodeDom.Compiler.GeneratedCode("EF.Reverse.POCO.Generator", "2.31.1.0")]
+    public class Fashion
+    {
+        public int FashionId { get; set; } // FashionID (Primary key)
+        public string FashionName { get; set; } // FashionName (length: 150)
+        public string FashionUrl { get; set; } // FashionUrl (length: 500)
+        public bool Active { get; set; } // Active
+        public System.DateTime DateInserted { get; set; } // DateInserted
+        public int? MenuId { get; set; } // MenuID
+        public System.DateTime? DateUpdate { get; set; } // DateUpdate
+        public System.DateTime? DateValidity { get; set; } // DateValidity
+        public string Remarks { get; set; } // Remarks (length: 150)
+
+        // Foreign keys
+
+        /// <summary>
+        /// Parent MenuNavigation pointed by [Fashion].([MenuId]) (FK_Fashion_MenuNavigation)
+        /// </summary>
+        public virtual MenuNavigation MenuNavigation { get; set; } // FK_Fashion_MenuNavigation
+
+        public Fashion()
+        {
+            DateInserted = System.DateTime.Now;
+        }
+    }
+
     // MenuNavigation
     [System.CodeDom.Compiler.GeneratedCode("EF.Reverse.POCO.Generator", "2.31.1.0")]
     public class MenuNavigation
@@ -543,19 +616,90 @@ namespace NepFlex.DataAccess.Context
         // Reverse navigation
 
         /// <summary>
+        /// Child Clearences where [Clearence].[MenuID] point to this entity (FK_Clearence_MenuNavigation)
+        /// </summary>
+        public virtual System.Collections.Generic.ICollection<Clearence> Clearences { get; set; } // Clearence.FK_Clearence_MenuNavigation
+        /// <summary>
         /// Child ClothingBrands where [Clothing_Brand].[MenuID] point to this entity (FK_Clothing_Brand_MenuNavigation)
         /// </summary>
         public virtual System.Collections.Generic.ICollection<ClothingBrand> ClothingBrands { get; set; } // Clothing_Brand.FK_Clothing_Brand_MenuNavigation
+        /// <summary>
+        /// Child Fashions where [Fashion].[MenuID] point to this entity (FK_Fashion_MenuNavigation)
+        /// </summary>
+        public virtual System.Collections.Generic.ICollection<Fashion> Fashions { get; set; } // Fashion.FK_Fashion_MenuNavigation
+        /// <summary>
+        /// Child NewArrivals where [NewArrival].[MenuID] point to this entity (FK_NewArrival_MenuNavigation)
+        /// </summary>
+        public virtual System.Collections.Generic.ICollection<NewArrival> NewArrivals { get; set; } // NewArrival.FK_NewArrival_MenuNavigation
 
         public MenuNavigation()
         {
+            Clearences = new System.Collections.Generic.List<Clearence>();
             ClothingBrands = new System.Collections.Generic.List<ClothingBrand>();
+            Fashions = new System.Collections.Generic.List<Fashion>();
+            NewArrivals = new System.Collections.Generic.List<NewArrival>();
+        }
+    }
+
+    // NewArrival
+    [System.CodeDom.Compiler.GeneratedCode("EF.Reverse.POCO.Generator", "2.31.1.0")]
+    public class NewArrival
+    {
+        public int NewArrivalId { get; set; } // NewArrivalID (Primary key)
+        public int? MenuId { get; set; } // MenuID
+        public string NewArivalBrand { get; set; } // NewArivalBrand (length: 150)
+        public string Url { get; set; } // Url (length: 500)
+        public bool Active { get; set; } // Active (Primary key)
+        public System.DateTime DateInserted { get; set; } // DateInserted (Primary key)
+        public string DateUpdated { get; set; } // DateUpdated (length: 10)
+        public string Remarks { get; set; } // Remarks (length: 100)
+
+        // Foreign keys
+
+        /// <summary>
+        /// Parent MenuNavigation pointed by [NewArrival].([MenuId]) (FK_NewArrival_MenuNavigation)
+        /// </summary>
+        public virtual MenuNavigation MenuNavigation { get; set; } // FK_NewArrival_MenuNavigation
+
+        public NewArrival()
+        {
+            DateInserted = System.DateTime.Now;
         }
     }
 
     #endregion
 
     #region POCO Configuration
+
+    // Clearence
+    [System.CodeDom.Compiler.GeneratedCode("EF.Reverse.POCO.Generator", "2.31.1.0")]
+    public class ClearenceConfiguration : System.Data.Entity.ModelConfiguration.EntityTypeConfiguration<Clearence>
+    {
+        public ClearenceConfiguration()
+            : this("dbo")
+        {
+        }
+
+        public ClearenceConfiguration(string schema)
+        {
+            ToTable("Clearence", schema);
+            HasKey(x => new { x.ClearenceId, x.Active, x.DateInserted });
+
+            Property(x => x.ClearenceId).HasColumnName(@"ClearenceID").HasColumnType("int").IsRequired().HasDatabaseGeneratedOption(System.ComponentModel.DataAnnotations.Schema.DatabaseGeneratedOption.Identity);
+            Property(x => x.MenuId).HasColumnName(@"MenuID").HasColumnType("int").IsOptional();
+            Property(x => x.ClearenceName).HasColumnName(@"ClearenceName").HasColumnType("nvarchar").IsOptional().HasMaxLength(150);
+            Property(x => x.ClearenceUrl).HasColumnName(@"ClearenceUrl").HasColumnType("nvarchar").IsOptional().HasMaxLength(500);
+            Property(x => x.Active).HasColumnName(@"Active").HasColumnType("bit").IsRequired().HasDatabaseGeneratedOption(System.ComponentModel.DataAnnotations.Schema.DatabaseGeneratedOption.None);
+            Property(x => x.DateInserted).HasColumnName(@"DateInserted").HasColumnType("datetime").IsRequired().HasDatabaseGeneratedOption(System.ComponentModel.DataAnnotations.Schema.DatabaseGeneratedOption.None);
+            Property(x => x.DateUpdate).HasColumnName(@"DateUpdate").HasColumnType("datetime").IsOptional();
+            Property(x => x.DateValidity).HasColumnName(@"DateValidity").HasColumnType("datetime").IsOptional();
+            Property(x => x.Remarks).HasColumnName(@"Remarks").HasColumnType("nchar").IsOptional().IsFixedLength().HasMaxLength(10);
+            Property(x => x.ClearencePercent).HasColumnName(@"ClearencePercent").HasColumnType("int").IsOptional();
+
+            // Foreign keys
+            HasOptional(a => a.MenuNavigation).WithMany(b => b.Clearences).HasForeignKey(c => c.MenuId).WillCascadeOnDelete(false); // FK_Clearence_MenuNavigation
+        }
+    }
 
     // Clothing_Brand
     [System.CodeDom.Compiler.GeneratedCode("EF.Reverse.POCO.Generator", "2.31.1.0")]
@@ -585,6 +729,35 @@ namespace NepFlex.DataAccess.Context
         }
     }
 
+    // Fashion
+    [System.CodeDom.Compiler.GeneratedCode("EF.Reverse.POCO.Generator", "2.31.1.0")]
+    public class FashionConfiguration : System.Data.Entity.ModelConfiguration.EntityTypeConfiguration<Fashion>
+    {
+        public FashionConfiguration()
+            : this("dbo")
+        {
+        }
+
+        public FashionConfiguration(string schema)
+        {
+            ToTable("Fashion", schema);
+            HasKey(x => x.FashionId);
+
+            Property(x => x.FashionId).HasColumnName(@"FashionID").HasColumnType("int").IsRequired().HasDatabaseGeneratedOption(System.ComponentModel.DataAnnotations.Schema.DatabaseGeneratedOption.Identity);
+            Property(x => x.FashionName).HasColumnName(@"FashionName").HasColumnType("nvarchar").IsOptional().HasMaxLength(150);
+            Property(x => x.FashionUrl).HasColumnName(@"FashionUrl").HasColumnType("nvarchar").IsOptional().HasMaxLength(500);
+            Property(x => x.Active).HasColumnName(@"Active").HasColumnType("bit").IsRequired();
+            Property(x => x.DateInserted).HasColumnName(@"DateInserted").HasColumnType("datetime").IsRequired();
+            Property(x => x.MenuId).HasColumnName(@"MenuID").HasColumnType("int").IsOptional();
+            Property(x => x.DateUpdate).HasColumnName(@"DateUpdate").HasColumnType("datetime").IsOptional();
+            Property(x => x.DateValidity).HasColumnName(@"DateValidity").HasColumnType("datetime").IsOptional();
+            Property(x => x.Remarks).HasColumnName(@"Remarks").HasColumnType("nvarchar").IsOptional().HasMaxLength(150);
+
+            // Foreign keys
+            HasOptional(a => a.MenuNavigation).WithMany(b => b.Fashions).HasForeignKey(c => c.MenuId).WillCascadeOnDelete(false); // FK_Fashion_MenuNavigation
+        }
+    }
+
     // MenuNavigation
     [System.CodeDom.Compiler.GeneratedCode("EF.Reverse.POCO.Generator", "2.31.1.0")]
     public class MenuNavigationConfiguration : System.Data.Entity.ModelConfiguration.EntityTypeConfiguration<MenuNavigation>
@@ -606,6 +779,34 @@ namespace NepFlex.DataAccess.Context
         }
     }
 
+    // NewArrival
+    [System.CodeDom.Compiler.GeneratedCode("EF.Reverse.POCO.Generator", "2.31.1.0")]
+    public class NewArrivalConfiguration : System.Data.Entity.ModelConfiguration.EntityTypeConfiguration<NewArrival>
+    {
+        public NewArrivalConfiguration()
+            : this("dbo")
+        {
+        }
+
+        public NewArrivalConfiguration(string schema)
+        {
+            ToTable("NewArrival", schema);
+            HasKey(x => new { x.NewArrivalId, x.Active, x.DateInserted });
+
+            Property(x => x.NewArrivalId).HasColumnName(@"NewArrivalID").HasColumnType("int").IsRequired().HasDatabaseGeneratedOption(System.ComponentModel.DataAnnotations.Schema.DatabaseGeneratedOption.Identity);
+            Property(x => x.MenuId).HasColumnName(@"MenuID").HasColumnType("int").IsOptional();
+            Property(x => x.NewArivalBrand).HasColumnName(@"NewArivalBrand").HasColumnType("nvarchar").IsOptional().HasMaxLength(150);
+            Property(x => x.Url).HasColumnName(@"Url").HasColumnType("nvarchar").IsOptional().HasMaxLength(500);
+            Property(x => x.Active).HasColumnName(@"Active").HasColumnType("bit").IsRequired().HasDatabaseGeneratedOption(System.ComponentModel.DataAnnotations.Schema.DatabaseGeneratedOption.None);
+            Property(x => x.DateInserted).HasColumnName(@"DateInserted").HasColumnType("date").IsRequired().HasDatabaseGeneratedOption(System.ComponentModel.DataAnnotations.Schema.DatabaseGeneratedOption.None);
+            Property(x => x.DateUpdated).HasColumnName(@"DateUpdated").HasColumnType("nchar").IsOptional().IsFixedLength().HasMaxLength(10);
+            Property(x => x.Remarks).HasColumnName(@"Remarks").HasColumnType("nvarchar").IsOptional().HasMaxLength(100);
+
+            // Foreign keys
+            HasOptional(a => a.MenuNavigation).WithMany(b => b.NewArrivals).HasForeignKey(c => c.MenuId).WillCascadeOnDelete(false); // FK_NewArrival_MenuNavigation
+        }
+    }
+
     #endregion
 
     #region Stored procedure return models
@@ -621,10 +822,6 @@ namespace NepFlex.DataAccess.Context
         public System.String MenuPopUrl { get; set; }
         public System.Boolean MenuStillActive { get; set; }
         public System.DateTime? MenuContainerValidity { get; set; }
-        public System.Int32? ClearenceID { get; set; }
-        public System.String ClearenceUrl { get; set; }
-        public System.DateTime? ClearenceCalidity { get; set; }
-        public System.String ClearenceRemarks { get; set; }
     }
 
     #endregion

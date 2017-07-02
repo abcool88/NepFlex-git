@@ -57,6 +57,8 @@
       <DependentUpon>OnlinePasalModels.tt</DependentUpon>
     </Compile>
     <Compile Include="Entities\ResourceModels\ClothingBrands.cs" />
+    <Compile Include="Entities\ResourceModels\MenuClearence.cs" />
+    <Compile Include="Entities\ResourceModels\MenuFashion.cs" />
     <Compile Include="Entities\ResourceModels\MenuTopContainer.cs" />
     <Compile Include="Entities\ResourceModels\MenuTopNav.cs" />
     <Compile Include="Interfaces\IUnitOfWork.cs" />
