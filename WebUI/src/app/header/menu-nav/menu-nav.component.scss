@@ -82,4 +82,9 @@
       width: 23.25%;
     }
   }
+  a:focus,
+  a:hover {
+    color: #00abff;
+    text-decoration: none;
+  }
 }

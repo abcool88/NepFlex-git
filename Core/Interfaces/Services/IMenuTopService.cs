@@ -8,5 +8,6 @@ namespace Core.Interfaces.Services
     {
        List<MenuTopContainer> GetMenuTopItems();
        List<MenuTopNav> GetMenuNav();
+       List<ClothingBrands> GetClothingBrands();
     }
 }

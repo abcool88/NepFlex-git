@@ -1,5 +1,6 @@
 ﻿using Core.Interfaces;
 using Core.Interfaces.Services;
+using NepFlex.Core.Entities.OnlinePasal;
 using NepFlex.Core.Entities.ResourceModels;
 using System.Collections.Generic;
 
@@ -19,6 +20,11 @@ namespace Core.Services
         public List<MenuTopNav> GetMenuNav()
         {
             return _unitOfWork.MenuTopRepository.GetMenuNav();
+        }
+
+        public List<ClothingBrands> GetClothingBrands()
+        {
+            return _unitOfWork.MenuTopRepository.GetClothingBrands();
         }
     }
 }

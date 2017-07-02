@@ -19,3 +19,14 @@ export interface MenuContainer {
   validity: string;
   multipleMenuID: string;
 }
+
+export interface ClothingBrand {
+  brandId: number;
+  menuId: number;
+  brandName: string;
+  brandUrl: string;
+  active: boolean;
+  dateInserted: Date;
+  dateUpdated: Date;
+  remarks: string;
+}

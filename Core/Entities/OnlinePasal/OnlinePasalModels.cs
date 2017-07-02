@@ -35,6 +35,7 @@ namespace NepFlex.Core.Entities.OnlinePasal
 
     public interface IMyDbContext : System.IDisposable
     {
+        System.Data.Entity.DbSet<ClothingBrand> ClothingBrands { get; set; } // Clothing_Brand
         System.Data.Entity.DbSet<MenuNavigation> MenuNavigations { get; set; } // MenuNavigation
 
         int SaveChanges();
@@ -64,6 +65,7 @@ namespace NepFlex.Core.Entities.OnlinePasal
     [System.CodeDom.Compiler.GeneratedCode("EF.Reverse.POCO.Generator", "2.31.1.0")]
     public class MyDbContext : System.Data.Entity.DbContext, IMyDbContext
     {
+        public System.Data.Entity.DbSet<ClothingBrand> ClothingBrands { get; set; } // Clothing_Brand
         public System.Data.Entity.DbSet<MenuNavigation> MenuNavigations { get; set; } // MenuNavigation
 
         static MyDbContext()
@@ -114,11 +116,13 @@ namespace NepFlex.Core.Entities.OnlinePasal
         {
             base.OnModelCreating(modelBuilder);
 
+            modelBuilder.Configurations.Add(new ClothingBrandConfiguration());
             modelBuilder.Configurations.Add(new MenuNavigationConfiguration());
         }
 
         public static System.Data.Entity.DbModelBuilder CreateModel(System.Data.Entity.DbModelBuilder modelBuilder, string schema)
         {
+            modelBuilder.Configurations.Add(new ClothingBrandConfiguration(schema));
             modelBuilder.Configurations.Add(new MenuNavigationConfiguration(schema));
             return modelBuilder;
         }
@@ -154,10 +158,12 @@ namespace NepFlex.Core.Entities.OnlinePasal
     [System.CodeDom.Compiler.GeneratedCode("EF.Reverse.POCO.Generator", "2.31.1.0")]
     public class FakeMyDbContext : IMyDbContext
     {
+        public System.Data.Entity.DbSet<ClothingBrand> ClothingBrands { get; set; }
         public System.Data.Entity.DbSet<MenuNavigation> MenuNavigations { get; set; }
 
         public FakeMyDbContext()
         {
+            ClothingBrands = new FakeDbSet<ClothingBrand>("BrandId", "Active", "DateInserted");
             MenuNavigations = new FakeDbSet<MenuNavigation>("MenuId");
         }
 
@@ -499,6 +505,32 @@ namespace NepFlex.Core.Entities.OnlinePasal
 
     #region POCO classes
 
+    // Clothing_Brand
+    [System.CodeDom.Compiler.GeneratedCode("EF.Reverse.POCO.Generator", "2.31.1.0")]
+    public class ClothingBrand
+    {
+        public int BrandId { get; set; } // BrandID (Primary key)
+        public int? MenuId { get; set; } // MenuID
+        public string BrandName { get; set; } // BrandName (length: 150)
+        public string BrandUrl { get; set; } // BrandUrl (length: 350)
+        public bool Active { get; set; } // Active (Primary key)
+        public System.DateTime DateInserted { get; set; } // DateInserted (Primary key)
+        public System.DateTime? DateUpdated { get; set; } // DateUpdated
+        public string Remarks { get; set; } // Remarks (length: 150)
+
+        // Foreign keys
+
+        /// <summary>
+        /// Parent MenuNavigation pointed by [Clothing_Brand].([MenuId]) (FK_Clothing_Brand_MenuNavigation)
+        /// </summary>
+        public virtual MenuNavigation MenuNavigation { get; set; } // FK_Clothing_Brand_MenuNavigation
+
+        public ClothingBrand()
+        {
+            DateInserted = System.DateTime.Now;
+        }
+    }
+
     // MenuNavigation
     [System.CodeDom.Compiler.GeneratedCode("EF.Reverse.POCO.Generator", "2.31.1.0")]
     public class MenuNavigation
@@ -507,11 +539,51 @@ namespace NepFlex.Core.Entities.OnlinePasal
         public string MenuName { get; set; } // MenuName (length: 50)
         public string MenuUrl { get; set; } // MenuUrl (length: 200)
         public bool? Active { get; set; } // Active
+
+        // Reverse navigation
+
+        /// <summary>
+        /// Child ClothingBrands where [Clothing_Brand].[MenuID] point to this entity (FK_Clothing_Brand_MenuNavigation)
+        /// </summary>
+        public virtual System.Collections.Generic.ICollection<ClothingBrand> ClothingBrands { get; set; } // Clothing_Brand.FK_Clothing_Brand_MenuNavigation
+
+        public MenuNavigation()
+        {
+            ClothingBrands = new System.Collections.Generic.List<ClothingBrand>();
+        }
     }
 
     #endregion
 
     #region POCO Configuration
+
+    // Clothing_Brand
+    [System.CodeDom.Compiler.GeneratedCode("EF.Reverse.POCO.Generator", "2.31.1.0")]
+    public class ClothingBrandConfiguration : System.Data.Entity.ModelConfiguration.EntityTypeConfiguration<ClothingBrand>
+    {
+        public ClothingBrandConfiguration()
+            : this("dbo")
+        {
+        }
+
+        public ClothingBrandConfiguration(string schema)
+        {
+            ToTable("Clothing_Brand", schema);
+            HasKey(x => new { x.BrandId, x.Active, x.DateInserted });
+
+            Property(x => x.BrandId).HasColumnName(@"BrandID").HasColumnType("int").IsRequired().HasDatabaseGeneratedOption(System.ComponentModel.DataAnnotations.Schema.DatabaseGeneratedOption.Identity);
+            Property(x => x.MenuId).HasColumnName(@"MenuID").HasColumnType("int").IsOptional();
+            Property(x => x.BrandName).HasColumnName(@"BrandName").HasColumnType("nvarchar").IsOptional().HasMaxLength(150);
+            Property(x => x.BrandUrl).HasColumnName(@"BrandUrl").HasColumnType("nvarchar").IsOptional().HasMaxLength(350);
+            Property(x => x.Active).HasColumnName(@"Active").HasColumnType("bit").IsRequired().HasDatabaseGeneratedOption(System.ComponentModel.DataAnnotations.Schema.DatabaseGeneratedOption.None);
+            Property(x => x.DateInserted).HasColumnName(@"DateInserted").HasColumnType("date").IsRequired().HasDatabaseGeneratedOption(System.ComponentModel.DataAnnotations.Schema.DatabaseGeneratedOption.None);
+            Property(x => x.DateUpdated).HasColumnName(@"DateUpdated").HasColumnType("date").IsOptional();
+            Property(x => x.Remarks).HasColumnName(@"Remarks").HasColumnType("nvarchar").IsOptional().HasMaxLength(150);
+
+            // Foreign keys
+            HasOptional(a => a.MenuNavigation).WithMany(b => b.ClothingBrands).HasForeignKey(c => c.MenuId).WillCascadeOnDelete(false); // FK_Clothing_Brand_MenuNavigation
+        }
+    }
 
     // MenuNavigation
     [System.CodeDom.Compiler.GeneratedCode("EF.Reverse.POCO.Generator", "2.31.1.0")]
@@ -549,11 +621,6 @@ namespace NepFlex.Core.Entities.OnlinePasal
         public System.String MenuPopUrl { get; set; }
         public System.Boolean MenuStillActive { get; set; }
         public System.DateTime? MenuContainerValidity { get; set; }
-        public System.Int32? BrandID { get; set; }
-        public System.String BrandName { get; set; }
-        public System.String BrandUrl { get; set; }
-        public System.Boolean? BrandStillActive { get; set; }
-        public System.String BrandRemarks { get; set; }
         public System.Int32? ClearenceID { get; set; }
         public System.String ClearenceUrl { get; set; }
         public System.DateTime? ClearenceCalidity { get; set; }

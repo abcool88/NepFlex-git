@@ -11,7 +11,7 @@ import { FilterByPipe } from '../../shared/pipes/filter-by.pipe';
 })
 export class MenuNavComponent implements OnInit {
   navList: any;
-  womenMenuPopContainer_x: any;
+  clothingBrands: any;
   womenMenuPopContainer: any;
   expandNoItem: boolean;
   expandUserStatus: boolean;
@@ -24,6 +24,8 @@ export class MenuNavComponent implements OnInit {
   MenuContainer: Observable<MenuContainer[]>;
   field: string;
   sortBy: any;
+  clothingField: string;
+  sortClothingBrandBy: string;
   constructor(private homeService: HomeService) {
     this.expandNoItem = false;
     this.expandUserStatus = false;
@@ -32,6 +34,7 @@ export class MenuNavComponent implements OnInit {
   ngOnInit() {
     this.getMenu();
     this.field = 'menuName';
+    this.clothingField = 'brandName';
   }
 
   getMenu() {
@@ -41,19 +44,24 @@ export class MenuNavComponent implements OnInit {
         navList.forEach(x => {
           this.sortBy = x.menuId;
         });
-
       });
   }
 
   getMenuTopItems(value) {
-     this.homeService.getMenuContainer()
+    this.homeService.getMenuContainer()
       .subscribe(result => {
         this.sortBy = value;
-        this.womenMenuPopContainer_x = result;
-        this.womenMenuPopContainer = result.filter(item => item.menuName.indexOf(value) !== -1);
-        console.log('RESULT HERE :> '  + this.womenMenuPopContainer);
+        this.womenMenuPopContainer = result.filter(item => item.menuID.toPrecision().indexOf(value) !== -1);
+      });
+    this.homeService.getClothingBrand()
+      .subscribe(resultClothingBrand => {
+        this.sortClothingBrandBy = value;
+        this.clothingBrands = resultClothingBrand.filter(itemx => itemx.menuId.toLocaleString().indexOf(value) !== -1);
       });
   }
+
+
+
   UserStatus(event) {
     this.expandUserStatus = !this.expandUserStatus;
     this.expandNoItem = false;

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using NepFlex.DataAccess.Context;
 using NepFlex.Core.Entities.ResourceModels;
+using NepFlex.Core.Entities.OnlinePasal;
 
 namespace DataAccess.Repositories
 {
@@ -18,19 +19,14 @@ namespace DataAccess.Repositories
             var results = _context.SpMenuContainer();
             return results.Select(a => new MenuTopContainer()
             {
-                MenuID=a.MenuID,
+                MenuID = a.MenuID,
                 MenuPopID = a.MenuPopID,
-                MenuName=a.MenuName,
-                MenuUrl=a.MenuUrl,
+                MenuName = a.MenuName,
+                MenuUrl = a.MenuUrl,
                 MenuPopContainer = a.MenuPopContainer,
                 MenuPopUrl = a.MenuPopUrl,
                 MenuStillActive = a.MenuStillActive,
                 MenuContainerValidity = a.MenuContainerValidity,
-                BrandID = a.BrandID,
-                BrandName = a.BrandName,
-                BrandUrl = a.BrandUrl,
-                BrandStillActive = a.BrandStillActive,
-                BrandRemarks = a.BrandRemarks,
                 ClearenceID = a.ClearenceID,
                 ClearenceUrl = a.ClearenceUrl,
                 ClearenceCalidity = a.ClearenceCalidity,
@@ -47,6 +43,19 @@ namespace DataAccess.Repositories
                 MenuName = x.MenuName,
                 MenuUrl = x.MenuUrl,
                 Active = x.Active
+            }).ToList();
+        }
+        public List<ClothingBrands> GetClothingBrands()
+        {
+            var resultClothingBrand = _context.ClothingBrands;
+            return resultClothingBrand.Select(x => new ClothingBrands()
+            {
+                BrandId = x.BrandId,
+                MenuId = x.MenuId,
+                BrandName = x.BrandName,
+                BrandUrl = x.BrandUrl,
+                Active = x.Active,
+                DateInserted = x.DateInserted
             }).ToList();
         }
     }

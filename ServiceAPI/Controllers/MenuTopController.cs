@@ -46,9 +46,24 @@ namespace Nepflex.ServiceAPI.Controllers
             try
             {
                 var menuTopList = _menuTopService.GetMenuTopItems();
-                    return Ok(menuTopList);
+                return Ok(menuTopList);
             }
-            catch(Exception ex)
+            catch (Exception ex)
+            {
+                return InternalServerError(ex);
+            }
+        }
+
+        [Route("getClothingBrand")]
+        [HttpGet]
+        public IHttpActionResult GetClothingBrands()
+        {
+            try
+            {
+                var clothingBrand = _menuTopService.GetClothingBrands();
+                return Ok(clothingBrand);
+            }
+            catch (Exception ex)
             {
                 return InternalServerError(ex);
             }
