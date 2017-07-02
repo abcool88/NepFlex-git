@@ -87,4 +87,13 @@
     color: #00abff;
     text-decoration: none;
   }
+  .li-data-container {
+    flex: 1 1 auto;
+    display: flex;
+  }
+  .title-container {
+    margin: 0 0 10px;
+    background: black;
+    color: white;
+  }
 }

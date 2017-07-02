@@ -5,13 +5,17 @@
       <div class="pop-over">
         <div class="menu-pop-container">
           <ul class="custom-rows">
-            <li class="title-group" *ngFor="let navItem of (womenMenuPopContainer); let i=index;">
-              <a [routerLink]="navItem.menuPopUrl">{{navItem.menuPopContainer}}</a>
+            <li class="title-group">
+              <p class="title-container">Most Visit</p>
+              <a *ngFor="let navItem of (womenMenuPopContainer); let i=index;" [routerLink]="navItem.menuPopUrl" class="li-data-container">
+              {{navItem.menuPopContainer}}</a>
             </li>
           </ul>
           <ul class="custom-rows">
-            <li class="title-group" *ngFor="let clBrand of (clothingBrands); let i=index;">
-              <a [routerLink]="clBrand.brandUrl">{{clBrand.brandName}}</a>
+            <li class="title-group">
+              <p class="title-container">Brands</p>
+              <a *ngFor="let clBrand of (clothingBrands); let i=index;" [routerLink]="clBrand.brandUrl" class="li-data-container">
+                {{clBrand.brandName}}</a>
             </li>
           </ul>
         </div>
