@@ -31,7 +31,6 @@ export class MenuNavComponent implements OnInit {
 
   ngOnInit() {
     this.getMenu();
-    //this.getMenuTopItems();
     this.field = 'menuName';
   }
 
@@ -41,7 +40,6 @@ export class MenuNavComponent implements OnInit {
         this.navList = navList;
         navList.forEach(x => {
           this.sortBy = x.menuId;
-          //this.getMenuTopItems(x.menuName);
         });
 
       });
