@@ -1,20 +1,20 @@
 <div class="menu-container">
   <ul class="nav-medium-header">
-    <li *ngFor="let nav of navList" class="list-nav-header">
-      <div >{{nav.menuName}}</div>
+    <li *ngFor="let nav of navList; let i=index;" class="list-nav-header">
+      <div (click)="getMenuTopItems(nav.menuName)">{{nav.menuName}}</div>
       <div class="pop-over">
         <div class="menu-pop-container">
           <ul class="custom-rows">
-            <li class="title-group" *ngFor="let navItem of (womenMenuPopContainer | filterBy : field : sortBy); let i=index;">
-              <a [routerLink]="navItem.menuPopUrl">{{navItem.menuPopContainer}}</a>
-            </li>
+              <li class="title-group" *ngFor="let navItem of (womenMenuPopContainer | filterBy : field : sortBy); let i=index;">
+                <a [routerLink]="navItem.menuPopUrl">{{navItem.menuPopContainer}}</a>
+              </li>
           </ul>
         </div>
       </div>
-    </li>
-    <li class="list-nav-header" (mouseover)="UserStatus($event)">
-      <span class="glyphicon glyphicon-user"></span>
-    </li>
+      </li>
+      <li class="list-nav-header" (mouseover)="UserStatus($event)">
+        <span class="glyphicon glyphicon-user"></span>
+      </li>
   </ul>
 </div>
 

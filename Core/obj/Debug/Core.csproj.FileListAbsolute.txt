@@ -5,5 +5,6 @@ A:\GIT\Core\bin\Debug\EntityFramework.dll
 A:\GIT\Core\bin\Debug\EntityFramework.SqlServer.dll
 A:\GIT\Core\bin\Debug\EntityFramework.xml
 A:\GIT\Core\bin\Debug\EntityFramework.SqlServer.xml
+A:\GIT\Core\obj\Debug\Core.csprojResolveAssemblyReference.cache
 A:\GIT\Core\obj\Debug\NepFlex.Core.dll
 A:\GIT\Core\obj\Debug\NepFlex.Core.pdb

@@ -63,7 +63,7 @@ export class BillingShippingComponent implements OnInit {
   }
 
   reviewOrConfirm(event) {
-    console.log(this.form.get('reviewBeforeConfirm').value);
+   // console.log(this.form.get('reviewBeforeConfirm').value);
     const reviewBeforeConfirm = this.form.get('reviewBeforeConfirm').value;
     if (reviewBeforeConfirm === 'yes') {
       this.showPopUpModel = true;

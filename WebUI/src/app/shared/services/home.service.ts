@@ -32,7 +32,6 @@ export class HomeService {
 
   private extractMenuContainer(res: Response): MenuContainer[] {
     const body = res.json();
-    console.log(body);
     return <MenuContainer[]>body || <MenuContainer[]>[];
   }
 

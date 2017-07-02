@@ -543,6 +543,8 @@ namespace NepFlex.Core.Entities.OnlinePasal
     {
         public System.Int32? MenuID { get; set; }
         public System.Int32 MenuPopID { get; set; }
+        public System.String MenuName { get; set; }
+        public System.String MenuUrl { get; set; }
         public System.String MenuPopContainer { get; set; }
         public System.String MenuPopUrl { get; set; }
         public System.Boolean MenuStillActive { get; set; }

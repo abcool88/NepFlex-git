@@ -133,5 +133,6 @@ A:\GIT\WebUI\bin\Microsoft.AI.DependencyCollector.xml
 A:\GIT\WebUI\bin\Microsoft.AI.ServerTelemetryChannel.xml
 A:\GIT\WebUI\bin\Microsoft.AI.WindowsServer.xml
 A:\GIT\WebUI\bin\Microsoft.AI.Web.xml
+A:\GIT\WebUI\obj\Debug\WebUI.csprojResolveAssemblyReference.cache
 A:\GIT\WebUI\obj\Debug\NepFlex.WebUI.dll
 A:\GIT\WebUI\obj\Debug\NepFlex.WebUI.pdb

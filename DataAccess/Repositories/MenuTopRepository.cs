@@ -20,6 +20,8 @@ namespace DataAccess.Repositories
             {
                 MenuID=a.MenuID,
                 MenuPopID = a.MenuPopID,
+                MenuName=a.MenuName,
+                MenuUrl=a.MenuUrl,
                 MenuPopContainer = a.MenuPopContainer,
                 MenuPopUrl = a.MenuPopUrl,
                 MenuStillActive = a.MenuStillActive,

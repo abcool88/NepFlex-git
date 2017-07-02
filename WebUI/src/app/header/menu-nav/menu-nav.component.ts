@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { MenuContainer } from '../../shared/interfaces/header';
 import { HomeService } from '../../shared/services/home.service';
-import { FilterBy } from '../../shared/pipes/filter-by.pipe';
+import { FilterByPipe } from '../../shared/pipes/filter-by.pipe';
+
 @Component({
   selector: 'app-menu-nav',
   templateUrl: './menu-nav.component.html',
@@ -10,15 +11,19 @@ import { FilterBy } from '../../shared/pipes/filter-by.pipe';
 })
 export class MenuNavComponent implements OnInit {
   navList: any;
+  womenMenuPopContainer_x: any;
   womenMenuPopContainer: any;
   expandNoItem: boolean;
   expandUserStatus: boolean;
+
+  passMenuName: string;
+  passMenuId: any;
 
   menuTopItem: any;
   errorMessage: string;
   MenuContainer: Observable<MenuContainer[]>;
   field: string;
-  sortBy: string;
+  sortBy: any;
   constructor(private homeService: HomeService) {
     this.expandNoItem = false;
     this.expandUserStatus = false;
@@ -26,27 +31,30 @@ export class MenuNavComponent implements OnInit {
 
   ngOnInit() {
     this.getMenu();
-    this.field = 'MenuPopContainer';
-    this.sortBy = '1';
-
-    this.getMenuTopItems();
+    //this.getMenuTopItems();
+    this.field = 'menuName';
   }
+
   getMenu() {
     this.homeService.getMenuNav()
       .subscribe(navList => {
         this.navList = navList;
-        this.navList.filter(element => {
-          const resultx = element.menuId;
+        navList.forEach(x => {
+          this.sortBy = x.menuId;
+          //this.getMenuTopItems(x.menuName);
         });
-      });
 
-  }
-  getMenuTopItems() {
-    this.homeService.getMenuContainer()
-      .subscribe(result => {
-        this.womenMenuPopContainer = result;
       });
-    return this.womenMenuPopContainer;
+  }
+
+  getMenuTopItems(value) {
+     this.homeService.getMenuContainer()
+      .subscribe(result => {
+        this.sortBy = value;
+        this.womenMenuPopContainer_x = result;
+        this.womenMenuPopContainer = result.filter(item => item.menuName.indexOf(value) !== -1);
+        console.log('RESULT HERE :> '  + this.womenMenuPopContainer);
+      });
   }
   UserStatus(event) {
     this.expandUserStatus = !this.expandUserStatus;
