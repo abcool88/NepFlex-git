@@ -27,6 +27,7 @@ import { ModalComponent } from './shared/modal/modal.component';
 import { MenuNavComponent } from './header/menu-nav/menu-nav.component';
 
 import { HomeService } from './shared/services/home.service';
+import { AccountComponent } from './account/account.component';
 @NgModule({
   declarations: [
     // components
@@ -48,7 +49,8 @@ import { HomeService } from './shared/services/home.service';
     OrderByNestedPipe,
     OrderByPipe,
     UniqueValuePipe,
-    CamelCase
+    CamelCase,
+    AccountComponent
 
   ],
   imports: [

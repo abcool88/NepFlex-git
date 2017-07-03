@@ -1,0 +1,48 @@
+<app-header></app-header>
+<div class="myaccount-body">
+  <div class="account-body">
+    <form [formGroup]="form">
+      <div class="page-container">
+        <div class="title-myAccount">My Account - {{title}}</div>
+        <input id="chkToUseDifferentAddr" type="radio" formControlName="accountInfo" (change)="checkedOrNot($event,accountInfo)"
+          value="Login">
+        <label for="chkToUseDifferentAddr" class="check-this-button">Login</label>
+        <input id="chkToUseSameAddr" type="radio" formControlName="accountInfo" (change)="checkedOrNot($event,accountInfo)" value="Register">
+        <label for="chkToUseSameAddr" class="check-this-button">Create Account</label>
+
+        <div class="item-container" [hidden]="loginRegister">
+          <div class="form-display-item" *ngFor="let lForm of loginForm;let i=index;">
+            <div class="form-display-label">{{lForm.label}}</div>
+            <div class="form-display-value">
+              <input type="text" class="form-control textbox-input" placeholder="{{lForm.value}}">
+            </div>
+          </div>
+          <div class="button-display">
+           <div class="btn custom-red-btn btn-lg" [routerLink]="['/billingandshipping']">Sign In</div>
+          </div>
+        </div>
+
+        <div class="item-container" [hidden]="!loginRegister">
+          <div class="form-display-item" *ngFor="let rForm of registerForm;let i=index;">
+            <div class="form-display-label">{{rForm.label}}</div>
+            <div class="form-display-value">
+              <input type="text" class="form-control textbox-input" placeholder="{{rForm.value}}">
+            </div>
+          </div>
+          <div class="button-display">
+          <div class="btn custom-red-btn btn-lg" [routerLink]="['/billingandshipping']">Create</div>
+          </div>
+        </div>
+
+      </div>
+    </form>
+    <!--<div class="page-body">
+      <div class="item-container">
+        <p>
+          account works!
+        </p>
+      </div>
+    </div>-->
+
+  </div>
+</div>

@@ -39,12 +39,15 @@
                 {{clearence.clearenceName | camelCase:'clearenceName'}}</a>
             </li>
           </ul>
-
         </div>
       </div>
     </li>
-    <li class="list-nav-header" (mouseover)="UserStatus($event)">
+    <li class="list-nav-header" (mouseover)="UserStatus($event)" [routerLink]="['/MyAccount']">
       <span class="glyphicon glyphicon-user"></span>
+      <div class="pop-over" *ngIf="expandUserStatus">
+        <div class="menu-pop-container">
+        </div>
+      </div>
     </li>
   </ul>
 </div>
@@ -53,7 +56,7 @@
 <!--user-login-->
 <div *ngIf="expandUserStatus" class="shoppingcart-expand">
   <ul class="userStatus-shoppingCart">
-    <li class="login-register">Login</li>
-    <li class="login-register">Register</li>
+    <!--<li class="login-register">Login</li>
+    <li class="login-register">Register</li>-->
   </ul>
 </div>
