@@ -1,0 +1,10 @@
+.overlay-off {
+  display: none;
+}
+
+.overlay-on {
+  display: block;
+  opacity: 1;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 10000;
+}

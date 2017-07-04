@@ -28,6 +28,7 @@ import { MenuNavComponent } from './header/menu-nav/menu-nav.component';
 
 import { HomeService } from './shared/services/home.service';
 import { AccountComponent } from './account/account.component';
+import { OverlayComponent } from './shared/overlay/overlay.component';
 @NgModule({
   declarations: [
     // components
@@ -50,7 +51,8 @@ import { AccountComponent } from './account/account.component';
     OrderByPipe,
     UniqueValuePipe,
     CamelCase,
-    AccountComponent
+    AccountComponent,
+    OverlayComponent
 
   ],
   imports: [
