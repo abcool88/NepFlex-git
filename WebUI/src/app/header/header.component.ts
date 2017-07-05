@@ -15,7 +15,6 @@ export class HeaderComponent implements OnInit {
   expandUserStatus: boolean = false;
 
   constructor() {
-
     this.topNav = [
       { id: '1', name: 'Sell-On-Nepflex' },
       { id: '2', name: 'Create Gift card' },

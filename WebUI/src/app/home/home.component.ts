@@ -5,7 +5,7 @@ import { Component, OnInit } from '@angular/core';
 import { HeaderComponent } from '../header/header.component';
 import { BannerComponent } from '../banner/banner.component';
 import { CarouselComponent } from '../carousel/carousel.component';
-
+import { LoaderService } from '../../app/shared/services/loader.service';
 
 @Component({
   selector: 'app-home',
@@ -15,13 +15,14 @@ import { CarouselComponent } from '../carousel/carousel.component';
 export class HomeComponent implements OnInit {
   limitedOffer: any;
 
-  constructor() {
+  constructor(private loaderService: LoaderService) {
     this.limitedOffer = [
       { id: '1', offerTitle: 'Limited Offer', dateEnds: '05/27/2017' }
     ];
   }
 
   ngOnInit() {
+    // this.loaderService.display(false);
   }
 
 }

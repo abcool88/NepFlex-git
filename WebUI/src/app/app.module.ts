@@ -29,6 +29,12 @@ import { MenuNavComponent } from './header/menu-nav/menu-nav.component';
 import { HomeService } from './shared/services/home.service';
 import { AccountComponent } from './account/account.component';
 import { OverlayComponent } from './shared/overlay/overlay.component';
+
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { SpinnerComponent } from './shared/spinner/spinner.component';
+import 'hammerjs';
+import { MdProgressSpinner, MaterialModule } from '@angular/material';
+import { LoaderService } from './shared/services/loader.service';
 @NgModule({
   declarations: [
     // components
@@ -52,7 +58,8 @@ import { OverlayComponent } from './shared/overlay/overlay.component';
     UniqueValuePipe,
     CamelCase,
     AccountComponent,
-    OverlayComponent
+    OverlayComponent,
+    SpinnerComponent
 
   ],
   imports: [
@@ -62,8 +69,9 @@ import { OverlayComponent } from './shared/overlay/overlay.component';
     HttpModule,
     RouterModule,
     AppRoutingModule,
+    BrowserAnimationsModule, MaterialModule
   ],
-  providers: [HomeService],
+  providers: [HomeService, LoaderService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

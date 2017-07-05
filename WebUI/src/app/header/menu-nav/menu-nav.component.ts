@@ -3,7 +3,8 @@ import { Observable } from 'rxjs/Observable';
 import { MenuContainer } from '../../shared/interfaces/header';
 import { HomeService } from '../../shared/services/home.service';
 import { FilterByPipe } from '../../shared/pipes/filter-by.pipe';
-
+import { Router } from '@angular/router';
+import { LoaderService } from 'app/shared/services/loader.service';
 @Component({
   selector: 'app-menu-nav',
   templateUrl: './menu-nav.component.html',
@@ -30,18 +31,21 @@ export class MenuNavComponent implements OnInit {
   sortBy: any;
   clothingField: string;
   sortClothingBrandBy: string;
-  constructor(private homeService: HomeService) {
+  constructor(private homeService: HomeService, private route: Router, private loaderService: LoaderService) {
     this.expandNoItem = false;
     this.expandUserStatus = false;
   }
 
   ngOnInit() {
+    this.loaderService.display(true);
     this.getMenu();
     this.field = 'menuName';
     this.clothingField = 'brandName';
+    this.loaderService.display(false);
   }
 
   getMenu() {
+
     this.homeService.getMenuNav()
       .subscribe(navList => {
         this.navList = navList;
@@ -52,6 +56,7 @@ export class MenuNavComponent implements OnInit {
   }
 
   getMenuTopItems(value) {
+    this.loaderService.display(true);
     this.homeService.getMenuContainer()
       .subscribe(result => {
         this.sortBy = value;
@@ -74,6 +79,7 @@ export class MenuNavComponent implements OnInit {
       .subscribe(resultNewArrival => {
         this.newArrivalList = resultNewArrival.filter(itemx => itemx.menuId.toPrecision().indexOf(value) !== -1);
       });
+    this.loaderService.display(false);
   }
 
 
@@ -81,5 +87,9 @@ export class MenuNavComponent implements OnInit {
   UserStatus(event) {
     this.expandUserStatus = !this.expandUserStatus;
     this.expandNoItem = false;
+  }
+  ClickedPopMenuUrl(url: string) {
+    debugger;
+    this.route.navigateByUrl(url);
   }
 }

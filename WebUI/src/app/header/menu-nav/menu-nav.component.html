@@ -7,7 +7,7 @@
           <ul class="custom-rows">
             <li class="title-group">
               <p class="title-container">Most Visit</p>
-              <a *ngFor="let navItem of (womenMenuPopContainer | orderBy:'menuPopContainer'); let i=index;" [routerLink]="navItem.menuPopUrl"
+              <a *ngFor="let navItem of womenMenuPopContainer | orderBy:'menuPopContainer'; let i=index;" [routerLink]="navItem.menuPopUrl"
                 class="li-data-container">
               {{navItem.menuPopContainer | camelCase:'menuPopContainer'}}</a>
             </li>
@@ -15,7 +15,7 @@
           <ul class="custom-rows">
             <li class="title-group">
               <p class="title-container">Brands</p>
-              <a *ngFor="let clBrand of (clothingBrands | orderBy:'brandName'); let i=index;" [routerLink]="clBrand.brandUrl" class="li-data-container">
+              <a *ngFor="let clBrand of (clothingBrands | orderBy:'brandName'); let i=index;" [routerLink]="[clBrand.brandUrl]" class="li-data-container">
                 {{clBrand.brandName | camelCase:'brandName'}}</a>
             </li>
           </ul>
@@ -60,3 +60,4 @@
     <li class="login-register">Register</li>-->
   </ul>
 </div>
+
