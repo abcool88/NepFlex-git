@@ -1,11 +1,23 @@
 import { Injectable } from '@angular/core';
+import { Observable, Subject } from 'rxjs';
+import 'rxjs/add/operator/distinct'
 
 @Injectable()
 export class OverlayService {
-  isOverlayOn$: boolean;
+
+  private isOverlayOn: Subject<boolean> = new Subject<boolean>();
+  public isOverlayOn$: Observable<boolean> = this.isOverlayOn.asObservable();
+
   constructor() { }
 
-  turnOffOverlay() {
+  public TurnOnOverlay() {
+    document.documentElement.style.overflow = 'hidden';
+    this.isOverlayOn.next(true);
+  }
+
+  public turnOffOverlay() {
+    document.documentElement.style.overflow = '';
+    this.isOverlayOn.next(false);
   }
 }
 

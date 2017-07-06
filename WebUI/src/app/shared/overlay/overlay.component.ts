@@ -12,9 +12,9 @@ export class OverlayComponent implements OnInit {
   ngOnInit() {
     this.overlayIsOn = false;
     this.overlayService.isOverlayOn$
-      //.subscribe((overlayIsOn: boolean) => {
-        //this.overlayIsOn = overlayIsOn;
-      //});
+      .subscribe((overlayIsOn: boolean) => {
+        this.overlayIsOn = overlayIsOn;
+      });
   }
   dismissOverlay() {
     this.overlayService.turnOffOverlay();
