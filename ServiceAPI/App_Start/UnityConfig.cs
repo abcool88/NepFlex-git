@@ -1,10 +1,6 @@
 using System;
 using Microsoft.Practices.Unity;
 using Microsoft.Practices.Unity.Configuration;
-using Core.Interfaces.Services;
-using Core.Services;
-using Core.Interfaces.Repositories;
-using DataAccess.Repositories;
 
 namespace Nepflex.ServiceAPI.App_Start
 {
@@ -41,8 +37,6 @@ namespace Nepflex.ServiceAPI.App_Start
 
             // TODO: Register your types here
             // container.RegisterType<IProductRepository, ProductRepository>();
-            container.RegisterType<IMenuTopService, MenuTopService>();
-            container.RegisterType<IMenuTopRepository, MenuTopRepository>();
             DependencyResolution.UnityConfig.RegisterTypes(container);
         }
     }
