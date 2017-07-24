@@ -6,7 +6,10 @@ import { FormControl, FormGroup, FormBuilder, ReactiveFormsModule } from '@angul
 
 import { HeaderComponent } from './header.component';
 import { BannerComponent } from '../banner/banner.component';
-
+import { SpinnerComponent } from 'app/shared/spinner/spinner.component';
+import { MenuNavComponent } from 'app/header/menu-nav/menu-nav.component';
+import { OrderByPipe } from 'app/shared/pipes/order-by.pipe';
+import { CamelCase } from 'app/shared/pipes/camelcase.pipe';
 describe('HeaderComponent', () => {
   let component: HeaderComponent;
   let fixture: ComponentFixture<HeaderComponent>;
@@ -14,7 +17,7 @@ describe('HeaderComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [ReactiveFormsModule, RouterModule, RouterTestingModule],
-      declarations: [HeaderComponent],
+      declarations: [HeaderComponent, MenuNavComponent, SpinnerComponent, OrderByPipe, CamelCase],
       providers: []
     })
       .compileComponents();

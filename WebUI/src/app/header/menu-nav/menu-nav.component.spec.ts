@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { MenuNavComponent } from './menu-nav.component';
+import { OrderByPipe } from 'app/shared/pipes/order-by.pipe';
 
 describe('MenuNavComponent', () => {
   let component: MenuNavComponent;
@@ -8,9 +9,11 @@ describe('MenuNavComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ MenuNavComponent ]
+      imports: [OrderByPipe],
+      declarations: [MenuNavComponent],
+      providers: []
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

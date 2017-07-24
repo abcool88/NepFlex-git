@@ -6,6 +6,8 @@ import { HomeComponent } from './home/home.component';
 import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
 import { BillingShippingComponent } from './billing-shipping/billing-shipping.component';
 import { AccountComponent } from './account/account.component';
+import { ListComponent } from 'app/list/list.component';
+
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: '', component: HomeComponent },
@@ -14,8 +16,8 @@ const routes: Routes = [
   { path: 'MyAccount', component: AccountComponent, pathMatch: 'full' },
   // { path: '**', redirectTo: 'pagenotfound', pathMatch: 'full' },
   // { path: '', redirectTo: 'home/home', pathMatch: 'full' },
-  // {path: 'home/home', component: HomeComponent }
-]
+  { path: 'list/:activeRouteId', component: ListComponent }
+];
 
 @NgModule({
   imports: [

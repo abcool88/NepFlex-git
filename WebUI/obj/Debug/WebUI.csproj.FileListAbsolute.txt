@@ -232,3 +232,4 @@ A:\GIT_Nepflex\WebUI\bin\System.Web.WebPages.Deployment.xml
 A:\GIT_Nepflex\WebUI\bin\System.Web.WebPages.Razor.xml
 A:\GIT_Nepflex\WebUI\obj\Debug\NepFlex.WebUI.dll
 A:\GIT_Nepflex\WebUI\obj\Debug\NepFlex.WebUI.pdb
+A:\GIT_Nepflex\WebUI\obj\Debug\WebUI.csprojResolveAssemblyReference.cache

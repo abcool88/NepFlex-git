@@ -35,6 +35,9 @@ import { SpinnerComponent } from './shared/spinner/spinner.component';
 import 'hammerjs';
 import { MdProgressSpinner, MaterialModule } from '@angular/material';
 import { LoaderService } from './shared/services/loader.service';
+import { ListComponent } from './list/list.component';
+import { DetailComponent } from './detail/detail.component';
+
 @NgModule({
   declarations: [
     // components
@@ -59,7 +62,9 @@ import { LoaderService } from './shared/services/loader.service';
     CamelCase,
     AccountComponent,
     OverlayComponent,
-    SpinnerComponent
+    SpinnerComponent,
+    ListComponent,
+    DetailComponent
 
   ],
   imports: [
