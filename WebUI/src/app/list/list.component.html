@@ -1,1 +1,17 @@
-<p>list page</p>
+<div class="responsive-body">
+  <div class="left-nav">
+    <div class="nav-body">
+      <div class="nav-title"> Filter </div>
+      <div class="nav-container" *ngFor="let item of navContainer;let i=index;">
+        <div>
+          {{item.containerName}}
+          <div [ngClass]="{'expand': item.expand==1, '': 'item.expand==0'}">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="list-body">
+    <div class="nav-body"> body </div>
+  </div>
+</div>
