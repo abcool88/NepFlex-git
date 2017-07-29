@@ -1,8 +1,7 @@
 @import '../../Style/styles.scss';
-
 .top-nav-bar {
   @include display-flex(); //border-bottom: 1px solid gray;
-  color: #1b5384;
+  color: $font-color-gray;
   margin-bottom: 1%;
 }
 
@@ -10,7 +9,7 @@
   @include display-flex();
   justify-content: flex-start;
   align-items: flex-start;
-  box-shadow: 5px 2px 7px rgba(33, 33, 33, 0.7);
+  box-shadow: 5px 2px 7px rgba(167, 167, 167, 0.7);
 }
 
 .header-logo {
@@ -96,12 +95,10 @@
 .shoppingcart-btn {
   color: #fff;
   background-color: $background-color-red;
-  border-color: #ffffff;
+  // border-color: #ffffff;
   border-radius: 0%;
 }
 
 .shopping-bag {
   background-image: url("/dist/assets/images/cartbag.jpg");
 }
-
-

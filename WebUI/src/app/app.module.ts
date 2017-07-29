@@ -37,6 +37,8 @@ import { MdProgressSpinner, MaterialModule } from '@angular/material';
 import { LoaderService } from './shared/services/loader.service';
 import { ListComponent } from './list/list.component';
 import { DetailComponent } from './detail/detail.component';
+import { IndexComponent } from './home/index/index.component';
+import { ProductCarouselComponent } from './carousel/product-carousel/product-carousel.component';
 
 @NgModule({
   declarations: [
@@ -64,7 +66,9 @@ import { DetailComponent } from './detail/detail.component';
     OverlayComponent,
     SpinnerComponent,
     ListComponent,
-    DetailComponent
+    DetailComponent,
+    IndexComponent,
+    ProductCarouselComponent,
 
   ],
   imports: [
