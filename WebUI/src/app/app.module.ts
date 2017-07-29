@@ -39,6 +39,7 @@ import { ListComponent } from './list/list.component';
 import { DetailComponent } from './detail/detail.component';
 import { IndexComponent } from './home/index/index.component';
 import { ProductCarouselComponent } from './carousel/product-carousel/product-carousel.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -69,6 +70,7 @@ import { ProductCarouselComponent } from './carousel/product-carousel/product-ca
     DetailComponent,
     IndexComponent,
     ProductCarouselComponent,
+    FooterComponent,
 
   ],
   imports: [
