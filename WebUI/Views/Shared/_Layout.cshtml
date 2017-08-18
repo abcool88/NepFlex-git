@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-<html>
+<html manifest="offline.manifest">
 <head>
   <base href="/">
     <meta charset="utf-8" />
@@ -7,13 +7,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script type="text/javascript" src="../../Scripts/jquery-1.4.min.js"></script>
+     <script type="text/javascript" src="../../Scripts/offline.js"></script>
     @{
   var @angs = "../node_modules/@angular/material/prebuilt-themes/indigo-pink.css";
    }
     <link href="@angs" rel="stylesheet">
     <!--<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">-->
   </head>
-<body>
+<body onload="onInit()">
    @RenderBody()
 
 @{

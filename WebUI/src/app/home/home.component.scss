@@ -1,60 +1,62 @@
 @import '../../Style/styles.scss';
-.right-container {
-  border: 1px solid red;
-  @include display-flex();
-}
+// .right-container {
+//   border: 1px solid red;
+//   @include display-flex();
+// }
 
-//limited deals scss:
-.limitedDeal-container {
-  @include display-flex();
-  color: white;
-  width: 87%;
-  padding: 0%;
-  background-color: #d6002a;
-  margin-top: 2%;
-  margin-left: 6.58%;
-}
+// //limited deals scss:
+// .limitedDeal-container {
+//   @include display-flex();
+//   color: white;
+//   width: 87%;
+//   padding: 0%;
+//   background-color: #d6002a;
+//   margin-top: 2%;
+//   margin-left: 6.58%;
+// }
 
-.limitedDeal-medium-header {
-  @include display-flex();
-  align-items: center;
-  justify-content: center;
-  margin: 0px;
-}
+// .limitedDeal-medium-header {
+//   @include display-flex();
+//   align-items: center;
+//   justify-content: center;
+//   margin: 0px;
+// }
 
-.list-nav-header {
-  //   margin-right: 2%;
-  list-style: none; //   font-family: sans-serif;
-  font-weight: 600;
-  font-size: x-large;
-  display: flex;
-  flex: 1 1 auto;
-  justify-content: center;
-  align-items: center;
-  align-content: center;
-  align-self: center;
-}
+// .list-nav-header {
+//   //   margin-right: 2%;
+//   list-style: none; //   font-family: sans-serif;
+//   font-weight: 600;
+//   font-size: x-large;
+//   display: flex;
+//   flex: 1 1 auto;
+//   justify-content: center;
+//   align-items: center;
+//   align-content: center;
+//   align-self: center;
+// }
 
-.limitedDeal-endDate {
-  margin-left: 2%;
-  font-family: sans-serif;
-  font-weight: 200;
-  font-size: smaller;
-}
+// .limitedDeal-endDate {
+//   margin-left: 2%;
+//   font-family: sans-serif;
+//   font-weight: 200;
+//   font-size: smaller;
+// }
 
-//home carousel
-.home-carousel {
-  display: flex;
-  flex: 1 1 auto;
-  justify-content: center;
-  align-content: center;
-  align-items: center;
-  align-self: auto;
-  order: 0;
-  border: 1px red solid;
-}
+// //home carousel
+// .home-carousel {
+//   display: flex;
+//   flex: 1 1 auto;
+//   justify-content: center;
+//   align-content: center;
+//   align-items: center;
+//   align-self: auto;
+//   order: 0;
+//   border: 1px red solid;
+// }
 
-.home-carousel-size {
-  height: 359px;
-  overflow: hidden;
-}
+// .home-carousel-size {
+//   height: 359px;
+//   overflow: hidden;
+// }
+
+
