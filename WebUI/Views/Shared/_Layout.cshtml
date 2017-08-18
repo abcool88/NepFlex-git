@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-<html manifest="offline.manifest">
+<html manifest="../../src/offline.manifest">
 <head>
   <base href="/">
     <meta charset="utf-8" />
@@ -8,7 +8,6 @@
     <title>@ViewBag.Title</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script type="text/javascript" src="../../Scripts/jquery-1.4.min.js"></script>
-     <script type="text/javascript" src="../../Scripts/offline.js"></script>
     @{
   var @angs = "../node_modules/@angular/material/prebuilt-themes/indigo-pink.css";
    }
@@ -29,5 +28,7 @@
   <script type="text/javascript" src="~/dist/styles.bundle.js?v=@version"></script>
   <script type="text/javascript" src="~/dist/vendor.bundle.js?v=@version"></script>
   <script type="text/javascript" src="~/dist/main.bundle.js?v=@version"></script>
+
+     <script type="text/javascript" src="../../Scripts/offline.js"></script>
 </body>
 </html>
