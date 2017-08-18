@@ -123,6 +123,7 @@ function onUpdate() {
 }
 
 function onDelete() {
+    debugger;
   var id = document.itemForm.id.value;
 
   var query = "delete from OfflineAppraisalls where id=?;";
@@ -181,7 +182,7 @@ function onSelect(htmlLIElement) {
 
         var row = results.rows.item(0);
 
-        updateForm(row['id'], row['make'], row['model']);
+        updateForm(row['ID'], row['make'], row['model']);
 
       }, function (transaction, error) {
         updateStatus("Error: " + error.code + "<br>Message: " + error.message);
@@ -243,6 +244,7 @@ nullDataHandler = function (transaction, results) {}
 // update view functions
 
 function updateForm(id, make, model) {
+  debugger;
   document.itemForm.id.value = id;
   document.itemForm.make.value = make;
   document.itemForm.model.value = model;
