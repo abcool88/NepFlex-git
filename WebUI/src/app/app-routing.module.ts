@@ -7,10 +7,12 @@ import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
 import { BillingShippingComponent } from './billing-shipping/billing-shipping.component';
 import { AccountComponent } from './account/account.component';
 import { ListComponent } from 'app/list/list.component';
+import { OfflineListComponent } from 'app/offline-list/offline-list.component';
 
 const routes: Routes = [
-  { path: 'home', component: HomeComponent },
-  { path: '', component: HomeComponent },
+  { path: 'list', component: OfflineListComponent },
+  { path: 'home/:Id', component: HomeComponent },
+  { path: '', component: OfflineListComponent },
   { path: 'shoppingbag', component: ShoppingCartComponent, pathMatch: 'full' },
   { path: 'billingandshipping', component: BillingShippingComponent, pathMatch: 'full' },
   { path: 'MyAccount', component: AccountComponent, pathMatch: 'full' },

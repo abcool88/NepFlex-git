@@ -40,6 +40,9 @@ import { DetailComponent } from './detail/detail.component';
 import { IndexComponent } from './home/index/index.component';
 import { ProductCarouselComponent } from './carousel/product-carousel/product-carousel.component';
 import { FooterComponent } from './footer/footer.component';
+import { CheckInternetStatus } from 'app/shared/controls/check-internet-status/check-internet-status';
+import { OfflineDatabaseService } from 'app/shared/services/offline-database/offline-database.service';
+import { OfflineListComponent } from './offline-list/offline-list.component';
 
 @NgModule({
   declarations: [
@@ -71,7 +74,7 @@ import { FooterComponent } from './footer/footer.component';
     IndexComponent,
     ProductCarouselComponent,
     FooterComponent,
-
+    OfflineListComponent
   ],
   imports: [
     BrowserModule,
@@ -82,7 +85,7 @@ import { FooterComponent } from './footer/footer.component';
     AppRoutingModule,
     BrowserAnimationsModule, MaterialModule
   ],
-  providers: [HomeService, LoaderService],
+  providers: [HomeService, LoaderService, CheckInternetStatus, OfflineDatabaseService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

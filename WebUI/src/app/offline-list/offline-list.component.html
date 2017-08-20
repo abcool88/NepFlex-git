@@ -1,0 +1,6 @@
+<div >INSIDE LIST PAGE</div>
+<div class="item-container">
+  <div class="item-row" *ngFor="let item of allRecords;let i =index;" (click)="updateForm(item.Id)">
+    Id:{{item.Id}} make:{{item.make}} model:{{item.model}} year:{{item.year}}
+  </div>
+</div>
