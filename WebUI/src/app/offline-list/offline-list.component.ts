@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { OfflineDatabaseService } from 'app/shared/services/offline-database/offline-database.service';
 import { Router } from '@angular/router';
+import { Observable } from 'rxjs/Observable';
+import { OfflineInsert } from 'app/shared/interfaces/offline-insert-list';
 
 @Component({
   selector: 'app-offline-list',
@@ -9,17 +11,14 @@ import { Router } from '@angular/router';
 })
 export class OfflineListComponent implements OnInit {
   allRecords: any;
-  constructor(private router: Router, private offlineDatabaseService: OfflineDatabaseService) { }
+  constructor(private router: Router,
+    private offlineDatabaseService: OfflineDatabaseService) {
+  }
 
   ngOnInit() {
-    debugger;
-    this.offlineDatabaseService.getAllRecords()
-      .subscribe(List => {
-        this.allRecords = List;
-      });
-    console.log('ALL Records: ', this.allRecords);
-    debugger;
+    this.allRecords = this.offlineDatabaseService.enteredData;
   }
+
   updateForm(Id: number) {
     this.router.navigateByUrl('/home', Id);
   }

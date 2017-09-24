@@ -34,8 +34,8 @@ export class HomeComponent implements OnInit {
     if (!window.openDatabase) {
       this.offlineDatabaseService.updateStatus('Error: DB not supported');
     } else {
-      this.offlineDatabaseService.initDB();
-      this.offlineDatabaseService.createTables();
+      //this.offlineDatabaseService.initDB();
+      //this.offlineDatabaseService.createTables();
       //this.offlineDatabaseService.getAllRecords();
     }
   }

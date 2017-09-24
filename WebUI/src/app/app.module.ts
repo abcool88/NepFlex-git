@@ -85,7 +85,14 @@ import { OfflineListComponent } from './offline-list/offline-list.component';
     AppRoutingModule,
     BrowserAnimationsModule, MaterialModule
   ],
-  providers: [HomeService, LoaderService, CheckInternetStatus, OfflineDatabaseService],
+  exports: [
+
+  ],
+  providers: [
+    HomeService,
+    LoaderService,
+    OfflineDatabaseService,
+    CheckInternetStatus],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

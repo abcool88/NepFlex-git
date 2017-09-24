@@ -5,16 +5,38 @@ import { Observable } from 'rxjs/Observable';
 
 @Injectable()
 export class OfflineDatabaseService {
-  localDB = null;
+  localDB: any;
   // online = true;
   query: string;
   row: any;
   dataRows: any;
-  retrieveData: any = new Array();
+  retrieveData: Observable<OfflineInsert> = new Observable<OfflineInsert>();
   //enteredData: any = [{ id: 1, make: '1', model: '122', year: '', image: '', active: '', remarks: '' }];
-  enteredData: Observable<OfflineInsert>;
+  //enteredData: Observable<OfflineInsert> = new Observable<OfflineInsert>();
+  enteredData: any = new Array();
 
-  constructor(private router: Router, ) { }
+  constructor(private router: Router, ) {
+    if (!window.openDatabase) {
+      this.updateStatus('Error: DB not supported');
+    } else {
+      this.initDB();
+      this.createTables();
+      this.getAllRecords();
+      debugger;
+    }
+  }
+
+  getAllRecords() {
+    const query = 'SELECT * FROM OfflineAppraisalls;';
+    this.localDB.transaction(transaction => {
+      transaction.executeSql(query, [], (transaction, results) => {
+        console.log('RESULTS: ', results.rows);
+        this.enteredData.push(results.rows);
+      });
+    });
+    return this.enteredData;
+  }
+
   initDB() {
     const shortmodel = 'localDatabase';
     const version = '1.0';
@@ -102,21 +124,6 @@ export class OfflineDatabaseService {
         });
       });
     }
-  }
-
-  getAllRecords() {
-    const query = 'SELECT * FROM OfflineAppraisalls;';
-    this.localDB.transaction(transaction => {
-      transaction.executeSql(query, [], (transaction, results) => {
-        this.enteredData = results.rows;
-        console.log('RESULTS: ', this.enteredData);
-
-        // for (let i = 0; i < results.rows.length; i++) {
-        //   this.retrieveData = results.rows.item(i);
-        //   this.enteredData = this.retrieveData;
-        // }
-      });
-    });
   }
 
   onSelect(Id: number) {
