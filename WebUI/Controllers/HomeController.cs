@@ -11,6 +11,6 @@ namespace NepFlex.WebUI.Controllers
         public ActionResult Index()
         {
             return View();
-        }        
+        }
     }
 }

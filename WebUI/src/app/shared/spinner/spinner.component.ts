@@ -1,5 +1,4 @@
 import { Component, OnInit, NgModule, ViewChild, Input } from '@angular/core';
-import { MdProgressSpinnerModule } from '@angular/material';
 import { LoaderService } from '../../shared/services/loader.service';
 
 @Component({
@@ -9,11 +8,11 @@ import { LoaderService } from '../../shared/services/loader.service';
 })
 
 @NgModule({
-  imports: [MdProgressSpinnerModule],
-  exports: [MdProgressSpinnerModule],
+  imports: [],
+  exports: [],
 })
 export class SpinnerComponent implements OnInit {
-   @ViewChild('md-progress-spinner') mdSpinner: MdProgressSpinnerModule;
+   @ViewChild('md-progress-spinner') mdSpinner;
    @Input() value = 50;
    @Input() mode = 'indeterminate';
    @Input() strokeWidth;

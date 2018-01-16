@@ -33,7 +33,6 @@ import { OverlayComponent } from './shared/overlay/overlay.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SpinnerComponent } from './shared/spinner/spinner.component';
 import 'hammerjs';
-import { MdProgressSpinner, MaterialModule } from '@angular/material';
 import { LoaderService } from './shared/services/loader.service';
 @NgModule({
   declarations: [
@@ -69,7 +68,7 @@ import { LoaderService } from './shared/services/loader.service';
     HttpModule,
     RouterModule,
     AppRoutingModule,
-    BrowserAnimationsModule, MaterialModule
+    BrowserAnimationsModule
   ],
   providers: [HomeService, LoaderService],
   bootstrap: [AppComponent]
