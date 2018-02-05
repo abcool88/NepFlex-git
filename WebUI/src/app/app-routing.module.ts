@@ -1,7 +1,7 @@
 ﻿import { RouterModule, Routes } from '@angular/router';
 import { NgModule } from '@angular/core';
 
-//all component
+// all component
 import { HomeComponent } from './home/home.component';
 import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
 import { BillingShippingComponent } from './billing-shipping/billing-shipping.component';
@@ -15,7 +15,7 @@ const routes: Routes = [
   // { path: '**', redirectTo: 'pagenotfound', pathMatch: 'full' },
   // { path: '', redirectTo: 'home/home', pathMatch: 'full' },
   // {path: 'home/home', component: HomeComponent }
-]
+];
 
 @NgModule({
   imports: [
