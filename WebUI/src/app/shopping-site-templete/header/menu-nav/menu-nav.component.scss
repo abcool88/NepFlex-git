@@ -1,0 +1,108 @@
+@import '../../../../Style/styles.scss';
+.menu-container {
+  @include display-flex();
+  color: white;
+  width: 100%;
+  padding: 0%;
+  background-color: $backgropund-header-color;
+  margin-bottom: 1%;
+  height: 6%;
+}
+
+.nav-medium-header {
+  @include display-flex();
+  align-items: center;
+  margin-top: 1%;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+  height: 100%;
+}
+
+.list-nav-header {
+  margin-right: 2%;
+  list-style: none;
+  align-items: center;
+  align-content: center;
+  align-self: center;
+  display: flex;
+  height: 100%;
+  padding: 8px 8px 10px;
+  padding-top: 10px;
+  list-style: none;
+  line-height: 20px;
+  & .pop-over {
+    display: none;
+  }
+}
+
+.list-nav-header:hover {
+  background-color: white;
+  color: black;
+  padding: 8px 8px 10px;
+  padding-top: 10px;
+  list-style: none;
+  line-height: 20px;
+  background-image: linear-gradient(#999, #fff 18%);
+  & .pop-over {
+    display: block;
+    & .menu-pop-container {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      justify-content: flex-start;
+      align-content: stretch;
+      align-items: flex-start;
+      top: 182px;
+      & .custom-rows {
+        order: 0;
+        flex: 1 1 auto;
+        align-self: auto;
+        border-right: $border-gray; //width: 20%;
+        list-style: none;
+        margin-left: 1%;
+        width: 17%;
+      }
+    }
+    & div {
+      box-shadow: 0 0px 1px rgba(1, 29, 51, 0.2);
+      //min-height: 300px;
+      background-color: #fff;
+      width: 980px;
+      position: absolute;
+      z-index: 9999;
+      padding-bottom: 15px;
+      left: 50%;
+      margin-left: -486px;
+      height: auto;
+    }
+    & .custom-rows {
+      padding-left: 0;
+      //min-height: 300px;
+      margin-top: 16px;
+      width: 23.25%;
+    }
+  }
+  a:focus,
+  a:hover {
+    color: #00abff;
+    text-decoration: none;
+  }
+  .li-data-container {
+    flex: 1 1 auto;
+    display: flex;
+    margin-bottom: 1%;
+  }
+  .title-container {
+    margin: 0 0 10px;
+    background: black;
+    color: white;
+  }
+  .clearence-highlight {
+    flex: 1 1 auto;
+    display: flex;
+    margin-bottom: 1%;
+    color: #ff0000;
+    text-decoration: none;
+  }
+}

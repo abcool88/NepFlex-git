@@ -1,0 +1,24 @@
+@import "../../styles-desktop/styles.scss";
+@import "../../../shared/styles-shared/styles.scss";
+
+.header-body {
+  @include displayFlex(nowrap, column, flex-start, stretch, stretch);
+  background: black;
+  color: white;
+  padding: 1em;
+
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+.header-container{
+  @include displayFlex(nowrap, row, flex-start, stretch, stretch);
+}
+.logo {
+  @include displayFlexChild(1, 1, auto, 0, auto);
+}
+.list-container{
+  @include displayFlexChild(0, 0, auto, 0, auto);
+  margin-right: 1em;
+}

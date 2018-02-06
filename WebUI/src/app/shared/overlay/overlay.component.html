@@ -1,2 +1,6 @@
-<div [ngClass]="{'overlay-on': overlayIsOn}" class="modal fade" (click)="dismissOverlay()">
+<div class="overlay-body" *ngIf="showOverlay">
+  <div class="overlay-container">
+    {{overlayMessage}}
+    <div class="email-button" (click)="sendEmail()">Email To Owner</div>
+  </div>
 </div>

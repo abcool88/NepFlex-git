@@ -1,0 +1,49 @@
+@mixin list-icon($icon-url, $margin) {
+    background-image: url($icon-url);
+    background-repeat: no-repeat;
+    background-size: 2em 2em;
+    display: inline-block;
+    height: 2em;
+    width: 2em;
+    content: "";
+    margin: $margin;
+    order: 0;
+    flex: 0 1 auto;
+    align-self: strech;
+    list-style: none;
+  }
+  
+  
+  //==== rotation animation starts =====
+  
+  @-webkit-keyframes rotation {
+    from {
+      -webkit-transform: rotate(0deg);
+    }
+    to {
+      -webkit-transform: rotate(-360deg)
+    }
+  }
+  @-moz-keyframes rotation {
+    from {
+      -moz-transform: rotate(0deg);
+    }
+    to {
+      -moz-transform: rotate(-360deg)
+    }
+  }
+  @keyframes rotation {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(-360deg)
+    }
+  }
+  
+  @mixin rotation($duration) {    
+    -webkit-animation: rotation $duration linear infinite;
+    -moz-animation: rotation $duration linear infinite;
+    animation: rotation $duration linear infinite;
+  }
+  //==== rotation animation ends =====

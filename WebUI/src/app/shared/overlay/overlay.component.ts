@@ -1,22 +1,28 @@
-import { Component, OnInit } from '@angular/core';
-import { OverlayService } from '../services/overlay.service';
+import { Component, OnInit, Input } from '@angular/core';
+
 @Component({
-  selector: 'app-overlay',
+  selector: 'overlay',
   templateUrl: './overlay.component.html',
   styleUrls: ['./overlay.component.scss']
 })
 export class OverlayComponent implements OnInit {
-  overlayIsOn: boolean;
-  constructor(private overlayService: OverlayService) { }
+  @Input() showOverlay: boolean = false;
+  @Input() overlayMessage: String;
+  closeModalBox: boolean = false;
 
-  ngOnInit() {
-    this.overlayIsOn = false;
-    this.overlayService.isOverlayOn$
-      .subscribe((overlayIsOn: boolean) => {
-        this.overlayIsOn = overlayIsOn;
-      });
+  constructor() {
+    console.log('showOverlay const', this.showOverlay);
   }
-  dismissOverlay() {
-    this.overlayService.turnOffOverlay();
+
+  ngOnInit(): void {
+
+  }
+  closeButtonClick(): void {
+    this.showOverlay = !this.showOverlay;
+    this.closeModalBox = this.showOverlay ;
+    console.log('showOverlay', this.showOverlay);
+  }
+  sendEmail(): void {
+    window.open('mailto:nepalicraig@gmail.com?subject= I want ' + this.overlayMessage + '&body= Name:.......... ,%0D%0A PhoneNumber:............ ,%0D%0A Price:.......... ');
   }
 }

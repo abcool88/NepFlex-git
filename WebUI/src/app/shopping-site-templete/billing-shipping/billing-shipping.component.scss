@@ -1,0 +1,164 @@
+@import '../../../Style/styles.scss';
+.billing-shipping-body {
+  height: 64%;
+  margin-left: 1%;
+  margin-right: 1%; // display: inline-flex;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-content: flex-start;
+  align-items: flex-start;
+  margin-bottom: 1%;
+}
+
+.billing-and-shipping {
+  border: $border-gray; //border-radius: 2%;
+  height: 100%;
+  width: 59%;
+  order: 0;
+  flex: 0 1 auto;
+  align-self: auto;
+  margin-right: 1%;
+}
+
+.shipping {
+  border: $border-gray; //border-radius: 2%;
+  height: 100%;
+  width: 59%;
+  order: 0;
+  flex: 0 1 auto;
+  align-self: auto;
+  margin-right: 1%;
+}
+
+.billing-and-shipping-paymment {
+  border: $border-gray; //border-radius: 2%;
+  height: 100%;
+  width: 59%;
+  order: 0;
+  flex: 0 1 auto;
+  align-self: auto;
+  margin-right: 1%; // display: flex;
+}
+
+.title-billing-shipping {
+  background-color: $background-color-red;
+  width: 100%;
+  height: 8%;
+  margin-bottom: 1%;
+  color: $font-color-white;
+  font-size: x-large;
+  font-family: $font-family;
+}
+
+.billing-shipping-container {
+  flex: 1 1 auto;
+  align-self: auto;
+  width: 100%;
+}
+
+.order-summary-item {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-content: flex-start;
+  align-items: center;
+  height: 50px;
+  border-bottom: $border-gray;
+}
+
+.order-summary-label {
+  width: 23%;
+  order: 0;
+  flex: 0 1 auto;
+  align-self: auto;
+  margin-right: 1%;
+  margin-left: 10%;
+  font-size: large;
+  font-family: $font-family;
+}
+
+.order-summary-value {
+  order: 0;
+  flex: 1 0 auto;
+  align-self: auto;
+  flex-direction: row;
+  font-size: large;
+  font-family: $font-family;
+  display: flex;
+}
+
+.textbox-input {
+  width: 90%;
+}
+
+.choose-shipping-label {
+  background-color: gainsboro;
+  border: 1px solid white;
+  color: #0a0a0a;
+  font-size: large;
+  border-radius: 7px;
+  padding: 1%;
+}
+
+// check-box
+input[type=radio] {
+  display: none;
+}
+
+input[type=radio]:checked+label {
+  background-color: #000000;
+  color: white;
+}
+
+.payment-method-body {
+  border: $border-gray;
+  height: 64%;
+  margin-left: 1%;
+  margin-right: 1%; // display: inline-flex;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-content: flex-start;
+  align-items: flex-start;
+}
+
+.btnRed {
+  color: #fff;
+  background-color: $background-color-red;
+  border-color: #ffffff;
+  border-radius: 0%;
+}
+
+.modal {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  margin: -30px;
+  background-color: rgba(255, 255, 255, 0.7);
+  z-index: 1000;
+  text-align: center;
+}
+
+.closed {
+  visibility: hidden;
+}
+
+.opened {
+  visibility: visible;
+}
+
+.modalBody {
+  top: 45%;
+  left: 25%;
+  width: 50%;
+  position: absolute;
+}
+
+.text-bold {
+  font-weight: 800;
+  font-size: 1.5em;
+}
+

@@ -1,0 +1,33 @@
+
+@mixin displayFlex($wrap: nowrap, $direction: row, $justify: flex-start, $align-items: stretch, $align-content: stretch) {
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: $direction;
+    -ms-flex-direction: $direction;
+    flex-direction: $direction;
+    -webkit-flex-wrap: $wrap;
+    -ms-flex-wrap: $wrap;
+    flex-wrap: $wrap;
+    -webkit-justify-content: $justify;
+    -ms-flex-pack: $justify;
+    justify-content: $justify;
+    -webkit-align-items: $align-items;
+    -ms-flex-align: $align-items;
+    align-items: $align-items;
+    -webkit-align-content: $align-content;
+    -ms-flex-line-pack: $align-content;
+    align-content: $align-content;
+  }
+  
+  @mixin displayFlexChild($grow: 0, $shrink: 0, $basis: auto, $order: 0, $align-self: auto) {
+    -webkit-flex: $grow $shrink $basis;
+    -ms-flex: $grow $shrink $basis;
+    flex: $grow $shrink $basis;
+    -webkit-order: $order;
+    -ms-flex-order: $order;
+    order: $order;
+    -webkit-align-self: $align-self;
+    -ms-flex-item-align: $align-self;
+    align-self: $align-self;
+  }

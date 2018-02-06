@@ -1,10 +1,38 @@
-.overlay-off {
-  display: none;
+:host {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.overlay-on {
-  display: block;
-  opacity: 1;
-  background: rgba(0, 0, 0, 0.6);
-  z-index: 10000;
+.overlay-body {
+  position: absolute;
+  width: 24%;
+  height: 12%;
+  top: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 2;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  color: powderblue;
+  font-family: sans-serif;
+  box-shadow: -2px 0px 22px 10px rgb(15, 98, 165);
+}
+.overlay-container {
+  background: #0a2a3a;
+  // height: 12em;
+  width: 20em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.email-button {
+  color: aliceblue;
+  background-color: #9a2031;
+  width: 6em;
+  font-size: 0.7em;
+  text-align: center;
+  margin: 2em;
+  z-index: 9999;
 }

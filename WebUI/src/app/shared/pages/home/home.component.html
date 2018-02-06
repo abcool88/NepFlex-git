@@ -1,0 +1,6 @@
+<div *ngIf="(showMobileVersion)" class="homepage-container">
+  <app-home-mobile></app-home-mobile>
+</div>
+<div *ngIf="(!showMobileVersion)" class="homepage-container">
+  <app-home-desktop></app-home-desktop>
+</div>

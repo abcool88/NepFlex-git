@@ -1,76 +1,36 @@
-﻿import { BrowserModule } from '@angular/platform-browser';
+import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
-import { RouterModule } from '@angular/router';
-import { HomeComponent } from './home/home.component';
 import { AppComponent } from './app.component';
+import { RouterModule } from '@angular/router';
+import { PagenotfoundComponent } from './shared/pages/pagenotfound/pagenotfound.component';
+import { HomeComponent } from './shared/pages/home/home.component';
+import { DesktopModule } from 'app/desktop/desktop.module';
+import { MobileModule } from 'app/mobile/mobile.module';
+import { SharedModule } from 'app/shared/shared.module';
+import { AppRoutingModule } from 'app/app-routing.module';
+import { CoreModule } from 'app/core/core.module';
 
-// pipes
-import { DefaultValuePipe } from './shared/pipes/default-value.pipe';
-import { FilterByPipe } from './shared/pipes/filter-by.pipe';
-import { OrderByNestedPipe } from './shared/pipes/order-by-nested.pipe';
-import { OrderByPipe } from './shared/pipes/order-by.pipe';
-import { UniqueValuePipe } from './shared/pipes/unique-value.pipe';
-import { CamelCase } from './shared/pipes/camelcase.pipe';
-// Routes
-import { AppRoutingModule } from './app-routing.module';
-import { HeaderComponent } from './header/header.component';
-import { BannerComponent } from './banner/banner.component';
-import { CarouselComponent } from './carousel/carousel.component';
-import { LimitedOfferComponent } from './banner/limited-offer/limited-offer.component';
-import { NewArrivalComponent } from './banner/new-arrival/new-arrival.component';
-import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
-import { BillingShippingComponent } from './billing-shipping/billing-shipping.component';
-
-import { ModalComponent } from './shared/modal/modal.component';
-import { MenuNavComponent } from './header/menu-nav/menu-nav.component';
-
-import { HomeService } from './shared/services/home.service';
-import { AccountComponent } from './account/account.component';
-import { OverlayComponent } from './shared/overlay/overlay.component';
-
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { SpinnerComponent } from './shared/spinner/spinner.component';
-import 'hammerjs';
-import { LoaderService } from './shared/services/loader.service';
 @NgModule({
   declarations: [
-    // components
-    HomeComponent,
     AppComponent,
-    HeaderComponent,
-    BannerComponent,
-    CarouselComponent,
-    LimitedOfferComponent,
-    NewArrivalComponent,
-    ShoppingCartComponent,
-    BillingShippingComponent,
-    ModalComponent,
-    MenuNavComponent,
-
-    // pipes
-    DefaultValuePipe,
-    FilterByPipe,
-    OrderByNestedPipe,
-    OrderByPipe,
-    UniqueValuePipe,
-    CamelCase,
-    AccountComponent,
-    OverlayComponent,
-    SpinnerComponent
-
+    PagenotfoundComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    ReactiveFormsModule,
     HttpModule,
+    CoreModule,
     RouterModule,
+    MobileModule,
+    DesktopModule,
+    SharedModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    RouterModule
   ],
-  providers: [HomeService, LoaderService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

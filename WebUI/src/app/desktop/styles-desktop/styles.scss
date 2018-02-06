@@ -1,0 +1,14 @@
+//@import '../../styles/mixins';
+html {
+  margin: 0;
+  height: 100%;
+}
+
+body {
+  height: 100%;
+}
+
+.hidden {
+  display: none;
+  visibility: hidden;
+}

@@ -1,0 +1,22 @@
+/* You can add global styles to this file, and also import other style files */
+
+// @import 'variables';
+@import './variables';
+@import './mixins';
+@import '../../styles/mixins';
+
+html {
+    font-family: $font-family;
+    color: $font-color-black;
+    margin: 0;
+    height: 100%;
+}
+
+body {
+    height: 100%;
+}
+
+.hidden {
+    display: none;
+    visibility: hidden;
+}

@@ -1,0 +1,15 @@
+<div class="header-body">
+  <div class="logo">{{title}}</div>
+  <div class="list-container" *ngFor='let item of headersNavigation;let i=index'>
+     <div *ngIf="!item.HasDropDown" (click)="HeaderRoute(item.headerRoute,item.canRoute)">
+       {{item.header}}
+     </div>
+    <app-dropdown *ngIf="item.HasDropDown"
+    [dropdownLabel]="item.header"
+    [dropdownOptions]="item.DropDownList"
+    [dropdownLabelRoute]="item.DropDownList">
+    </app-dropdown>
+ </div>
+ <app-search-box class="header-search-box"></app-search-box>
+</div>
+
