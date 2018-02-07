@@ -7,7 +7,6 @@ import { DesktopPageModule } from 'app/desktop/pages/desktop-page.module';
 import { HomeDesktopComponent } from 'app/desktop/pages/home-desktop/home-desktop.component';
 import { DesktopControlModule } from 'app/desktop/controls/desktop-control.module';
 
-
 @NgModule({
     imports: [
         BrowserModule,

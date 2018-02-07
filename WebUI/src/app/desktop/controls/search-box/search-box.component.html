@@ -1,3 +1,7 @@
-<div>
-  <input class="search-input" type="text" placeholder="search me pls">
-</div>
+<form [formGroup]="form">
+  <input class="search-input" type="text"
+  formControlName="searchedText"
+  (change)="searchValueChanged($event)"
+  placeholder="search me pls">
+</form>
+<app-search-results-overlay *ngIf="openSearchedResultsOverlay"></app-search-results-overlay>

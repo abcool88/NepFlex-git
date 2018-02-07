@@ -6,6 +6,8 @@
   background: #5f0000;
   color: white;
   padding: 1em;
+  position: fixed;
+  width: 100%;
 }
 .header-container{
   @include displayFlex(nowrap, row, flex-start, stretch, stretch);
