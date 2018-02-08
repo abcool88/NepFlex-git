@@ -23,21 +23,21 @@ namespace Nepflex.ServiceAPI.Controllers
             _menuTopService = menuTopService;
         }
 
-        //[Route("getMenu")]
-        //[HttpGet]
-        //public IHttpActionResult GetMenuNav()
-        //{
-        //    Console.WriteLine("came here in GetMenuNav");
-        //    try
-        //    {
-        //        var menuNavList = _menuTopService.GetMenuNav();
-        //        return Ok(menuNavList);
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        return InternalServerError(ex);
-        //    }
-        //}
+        [Route("getMenu")]
+        [HttpGet]
+        public IHttpActionResult GetMenuNav()
+        {
+            Console.WriteLine("came here in GetMenuNav");
+            try
+            {
+                var menuNavList = _menuTopService.GetMenuNav();
+                return Ok(menuNavList);
+            }
+            catch (Exception ex)
+            {
+                return InternalServerError(ex);
+            }
+        }
 
         //[Route("getMenuContainer")]
         //[HttpGet]

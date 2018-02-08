@@ -55,6 +55,7 @@ namespace NepFlex.DataAccess.Mapping
         System.Data.Entity.DbSet<MasterServicesCategory> MasterServicesCategories { get; set; } // Master_ServicesCategory
         System.Data.Entity.DbSet<MasterTable> MasterTables { get; set; } // MasterTable
         System.Data.Entity.DbSet<MasterTravelsandToursCategory> MasterTravelsandToursCategories { get; set; } // Master_TravelsandToursCategory
+        System.Data.Entity.DbSet<MenuNavigation> MenuNavigations { get; set; } // MenuNavigation
         System.Data.Entity.DbSet<PostMyData> PostMyDatas { get; set; } // PostMyData
         System.Data.Entity.DbSet<SelectTopCategory> SelectTopCategories { get; set; } // SelectTopCategory
         System.Data.Entity.DbSet<TrackEmail> TrackEmails { get; set; } // TrackEmail
@@ -177,6 +178,7 @@ namespace NepFlex.DataAccess.Mapping
         public System.Data.Entity.DbSet<MasterServicesCategory> MasterServicesCategories { get; set; } // Master_ServicesCategory
         public System.Data.Entity.DbSet<MasterTable> MasterTables { get; set; } // MasterTable
         public System.Data.Entity.DbSet<MasterTravelsandToursCategory> MasterTravelsandToursCategories { get; set; } // Master_TravelsandToursCategory
+        public System.Data.Entity.DbSet<MenuNavigation> MenuNavigations { get; set; } // MenuNavigation
         public System.Data.Entity.DbSet<PostMyData> PostMyDatas { get; set; } // PostMyData
         public System.Data.Entity.DbSet<SelectTopCategory> SelectTopCategories { get; set; } // SelectTopCategory
         public System.Data.Entity.DbSet<TrackEmail> TrackEmails { get; set; } // TrackEmail
@@ -256,6 +258,7 @@ namespace NepFlex.DataAccess.Mapping
             modelBuilder.Configurations.Add(new MasterServicesCategoryConfiguration());
             modelBuilder.Configurations.Add(new MasterTableConfiguration());
             modelBuilder.Configurations.Add(new MasterTravelsandToursCategoryConfiguration());
+            modelBuilder.Configurations.Add(new MenuNavigationConfiguration());
             modelBuilder.Configurations.Add(new PostMyDataConfiguration());
             modelBuilder.Configurations.Add(new SelectTopCategoryConfiguration());
             modelBuilder.Configurations.Add(new TrackEmailConfiguration());
@@ -290,6 +293,7 @@ namespace NepFlex.DataAccess.Mapping
             modelBuilder.Configurations.Add(new MasterServicesCategoryConfiguration(schema));
             modelBuilder.Configurations.Add(new MasterTableConfiguration(schema));
             modelBuilder.Configurations.Add(new MasterTravelsandToursCategoryConfiguration(schema));
+            modelBuilder.Configurations.Add(new MenuNavigationConfiguration(schema));
             modelBuilder.Configurations.Add(new PostMyDataConfiguration(schema));
             modelBuilder.Configurations.Add(new SelectTopCategoryConfiguration(schema));
             modelBuilder.Configurations.Add(new TrackEmailConfiguration(schema));
@@ -1832,6 +1836,7 @@ namespace NepFlex.DataAccess.Mapping
         public System.Data.Entity.DbSet<MasterServicesCategory> MasterServicesCategories { get; set; }
         public System.Data.Entity.DbSet<MasterTable> MasterTables { get; set; }
         public System.Data.Entity.DbSet<MasterTravelsandToursCategory> MasterTravelsandToursCategories { get; set; }
+        public System.Data.Entity.DbSet<MenuNavigation> MenuNavigations { get; set; }
         public System.Data.Entity.DbSet<PostMyData> PostMyDatas { get; set; }
         public System.Data.Entity.DbSet<SelectTopCategory> SelectTopCategories { get; set; }
         public System.Data.Entity.DbSet<TrackEmail> TrackEmails { get; set; }
@@ -1865,6 +1870,7 @@ namespace NepFlex.DataAccess.Mapping
             MasterServicesCategories = new FakeDbSet<MasterServicesCategory>("ServiceId");
             MasterTables = new FakeDbSet<MasterTable>("Id");
             MasterTravelsandToursCategories = new FakeDbSet<MasterTravelsandToursCategory>("TravelsandToursId");
+            MenuNavigations = new FakeDbSet<MenuNavigation>("MenuId");
             PostMyDatas = new FakeDbSet<PostMyData>("PostId");
             SelectTopCategories = new FakeDbSet<SelectTopCategory>("Id");
             TrackEmails = new FakeDbSet<TrackEmail>("Id");
@@ -2744,6 +2750,16 @@ namespace NepFlex.DataAccess.Mapping
         public string TravelsandTours { get; set; } // TravelsandTours (length: 50)
     }
 
+    // MenuNavigation
+    [System.CodeDom.Compiler.GeneratedCode("EF.Reverse.POCO.Generator", "2.31.1.0")]
+    public class MenuNavigation
+    {
+        public int MenuId { get; set; } // MenuID (Primary key)
+        public string MenuName { get; set; } // MenuName (length: 50)
+        public string MenuUrl { get; set; } // MenuUrl (length: 200)
+        public bool? Active { get; set; } // Active
+    }
+
     // PostMyData
     [System.CodeDom.Compiler.GeneratedCode("EF.Reverse.POCO.Generator", "2.31.1.0")]
     public class PostMyData
@@ -3375,6 +3391,27 @@ namespace NepFlex.DataAccess.Mapping
 
             Property(x => x.TravelsandToursId).HasColumnName(@"TravelsandTours_ID").HasColumnType("bigint").IsRequired().HasDatabaseGeneratedOption(System.ComponentModel.DataAnnotations.Schema.DatabaseGeneratedOption.Identity);
             Property(x => x.TravelsandTours).HasColumnName(@"TravelsandTours").HasColumnType("nvarchar").IsOptional().HasMaxLength(50);
+        }
+    }
+
+    // MenuNavigation
+    [System.CodeDom.Compiler.GeneratedCode("EF.Reverse.POCO.Generator", "2.31.1.0")]
+    public class MenuNavigationConfiguration : System.Data.Entity.ModelConfiguration.EntityTypeConfiguration<MenuNavigation>
+    {
+        public MenuNavigationConfiguration()
+            : this("dbo")
+        {
+        }
+
+        public MenuNavigationConfiguration(string schema)
+        {
+            ToTable("MenuNavigation", schema);
+            HasKey(x => x.MenuId);
+
+            Property(x => x.MenuId).HasColumnName(@"MenuID").HasColumnType("int").IsRequired().HasDatabaseGeneratedOption(System.ComponentModel.DataAnnotations.Schema.DatabaseGeneratedOption.Identity);
+            Property(x => x.MenuName).HasColumnName(@"MenuName").HasColumnType("nvarchar").IsOptional().HasMaxLength(50);
+            Property(x => x.MenuUrl).HasColumnName(@"MenuUrl").HasColumnType("nvarchar").IsOptional().HasMaxLength(200);
+            Property(x => x.Active).HasColumnName(@"Active").HasColumnType("bit").IsOptional();
         }
     }
 

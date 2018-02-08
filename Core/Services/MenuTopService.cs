@@ -16,10 +16,10 @@ namespace Core.Services
         //{
         //    return _unitOfWork.MenuTopRepository.GetMenuTopItems();
         //}
-        //public List<MenuTopNav> GetMenuNav()
-        //{
-        //    return _unitOfWork.MenuTopRepository.GetMenuNav();
-        //}
+        public List<MenuTopNav> GetMenuNav()
+        {
+            return _unitOfWork.MenuTopRepository.GetMenuNav();
+        }
 
         //public List<ClothingBrands> GetClothingBrands()
         //{

@@ -30,17 +30,17 @@ namespace DataAccess.Repositories
         //    }).ToList();
         //}
 
-        //public List<MenuTopNav> GetMenuNav()
-        //{
-        //    var resultNav = _context.MenuNavigations;
-        //    return resultNav.Select(x => new MenuTopNav()
-        //    {
-        //        MenuId = x.MenuId,
-        //        MenuName = x.MenuName,
-        //        MenuUrl = x.MenuUrl,
-        //        Active = x.Active
-        //    }).ToList();
-        //}
+        public List<MenuTopNav> GetMenuNav()
+        {
+            var resultNav = _context.MenuNavigations;
+            return resultNav.Select(x => new MenuTopNav()
+            {
+                MenuId = x.MenuId,
+                MenuName = x.MenuName,
+                MenuUrl = x.MenuUrl,
+                Active = x.Active
+            }).ToList();
+        }
         //public List<ClothingBrands> GetClothingBrands()
         //{
         //    var resultClothingBrand = _context.ClothingBrands;

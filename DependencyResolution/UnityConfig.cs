@@ -8,6 +8,8 @@ using DataAccess.Repositories;
 using NepFlex.DataAccess.Context;
 using Core.Interfaces;
 using DataAccess;
+using NepFlex.Core.Interfaces.Services;
+using NepFlex.Core.Services;
 
 namespace DependencyResolution
 {
@@ -18,6 +20,7 @@ namespace DependencyResolution
             container.RegisterType<IOnlinePasalContext, OnlinePasalContext>(new TransientLifetimeManager(), new InjectionConstructor());
             container.RegisterType<IUnitOfWork, UnitOfWork>(new PerRequestLifetimeManager());
             container.RegisterType<IMenuTopService, MenuTopService>();
+            container.RegisterType<ISearchService, SearchService>();
         }
     }
 }

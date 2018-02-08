@@ -2,6 +2,8 @@
   <input class="search-input" type="text"
   formControlName="searchedText"
   (change)="searchValueChanged($event)"
-  placeholder="search me pls">
+  placeholder="search me pls"
+  (focusin)="openSearchedResultsOverlay=true;"
+  (focusout)="openSearchedResultsOverlay=false;">
 </form>
 <app-search-results-overlay *ngIf="openSearchedResultsOverlay"></app-search-results-overlay>

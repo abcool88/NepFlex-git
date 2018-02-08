@@ -13,6 +13,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using NepFlex.DataAccess.Context;
+using NepFlex.DataAccess.Repositories;
+using NepFlex.Core.Interfaces.Repositories;
 
 namespace DataAccess
 {
@@ -24,6 +26,7 @@ namespace DataAccess
 
         // TODO: Add Repositories
         public IMenuTopRepository MenuTopRepository { get; private set; }
+        public ISearchRepository SearchRepository { get; private set; }
 
         public UnitOfWork(IOnlinePasalContext context)
         {
@@ -35,6 +38,7 @@ namespace DataAccess
         {
             // TODO: Add Repositories
             MenuTopRepository = new MenuTopRepository(_context);
+            SearchRepository = new SearchRepository(_context);
         }
         public List<ValidationResult> GetValidationErrors()
         {

@@ -11,7 +11,7 @@ namespace Core.Interfaces.Repositories
         //List<MenuClearence> GetMenuClearence();
         //List<Fashion> GetFashion();
         //List<NewArrival> GetNewArrival();
-        //List<MenuTopNav> GetMenuNav();
+        List<MenuTopNav> GetMenuNav();
 
 
     }

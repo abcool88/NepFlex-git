@@ -172,6 +172,7 @@
        //NOTE: make sure this list consistent across all three T4 files(i.e OnlinePasalContext.tt,OnlinePasalMapping.tt , OnlinePasalModels.tt)
 			List<string>includedTables=new List<string>{
 				//tables name here
+				"MenuNavigation",
 				"BlockedIP",
 				"BrowserViewed",
 				"Craig_Articles",
