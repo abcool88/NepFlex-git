@@ -7,6 +7,7 @@ import { DesktopHeaderComponent } from 'app/desktop/controls/desktop-header/desk
 import { DesktopFooterComponent } from 'app/desktop/controls/desktop-footer/desktop-footer.component';
 import { SearchBoxComponent } from './search-box/search-box.component';
 import { SearchResultsOverlayComponent } from './search-box/search-results-overlay/search-results-overlay.component';
+import { FilterBoxComponent } from './search-box/filter-box/filter-box.component';
 
 @NgModule({
     imports: [CommonModule, ReactiveFormsModule, SharedModule],
@@ -14,10 +15,12 @@ import { SearchResultsOverlayComponent } from './search-box/search-results-overl
         DesktopHeaderComponent,
         DesktopFooterComponent,
         SearchBoxComponent,
-        SearchResultsOverlayComponent
+        SearchResultsOverlayComponent,
+        FilterBoxComponent
 
     ],
     exports: [
+      SearchBoxComponent,
         DesktopHeaderComponent,
         DesktopFooterComponent
     ]

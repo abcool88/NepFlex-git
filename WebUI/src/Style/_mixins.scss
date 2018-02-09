@@ -1,3 +1,18 @@
+@mixin display-parent-flex($flex-Direction,$flex-wrap,$justify-content,$align-items,$align-content) {
+  display: flex;
+  flex-direction: $flex-Direction;
+  flex-wrap: $flex-wrap;
+  justify-content: $justify-content;
+  align-items: $align-items;
+  align-content: $align-content;
+}
+
+@mixin display-child-flex($flex1,$flex2,$flex-Style,$align-self) {
+  order: 0;
+  flex: $flex1 $flex2 $flex-Style;
+  align-self: $align-self;
+}
+
 @mixin display-flex {
   display: flex;
   flex: 1 1 auto;

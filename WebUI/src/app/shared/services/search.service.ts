@@ -4,23 +4,23 @@ import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';
 
-import { MenuTopNav } from '../interfaces/header';
 import { SearchResponse } from 'app/shared/ResourceModels/SearchResponse';
+import { ItemDescription } from 'app/shared/ResourceModels/ItemDescription';
 
 @Injectable()
-export class HomeService {
+export class SearchService {
   private apiUrl_getSearchResponse = 'https://localhost/ServiceAPI/api/search';
-  private apiUrl_getMenuNav = 'https://localhost/ServiceAPI/api/menuTop/getMenu';
+  private apiUrl_getItemDescription = 'https://localhost/ServiceAPI/api/ItemDescription';
 
   constructor(private http: Http) {}
 
-  getMenuNav(): Observable<MenuTopNav[]> {
-    return this.http.get(this.apiUrl_getMenuNav).map(this.extractMenuTopNav);
+  getItemDescription(): Observable<ItemDescription[]> {
+    return this.http.get(this.apiUrl_getItemDescription).map(this.extractItemDescription);
   }
 
-  private extractMenuTopNav(res: Response): MenuTopNav[] {
+  private extractItemDescription(res: Response): ItemDescription[] {
     const body = res.json();
-    return <MenuTopNav[]>body || <MenuTopNav[]>[];
+    return <ItemDescription[]>body || <ItemDescription[]>[];
   }
 
   getSearchResponse(val: string): Observable<SearchResponse[]> {

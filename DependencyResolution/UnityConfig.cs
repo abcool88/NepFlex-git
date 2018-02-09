@@ -21,6 +21,7 @@ namespace DependencyResolution
             container.RegisterType<IUnitOfWork, UnitOfWork>(new PerRequestLifetimeManager());
             container.RegisterType<IMenuTopService, MenuTopService>();
             container.RegisterType<ISearchService, SearchService>();
+            container.RegisterType<IItemDescriptionService, ItemDescriptionService>();
         }
     }
 }

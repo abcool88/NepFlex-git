@@ -1,0 +1,23 @@
+@import '../../../../../Style/styles.scss';
+.filter-body {
+  @include display-parent-flex(row,nowrap,flex-start,flex-start,flex-start);
+}
+.filter-container {
+  @include display-parent-flex(row,nowrap,flex-start,flex-start,flex-start);
+  @include display-child-flex(1,1,auto,auto);
+}
+.custom-filter {
+  border: 1px solid black;
+  padding: 0.5em;
+  margin: 0 0.5em 0 0.5em;
+}
+.close-button {
+  @include display-child-flex(0,1,auto,auto);
+  background-image: Url($close-round-button);
+  width: 2em;
+  height: 2em;
+  background: burlywood;
+}
+.group-by {
+  @include display-child-flex(0,1,auto,auto);
+}

@@ -12,6 +12,7 @@ namespace Core.Interfaces
     {
         IMenuTopRepository MenuTopRepository { get; }
         ISearchRepository SearchRepository { get; }
+        IItemDescriptionRepository ItemDescriptionRepository { get; }
         bool Save();
     }
 }

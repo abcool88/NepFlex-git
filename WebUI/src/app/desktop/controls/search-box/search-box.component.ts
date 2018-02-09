@@ -10,6 +10,7 @@ import { FormBuilder } from '@angular/forms';
 export class SearchBoxComponent implements OnInit {
   form: FormGroup;
   openSearchedResultsOverlay: boolean = false;
+  inputText: string;
   constructor(private fb: FormBuilder) {
     this.createForm();
   }
@@ -24,7 +25,7 @@ export class SearchBoxComponent implements OnInit {
     const searchingValue = this.form.get('searchedText').value;
     if (searchingValue) {
       this.openSearchedResultsOverlay = true;
-      console.log('searchedtext1', this.form.get('searchedText').value);
+      this.inputText = this.form.get('searchedText').value;
     } else {
       this.openSearchedResultsOverlay = false;
     }

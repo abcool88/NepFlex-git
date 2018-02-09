@@ -9,25 +9,23 @@ using System.Web.Http;
 
 namespace Nepflex.ServiceAPI.Controllers
 {
-    [RoutePrefix("api/search")]
-    //[Authorize]
-    public class searchController : ApiController
+    [RoutePrefix("api/itemDescription")]
+    public class ItemDescriptionController : ApiController
     {
-        public ISearchService _searchService;
+        private IItemDescriptionService _itemDescriptions;
         private IUnitOfWork _unitOfWork { get; set; }
-        public searchController(ISearchService searchService)
+        public ItemDescriptionController(IItemDescriptionService itemDescriptions)
         {
-            _searchService = searchService;
+            _itemDescriptions = itemDescriptions;
         }
 
-        [Route("{searchText}")]
+        [Route("")]
         [HttpGet]
-        public IHttpActionResult GetSearchResponseList(string searchText)
+        public IHttpActionResult GetItemDescription()
         {
-            Console.WriteLine("came here in GetMenuNav");
             try
             {
-                var results = _searchService.GetSearchResponseList(searchText);
+                var results = _itemDescriptions.GetItemDescriptionList();
                 return Ok(results);
             }
             catch (Exception ex)

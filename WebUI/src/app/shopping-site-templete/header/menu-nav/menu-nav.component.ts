@@ -57,28 +57,28 @@ export class MenuNavComponent implements OnInit {
 
   getMenuTopItems(value) {
     this.loaderService.display(true);
-    this.homeService.getMenuContainer()
-      .subscribe(result => {
-        this.sortBy = value;
-        this.womenMenuPopContainer = result.filter(item => item.menuID.toPrecision().indexOf(value) !== -1);
-      });
-    this.homeService.getClothingBrand()
-      .subscribe(resultClothingBrand => {
-        this.sortClothingBrandBy = value;
-        this.clothingBrands = resultClothingBrand.filter(itemx => itemx.menuId.toPrecision().indexOf(value) !== -1);
-      });
-    this.homeService.getClearence()
-      .subscribe(resultClearence => {
-        this.ClearenceList = resultClearence.filter(itemx => itemx.menuId.toPrecision().indexOf(value) !== -1);
-      });
-    this.homeService.getFashion()
-      .subscribe(resultFashion => {
-        this.fashionList = resultFashion.filter(itemx => itemx.menuId.toPrecision().indexOf(value) !== -1);
-      });
-    this.homeService.getNewArrivals()
-      .subscribe(resultNewArrival => {
-        this.newArrivalList = resultNewArrival.filter(itemx => itemx.menuId.toPrecision().indexOf(value) !== -1);
-      });
+    // this.homeService.getMenuContainer()
+    //   .subscribe(result => {
+    //     this.sortBy = value;
+    //     this.womenMenuPopContainer = result.filter(item => item.menuID.toPrecision().indexOf(value) !== -1);
+    //   });
+    // this.homeService.getClothingBrand()
+    //   .subscribe(resultClothingBrand => {
+    //     this.sortClothingBrandBy = value;
+    //     this.clothingBrands = resultClothingBrand.filter(itemx => itemx.menuId.toPrecision().indexOf(value) !== -1);
+    //   });
+    // this.homeService.getClearence()
+    //   .subscribe(resultClearence => {
+    //     this.ClearenceList = resultClearence.filter(itemx => itemx.menuId.toPrecision().indexOf(value) !== -1);
+    //   });
+    // this.homeService.getFashion()
+    //   .subscribe(resultFashion => {
+    //     this.fashionList = resultFashion.filter(itemx => itemx.menuId.toPrecision().indexOf(value) !== -1);
+    //   });
+    // this.homeService.getNewArrivals()
+    //   .subscribe(resultNewArrival => {
+    //     this.newArrivalList = resultNewArrival.filter(itemx => itemx.menuId.toPrecision().indexOf(value) !== -1);
+    //   });
     this.loaderService.display(false);
   }
 

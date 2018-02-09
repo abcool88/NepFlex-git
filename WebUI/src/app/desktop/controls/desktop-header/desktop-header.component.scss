@@ -8,6 +8,7 @@
   padding: 1em;
   position: fixed;
   width: 100%;
+  z-index: 2;
 }
 .header-container{
   @include displayFlex(nowrap, row, flex-start, stretch, stretch);
@@ -22,10 +23,7 @@
   @include displayFlexChild(0, 0, auto, 0, auto);
   margin-right: 1em;
 }
-.header-search-box{
-  flex: 1 1 auto;
-  margin-right: 1em;
-}
+
 .social {
   text-align: center;
   width: 43px;

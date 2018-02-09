@@ -2644,10 +2644,11 @@ namespace NepFlex.DataAccess.Mapping
     public class ItemDescription
     {
         public long Id { get; set; } // ID (Primary key)
+        public string Category { get; set; } // Category (length: 50)
         public string Condition { get; set; } // Condition (length: 25)
         public string PhoneBrand { get; set; } // PhoneBrand (length: 20)
         public string AutosBrand { get; set; } // AutosBrand (length: 30)
-        public string Modal { get; set; } // Modal (length: 50)
+        public string Model { get; set; } // Model (length: 50)
         public string MileKmph { get; set; } // Mile_KMPH (length: 25)
         public string Warranty { get; set; } // Warranty (length: 10)
         public string ExtraWarranty { get; set; } // extra_Warranty (length: 25)
@@ -3166,10 +3167,11 @@ namespace NepFlex.DataAccess.Mapping
             HasKey(x => x.Id);
 
             Property(x => x.Id).HasColumnName(@"ID").HasColumnType("bigint").IsRequired().HasDatabaseGeneratedOption(System.ComponentModel.DataAnnotations.Schema.DatabaseGeneratedOption.Identity);
+            Property(x => x.Category).HasColumnName(@"Category").HasColumnType("varchar").IsOptional().IsUnicode(false).HasMaxLength(50);
             Property(x => x.Condition).HasColumnName(@"Condition").HasColumnType("varchar").IsOptional().IsUnicode(false).HasMaxLength(25);
             Property(x => x.PhoneBrand).HasColumnName(@"PhoneBrand").HasColumnType("varchar").IsOptional().IsUnicode(false).HasMaxLength(20);
             Property(x => x.AutosBrand).HasColumnName(@"AutosBrand").HasColumnType("varchar").IsOptional().IsUnicode(false).HasMaxLength(30);
-            Property(x => x.Modal).HasColumnName(@"Modal").HasColumnType("varchar").IsOptional().IsUnicode(false).HasMaxLength(50);
+            Property(x => x.Model).HasColumnName(@"Model").HasColumnType("varchar").IsOptional().IsUnicode(false).HasMaxLength(50);
             Property(x => x.MileKmph).HasColumnName(@"Mile_KMPH").HasColumnType("varchar").IsOptional().IsUnicode(false).HasMaxLength(25);
             Property(x => x.Warranty).HasColumnName(@"Warranty").HasColumnType("varchar").IsOptional().IsUnicode(false).HasMaxLength(10);
             Property(x => x.ExtraWarranty).HasColumnName(@"extra_Warranty").HasColumnType("varchar").IsOptional().IsUnicode(false).HasMaxLength(25);

@@ -27,6 +27,7 @@ namespace DataAccess
         // TODO: Add Repositories
         public IMenuTopRepository MenuTopRepository { get; private set; }
         public ISearchRepository SearchRepository { get; private set; }
+        public IItemDescriptionRepository ItemDescriptionRepository { get; private set; }
 
         public UnitOfWork(IOnlinePasalContext context)
         {
@@ -39,6 +40,7 @@ namespace DataAccess
             // TODO: Add Repositories
             MenuTopRepository = new MenuTopRepository(_context);
             SearchRepository = new SearchRepository(_context);
+            ItemDescriptionRepository = new ItemDescriptionRepository(_context);
         }
         public List<ValidationResult> GetValidationErrors()
         {

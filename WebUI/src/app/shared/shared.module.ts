@@ -4,23 +4,29 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { OverlayComponent } from './overlay/overlay.component';
 import { CarouselComponent } from './carousel/carousel.component';
 import { DropdownComponent } from './dropdown/dropdown.component';
+import { HomeService } from 'app/shared/services/home.service';
+import { OrderByPipe } from 'app/shared/pipes/order-by.pipe';
+import { FilteringSearch } from 'app/shared/ResourceModels/FilteringSearch';
+import { SearchService } from 'app/shared/services/search.service';
 
 // import { HomeComponent } from 'app/shared/pages/home/home.component';
 
 @NgModule({
   imports: [CommonModule, ReactiveFormsModule],
   declarations: [
-    // HomeComponent
+    OrderByPipe,
     OverlayComponent,
     CarouselComponent,
     DropdownComponent
   ],
-  providers: [OverlayComponent, CarouselComponent],
-  exports: [
+  providers: [
+    SearchService,
+    FilteringSearch,
     OverlayComponent,
     CarouselComponent,
-    DropdownComponent
-    // HomeComponent
-  ]
+    HomeService,
+    OrderByPipe
+  ],
+  exports: [OrderByPipe, OverlayComponent, CarouselComponent, DropdownComponent]
 })
 export class SharedModule {}

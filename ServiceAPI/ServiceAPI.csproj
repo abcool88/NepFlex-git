@@ -144,6 +144,7 @@
     <Compile Include="App_Start\UnityMvcActivator.cs" />
     <Compile Include="App_Start\UnityWebApiActivator.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\ItemDescriptionController.cs" />
     <Compile Include="Controllers\MenuTopController.cs" />
     <Compile Include="Controllers\searchController.cs" />
     <Compile Include="Global.asax.cs">
