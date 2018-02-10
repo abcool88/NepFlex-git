@@ -1,11 +1,11 @@
 <form [formGroup]="form" class="form">
-  <input class="search-input" type="text"
-  formControlName="searchedText"
-  (change)="searchValueChanged($event)"
-  placeholder="search me pls"
-  >
+  <input id="searchBoxLg" data-test-id="searchBoxLg" alt="search box" class="search-input-large" type="text"
+  formControlName="searchedText" (change)="searchValueChanged($event)" placeholder="search me pls"
+  />
 </form>
-<app-search-results-overlay *ngIf="openSearchedResultsOverlay" [searchText]="inputText"></app-search-results-overlay>
+<app-search-results-overlay
+*ngIf="openSearchedResultsOverlay"
+[searchText]="inputText"
+(turnOverlayOn)="turnSearchOverlayOn()"
+></app-search-results-overlay>
 
-<!-- (focusin)="openSearchedResultsOverlay=true;"
-(focusout)="openSearchedResultsOverlay=false;" -->

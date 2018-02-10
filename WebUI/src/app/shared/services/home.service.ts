@@ -24,9 +24,10 @@ export class HomeService {
   }
 
   getSearchResponse(val: string): Observable<SearchResponse[]> {
-    return this.http
+    const req = this.http
       .get(`${this.apiUrl_getSearchResponse}/` + val)
       .map(this.extractSearchResponse);
+      return req;
   }
   private extractSearchResponse(res: Response): SearchResponse[] {
     const body = res.json();

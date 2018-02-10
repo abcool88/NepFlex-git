@@ -7,17 +7,32 @@
   @include display-child-flex(1,1,auto,auto);
 }
 .custom-filter {
-  border: 1px solid black;
-  padding: 0.5em;
-  margin: 0 0.5em 0 0.5em;
+  border: 1px solid #f3f3f3;
+  margin: 0 2em 0 0.5em;
+  height: 2.5em;
+  background: #e4e4e4;
 }
 .close-button {
   @include display-child-flex(0,1,auto,auto);
-  background-image: Url($close-round-button);
-  width: 2em;
-  height: 2em;
-  background: burlywood;
+  background-image: url($close-round-button);
+  width: 6em;
+  height: 6em;
+  content: '';
+  display: block;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  bottom: 0;
+  right: 0;
+  position: fixed;
+  margin: 0 2em 2em 0;
 }
 .group-by {
-  @include display-child-flex(0,1,auto,auto);
+  @include display-child-flex(0,1,auto,center);
+  height: 82%;
+  margin-right: 2em;
+  & select {
+    outline: none;
+    border: none;
+    height: 100%;
+  }
 }

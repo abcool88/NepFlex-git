@@ -14,6 +14,7 @@ export class FilterBoxComponent implements OnInit, ControlValueAccessor {
   @Input() itemDescriptions: ItemDescription[];
   @Input() _selectedValue: string;
   @Output() filteredBy: EventEmitter<any> = new EventEmitter();
+  @Output() closeFilterBar: EventEmitter<boolean> = new EventEmitter();
   orderListBy: string[] = ['Recently Added', 'Old Stuffs'];
 
   constructor(
@@ -37,6 +38,9 @@ export class FilterBoxComponent implements OnInit, ControlValueAccessor {
       this.itemDescriptions = x;
       console.log('this.itemDescriptions: ', this.itemDescriptions);
     });
+  }
+  closeFilterBox() {
+    this.closeFilterBar.emit(true);
   }
 
   changedFilterBy(event: { target; value: string }, field: string) {

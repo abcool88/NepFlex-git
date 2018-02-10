@@ -4,7 +4,17 @@
   position: relative;
   z-index: 3;
 }
-.search-input{
+.search-input-small{
+  width: 50%;
+  border: none;
+  outline: none;
+  color: black;
+  padding: 0.2em 0.2em 0.2em 2.2em;
+  border-radius: 0.5em;
+  height: 2em;
+  margin-top: 0.5em;
+}
+.search-input-large{
   width: 100%;
   border: none;
   outline: none;

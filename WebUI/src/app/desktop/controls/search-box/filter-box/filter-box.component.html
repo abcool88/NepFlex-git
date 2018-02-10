@@ -7,23 +7,23 @@
       </select>
     </div>
     <div class="group-by">
-      <label data-test-id="lblCategory">Order By :</label>
-      <select id="selectFilterByOrderBy" data-test-id='filterByOrderBy' (change)="changedFilterBy($event,'OrderBy')">
-        <option *ngFor="let items of orderListBy; let i=index">{{items}}</option>
-      </select>
-    </div>
-    <div class="group-by">
-      <label data-test-id="lblCategory">Model :</label>
-      <select id="selectFilterBySubCategory" data-test-id='filterByModel' (change)="changedFilterBy($event,'modal')">
-        <option *ngFor="let item of itemDescriptions; let i=index">{{item.warranty}}</option>
-      </select>
-    </div>
-    <div class="group-by">
       <label data-test-id="lblCategory">Condition :</label>
       <select id="selectFilterBySubCategory" data-test-id='filterByCondition' (change)="changedFilterBy($event,'condition')">
         <option *ngFor="let item of itemDescriptions; let i=index">{{item.condition}}</option>
       </select>
     </div>
+    <div class="group-by">
+      <label data-test-id="lblCategory">Warranty :</label>
+      <select id="selectFilterBySubCategory" data-test-id='filterByModel' (change)="changedFilterBy($event,'modal')">
+        <option *ngFor="let item of itemDescriptions; let i=index">{{item.warranty}}</option>
+      </select>
+    </div>
+    <div class="group-by">
+      <label data-test-id="lblCategory">Order By :</label>
+      <select id="selectFilterByOrderBy" data-test-id='filterByOrderBy' (change)="changedFilterBy($event,'OrderBy')">
+        <option *ngFor="let items of orderListBy; let i=index">{{items}}</option>
+      </select>
+    </div>
   </div>
-  <!-- <div class="close-button"></div> -->
+  <div class="close-button" (click)="closeFilterBox()" alt="close" title="Close Search"></div>
 </div>

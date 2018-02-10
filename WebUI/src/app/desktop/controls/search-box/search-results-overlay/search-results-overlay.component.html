@@ -1,5 +1,5 @@
 <div class="search-overlay-body">
-  <app-filter-box (filteredBy)="filterBy()"></app-filter-box>
+  <app-filter-box (filteredBy)="filterBy()" (closeFilterBar)="closeOverlay($event)"></app-filter-box>
   <div class="search-overlay-container">
     <div *ngFor="let item of searchResults | orderBy:'dateAdded';let i=index;">
       <div class="layoutbox">

@@ -1,45 +1,79 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, SimpleChanges, Output, EventEmitter } from '@angular/core';
 import { SearchResponse } from 'app/shared/ResourceModels/SearchResponse';
 import { HomeService } from 'app/shared/services/home.service';
 import { Observable } from 'rxjs/Observable';
 import { OrderByPipe } from 'app/shared/pipes/order-by.pipe';
 import { FilterByPipe } from 'app/shared/pipes/filter-by.pipe';
 import { FilteringSearch } from 'app/shared/ResourceModels/FilteringSearch';
+import {
+  AfterViewInit,
+  OnChanges
+} from '@angular/core/src/metadata/lifecycle_hooks';
 
 @Component({
   selector: 'app-search-results-overlay',
   templateUrl: './search-results-overlay.component.html',
   styleUrls: ['./search-results-overlay.component.scss']
 })
-export class SearchResultsOverlayComponent implements OnInit {
+export class SearchResultsOverlayComponent
+  implements OnInit, AfterViewInit, OnChanges {
   @Input() searchText: string;
-  searchResponse: SearchResponse[];
+  @Output() turnOverlayOn: EventEmitter<boolean> = new EventEmitter();
   searchResults: SearchResponse[];
+  searchResponse: SearchResponse[];
 
-  constructor(private searchService: HomeService, private filtering: FilteringSearch) {}
-
-  ngOnInit() {
+  constructor(
+    private searchService: HomeService,
+    private filtering: FilteringSearch
+  ) {}
+  ngAfterViewInit(): void {
     this.searching();
+  }
+  ngOnInit() {}
+
+  ngOnChanges(changes: SimpleChanges) {
+     this.searching();
+  }
+  closeOverlay(event: Event) {
+    this.turnOverlayOn.emit(false);
   }
 
   filterBy() {
     const pipe = new FilterByPipe();
     this.searchResults = this.searchResponse; // I have to always pretend fresh copy
     const field: string = this.filtering.field.toLowerCase();
-    const val: string = this.filtering.val;
+    let val: string = this.filtering.val;
     switch (field) {
       case 'topcategory':
-      this.searchResults = pipe.transform(this.searchResults, 'topCategory', val);
-      break;
-      case 'subcategory':
-      this.searchResults = pipe.transform(this.searchResults, 'subcategory', val);
-      break;
+        this.searchResults = pipe.transform(
+          this.searchResults,
+          'topCategory',
+          val
+        );
+        break;
+      case 'orderby':
+        const pipe2 = new OrderByPipe();
+        if (val === 'recently added') {
+          val = 'dateAdded';
+          this.searchResults = pipe2.transform(this.searchResults, val, true);
+        } else {
+          this.searchResults = pipe2.transform(this.searchResults, val, false);
+        }
+        break;
       case 'condition':
-      this.searchResults = pipe.transform(this.searchResults, 'condition', val);
-      break;
+        this.searchResults = pipe.transform(
+          this.searchResults,
+          'condition',
+          val
+        );
+        break;
       case 'warranty':
-      this.searchResults = pipe.transform(this.searchResults, 'warranty', val);
-      break;
+        this.searchResults = pipe.transform(
+          this.searchResults,
+          'warranty',
+          val
+        );
+        break;
     }
   }
 
@@ -49,5 +83,5 @@ export class SearchResultsOverlayComponent implements OnInit {
       this.searchResponse = this.searchResults;
       console.log('this.searchResults: ', this.searchResults);
     });
-  }
+   }
 }
