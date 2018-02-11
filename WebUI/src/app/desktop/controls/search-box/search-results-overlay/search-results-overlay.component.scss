@@ -1,18 +1,31 @@
 @import '../../../../../Style/styles.scss';
+
 .search-overlay-body {
-  background: #dedede;
+  @include display-parent-flex(column,nowrap,flex-start,center,flex-start);
+  background: #ffffff;
   color: #0a0a0a;
   z-index: 1;
-  width: 100%;
+  width: 117em;
   border-radius: 5px;
-  height: 46em;
-  top: 50px;
+  height: 51em;
+  top: 66px;
+  -webkit-box-shadow: 0px 0px 8px 1px #a7a7a7;
   box-shadow: 0px 0px 8px 1px #a7a7a7;
-  position: fixed;
-  overflow: scroll;
+  position: absolute;
+  overflow: auto;
   padding: 1em;
+  font-size: 11px;
+  font-family: sans-serif;
 }
-
+.filter-bar{
+  @include display-child-flex(0,1,auto,auto);
+}
+.search-overlay-container{
+  @include display-child-flex(0,1,auto,stretch);
+}
+.all-results{
+  @include display-child-flex(0,1,auto,auto);
+}
 //layout box
 .layoutbox {
   margin: 10px;

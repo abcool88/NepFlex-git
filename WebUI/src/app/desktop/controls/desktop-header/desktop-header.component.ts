@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -7,6 +7,8 @@ import { Router } from '@angular/router';
   styleUrls: ['./desktop-header.component.scss']
 })
 export class DesktopHeaderComponent implements OnInit {
+  @Input() isThisComingFromHomePage: boolean = false;
+  @Input() inputText: string;
   title: string = 'NepaliCraig';
   headersNavigation: [
     {
@@ -23,14 +25,6 @@ export class DesktopHeaderComponent implements OnInit {
     this.headersNavigation = [
       {
         headerId: 1,
-        header: 'home',
-        headerRoute: 'home',
-        canRoute: true,
-        HasDropDown: false,
-        DropDownList: [{ label: '' }]
-      },
-      {
-        headerId: 2,
         header: 'About Us',
         headerRoute: 'home',
         canRoute: true,
@@ -38,15 +32,7 @@ export class DesktopHeaderComponent implements OnInit {
         DropDownList: [{ label: '' }]
       },
       {
-        headerId: 3,
-        header: 'Contact Us',
-        headerRoute: 'home',
-        canRoute: true,
-        HasDropDown: false,
-        DropDownList: [{ label: '' }]
-      },
-      {
-        headerId: 4,
+        headerId: 2,
         header: 'Report Item',
         headerRoute: 'home',
         canRoute: true,
@@ -54,23 +40,7 @@ export class DesktopHeaderComponent implements OnInit {
         DropDownList: [{ label: '' }]
       },
       {
-        headerId: 5,
-        header: 'Terms Of Use',
-        headerRoute: 'Terms Of Use',
-        canRoute: true,
-        HasDropDown: false,
-        DropDownList: [{ label: '' }]
-      },
-      {
-        headerId: 6,
-        header: 'Notification',
-        headerRoute: 'Notification',
-        canRoute: true,
-        HasDropDown: true,
-        DropDownList: [{ label: 'you have 0 notifications' }]
-      },
-      {
-        headerId: 7,
+        headerId: 3,
         header: 'NC Latest',
         headerRoute: 'home',
         canRoute: false,
@@ -78,12 +48,20 @@ export class DesktopHeaderComponent implements OnInit {
         DropDownList: [{ label: 'FAQ' }, { label: 'Latest Release' }]
       },
       {
-        headerId: 8,
+        headerId: 4,
         header: 'My Account',
         headerRoute: 'account',
         canRoute: true,
         HasDropDown: true,
         DropDownList: [{ label: 'Post Items' }, { label: 'LogIn' }]
+      },
+      {
+        headerId: 5,
+        header: '',
+        headerRoute: 'Notification',
+        canRoute: true,
+        HasDropDown: true,
+        DropDownList: [{ label: 'you have 0 notifications' }]
       }
     ];
   }

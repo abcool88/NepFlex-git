@@ -8,6 +8,8 @@ import { DesktopFooterComponent } from 'app/desktop/controls/desktop-footer/desk
 import { SearchBoxComponent } from './search-box/search-box.component';
 import { SearchResultsOverlayComponent } from './search-box/search-results-overlay/search-results-overlay.component';
 import { FilterBoxComponent } from './search-box/filter-box/filter-box.component';
+import { HomeSearchOverlayComponent } from './home-search-overlay/home-search-overlay.component';
+import { InfoBoxComponent } from './info-box/info-box.component';
 
 @NgModule({
     imports: [CommonModule, ReactiveFormsModule, SharedModule],
@@ -16,7 +18,9 @@ import { FilterBoxComponent } from './search-box/filter-box/filter-box.component
         DesktopFooterComponent,
         SearchBoxComponent,
         SearchResultsOverlayComponent,
-        FilterBoxComponent
+        FilterBoxComponent,
+        HomeSearchOverlayComponent,
+        InfoBoxComponent
 
     ],
     exports: [

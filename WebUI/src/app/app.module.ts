@@ -28,7 +28,6 @@ import { CoreModule } from 'app/core/core.module';
     DesktopModule,
     SharedModule,
     AppRoutingModule,
-    RouterModule
   ],
   providers: [],
   bootstrap: [AppComponent]

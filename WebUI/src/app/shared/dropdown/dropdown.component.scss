@@ -1,9 +1,9 @@
 .custom-dropdown {
   list-style: none;
 }
-.list-group-item{
+.list-group-item {
   color: black;
-  border:none;
+  border: none;
 }
 
 .list-group-item:hover {
@@ -15,10 +15,12 @@
   border: 1px solid #ddd;
 }
 
-.dropdown-menu{
+.dropdown-menu {
   font-size: 10px;
   min-width: 114px;
 }
 .dropdown:hover .dropdown-menu {
   display: block;
+  top: 3.4em;
+  left: -10px;
 }

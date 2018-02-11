@@ -1,27 +1,87 @@
 @import "../../styles-desktop/styles.scss";
 @import "../../../shared/styles-shared/styles.scss";
 
+.non-home-search-box{
+  -webkit-box-flex: 1;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif !important;
+    font-size: 19px !important;
+    line-height: 24px !important;
+    padding-top: 0px !important;
+    padding-bottom: 0px !important;
+    color: #484848 !important;
+    background-color: #ffffff !important;
+    border-radius: 4px !important;
+    border: 1px solid #DBDBDB !important;
+    padding: 0px !important;
+    display: table !important;
+    table-layout: fixed !important;
+    height: 42px !important;
+    width: 100% !important;
+    position: relative !important;
+    -webkit-box-shadow: 0 5px 30px rgba(156, 160, 171, 0.25) !important;
+    box-shadow: 0 5px 30px rgba(156, 160, 171, 0.25) !important;
+}
 .header-body {
   @include displayFlex(nowrap, row, flex-start, stretch, stretch);
-  background: #5f0000;
-  color: white;
+  background: #ffffff;
+  color: #8a8888;
   padding: 1em;
   position: fixed;
   width: 100%;
   z-index: 2;
+  height: 3em;
 }
 .header-container{
   @include displayFlex(nowrap, row, flex-start, stretch, stretch);
 }
-.logo {
-  @include displayFlexChild(0, 0, 15em, 0, auto);
+.header-left-section{
+  @include displayFlexChild(0, 1, auto, 0, auto);
   font-family: cursive;
-  // font-size: 5em;
   font-weight: bolder;
+  margin-right: 1em;
+}
+.header-middle-section{
+  @include displayFlexChild(1, 1, auto, 0, auto);
+}
+
+.header-right-section{
+  @include displayFlex(nowrap, row, flex-start, stretch, stretch);
+  @include displayFlexChild(0, 1, auto, 0, auto);
+}
+.logo {
+  // @include displayFlexChild(0, 0, 15em, 0, auto);
+  // font-family: cursive;
+  // font-weight: bolder;
+}
+.notification-glyphicon{
+  fill: #bcb5b9;
+  width: 2em;
+  height: 2em;
 }
 .list-container{
-  @include displayFlexChild(0, 0, auto, 0, auto);
   margin-right: 1em;
+  -webkit-appearance: none !important;
+  background: transparent !important;
+  border: none !important;
+  color: #656565 !important;
+  display: inline-block !important;
+  text-decoration: none !important;
+  margin: 0px !important;
+  position: relative !important;
+  padding: 0 8px !important;
+  white-space: nowrap !important;
+  height: 36px !important;
+  line-height: 25px !important;
+}
+.list-container:hover{
+  color:#2196F3 !important;
+  vertical-align: middle !important;
+  -moz-box-sizing: border-box !important;
+  box-sizing: border-box !important;
+  border-bottom: 2px solid transparent !important;
+  border-bottom-color: #767676 !important;
 }
 
 .social {

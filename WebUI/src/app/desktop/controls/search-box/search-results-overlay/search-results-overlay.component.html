@@ -1,6 +1,7 @@
 <div class="search-overlay-body">
-  <app-filter-box (filteredBy)="filterBy()" (closeFilterBar)="closeOverlay($event)"></app-filter-box>
+  <app-filter-box class="filter-bar" (filteredBy)="filterBy()" (closeFilterBar)="closeOverlay($event)"></app-filter-box>
   <div class="search-overlay-container">
+      <div class="all-results">Total Results({{TotalCount}})</div>
     <div *ngFor="let item of searchResults | orderBy:'dateAdded';let i=index;">
       <div class="layoutbox">
         <Label ID="Lblprice" Class="LabelPrice">Rs. {{item.price}}</Label>
@@ -49,3 +50,4 @@
     </div>
   </div>
 </div>
+

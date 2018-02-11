@@ -39,9 +39,6 @@ export class FilterBoxComponent implements OnInit, ControlValueAccessor {
       console.log('this.itemDescriptions: ', this.itemDescriptions);
     });
   }
-  closeFilterBox() {
-    this.closeFilterBar.emit(true);
-  }
 
   changedFilterBy(event: { target; value: string }, field: string) {
     const val = event.target.value;

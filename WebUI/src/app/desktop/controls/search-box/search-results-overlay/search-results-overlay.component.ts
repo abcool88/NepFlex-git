@@ -1,4 +1,11 @@
-import { Component, OnInit, Input, SimpleChanges, Output, EventEmitter } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  Input,
+  SimpleChanges,
+  Output,
+  EventEmitter
+} from '@angular/core';
 import { SearchResponse } from 'app/shared/ResourceModels/SearchResponse';
 import { HomeService } from 'app/shared/services/home.service';
 import { Observable } from 'rxjs/Observable';
@@ -19,8 +26,9 @@ export class SearchResultsOverlayComponent
   implements OnInit, AfterViewInit, OnChanges {
   @Input() searchText: string;
   @Output() turnOverlayOn: EventEmitter<boolean> = new EventEmitter();
-  searchResults: SearchResponse[];
-  searchResponse: SearchResponse[];
+  searchResults: SearchResponse[] = new Array();
+  searchResponse: SearchResponse[] = new Array();
+  TotalCount: number;
 
   constructor(
     private searchService: HomeService,
@@ -32,7 +40,7 @@ export class SearchResultsOverlayComponent
   ngOnInit() {}
 
   ngOnChanges(changes: SimpleChanges) {
-     this.searching();
+    this.searching();
   }
   closeOverlay(event: Event) {
     this.turnOverlayOn.emit(false);
@@ -79,9 +87,10 @@ export class SearchResultsOverlayComponent
 
   searching() {
     this.searchService.getSearchResponse(this.searchText).subscribe(x => {
+      this.TotalCount = x.length;
+      this.searchResponse = x;
       this.searchResults = x;
-      this.searchResponse = this.searchResults;
-      console.log('this.searchResults: ', this.searchResults);
+      console.log('this.searchResponse: ', this.searchResponse);
     });
-   }
+  }
 }

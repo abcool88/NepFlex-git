@@ -1,26 +1,45 @@
-.form{
-  width: 40em;
+@import '../../../../Style/styles.scss';
+.form {
+  @include display-parent-flex(row,nowrap,flex-start,flex-start,flex-start);
+  width: 100%;
   float: right;
   position: relative;
   z-index: 3;
+  padding: 0.3em 0.5em 0.3em 2.2em;
 }
-.search-input-small{
+.close-button {
+  @include display-child-flex(0,1,auto,auto);
+  background-image: url($close-round-button);
+  width: 2em;
+  height: 2em;
+  content: '';
+  display: block;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  right: 0;
+}
+.custom-glyphicon{
+  @include display-child-flex(0,1,auto,center);
+  color: #7fc3ff;
+}
+.search-input-small {
   width: 50%;
   border: none;
   outline: none;
   color: black;
-  padding: 0.2em 0.2em 0.2em 2.2em;
+  // padding: 0.2em 0.2em 0.2em 2.2em;
   border-radius: 0.5em;
   height: 2em;
   margin-top: 0.5em;
 }
-.search-input-large{
+.search-input-large {
+  @include display-child-flex(1,1,auto,auto);
   width: 100%;
   border: none;
   outline: none;
   color: black;
-  padding: 0.2em 0.2em 0.2em 2.2em;
+  padding: 0.1em 0.2em 0.2em 0.8em;
   border-radius: 0.5em;
   height: 2em;
-  margin-top: 0.5em;
+ // margin-top: 0.5em;
 }
