@@ -34,7 +34,7 @@ export class DesktopHeaderComponent implements OnInit {
       {
         headerId: 2,
         header: 'Report Item',
-        headerRoute: 'home',
+        headerRoute: 'report',
         canRoute: true,
         HasDropDown: false,
         DropDownList: [{ id: 2, label: '', url: '' }]

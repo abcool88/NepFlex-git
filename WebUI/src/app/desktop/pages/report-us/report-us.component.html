@@ -1,0 +1,47 @@
+<div class="global-desktop-body">
+  <div class="global-desktop-header">
+    <app-desktop-header></app-desktop-header>
+  </div>
+  <form [formGroup]="reportForm" class="global-desktop-container">
+    <div class="body-container">
+      <div class="imgaboutus"></div>
+      <div class="info-blocks">
+        <div class="left-section" id="reportLeftsection">
+          <div class="report-info" id="aboutUsInfo">
+            <div class="title-text">Report Section</div>
+            <div class="report-input-box" id="aboutUsInfo">
+              Your FullName:
+              <input type="text" formControlName="fullName"/>
+            </div>
+            <div class="report-input-box" id="aboutUsInfo">
+              Your Email:
+              <input type="email" formControlName="email"/>
+            </div>
+            <div class="report-input-box" id="aboutUsInfo">
+              URL:
+              <input type="url" formControlName="url"/>
+            </div>
+            <div class="report-input-box" id="aboutUsInfo">
+              Please provide Detail:
+              <textarea type="text" formControlName="details">
+              </textarea>
+            </div>
+          </div>
+        </div>
+        <div class="right-section" id="reportRightsection">
+          <div class="contact-us-info">
+            <div class="title-about-us">Contact Us</div>
+            <label>you need to login to contact..</label>
+          </div>
+          <div class="terms-of-service-info">
+            <div class="title-about-us">Terms and Condition</div>
+            <label [routerLink]="['../termsofuse']">See Terms and Condition</label>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+  <div class="global-desktop-footer">
+    <app-desktop-footer></app-desktop-footer>
+  </div>
+</div>

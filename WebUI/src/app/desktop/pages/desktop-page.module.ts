@@ -10,6 +10,7 @@ import { SearchComponent } from './search/search.component';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { TermsOfUseComponent } from './terms-of-use/terms-of-use.component';
 import { FaqComponent } from './faq/faq.component';
+import { ReportUsComponent } from './report-us/report-us.component';
 
 @NgModule({
     imports: [
@@ -25,7 +26,8 @@ import { FaqComponent } from './faq/faq.component';
         SearchComponent,
         AboutUsComponent,
         TermsOfUseComponent,
-        FaqComponent
+        FaqComponent,
+        ReportUsComponent
     ],
     exports: [HomeDesktopComponent]
 })

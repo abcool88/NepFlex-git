@@ -7,11 +7,11 @@
   padding: 8em;
 }
 .terms-of-use-info {
-  @include body-page-container(100% ,42px );
+  @include body-page-container(100% ,42px,#484848,#ffffff);
   @include display-child-flex(0,1,auto,auto);
 }
-.terms-of-service-info{
-  @include body-page-container(41% ,42px);
+.terms-of-service-info {
+  @include body-page-container(41% ,42px,#484848,#ffffff);
   @include display-child-flex(0,1,auto,auto);
 }
 
