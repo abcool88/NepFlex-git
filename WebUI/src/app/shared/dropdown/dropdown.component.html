@@ -2,7 +2,7 @@
   <div class="dropdown">
     <div [hidden]="!showDropdownLabel" class="dropdown-toggle" data-toggle="dropdown" style="text-shadow: none">{{dropdownLabel}}</div>
     <ul class="dropdown-menu">
-      <li class="list-group-item" *ngFor="let item of dropdownOptions;let i=index">{{item.label}}
+      <li class="list-group-item" *ngFor="let item of dropdownOptions;let i=index" (click)="routeDropdownTo(item.url)">{{item.label}}
     </ul>
   </div>
 </div>

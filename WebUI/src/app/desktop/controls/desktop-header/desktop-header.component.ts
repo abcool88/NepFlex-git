@@ -17,7 +17,7 @@ export class DesktopHeaderComponent implements OnInit {
       headerRoute: string;
       canRoute: boolean;
       HasDropDown: boolean;
-      DropDownList: [{ label: string }];
+      DropDownList: [{ id: number; label: string; url: string }];
     }
   ];
 
@@ -26,10 +26,10 @@ export class DesktopHeaderComponent implements OnInit {
       {
         headerId: 1,
         header: 'About Us',
-        headerRoute: 'home',
+        headerRoute: 'aboutus',
         canRoute: true,
         HasDropDown: false,
-        DropDownList: [{ label: '' }]
+        DropDownList: [{ id: 1, label: '', url: '' }]
       },
       {
         headerId: 2,
@@ -37,7 +37,7 @@ export class DesktopHeaderComponent implements OnInit {
         headerRoute: 'home',
         canRoute: true,
         HasDropDown: false,
-        DropDownList: [{ label: '' }]
+        DropDownList: [{ id: 2, label: '', url: '' }]
       },
       {
         headerId: 3,
@@ -45,7 +45,10 @@ export class DesktopHeaderComponent implements OnInit {
         headerRoute: 'home',
         canRoute: false,
         HasDropDown: true,
-        DropDownList: [{ label: 'FAQ' }, { label: 'Latest Release' }]
+        DropDownList: [
+          { id: 3, label: 'FAQ', url: 'faq' },
+          { id: 4, label: 'Latest Release', url: '' }
+        ]
       },
       {
         headerId: 4,
@@ -53,7 +56,10 @@ export class DesktopHeaderComponent implements OnInit {
         headerRoute: 'account',
         canRoute: true,
         HasDropDown: true,
-        DropDownList: [{ label: 'Post Items' }, { label: 'LogIn' }]
+        DropDownList: [
+          { id: 5, label: 'Post Items', url: '' },
+          { id: 6, label: 'LogIn', url: '' }
+        ]
       },
       {
         headerId: 5,
@@ -61,7 +67,7 @@ export class DesktopHeaderComponent implements OnInit {
         headerRoute: 'Notification',
         canRoute: true,
         HasDropDown: true,
-        DropDownList: [{ label: 'you have 0 notifications' }]
+        DropDownList: [{ id: 7, label: 'you have 0 notifications', url: '' }]
       }
     ];
   }

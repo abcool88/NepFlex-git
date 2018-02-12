@@ -39,6 +39,14 @@ export class HomeSearchOverlayComponent implements OnInit {
         canRoute: true,
         HasDropDown: false,
         DropDownList: [{ label: '' }]
+      },
+      {
+        buttonId: 3,
+        buttonLabel: 'Switch To Classic NC',
+        buttonRoute: `/search/m`,
+        canRoute: true,
+        HasDropDown: false,
+        DropDownList: [{ label: '' }]
       }
     ];
   }

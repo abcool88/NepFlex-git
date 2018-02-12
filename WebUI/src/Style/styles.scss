@@ -1,5 +1,17 @@
 @import './_variables.scss';
 @import './_mixins.scss';
+.global-desktop-body{
+  @include display-parent-flex(row,nowrap,flex-start,flex-start,flex-start);
+}
+.global-desktop-header{
+  @include display-child-flex(0,1,auto,auto);
+}
+.global-desktop-container{
+  @include display-child-flex(1,1,auto,auto);
+}
+.global-desktop-footer{
+  @include display-child-flex(0,1,auto,auto);
+}
 
 .custom-red-btn {
   color: #fff;

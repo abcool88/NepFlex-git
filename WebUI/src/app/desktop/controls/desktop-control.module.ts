@@ -12,21 +12,21 @@ import { HomeSearchOverlayComponent } from './home-search-overlay/home-search-ov
 import { InfoBoxComponent } from './info-box/info-box.component';
 
 @NgModule({
-    imports: [CommonModule, ReactiveFormsModule, SharedModule],
-    declarations: [
-        DesktopHeaderComponent,
-        DesktopFooterComponent,
-        SearchBoxComponent,
-        SearchResultsOverlayComponent,
-        FilterBoxComponent,
-        HomeSearchOverlayComponent,
-        InfoBoxComponent
-
-    ],
-    exports: [
-      SearchBoxComponent,
-        DesktopHeaderComponent,
-        DesktopFooterComponent
-    ]
+  imports: [CommonModule, ReactiveFormsModule, SharedModule],
+  declarations: [
+    DesktopHeaderComponent,
+    DesktopFooterComponent,
+    SearchBoxComponent,
+    SearchResultsOverlayComponent,
+    FilterBoxComponent,
+    HomeSearchOverlayComponent,
+    InfoBoxComponent
+  ],
+  exports: [
+    InfoBoxComponent,
+    SearchBoxComponent,
+    DesktopHeaderComponent,
+    DesktopFooterComponent
+  ]
 })
-export class DesktopControlModule { }
+export class DesktopControlModule {}

@@ -1,0 +1,31 @@
+@import '../../../../Style/styles.scss';
+
+.info-blocks {
+  @include display-parent-flex(row,nowrap,flex-start,flex-start,flex-start);
+}
+.body-container {
+  padding: 8em;
+}
+.faq-info {
+  @include body-page-container(100% ,42px );
+  @include display-child-flex(0,1,auto,auto);
+}
+.terms-of-service-info{
+  @include body-page-container(41% ,42px);
+  @include display-child-flex(0,1,auto,auto);
+}
+
+.imgaboutus {
+  background-image: url($nCImageAboutusPage);
+  width: 13em;
+  height: 8em;
+  content: '';
+  display: block;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  z-index: 1;
+  margin-left: 35em;
+}
+.title-text {
+  @include custom-font-style(35px,56px,-0.8px,1px,8px,#6f6f6f,normal);
+}

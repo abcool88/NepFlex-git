@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-dropdown',
@@ -10,9 +11,12 @@ export class DropdownComponent implements OnInit {
   @Input() dropdownLabel: string;
   @Input() showDropdownLabel: boolean = true;
   @Input() dropdownLabelRoute: string;
-  constructor() {}
+  constructor(private route: Router) {}
 
   ngOnInit() {
     console.log(this.dropdownOptions);
+  }
+  routeDropdownTo(val: string) {
+    this.route.navigate([val]);
   }
 }

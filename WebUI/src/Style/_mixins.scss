@@ -13,6 +13,46 @@
   align-self: $align-self;
 }
 
+@mixin custom-font-style($font-size,$line-height,$letter-spacing,$padding-topx,$padding-bottom,$color,$font-weight) {
+  font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto,
+    Helvetica Neue, sans-serif !important;
+  font-size: $font-size !important;
+  line-height: $line-height !important;
+  letter-spacing: $letter-spacing !important;
+  padding-top: $padding-topx !important;
+  padding-bottom: $padding-bottom !important;
+  color: $color !important;
+  font-weight: $font-weight !important;
+  line-height: calc(0.7vw + 48px) !important;
+}
+
+@mixin body-page-container($width,$height) {
+  -webkit-box-flex: 1;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto,
+    Helvetica Neue, sans-serif !important;
+  font-size: 15px !important;
+  line-height: 24px !important;
+  padding-top: 0px !important;
+  padding-bottom: 0px !important;
+  color: #484848 !important;
+  background-color: #ffffff !important;
+  border-radius: 4px !important;
+  border: 1px solid #dbdbdb !important;
+  padding: 33px !important;
+  display: table !important;
+  table-layout: fixed !important;
+  height: $height !important;
+  width: $width !important;
+  position: relative !important;
+  -webkit-box-shadow: 0 5px 30px rgba(156, 160, 171, 0.25) !important;
+  box-shadow: 0 5px 30px rgba(156, 160, 171, 0.25) !important;
+  margin: 0 4em 4em 0;
+}
+
+//below not needed
+
 @mixin display-flex {
   display: flex;
   flex: 1 1 auto;

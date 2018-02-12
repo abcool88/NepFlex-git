@@ -31,7 +31,8 @@
   position: fixed;
   width: 100%;
   z-index: 2;
-  height: 3em;
+  height: 6em;
+  border-bottom: 0.2px solid #f9f9f9;
 }
 .header-container{
   @include displayFlex(nowrap, row, flex-start, stretch, stretch);

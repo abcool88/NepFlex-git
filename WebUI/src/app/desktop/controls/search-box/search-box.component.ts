@@ -23,6 +23,7 @@ export class SearchBoxComponent implements OnInit {
   searchResponse: SearchResponse[];
   searchResults: SearchResponse[];
   turnHomePageSpecificOverlayOn: Boolean = false;
+  infoBoxTurnOn: boolean = false;
   infoPageLabel: string = 'please search something';
   constructor(
     private fb: FormBuilder,
@@ -34,9 +35,14 @@ export class SearchBoxComponent implements OnInit {
   }
 
   ngOnInit() {
+    const r = location.pathname;
+    if (r.includes('search')) {
+      this.infoBoxTurnOn = true;
+    }
     if (this.inputText) {
       this.form.get('searchedText').patchValue(this.inputText);
       this.openSearchedResultsOverlay = true;
+      this.turnCancelButtonOn = true;
     }
   }
   createForm() {
