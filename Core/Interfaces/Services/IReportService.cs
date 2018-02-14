@@ -9,6 +9,7 @@ namespace NepFlex.Core.Interfaces.Services
 {
     public interface IReportService
     {
-        List<ReportedData> getReportedData();
+        List<ReportedData> GetReportedData();
+       int SaveReportData(ReportedData a);
     }
 }

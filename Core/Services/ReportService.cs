@@ -16,9 +16,13 @@ namespace NepFlex.Core.Services
         {
             _unitOfWork = unitOfWork;
         }
-        public List<ReportedData> getReportedData()
+        public List<ReportedData> GetReportedData()
         {
-            return _unitOfWork.ReportRepository.getReportedData();
+            return _unitOfWork.ReportRepository.GetReportedData();
+        }
+        public int SaveReportData(ReportedData a)
+        {
+            return _unitOfWork.ReportRepository.SaveReportData(a);
         }
     }
 }

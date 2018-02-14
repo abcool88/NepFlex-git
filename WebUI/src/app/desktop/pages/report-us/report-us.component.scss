@@ -13,14 +13,18 @@
 .left-section {
   @include display-child-flex(0,1,auto,auto);
   @include display-parent-flex(column,nowrap,flex-start,flex-start,flex-start);
+  margin-right: 4em;
 }
 .right-section {
   @include display-child-flex(0,1,auto,auto);
   @include display-parent-flex(column,nowrap,flex-start,flex-start,flex-start);
+  max-height: 60em;
+  overflow: auto;
 }
 .contact-us-info {
-  @include body-page-container(41% ,42px,#484848,#ffffff);
+  @include body-page-container(98% ,42px,#484848,#ffffff);
   @include display-child-flex(0,1,auto,auto);
+  min-height: 33em;
 }
 .terms-of-service-info {
   @include body-page-container(41% ,42px,#484848,#ffffff);
@@ -47,15 +51,23 @@
   & input {
     width: 100%;
     border-radius: 6px;
-    border: 1px solid #e4e4e4;
+    // border: 1px solid #e4e4e4;
   }
   & textarea {
     min-width: 100%;
     max-width: 100%;
-    max-height: 150px;
+    max-height: 100px;
     min-height: 100px;
     border-radius: 6px;
-    border: 1px solid #e4e4e4;
+    // border: 1px solid #e4e4e4;
   }
 }
-
+.submitBtn {
+  @include submit-button;
+}
+.submitBtn:hover {
+  color: rgb(126, 18, 18);
+}
+border-red{
+  border: 1px solid #e4e4e4;
+}

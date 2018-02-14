@@ -90,7 +90,6 @@ export class SearchResultsOverlayComponent
       this.TotalCount = x.length;
       this.searchResponse = x;
       this.searchResults = x;
-      console.log('this.searchResponse: ', this.searchResponse);
     });
   }
 }

@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { OverlayComponent } from './overlay/overlay.component';
 import { CarouselComponent } from './carousel/carousel.component';
 import { DropdownComponent } from './dropdown/dropdown.component';
@@ -8,25 +8,42 @@ import { HomeService } from 'app/shared/services/home.service';
 import { OrderByPipe } from 'app/shared/pipes/order-by.pipe';
 import { FilteringSearch } from 'app/shared/ResourceModels/FilteringSearch';
 import { SearchService } from 'app/shared/services/search.service';
+import { ReportService } from 'app/shared/services/report.service';
+import { DefaultValuePipe } from 'app/shared/pipes/default-value.pipe';
+import { HttpModule } from '@angular/http';
+import { BrowserModule } from '@angular/platform-browser';
 
 // import { HomeComponent } from 'app/shared/pages/home/home.component';
 
 @NgModule({
-  imports: [CommonModule, ReactiveFormsModule],
+  imports: [
+    BrowserModule,
+    FormsModule,
+    HttpModule,
+    CommonModule,
+    ReactiveFormsModule
+  ],
   declarations: [
+    DefaultValuePipe,
     OrderByPipe,
     OverlayComponent,
     CarouselComponent,
     DropdownComponent
   ],
   providers: [
+    ReportService,
     SearchService,
     FilteringSearch,
     OverlayComponent,
     CarouselComponent,
-    HomeService,
-    OrderByPipe
+    HomeService
   ],
-  exports: [OrderByPipe, OverlayComponent, CarouselComponent, DropdownComponent]
+  exports: [
+    DefaultValuePipe,
+    OrderByPipe,
+    OverlayComponent,
+    CarouselComponent,
+    DropdownComponent
+  ]
 })
 export class SharedModule {}

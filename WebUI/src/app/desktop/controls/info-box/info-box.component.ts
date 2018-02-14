@@ -7,7 +7,9 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class InfoBoxComponent implements OnInit {
   @Input() infoText: string[];
-  constructor() {}
+  constructor() {
+   // console.log('this.infoText:', this.infoText);
+  }
 
   ngOnInit() {}
 }

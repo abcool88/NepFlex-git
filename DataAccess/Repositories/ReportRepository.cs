@@ -18,17 +18,28 @@ namespace NepFlex.DataAccess.Repositories
             _context = context;
         }
 
-        public List<ReportedData> getReportedData()
+        public List<ReportedData> GetReportedData()
         {
-            // string collection
-            //IList<ReportedData> stringList = new List<ReportedData>() { };
+            var db = _context.CraigInquiries;
+            var resultList = db.Select(a => new ReportedData
+            {
+                DateAdded = a.DateAdded,
+                Email = a.Email,
+                Detail = a.Detail,
+                Id = a.Id,
+                Name = a.Name,
+                Ui = a.Ui,
+                Url = a.Url,
+                UserName = a.UserName
+            }).ToList();
 
-            //var result = from s in _context.CraigInquiries
-            //             select s;
+            return resultList;
+        }
+        public int SaveReportData(ReportedData item)
+        {
+            var tt = _context.SpCraigInquiry(item.Name, item.Email, item.Url, item.Detail, item.UserName, "new");
 
-            //var resultList= result.ToList();
-
-            //return resultList;
+            return tt ;
         }
     }
 }

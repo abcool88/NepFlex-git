@@ -1,4 +1,5 @@
 ﻿using Core.Interfaces;
+using NepFlex.Core.Entities.ResourceModels;
 using NepFlex.Core.Interfaces.Services;
 using System;
 using System.Collections.Generic;
@@ -26,10 +27,24 @@ namespace Nepflex.ServiceAPI.Controllers
             Console.WriteLine("came here in GetMenuNav");
             try
             {
-                var results = _reportService.getReportedData();
+                var results = _reportService.GetReportedData();
                 return Ok(results);
             }
             catch (Exception ex)
+            {
+                return InternalServerError(ex);
+            }
+        }
+        [Route("")]
+        [HttpPost]
+        public IHttpActionResult SaveReport(ReportedData reportData)
+        {
+            try
+            {
+                var result = _reportService.SaveReportData(reportData);
+                return Ok(result);
+            }
+            catch(Exception ex)
             {
                 return InternalServerError(ex);
             }

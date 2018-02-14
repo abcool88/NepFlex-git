@@ -10,6 +10,7 @@ namespace NepFlex.Core.Interfaces.Repositories
 {
     public interface IReportRepository : IRepository<String, int>
     {
-        List<ReportedData> getReportedData();
+        List<ReportedData> GetReportedData();
+        int SaveReportData(ReportedData a);
     }
 }
