@@ -16,11 +16,16 @@ export class ReportUsComponent implements OnInit {
   reportedDataList: ReportGetData[] = new Array();
   infoPageLabel: string = 'No Report Found';
   showInfoPage: boolean = false;
+  turnSubmitButtonDisable: boolean = false;
 
-  constructor(private fb: FormBuilder, private reportService: ReportService, private route: Router) {
+  constructor(
+    private fb: FormBuilder,
+    private reportService: ReportService,
+    private route: Router
+  ) {
     this.createReportForm();
     this.getReportedData();
-  };
+  }
 
   ngOnInit() {}
   createReportForm() {
@@ -63,11 +68,14 @@ export class ReportUsComponent implements OnInit {
     return true;
   }
   saveReport() {
+    this.turnSubmitButtonDisable = true;
     if (!this.checkValidation()) {
+      this.turnSubmitButtonDisable = false;
       return;
     } else {
       const para = Object.assign(new ReportGetData(), this.reportForm.value);
       this.reportService.AddReports(para);
+      this.turnSubmitButtonDisable = false;
     }
   }
 }

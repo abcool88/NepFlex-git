@@ -27,7 +27,7 @@
               </textarea>
             </div>
             <div class="report-input-box" id="aboutUsInfo">
-              <div class="submitBtn" (click)="saveReport()">Submit</div>
+              <div [ngClass]="{'submitBtn':!turnSubmitButtonDisable,'disable-button':turnSubmitButtonDisable}" (click)="saveReport()">Submit</div>
             </div>
           </div>
         </div>
