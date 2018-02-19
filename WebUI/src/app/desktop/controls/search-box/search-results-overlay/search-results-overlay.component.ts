@@ -15,7 +15,7 @@ import { FilteringSearch } from 'app/shared/ResourceModels/FilteringSearch';
 import {
   AfterViewInit,
   OnChanges
-} from '@angular/core/src/metadata/lifecycle_hooks';
+} from '@angular/core';
 
 @Component({
   selector: 'app-search-results-overlay',

@@ -1,35 +1,29 @@
-import { Injectable } from '@angular/core';
-import { Http, Response } from '@angular/http';
-import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';
-
 import { SearchResponse } from 'app/shared/ResourceModels/SearchResponse';
 import { ItemDescription } from 'app/shared/ResourceModels/ItemDescription';
+import { HttpClient, HttpResponse } from '@angular/common/http';
+import { Observable } from 'rxjs/Observable';
+import { Injectable } from '@angular/core';
 
 @Injectable()
 export class SearchService {
   private apiUrl_getSearchResponse = 'https://localhost/ServiceAPI/api/search';
   private apiUrl_getItemDescription = 'https://localhost/ServiceAPI/api/ItemDescription';
 
-  constructor(private http: Http) {}
+  constructor(private httpClient: HttpClient) {}
 
   getItemDescription(): Observable<ItemDescription[]> {
-    return this.http.get(this.apiUrl_getItemDescription).map(this.extractItemDescription);
-  }
-
-  private extractItemDescription(res: Response): ItemDescription[] {
-    const body = res.json();
-    return <ItemDescription[]>body || <ItemDescription[]>[];
+    const a = this.httpClient.get<ItemDescription[]>(
+      `${this.apiUrl_getItemDescription}`
+    );
+    return a;
   }
 
   getSearchResponse(val: string): Observable<SearchResponse[]> {
-    return this.http
-      .get(`${this.apiUrl_getSearchResponse}/` + val)
-      .map(this.extractSearchResponse);
-  }
-  private extractSearchResponse(res: Response): SearchResponse[] {
-    const body = res.json();
-    return <SearchResponse[]>body || <SearchResponse[]>[];
+    const b = this.httpClient.get<SearchResponse[]>(
+      `${this.apiUrl_getSearchResponse}/` + val
+    );
+    return b;
   }
 }

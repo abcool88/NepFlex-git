@@ -11,6 +11,7 @@ import { MobileModule } from 'app/mobile/mobile.module';
 import { SharedModule } from 'app/shared/shared.module';
 import { AppRoutingModule } from 'app/app-routing.module';
 import { CoreModule } from 'app/core/core.module';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,7 @@ import { CoreModule } from 'app/core/core.module';
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule,
+    HttpClientModule,
     CoreModule,
     RouterModule,
     MobileModule,
