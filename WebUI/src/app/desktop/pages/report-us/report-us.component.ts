@@ -5,6 +5,7 @@ import { ReportGetData } from 'app/shared/ResourceModels/ReportGetData';
 import { window } from 'rxjs/operators/window';
 import { async } from '@angular/core/testing';
 import { Router } from '@angular/router';
+import { forEach } from '@angular/router/src/utils/collection';
 
 @Component({
   selector: 'app-report-us',
@@ -17,6 +18,8 @@ export class ReportUsComponent implements OnInit {
   infoPageLabel: string = 'No Report Found';
   showInfoPage: boolean = false;
   turnSubmitButtonDisable: boolean = false;
+  turnLargeLoader: boolean = false;
+  turnSmallLoader: boolean = false;
 
   constructor(
     private fb: FormBuilder,
@@ -24,6 +27,7 @@ export class ReportUsComponent implements OnInit {
     private route: Router
   ) {
     this.createReportForm();
+    this.turnSmallLoader = true;
     this.getReportedData();
   }
 
@@ -44,12 +48,13 @@ export class ReportUsComponent implements OnInit {
 
   getReportedData() {
     this.reportService.getReports().subscribe(a => {
-      this.reportedDataList = a;
-      // console.log('this.reportedDataList.length', this.reportedDataList.length);
+      this.reportedDataList = [];
+        this.reportedDataList = a;
       if (this.reportedDataList.length > 0) {
       } else {
         this.showInfoPage = true;
       }
+      this.turnSmallLoader = false;
     });
   }
   checkValidation(): boolean {
@@ -75,6 +80,8 @@ export class ReportUsComponent implements OnInit {
     } else {
       const para = Object.assign(new ReportGetData(), this.reportForm.value);
       this.reportService.AddReports(para);
+      this.turnSmallLoader = true;
+      this.getReportedData();
       this.turnSubmitButtonDisable = false;
     }
   }

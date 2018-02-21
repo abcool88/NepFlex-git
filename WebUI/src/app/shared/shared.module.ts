@@ -12,8 +12,7 @@ import { ReportService } from 'app/shared/services/report.service';
 import { DefaultValuePipe } from 'app/shared/pipes/default-value.pipe';
 import { HttpModule } from '@angular/http';
 import { BrowserModule } from '@angular/platform-browser';
-
-// import { HomeComponent } from 'app/shared/pages/home/home.component';
+import { SpinnerComponent } from 'app/shared/spinner/spinner.component';
 
 @NgModule({
   imports: [
@@ -24,6 +23,7 @@ import { BrowserModule } from '@angular/platform-browser';
     ReactiveFormsModule
   ],
   declarations: [
+    SpinnerComponent,
     DefaultValuePipe,
     OrderByPipe,
     OverlayComponent,
@@ -39,6 +39,7 @@ import { BrowserModule } from '@angular/platform-browser';
     HomeService
   ],
   exports: [
+    SpinnerComponent,
     DefaultValuePipe,
     OrderByPipe,
     OverlayComponent,

@@ -12,3 +12,41 @@ body {
 html {
   height: 100%;
 }
+.home-load-spinner {
+  margin: 5em 0 0 42em;
+  border: 16px solid #f3f3f3; /* Light grey */
+  border-top: 16px solid #697b87;
+  border-bottom: 16px solid #ff3b3b;
+  border-left: 16px solid #38b5bb;
+  border-right: 16px solid #ce7508;
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  animation: spin 2s linear infinite;
+}
+
+.loader-lg {
+  border: 16px solid #f3f3f3; /* Light grey */
+  border-top: 16px solid #697b87;
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  animation: spin 2s linear infinite;
+}
+.loader-sm {
+  width: 43px;
+  height: 42px;
+  border: 16px solid #f3f3f3; /* Light grey */
+  border-top: 16px solid #697b87;
+  border-radius: 50%;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

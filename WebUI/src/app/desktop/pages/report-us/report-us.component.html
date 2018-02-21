@@ -7,7 +7,7 @@
       <div class="imgaboutus"></div>
       <div class="info-blocks">
         <div class="left-section" id="reportLeftsection">
-          <div class="report-info" id="aboutUsInfo">
+          <div *ngIf="!turnSmallLoader" class="report-info" id="aboutUsInfo">
             <div class="title-text">Report Section</div>
             <div class="report-input-box" id="aboutUsInfo">
               Your FullName:
@@ -34,6 +34,7 @@
         <div class="right-section" id="reportRightsection">
           <div class="contact-us-info">
             <div class="title-text">Reported: </div>
+            <app-spinner [showSmallLoader]="turnSmallLoader"></app-spinner>
             <div *ngFor="let item of reportedDataList;let i=index;">
               <ul *ngIf="!showInfoPage">
                 <li>{{item.dateAdded | date}} Name:{{item.name | defaultValue:'N/A'}}

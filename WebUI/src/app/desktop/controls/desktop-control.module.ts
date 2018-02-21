@@ -23,6 +23,7 @@ import { InfoBoxComponent } from './info-box/info-box.component';
     InfoBoxComponent
   ],
   exports: [
+    SharedModule,
     InfoBoxComponent,
     SearchBoxComponent,
     DesktopHeaderComponent,
