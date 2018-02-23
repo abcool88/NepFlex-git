@@ -12,7 +12,8 @@ export class ReportService {
   constructor(private http: Http) {}
 
   getReports(): Observable<ReportGetData[]> {
-    return this.http.get(`${this.apiUrl_getReport}`).map(this.extractReports);
+    return this.http.get(`${this.apiUrl_getReport}`)
+    .map(this.extractReports);
   }
   private extractReports(res: Response): ReportGetData[] {
     const body = res.json();

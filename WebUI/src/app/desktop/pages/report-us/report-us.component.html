@@ -34,7 +34,8 @@
         <div class="right-section" id="reportRightsection">
           <div class="contact-us-info">
             <div class="title-text">Reported: </div>
-            <app-spinner [showSmallLoader]="turnSmallLoader"></app-spinner>
+            <!-- <app-spinner [showSmallLoader]="turnSmallLoader"></app-spinner> -->
+            <app-cloud-spinner [showCloudSpinner]="turnSmallLoader"></app-cloud-spinner>
             <div *ngFor="let item of reportedDataList;let i=index;">
               <ul *ngIf="!showInfoPage">
                 <li>{{item.dateAdded | date}} Name:{{item.name | defaultValue:'N/A'}}

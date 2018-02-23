@@ -13,6 +13,7 @@ import { DefaultValuePipe } from 'app/shared/pipes/default-value.pipe';
 import { HttpModule } from '@angular/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { SpinnerComponent } from 'app/shared/spinner/spinner.component';
+import { CloudSpinnerComponent } from './spinner/cloud-spinner/cloud-spinner.component';
 
 @NgModule({
   imports: [
@@ -28,7 +29,8 @@ import { SpinnerComponent } from 'app/shared/spinner/spinner.component';
     OrderByPipe,
     OverlayComponent,
     CarouselComponent,
-    DropdownComponent
+    DropdownComponent,
+    CloudSpinnerComponent
   ],
   providers: [
     ReportService,
@@ -40,6 +42,7 @@ import { SpinnerComponent } from 'app/shared/spinner/spinner.component';
   ],
   exports: [
     SpinnerComponent,
+    CloudSpinnerComponent,
     DefaultValuePipe,
     OrderByPipe,
     OverlayComponent,
