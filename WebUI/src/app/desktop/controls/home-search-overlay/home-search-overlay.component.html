@@ -1,7 +1,7 @@
 <div class="home-search-overlay-body">
   <div class="home-search-overlay-container">
-    <div class="home-overlay-button" *ngFor="let button of homeButtonCollections;let i=index;">
-      <div (click)="buttonRedirect(button.buttonRoute,button.canRoute)">{{button.buttonLabel}}</div>
+    <div  class="animBtn themeA" *ngFor="let button of homeButtonCollections;let i=index;">
+      <div  (click)="buttonRedirect(button.buttonRoute,button.canRoute)">{{button.buttonLabel}}</div>
     </div>
   </div>
   <div class="all-results"></div>
