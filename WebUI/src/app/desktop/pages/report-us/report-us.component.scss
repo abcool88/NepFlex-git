@@ -21,6 +21,7 @@
   max-height: 60em;
   overflow: auto;
 }
+
 .contact-us-info {
   @include body-page-container(98% ,42px,#484848,#ffffff);
   @include display-child-flex(0,1,auto,auto);
@@ -69,7 +70,7 @@
 .submitBtn {
   @include submit-button;
 }
-.disable-button{
+.disable-button {
   height: 2em;
   width: 6em;
   background: #f7f7f7;
@@ -84,6 +85,6 @@
 .submitBtn:hover {
   color: rgb(126, 18, 18);
 }
-border-red{
+border-red {
   border: 1px solid #e4e4e4;
 }

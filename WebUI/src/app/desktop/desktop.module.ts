@@ -8,18 +8,15 @@ import { HomeDesktopComponent } from 'app/desktop/pages/home-desktop/home-deskto
 import { DesktopControlModule } from 'app/desktop/controls/desktop-control.module';
 
 @NgModule({
-    imports: [
-        BrowserModule,
-        RouterModule,
-        SharedModule,
-        DesktopPageModule,
-        DesktopControlModule
-    ],
-    declarations: [
-    ],
-    exports: [HomeDesktopComponent],
-    providers: [
-    ]
-
+  imports: [
+    BrowserModule,
+    RouterModule,
+    SharedModule,
+    DesktopPageModule,
+    DesktopControlModule
+  ],
+  declarations: [],
+  exports: [HomeDesktopComponent],
+  providers: []
 })
-export class DesktopModule { }
+export class DesktopModule {}
