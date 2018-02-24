@@ -14,6 +14,7 @@ import { HttpModule } from '@angular/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { SpinnerComponent } from 'app/shared/spinner/spinner.component';
 import { CloudSpinnerComponent } from './spinner/cloud-spinner/cloud-spinner.component';
+import { ModalComponent } from './modal/modal.component';
 
 @NgModule({
   imports: [
@@ -30,7 +31,8 @@ import { CloudSpinnerComponent } from './spinner/cloud-spinner/cloud-spinner.com
     OverlayComponent,
     CarouselComponent,
     DropdownComponent,
-    CloudSpinnerComponent
+    CloudSpinnerComponent,
+    ModalComponent
   ],
   providers: [
     ReportService,
@@ -47,7 +49,8 @@ import { CloudSpinnerComponent } from './spinner/cloud-spinner/cloud-spinner.com
     OrderByPipe,
     OverlayComponent,
     CarouselComponent,
-    DropdownComponent
+    DropdownComponent,
+    ModalComponent
   ]
 })
 export class SharedModule {}

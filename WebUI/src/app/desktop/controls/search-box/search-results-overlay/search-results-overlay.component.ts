@@ -4,18 +4,16 @@ import {
   Input,
   SimpleChanges,
   Output,
-  EventEmitter
+  EventEmitter,
+  AfterViewInit,
+  OnChanges
 } from '@angular/core';
 import { SearchResponse } from 'app/shared/ResourceModels/SearchResponse';
-import { HomeService } from 'app/shared/services/home.service';
 import { Observable } from 'rxjs/Observable';
 import { OrderByPipe } from 'app/shared/pipes/order-by.pipe';
 import { FilterByPipe } from 'app/shared/pipes/filter-by.pipe';
 import { FilteringSearch } from 'app/shared/ResourceModels/FilteringSearch';
-import {
-  AfterViewInit,
-  OnChanges
-} from '@angular/core';
+import { SearchService } from '../../../../shared/services/search.service';
 
 @Component({
   selector: 'app-search-results-overlay',
@@ -31,7 +29,7 @@ export class SearchResultsOverlayComponent
   TotalCount: number;
 
   constructor(
-    private searchService: HomeService,
+    private searchService: SearchService,
     private filtering: FilteringSearch
   ) {}
   ngAfterViewInit(): void {
@@ -86,7 +84,8 @@ export class SearchResultsOverlayComponent
   }
 
   searching() {
-    this.searchService.getSearchResponse(this.searchText).subscribe(x => {
+    this.searchService
+    .getSearchResponse(this.searchText).subscribe(x => {
       this.TotalCount = x.length;
       this.searchResponse = x;
       this.searchResults = x;

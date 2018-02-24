@@ -22,8 +22,8 @@ export class DesktopHeaderComponent implements OnInit {
   ];
 
   constructor(private router: Router) {
-    this.headersNavigation = [
-      {
+    this.headersNavigation =[
+       {
         headerId: 1,
         header: 'About Us',
         headerRoute: 'aboutus',

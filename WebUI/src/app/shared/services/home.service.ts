@@ -14,23 +14,23 @@ export class HomeService {
 
   constructor(private http: Http) {}
 
-  getMenuNav(): Observable<MenuTopNav[]> {
-    return this.http.get(this.apiUrl_getMenuNav).map(this.extractMenuTopNav);
-  }
+  // getMenuNav(): Observable<MenuTopNav[]> {
+  //   return this.http.get(this.apiUrl_getMenuNav).map(this.extractMenuTopNav);
+  // }
 
-  private extractMenuTopNav(res: Response): MenuTopNav[] {
-    const body = res.json();
-    return <MenuTopNav[]>body || <MenuTopNav[]>[];
-  }
+  // private extractMenuTopNav(res: Response): MenuTopNav[] {
+  //   const body = res.json();
+  //   return <MenuTopNav[]>body || <MenuTopNav[]>[];
+  // }
 
-  getSearchResponse(val: string): Observable<SearchResponse[]> {
-    const req = this.http
-      .get(`${this.apiUrl_getSearchResponse}/` + val)
-      .map(this.extractSearchResponse);
-      return req;
-  }
-  private extractSearchResponse(res: Response): SearchResponse[] {
-    const body = res.json();
-    return <SearchResponse[]>body || <SearchResponse[]>[];
-  }
+  // getSearchResponse(val: string): Observable<SearchResponse[]> {
+  //   const req = this.http
+  //     .get(`${this.apiUrl_getSearchResponse}/` + val)
+  //     .map(this.extractSearchResponse);
+  //     return req;
+  // }
+  // private extractSearchResponse(res: Response): SearchResponse[] {
+  //   const body = res.json();
+  //   return <SearchResponse[]>body || <SearchResponse[]>[];
+  // }
 }

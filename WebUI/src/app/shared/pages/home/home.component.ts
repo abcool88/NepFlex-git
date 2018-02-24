@@ -43,7 +43,6 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    debugger;
     console.log('it comes to home component..');
   }
 
