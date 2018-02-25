@@ -24,7 +24,7 @@ namespace Nepflex.ServiceAPI.Controllers
         [HttpGet]
         public IHttpActionResult GetSearchResponseList(string searchText)
         {
-            Console.WriteLine("came here in GetMenuNav");
+            Console.WriteLine("came here in search");
             try
             {
                 var results = _searchService.GetSearchResponseList(searchText);

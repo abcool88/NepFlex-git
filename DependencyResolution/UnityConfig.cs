@@ -23,6 +23,7 @@ namespace DependencyResolution
             container.RegisterType<ISearchService, SearchService>();
             container.RegisterType<IItemDescriptionService, ItemDescriptionService>();
             container.RegisterType<IReportService, ReportService>();
+            container.RegisterType<IDetailService, DetailService>();
         }
     }
 }

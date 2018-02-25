@@ -57,6 +57,7 @@
       <DependentUpon>OnlinePasalModels.tt</DependentUpon>
     </Compile>
     <Compile Include="Entities\ResourceModels\ClothingBrands.cs" />
+    <Compile Include="Entities\ResourceModels\DetailResponse.cs" />
     <Compile Include="Entities\ResourceModels\ItemDescription.cs" />
     <Compile Include="Entities\ResourceModels\MenuClearence.cs" />
     <Compile Include="Entities\ResourceModels\MenuFashion.cs" />
@@ -65,16 +66,19 @@
     <Compile Include="Entities\ResourceModels\ReportedData.cs" />
     <Compile Include="Entities\ResourceModels\SearchResponse.cs" />
     <Compile Include="Interfaces\IUnitOfWork.cs" />
+    <Compile Include="Interfaces\Repositories\IDetailRepository.cs" />
     <Compile Include="Interfaces\Repositories\IItemDescriptionRepository.cs" />
     <Compile Include="Interfaces\Repositories\IMenuTopRepository.cs" />
     <Compile Include="Interfaces\Repositories\IReportRepository.cs" />
     <Compile Include="Interfaces\Repositories\IRepository.cs" />
     <Compile Include="Interfaces\Repositories\ISearchRepository.cs" />
+    <Compile Include="Interfaces\Services\IDetailService.cs" />
     <Compile Include="Interfaces\Services\IItemDescriptionService.cs" />
     <Compile Include="Interfaces\Services\IMenuTopService.cs" />
     <Compile Include="Interfaces\Services\IReportService.cs" />
     <Compile Include="Interfaces\Services\ISearchService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\DetailService.cs" />
     <Compile Include="Services\ItemDescriptionService.cs" />
     <Compile Include="Services\MenuTopService.cs" />
     <Compile Include="Services\ReportService.cs" />

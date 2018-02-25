@@ -29,6 +29,7 @@ namespace DataAccess
         public ISearchRepository SearchRepository { get; private set; }
         public IItemDescriptionRepository ItemDescriptionRepository { get; private set; }
         public IReportRepository ReportRepository { get; private set; }
+        public IDetailRepository DetailRepository { get; private set; }
 
         public UnitOfWork(IOnlinePasalContext context)
         {
@@ -43,6 +44,7 @@ namespace DataAccess
             SearchRepository = new SearchRepository(_context);
             ItemDescriptionRepository = new ItemDescriptionRepository(_context);
             ReportRepository = new ReportRepository(_context);
+            DetailRepository = new DetailRepository(_context);
         }
         public List<ValidationResult> GetValidationErrors()
         {

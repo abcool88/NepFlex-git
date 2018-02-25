@@ -329,4 +329,3 @@ E:\GIT_Nepflex\WebUI\bin\System.Web.WebPages.Razor.xml
 E:\GIT_Nepflex\WebUI\obj\Debug\WebUI.csproj.CoreCompileInputs.cache
 E:\GIT_Nepflex\WebUI\obj\Debug\NepFlex.WebUI.dll
 E:\GIT_Nepflex\WebUI\obj\Debug\NepFlex.WebUI.pdb
-E:\GIT_Nepflex\WebUI\obj\Debug\WebUI.csprojResolveAssemblyReference.cache

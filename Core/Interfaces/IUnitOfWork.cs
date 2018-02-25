@@ -14,6 +14,7 @@ namespace Core.Interfaces
         ISearchRepository SearchRepository { get; }
         IItemDescriptionRepository ItemDescriptionRepository { get; }
         IReportRepository ReportRepository { get; }
+        IDetailRepository DetailRepository { get; }
         bool Save();
     }
 }
