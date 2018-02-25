@@ -35,7 +35,7 @@ namespace Nepflex.ServiceAPI.Controllers
                 return InternalServerError(ex);
             }
         }
-        [Route("")]
+        [Route("post")]
         [HttpPost]
         public IHttpActionResult SaveReport(ReportedData reportData)
         {

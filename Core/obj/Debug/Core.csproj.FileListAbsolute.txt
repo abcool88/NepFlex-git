@@ -27,3 +27,4 @@ E:\GIT_Nepflex\Core\bin\Debug\EntityFramework.SqlServer.xml
 E:\GIT_Nepflex\Core\obj\Debug\Core.csproj.CoreCompileInputs.cache
 E:\GIT_Nepflex\Core\obj\Debug\NepFlex.Core.dll
 E:\GIT_Nepflex\Core\obj\Debug\NepFlex.Core.pdb
+E:\GIT_Nepflex\Core\obj\Debug\Core.csprojResolveAssemblyReference.cache

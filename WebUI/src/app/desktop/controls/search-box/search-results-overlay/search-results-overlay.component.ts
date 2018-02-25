@@ -27,11 +27,14 @@ export class SearchResultsOverlayComponent
   searchResults: SearchResponse[] = new Array();
   searchResponse: SearchResponse[] = new Array();
   TotalCount: number;
+  turnLargeLoader: boolean = false;
 
   constructor(
     private searchService: SearchService,
     private filtering: FilteringSearch
-  ) {}
+  ) {
+    this.turnLargeLoader = true;
+  }
   ngAfterViewInit(): void {
     this.searching();
   }
@@ -45,6 +48,7 @@ export class SearchResultsOverlayComponent
   }
 
   filterBy() {
+    this.turnLargeLoader = true;
     const pipe = new FilterByPipe();
     this.searchResults = this.searchResponse; // I have to always pretend fresh copy
     const field: string = this.filtering.field.toLowerCase();
@@ -81,14 +85,15 @@ export class SearchResultsOverlayComponent
         );
         break;
     }
+    this.turnLargeLoader = false;
   }
 
   searching() {
-    this.searchService
-    .getSearchResponse(this.searchText).subscribe(x => {
+    this.searchService.getSearchResponse(this.searchText).subscribe(x => {
       this.TotalCount = x.length;
       this.searchResponse = x;
       this.searchResults = x;
+      this.turnLargeLoader = false;
     });
   }
 }

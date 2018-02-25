@@ -1,9 +1,10 @@
 <div class="search-overlay-body">
   <app-filter-box class="filter-bar" (filteredBy)="filterBy()" (closeFilterBar)="closeOverlay($event)"></app-filter-box>
   <div class="search-overlay-container">
-      <div class="all-results">Total Results({{TotalCount}})</div>
-    <div *ngFor="let item of searchResults | orderBy:'dateAdded';let i=index;">
-      <div class="layoutbox">
+    <div class="all-results">Total Results({{TotalCount}})</div>
+    <app-spinner [showLargeLoader]="turnLargeLoader"></app-spinner>
+    <div *ngIf="!turnLargeLoader">
+      <div class="layoutbox" *ngFor="let item of searchResults | orderBy:'dateAdded';let i=index;">
         <Label ID="Lblprice" Class="LabelPrice">Rs. {{item.price}}</Label>
         <div class="socialbtnNC">
           <p class="facebook" style="width:33%;">
@@ -50,4 +51,3 @@
     </div>
   </div>
 </div>
-

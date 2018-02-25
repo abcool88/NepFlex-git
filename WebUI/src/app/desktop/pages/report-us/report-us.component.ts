@@ -40,16 +40,26 @@ export class ReportUsComponent implements OnInit {
       detail: ''
     });
   }
-  populateReportForm() {
-    if (!this.reportForm) {
-      return;
+  populateReportForm(reportData: ReportGetData): void {
+    if (this.reportForm) {
+      this.reportForm.reset();
     }
+    this.reportForm.setValue({
+      id: reportData.id,
+      name: reportData.name,
+      email: reportData.email,
+      url: reportData.url,
+      detail: reportData.detail,
+      dateAdded: reportData.dateAdded,
+      userName: reportData.userName,
+      ui: reportData.ui
+    });
   }
 
   getReportedData() {
     this.reportService.getReports().subscribe(a => {
       this.reportedDataList = [];
-        this.reportedDataList = a;
+      this.reportedDataList = a;
       if (this.reportedDataList.length > 0) {
       } else {
         this.showInfoPage = true;
@@ -78,11 +88,15 @@ export class ReportUsComponent implements OnInit {
       this.turnSubmitButtonDisable = false;
       return;
     } else {
-      const para = Object.assign(new ReportGetData(), this.reportForm.value);
-      this.reportService.AddReports(para);
-      this.turnSmallLoader = true;
-      this.getReportedData();
-      this.turnSubmitButtonDisable = false;
+      const para: ReportGetData = Object.assign(
+        new ReportGetData(),
+        this.reportForm.value
+      );
+      this.reportService.AddReports(para).subscribe(() => {
+        this.turnSmallLoader = true;
+        this.getReportedData();
+        this.turnSubmitButtonDisable = false;
+      });
     }
   }
 }
