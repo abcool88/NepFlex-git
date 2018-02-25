@@ -11,6 +11,8 @@ import { AboutUsComponent } from './about-us/about-us.component';
 import { TermsOfUseComponent } from './terms-of-use/terms-of-use.component';
 import { FaqComponent } from './faq/faq.component';
 import { ReportUsComponent } from './report-us/report-us.component';
+import { DetailComponent } from './detail/detail.component';
+import { ListComponent } from './list/list.component';
 
 @NgModule({
     imports: [
@@ -27,7 +29,9 @@ import { ReportUsComponent } from './report-us/report-us.component';
         AboutUsComponent,
         TermsOfUseComponent,
         FaqComponent,
-        ReportUsComponent
+        ReportUsComponent,
+        DetailComponent,
+        ListComponent
     ],
     exports: [HomeDesktopComponent]
 })
