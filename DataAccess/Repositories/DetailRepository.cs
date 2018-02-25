@@ -10,16 +10,16 @@ using System.Threading.Tasks;
 
 namespace NepFlex.DataAccess.Repositories
 {
-    public class DetailRepository : IDetailRepository
+    public class DetailRepository : Repository<DetailResponse, int>, IDetailRepository
     {
-        public IOnlinePasalContext _context;
-        public DetailRepository(IOnlinePasalContext context)
+        private readonly IOnlinePasalContext _context;
+        public DetailRepository(IOnlinePasalContext context) : base(context)
         {
             _context = context;
         }
-        public async Task<List<DetailResponse>> GetDetailOfIndividualItem(int id)
+        public List<DetailResponse> GetDetailOfIndividualItem(int id)
         {
-            var result = await _context.GetDataAsync(id, "Detail");
+            var result = _context.GetData(id, "Detail");
             var response = result.ResultSet1.Select(a => new DetailResponse()
             {
                 Title = a.Title,

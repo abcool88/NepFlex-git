@@ -11,14 +11,14 @@ namespace NepFlex.Core.Services
 {
     public class DetailService : IDetailService
     {
-        public IUnitOfWork _unitOfWork { get; set; }
+        private IUnitOfWork _unitOfWork { get; set; }
         public DetailService(IUnitOfWork unitOfWork)
         {
             _unitOfWork = unitOfWork;
         }
-        public async Task<List<DetailResponse>> GetDetailOfIndividualItem(int id)
+        public List<DetailResponse> GetDetailOfIndividualItem(int id)
         {
-            return await _unitOfWork.DetailRepository.GetDetailOfIndividualItem(id);
+            return _unitOfWork.DetailRepository.GetDetailOfIndividualItem(id);
         }
     }
 }

@@ -10,6 +10,7 @@ import { SearchResultsOverlayComponent } from './search-box/search-results-overl
 import { FilterBoxComponent } from './search-box/filter-box/filter-box.component';
 import { HomeSearchOverlayComponent } from './home-search-overlay/home-search-overlay.component';
 import { InfoBoxComponent } from './info-box/info-box.component';
+import { ItemContainerComponent } from './item-container/item-container.component';
 
 @NgModule({
   imports: [CommonModule, ReactiveFormsModule, SharedModule],
@@ -20,7 +21,8 @@ import { InfoBoxComponent } from './info-box/info-box.component';
     SearchResultsOverlayComponent,
     FilterBoxComponent,
     HomeSearchOverlayComponent,
-    InfoBoxComponent
+    InfoBoxComponent,
+    ItemContainerComponent
   ],
   exports: [
     SharedModule,

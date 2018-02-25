@@ -9,6 +9,6 @@ namespace NepFlex.Core.Interfaces.Services
 {
     public interface IDetailService
     {
-        Task<List<DetailResponse>> GetDetailOfIndividualItem(int id);
+       List<DetailResponse> GetDetailOfIndividualItem(int id);
     }
 }

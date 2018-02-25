@@ -8,8 +8,8 @@ using System.Threading.Tasks;
 
 namespace NepFlex.Core.Interfaces.Repositories
 {
-    public interface IDetailRepository
+    public interface IDetailRepository : IRepository<DetailResponse, int>
     {
-        Task<List<DetailResponse>> GetDetailOfIndividualItem(int id);
+        List<DetailResponse> GetDetailOfIndividualItem(int id);
     }
 }

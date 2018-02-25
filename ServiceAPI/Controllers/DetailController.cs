@@ -9,7 +9,8 @@ using System.Web.Http;
 
 namespace Nepflex.ServiceAPI.Controllers
 {
-    [RoutePrefix("api/detail")]
+    [RoutePrefix("api/itemDetail")]
+    //[Authorize]
     public class DetailController : ApiController
     {
         private IDetailService _detailService;

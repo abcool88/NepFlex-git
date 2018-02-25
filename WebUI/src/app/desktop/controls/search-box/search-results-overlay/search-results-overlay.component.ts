@@ -28,7 +28,7 @@ export class SearchResultsOverlayComponent
   searchResponse: SearchResponse[] = new Array();
   TotalCount: number;
   turnLargeLoader: boolean = false;
-
+c
   constructor(
     private searchService: SearchService,
     private filtering: FilteringSearch

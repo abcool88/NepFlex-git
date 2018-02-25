@@ -12,9 +12,7 @@ export class SearchComponent implements OnInit {
 
   ngOnInit() {
     const result = this.route.params.subscribe(params => {
-      this.searchingText = params['searchedText']; // (+) converts string 'id' to a number
-
-      // In a real app: dispatch action to load the details here.
+      this.searchingText = params['searchedText'];
     });
   }
 }

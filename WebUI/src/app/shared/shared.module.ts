@@ -15,6 +15,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { SpinnerComponent } from 'app/shared/spinner/spinner.component';
 import { CloudSpinnerComponent } from './spinner/cloud-spinner/cloud-spinner.component';
 import { ModalComponent } from './modal/modal.component';
+import { DetailService } from 'app/shared/services/detail.service';
 
 @NgModule({
   imports: [
@@ -36,7 +37,8 @@ import { ModalComponent } from './modal/modal.component';
   ],
   providers: [
     ReportService,
-    SearchService,
+    SearchService,,
+    DetailService,
     FilteringSearch,
     OverlayComponent,
     CarouselComponent,

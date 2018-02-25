@@ -4,50 +4,7 @@
     <div class="all-results">Total Results({{TotalCount}})</div>
     <app-spinner [showLargeLoader]="turnLargeLoader"></app-spinner>
     <div *ngIf="!turnLargeLoader">
-      <div class="layoutbox" *ngFor="let item of searchResults | orderBy:'dateAdded';let i=index;">
-        <Label ID="Lblprice" Class="LabelPrice">Rs. {{item.price}}</Label>
-        <div class="socialbtnNC">
-          <p class="facebook" style="width:33%;">
-            <a href="https://facebook.com/sharer.php?u=http://www.nepalicraig.com/Detail.aspx?Id={{item.postID}}" title="{{item.title}}"
-              target="_blank">
-              <span class="fa fa-facebook"></span>
-            </a>
-          </p>
-          <p class="twitter" style="width:34%;">
-            <a href="https://twitter.com/intent/tweet?url=http://www.nepalicraig.com/Detail.aspx?Id={{item.postID}} & text='{{item.title}}' & via=NepaliCraig&hashtags=NepaliCraigPost"
-              target="_blank">
-              <span class="fa fa-twitter"></span>
-            </a>
-          </p>
-          <p class="google-plus" style="width:33%;">
-            <a href="https://plus.google.com/share?url=http://www.nepalicraig.com/Detail.aspx?Id={{item.postID}}" target="_blank">
-              <span class="fa fa-google-plus"></span>
-            </a>
-          </p>
-        </div>
-        <b>
-          <Label ID="detailgrid" class="badgehome badge">{{item.topCategory}} >> {{item.subCategory}}
-          </Label>
-        </b>&nbsp;
-        <br />
-        <br />
-        <a href="Detail.aspx?Id={{item.postID}}">
-
-          <div class="NewsImage" style="height: 11em;width: 16em;">
-
-            <img ID="img_Top" class="img-circle" Style="width: 98%;height: 98%;" src='/dist/assets/images/empty_cart.png' />
-          </div>
-        </a>
-        <div class="captionrepeater">
-
-          <Label ID="txtDetail">{{item.title}}</Label>
-          <Label ID="lblCondition">{{item.condition}}</Label>
-          <br />
-
-          <Label ID="lblModal">{{item.modal}}</Label>
-          <Label ID="lblMileKMPH" hidden=true>{{item.modal}}</Label>
-        </div>
-      </div>
+      <app-item-container [itemResults]="searchResults"></app-item-container>
     </div>
   </div>
 </div>

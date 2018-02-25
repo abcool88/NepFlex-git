@@ -13,8 +13,8 @@ import { ErrorObservable } from 'rxjs/observable/ErrorObservable';
 import { Headers, RequestOptions } from '@angular/http';
 @Injectable()
 export class ReportService {
-  private apiUrl_getReport = 'http://localhost/ServiceAPI/api/report';
-  private apiUrl_postReport = 'http://localhost/ServiceAPI/api/report/post';
+  private apiUrl_getReport = 'https://localhost/ServiceAPI/api/report';
+  private apiUrl_postReport = 'https://localhost/ServiceAPI/api/report/post';
   headers = new Headers({ 'Content-Type': 'application/json' });
   options = new RequestOptions({ headers: this.headers });
 

@@ -17,7 +17,7 @@ const routes: Routes = [
   { path: '', component: HomeComponent},
   { path: 'faq', component: FaqComponent , pathMatch: 'full'},
   { path: 'home', component: HomeComponent , pathMatch: 'full'},
-  { path: 'detail', component: DetailComponent, pathMatch: 'full'},
+  { path: 'detail/:itemId', component: DetailComponent, pathMatch: 'full'},
   { path: 'list', component: ListComponent, pathMatch: 'full'},
   { path: 'report', component: ReportUsComponent , pathMatch: 'full'},
   { path: 'aboutus', component: AboutUsComponent , pathMatch: 'full'},
