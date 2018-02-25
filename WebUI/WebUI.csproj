@@ -237,7 +237,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>3317</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>https://www.nepflexlocalhost.com/</IISUrl>
+          <IISUrl>http://www.nepflexlocalhost.com/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>https://www.nepflexlocalhost.com/</CustomServerUrl>

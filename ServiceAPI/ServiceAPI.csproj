@@ -196,7 +196,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>3235</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>https://localhost/ServiceAPI</IISUrl>
+          <IISUrl>http://localhost/ServiceAPI</IISUrl>
           <OverrideIISAppRootUrl>True</OverrideIISAppRootUrl>
           <IISAppRootUrl>https://localhost/ServiceAPI</IISAppRootUrl>
           <NTLMAuthentication>False</NTLMAuthentication>

@@ -4,22 +4,24 @@ import { ReportGetData } from 'app/shared/ResourceModels/ReportGetData';
 import { Observable } from 'rxjs/Observable';
 import { catchError, retry } from 'rxjs/operators';
 import { ErrorObservable } from 'rxjs/observable/ErrorObservable';
+import {Headers,RequestOptions} from '@angular/http';
 @Injectable()
 export class ReportService {
-  private apiUrl_getReport = 'https://localhost/ServiceAPI/api/report';
+  private apiUrl_getReport = 'http://localhost/ServiceAPI/api/report';
+  headers = new Headers({ 'Content-Type': 'application/json' });
+  options = new RequestOptions({ headers: this.headers });
+
   httpOptions = {
     headers: new HttpHeaders({
       'Content-Type':  'application/json'
     })
   };
 
+
   constructor(private http: HttpClient) {}
 
   getReports(): Observable<ReportGetData[]> {
-    return this.http.get<ReportGetData[]>(`${this.apiUrl_getReport}`,this.httpOptions)
-    .pipe(
-      catchError(this.handleError) // then handle the error
-    );
+    return this.http.get<ReportGetData[]>(`${this.apiUrl_getReport}`);
   }
 
   AddReports(val: ReportGetData): Observable<ReportGetData> {

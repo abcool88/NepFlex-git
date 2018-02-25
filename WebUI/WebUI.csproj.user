@@ -22,7 +22,7 @@
           <SQLDebugging>False</SQLDebugging>
           <ExternalProgram>
           </ExternalProgram>
-          <StartExternalURL>https://www.nepflexlocalhost.com/</StartExternalURL>
+          <StartExternalURL>http://www.nepflexlocalhost.com/</StartExternalURL>
           <StartCmdLineArguments>
           </StartCmdLineArguments>
           <StartWorkingDirectory>
