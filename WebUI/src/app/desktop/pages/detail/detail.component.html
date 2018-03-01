@@ -6,8 +6,8 @@
     <div class="body-container">
       <div class="imgaboutus"></div>
       <div class="info-blocks">
-        <div class="terms-of-use-info" id="aboutUsInfo">
-          <app-carousel [imageList]="itemDetail.image"></app-carousel>
+        <div class="container" id="aboutUsInfo">
+          <app-carousel></app-carousel>
           <div *ngFor="let item of itemDetail;let i=index;">
             {{item.title}}
             {{item.image}}

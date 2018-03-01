@@ -12,6 +12,7 @@ import { SharedModule } from 'app/shared/shared.module';
 import { AppRoutingModule } from 'app/app-routing.module';
 import { CoreModule } from 'app/core/core.module';
 import {HttpClientModule} from '@angular/common/http';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import {HttpClientModule} from '@angular/common/http';
     HomeComponent
   ],
   imports: [
+    NgbModule.forRoot(),
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,

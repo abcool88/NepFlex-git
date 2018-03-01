@@ -16,6 +16,7 @@ import { SpinnerComponent } from 'app/shared/spinner/spinner.component';
 import { CloudSpinnerComponent } from './spinner/cloud-spinner/cloud-spinner.component';
 import { ModalComponent } from './modal/modal.component';
 import { DetailService } from 'app/shared/services/detail.service';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   imports: [
@@ -23,7 +24,8 @@ import { DetailService } from 'app/shared/services/detail.service';
     FormsModule,
     HttpModule,
     CommonModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgbModule
   ],
   declarations: [
     SpinnerComponent,
