@@ -1,19 +1,12 @@
-<form [formGroup]="form" class="form" autocomplete="off"
- (focusin)="turnHomeSearchOverlayOn(true)">
+<form [formGroup]="form" class="form" autocomplete="off" (focusin)="turnHomeSearchOverlayOn(true)">
   <div class="custom-glyphicon">
-      <i class="fas fa-search"></i>
-    <!-- <span class="glyphicon glyphicon-search"></span> -->
+    <i class="fa fa-search"></i>
   </div>
-  <input id="searchBoxLg"
-          data-test-id="searchBoxLg"
-          alt="search box"
-          class="search-input-large"
-          type="text"
-          formControlName="searchedText"
-          (change)="searchValueChanged($event)"
-          placeholder="Try “Auto/Vehicle”"
-          />
-    <span class="glyphicon glyphicon-remove custom-glyphicon" *ngIf="turnCancelButtonOn" (click)="turnSearchOverlayOn()" alt="close" title="Close Search"></span>
+  <input id="searchBoxLg" data-test-id="searchBoxLg" alt="search box" class="search-input-large" type="text" formControlName="searchedText"
+    (change)="searchValueChanged($event)" value="{{inputText}}" placeholder="Try “Auto/Vehicle”" />
+  <div class="custom-glyphicon" (click)="turnSearchOverlayOn()">
+    <i class="fa fa-times-circle" *ngIf="turnCancelButtonOn" alt="close" title="Close Search"></i>
+  </div>
 </form>
 <app-search-results-overlay *ngIf="openSearchedResultsOverlay" [searchText]="inputText"></app-search-results-overlay>
 <app-home-search-overlay *ngIf="turnHomePageSpecificOverlayOn && isThisComingFromHomePage"></app-home-search-overlay>

@@ -3,35 +3,118 @@
     <app-desktop-header></app-desktop-header>
   </div>
   <div class="global-desktop-container">
+    <div class="field-title"></div>
     <div class="body-container">
+      <div class="field-title"></div>
       <div class="imgaboutus"></div>
       <div class="info-blocks">
-        <div class="container" id="aboutUsInfo">
-          <app-carousel></app-carousel>
+        <div class="left-section" id="aboutUsInfo">
+          <div class="container-title">Details</div>
           <div *ngFor="let item of itemDetail;let i=index;">
-            {{item.title}}
-            {{item.image}}
-            {{item.detail}}
-            {{item.name}}
-            {{item.email}}
-            {{item.contact}}
-            {{item.address}}
-            {{item.other}}
-            {{item.topCategory}}
-            {{item.subCategory}}
-            {{item.price}}
-            {{item.condition}}
-            {{item.brand}}
-            {{item.modal}}
-            {{item.mile_KMPH}}
-            {{item.warranty}}
-            {{item.extra_Warranty}}
-            {{item.dateAdded}}
-            {{item.showPhoneNumber}}
-            {{item.showEmailID}}
-            {{item.profilePicture}}
+            <div class="field-container">
+              <div class="field-title">{{item.title}}</div>
+            </div>
+            <div class="field-container">
+              <div class="field-title"></div>
+              <label>{{item.topCategory}}</label>
+            </div>
+            <div class="field-container">
+              <div class="field-title"></div>
+              <label>{{item.subCategory}}</label>
+            </div>
+            <div class="field-container">
+              <div class="field-title">Price:</div>
+              <label>{{item.price}}</label>
+            </div>
+            <div class="field-container">
+              <div class="field-title">Condition:</div>
+              <label>{{item.condition}}</label>
+            </div>
+            <div class="field-container">
+              <div class="field-title">Specification:</div>
+              <label>{{item.brand}}</label>
+            </div>
+            <div class="field-container">
+              <div class="field-title">Model:</div>
+              <label>{{item.modal}}</label>
+            </div>
+            <div class="field-container" *ngIf="item.subCategory==='Auto/Vehicle'">
+              <div class="field-title">Odometer:</div>
+              <label>{{item.mile_KMPH}}</label>
+            </div>
+            <div class="field-container">
+              <div class="field-title">warranty:</div>
+              <label>{{item.warranty}}</label>
+            </div>
+            <div class="field-container">
+              <div class="field-title">Extra Warranty: </div>
+              <label>{{item.extra_Warranty}}</label>
+            </div>
+            <div class="field-container">
+              <div class="field-title">Date Posted:</div>
+              <label>{{item.dateAdded}}</label>
+            </div>
+            <!-- <div class="field-container">
+              <div class="field-title"></div>
+              <label>{{item.showPhoneNumber}}</label>
+            </div> -->
+            <!-- <div class="field-container">
+              <div class="field-title"></div>
+              <label>{{item.showEmailID}}</label>
+            </div> -->
           </div>
         </div>
+
+        <div class="middle-section" id="contactUsInfo">
+          <div class="photo-section">
+            <div class="container-title">Photos</div>
+            <app-carousel *ngIf="imagesFound" [imageList]="itemImages"></app-carousel>
+            <div *ngIf="!imagesFound">No Images found</div>
+          </div>
+          <div class="detail-description">
+            <div class="container-title">Description:</div>
+            <div *ngFor="let item of itemDetail;let i=index;">
+              <div class="field-container">
+                <div class="field-title">Detail: </div>
+                <label>{{item.detail}}</label>
+              </div>
+              <div class="field-container">
+                <div class="field-title">Other Description:</div>
+                <label>{{item.other}}</label>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="right-section" id="contactUsInfo">
+          <div class="detail-about-poster">
+            <div class="container-title">Poster Detail:</div>
+            <div *ngFor="let item of itemDetail;let i=index;">
+              <div class="field-container">
+                <div class="field-title"></div>
+                <label>{{item.profilePicture}}</label>
+              </div>
+              <div class="field-container">
+                <div class="field-title">Name: </div>
+                <label>{{item.name}}</label>
+              </div>
+              <div class="field-container">
+                <div class="field-title">Email:</div>
+                <label>{{item.email}}</label>
+              </div>
+              <div class="field-container" *ngIf="item.showPhoneNumber">
+                <div class="field-title">Contact:</div>
+                <label>{{item.contact}}</label>
+              </div>
+              <div class="field-container">
+                <div class="field-title">Address:</div>
+                <label>{{item.address}}</label>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
       </div>
     </div>
   </div>

@@ -5,7 +5,7 @@ import { ItemDetail } from 'app/shared/ResourceModels/DetailResponse';
 
 @Injectable()
 export class DetailService {
-  private apiUrl_getDetailOfItem = 'https://localhost/ServiceAPI/api/itemDetail';
+  private apiUrl_getDetailOfItem = 'http://localhost/ServiceAPI/api/itemDetail';
 
   constructor(private httpClient: HttpClient) {}
 

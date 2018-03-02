@@ -9,10 +9,8 @@ import { NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
 })
 export class CarouselComponent implements OnInit {
   @Input() imageList: string[];
-  constructor(config: NgbCarouselConfig) {
-  }
+  @Input() showLabelBeforeImg: boolean = false;
+  constructor(config: NgbCarouselConfig) {}
   ngOnInit() {
-
   }
-
 }

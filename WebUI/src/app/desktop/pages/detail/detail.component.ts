@@ -10,6 +10,8 @@ import { ItemDetail } from 'app/shared/ResourceModels/DetailResponse';
 export class DetailComponent implements OnInit {
   itemID: number;
   itemDetail: ItemDetail;
+  itemImages: string[];
+  imagesFound: boolean = false;
   constructor(
     private detailService: DetailService,
     private route: ActivatedRoute
@@ -22,8 +24,15 @@ export class DetailComponent implements OnInit {
     });
   }
   getItemDetail(id: number) {
-    this.detailService.getItemDetail(id).subscribe((a: ItemDetail) => {
-      this.itemDetail = a;
+    this.detailService.getItemDetail(id).subscribe((item: ItemDetail) => {
+      this.itemDetail = item;
+      this.itemImages = item.image;
+      if (item.image!==null) {
+        this.imagesFound = true;
+      } else {
+        this.imagesFound = false;
+      }
+      console.log(this.itemImages);
     });
   }
 }

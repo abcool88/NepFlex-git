@@ -1,6 +1,6 @@
 export class ItemDetail {
   title: string;
-  image: string;
+  image: string[];
   detail: string;
   name: string;
   email: string;

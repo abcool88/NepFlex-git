@@ -17,12 +17,18 @@
   font-size: 11px;
   font-family: sans-serif;
 }
-.filter-bar{
+.filter-bar {
   @include display-child-flex(0,1,auto,auto);
 }
-.search-overlay-container{
+.search-overlay-container {
   @include display-child-flex(0,1,auto,stretch);
 }
-.all-results{
+.all-results {
   @include display-child-flex(0,1,auto,auto);
+}
+.try-again-label {
+  text-align: center;
+  margin-top: 5em;
+  color: gray;
+  font-size: large;
 }

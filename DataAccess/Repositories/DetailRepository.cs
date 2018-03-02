@@ -23,7 +23,7 @@ namespace NepFlex.DataAccess.Repositories
             var response = result.ResultSet1.Select(a => new DetailResponse()
             {
                 Title = a.Title,
-                Image = a.Image,
+                Image =  a.Image,
                 Detail = a.Detail,
                 Name = a.Name,
                 Email = a.Email,
@@ -40,11 +40,11 @@ namespace NepFlex.DataAccess.Repositories
                 Warranty = a.Warranty,
                 Extra_Warranty = a.extra_Warranty,
                 DateAdded = a.DateAdded,
-                ShowPhoneNumber=a.ShowPhoneNumber,
-                ShowEmailID=a.showEmailID,
-                ProfilePicture=a.ProfilePicture
-            }).ToList();
-            return response;
+                ShowPhoneNumber = a.ShowPhoneNumber,
+                ShowEmailID = a.showEmailID,
+                ProfilePicture = a.ProfilePicture
+            }).ToArray();
+            return response.ToList();
         }
     }
 }

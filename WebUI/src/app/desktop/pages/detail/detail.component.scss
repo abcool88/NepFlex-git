@@ -1,7 +1,18 @@
 @import '../../../../Style/styles.scss';
-
+@mixin custom{
+  // border-radius: 4px !important;
+  // border: 1px solid #dbdbdb !important;
+  //box-shadow: 0 5px 30px rgba(156, 160, 171, 0.25) !important;
+  background: #f9f9f9;
+  padding: 33px !important;
+}
 .info-blocks {
   @include display-parent-flex(row,nowrap,flex-start,flex-start,flex-start);
+  border-radius: 4px !important;
+  border: 1px solid #dbdbdb !important;
+  box-shadow: 0 5px 30px rgba(156, 160, 171, 0.25) !important;
+  background: #f9f9f9;
+
 }
 .body-container {
   padding: 8em;
@@ -11,7 +22,39 @@
   @include display-child-flex(0,1,auto,auto);
 }
 .terms-of-service-info {
-  @include body-page-container(41% ,42px,#484848,#ffffff);
+  //@include body-page-container(41% ,42px,#484848,#ffffff);
+  @include display-child-flex(0,1,auto,auto);
+  @include custom();
+}
+
+.left-section {
+  border: none;
+  margin: 0;
+ // @include body-page-container(auto ,42px,#484848,#ffffff);
+  @include display-child-flex(0,1,auto,auto);
+  @include custom();
+}
+.middle-section {
+  @include display-child-flex(1,1,auto,auto);
+  @include display-parent-flex(column,nowrap,flex-start,flex-start,flex-start);
+}
+.right-section {
+  @include custom();
+  @include display-child-flex(0,1,auto,auto);
+  @include display-parent-flex(column,nowrap,flex-start,flex-start,flex-start);
+}
+.photo-section {
+  // @include body-page-container(auto ,42px,#484848,#ffffff);
+  @include display-child-flex(0,1,auto,auto);
+  @include custom();
+}
+.detail-description {
+  //@include body-page-container(auto ,42px,#484848,#ffffff);
+  @include display-child-flex(0,1,auto,auto);
+  @include custom();
+}
+.detail-about-poster {
+//  @include body-page-container(auto ,42px,#484848,#ffffff);
   @include display-child-flex(0,1,auto,auto);
 }
 
@@ -28,4 +71,14 @@
 }
 .title-text {
   @include custom-font-style(35px,56px,-0.8px,1px,8px,#6f6f6f,normal);
+}
+
+.field-container {
+  background-color: #f9f9f9;
+  border-bottom: 1px solid #c1c1c1;
+}
+.field-title {
+  width: 15em;
+  font-size: large;
+  color: #415967;
 }
