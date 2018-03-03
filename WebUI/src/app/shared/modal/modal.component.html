@@ -1,21 +1,14 @@
-<div id="myModal" class="modal fade custom-modal" role="dialog">
-  <form [formGroup]="modalform">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">X</button>
-          <h4 class="modal-title">{{modaltitle}}</h4>
-        </div>
-        <div class="modal-body">
-          <div class="col-md-7">
-            {{modalbody}}
-          </div>
-        </div>
-        <div class="modal-footer">
-          {{modalfooter}}
-          <button type="button" class="btn btn-primary">Create</button>
-        </div>
-      </div>
+<ng-template #content let-c="close" let-d="dismiss">
+    <div class="modal-header">
+      <h4 class="modal-title">Modal title</h4>
+      <button type="button" class="close" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
     </div>
-  </form>
-</div>
+    <div class="modal-body">
+      <p>One fine body&hellip;</p>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-outline-light" >Close</button>
+    </div>
+  </ng-template>

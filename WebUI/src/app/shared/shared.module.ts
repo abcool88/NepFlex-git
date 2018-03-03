@@ -17,6 +17,9 @@ import { CloudSpinnerComponent } from './spinner/cloud-spinner/cloud-spinner.com
 import { ModalComponent } from './modal/modal.component';
 import { DetailService } from 'app/shared/services/detail.service';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { CamelCase } from 'app/shared/pipes/camelcase.pipe';
+import { AnimatedButtonComponent } from './animated-button/animated-button.component';
+import { ButtonProperties } from 'app/shared/ResourceModels/ButtonProperties';
 
 @NgModule({
   imports: [
@@ -31,17 +34,20 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     SpinnerComponent,
     DefaultValuePipe,
     OrderByPipe,
+    CamelCase,
     OverlayComponent,
     CarouselComponent,
     DropdownComponent,
     CloudSpinnerComponent,
-    ModalComponent
+    ModalComponent,
+    AnimatedButtonComponent
   ],
   providers: [
     ReportService,
     SearchService,,
     DetailService,
     FilteringSearch,
+    ButtonProperties,
     OverlayComponent,
     CarouselComponent,
     HomeService
@@ -51,10 +57,12 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     CloudSpinnerComponent,
     DefaultValuePipe,
     OrderByPipe,
+    CamelCase,
     OverlayComponent,
     CarouselComponent,
     DropdownComponent,
-    ModalComponent
+    ModalComponent,
+    AnimatedButtonComponent
   ]
 })
 export class SharedModule {}

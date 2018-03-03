@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { DetailService } from 'app/shared/services/detail.service';
 import { ActivatedRoute } from '@angular/router';
 import { ItemDetail } from 'app/shared/ResourceModels/DetailResponse';
+import { ButtonProperties } from 'app/shared/ResourceModels/ButtonProperties';
 @Component({
   selector: 'app-detail',
   templateUrl: './detail.component.html',
@@ -12,10 +13,40 @@ export class DetailComponent implements OnInit {
   itemDetail: ItemDetail;
   itemImages: string[];
   imagesFound: boolean = false;
+  turnLargeLoader: boolean = false;
+  turnSmallLoader: boolean = false;
+  detailButttons: ButtonProperties[]=new Array();
   constructor(
     private detailService: DetailService,
     private route: ActivatedRoute
-  ) {}
+  ) {
+    this.turnLargeLoader = true;
+    this.turnSmallLoader = true;
+    this.allButtons();
+  }
+  allButtons() {
+    this.detailButttons = [
+      {
+        buttonId: 1,
+        buttonLabel: 'Send Email',
+        hasPopUp: true,
+        buttonRoute:'',
+        canRoute:false,
+        HasDropDown:false,
+        DropDownList: [{ id: 1, label: '', url: '' }],
+        popUpName:'sendEmail',
+      },
+      {
+        buttonId: 2,
+        buttonLabel: 'All Items From This Poster',
+        hasPopUp: true,
+        buttonRoute:'',
+        canRoute:false,
+        HasDropDown:false,
+        DropDownList: [{ id: 1, label: '', url: '' }],
+      }
+    ];
+  }
 
   ngOnInit() {
     const result = this.route.params.subscribe(params => {
@@ -27,11 +58,13 @@ export class DetailComponent implements OnInit {
     this.detailService.getItemDetail(id).subscribe((item: ItemDetail) => {
       this.itemDetail = item;
       this.itemImages = item.image;
-      if (item.image!==null) {
+      if (item.image !== null) {
         this.imagesFound = true;
       } else {
         this.imagesFound = false;
       }
+      this.turnLargeLoader = false;
+      this.turnSmallLoader = false;
       console.log(this.itemImages);
     });
   }

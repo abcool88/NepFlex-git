@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ButtonProperties } from 'app/shared/ResourceModels/ButtonProperties';
 
 @Component({
   selector: 'app-home-search-overlay',
@@ -7,16 +8,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./home-search-overlay.component.scss']
 })
 export class HomeSearchOverlayComponent implements OnInit {
-  homeButtonCollections: [
-    {
-      buttonId: number;
-      buttonLabel: string;
-      buttonRoute: string;
-      canRoute: boolean;
-      HasDropDown: boolean;
-      DropDownList: [{ label: string }];
-    }
-  ];
+  homeButtonCollections: ButtonProperties[]=new Array();
   constructor(private router: Router) {
     this.ButtonCollections();
   }
@@ -30,7 +22,7 @@ export class HomeSearchOverlayComponent implements OnInit {
         buttonRoute: `/search`,
         canRoute: true,
         HasDropDown: false,
-        DropDownList: [{ label: '' }]
+        DropDownList: [{ id: 1, label: '', url: '' }]
       },
       {
         buttonId: 2,
@@ -38,7 +30,7 @@ export class HomeSearchOverlayComponent implements OnInit {
         buttonRoute: `/search/m`,
         canRoute: true,
         HasDropDown: false,
-        DropDownList: [{ label: '' }]
+        DropDownList: [{ id: 1, label: '', url: '' }]
       },
       {
         buttonId: 3,
@@ -46,7 +38,7 @@ export class HomeSearchOverlayComponent implements OnInit {
         buttonRoute: `/search/m`,
         canRoute: true,
         HasDropDown: false,
-        DropDownList: [{ label: '' }]
+        DropDownList: [{ id: 1, label: '', url: '' }]
       }
     ];
   }

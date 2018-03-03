@@ -1,0 +1,11 @@
+<div class="animated-button-body">
+  <div class="animated-button-container">
+    <div class="animBtn themeA" *ngFor="let item of buttonCollections;let i=index;" (click)="functionalButton(item.buttonId)">
+      <div>{{item.buttonLabel}}</div>
+      <app-dropdown *ngIf="item.HasDropDown" [dropdownLabel]="item.DropDownList" [dropdownOptions]="item.DropDownList" [dropdownLabelRoute]="item.DropDownList[i].url">
+      </app-dropdown>
+    </div>
+  </div>
+  <div class="all-results"></div>
+</div>
+<app-modal *ngIf="showPopUpModal"></app-modal>

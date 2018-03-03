@@ -11,6 +11,7 @@ import { FilterBoxComponent } from './search-box/filter-box/filter-box.component
 import { HomeSearchOverlayComponent } from './home-search-overlay/home-search-overlay.component';
 import { InfoBoxComponent } from './info-box/info-box.component';
 import { ItemContainerComponent } from './item-container/item-container.component';
+import { SendEmailComponent } from './send-email/send-email.component';
 
 @NgModule({
   imports: [CommonModule, ReactiveFormsModule, SharedModule],
@@ -22,7 +23,8 @@ import { ItemContainerComponent } from './item-container/item-container.componen
     FilterBoxComponent,
     HomeSearchOverlayComponent,
     InfoBoxComponent,
-    ItemContainerComponent
+    ItemContainerComponent,
+    SendEmailComponent
   ],
   exports: [
     SharedModule,
