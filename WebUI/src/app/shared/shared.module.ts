@@ -20,6 +20,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CamelCase } from 'app/shared/pipes/camelcase.pipe';
 import { AnimatedButtonComponent } from './animated-button/animated-button.component';
 import { ButtonProperties } from 'app/shared/ResourceModels/ButtonProperties';
+import { SendEmailComponent } from './send-email/send-email.component';
+import { TextAreaComponent } from './text-area/text-area.component';
 
 @NgModule({
   imports: [
@@ -40,7 +42,9 @@ import { ButtonProperties } from 'app/shared/ResourceModels/ButtonProperties';
     DropdownComponent,
     CloudSpinnerComponent,
     ModalComponent,
-    AnimatedButtonComponent
+    AnimatedButtonComponent,
+    SendEmailComponent,
+    TextAreaComponent
   ],
   providers: [
     ReportService,
@@ -52,6 +56,7 @@ import { ButtonProperties } from 'app/shared/ResourceModels/ButtonProperties';
     CarouselComponent,
     HomeService
   ],
+  entryComponents:[SendEmailComponent],
   exports: [
     SpinnerComponent,
     CloudSpinnerComponent,
@@ -62,7 +67,8 @@ import { ButtonProperties } from 'app/shared/ResourceModels/ButtonProperties';
     CarouselComponent,
     DropdownComponent,
     ModalComponent,
-    AnimatedButtonComponent
+    AnimatedButtonComponent,
+    SendEmailComponent
   ]
 })
 export class SharedModule {}

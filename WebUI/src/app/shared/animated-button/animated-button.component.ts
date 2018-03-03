@@ -2,7 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { ButtonProperties } from 'app/shared/ResourceModels/ButtonProperties';
 import { Router } from '@angular/router';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { AboutUsComponent } from '../../desktop/pages/about-us/about-us.component';
+import { SendEmailComponent } from 'app/shared/send-email/send-email.component';
 
 @Component({
   selector: 'app-animated-button',
@@ -12,7 +12,7 @@ import { AboutUsComponent } from '../../desktop/pages/about-us/about-us.componen
 export class AnimatedButtonComponent implements OnInit {
   @Input() buttonCollections: ButtonProperties[];
   showPopUpModal: boolean = false;
-  constructor(private router: Router,private modalService: NgbModal) {}
+  constructor(private router: Router, private modalService: NgbModal) {}
 
   ngOnInit() {}
   functionalButton(id: number) {
@@ -23,8 +23,8 @@ export class AnimatedButtonComponent implements OnInit {
       buttonFunctions.popUpName === 'sendEmail'
     ) {
       this.showPopUpModal = true;
-      console.log('showPopUpModal: ',  this.showPopUpModal);
-      this.modalService.open(AboutUsComponent, { windowClass: 'dark-modal' });
+      console.log('showPopUpModal: ', this.showPopUpModal);
+      this.modalService.open(SendEmailComponent, { windowClass: 'dark-modal' });
     }
 
     if (buttonFunctions.canRoute === true) {
