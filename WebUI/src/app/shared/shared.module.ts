@@ -21,7 +21,7 @@ import { CamelCase } from 'app/shared/pipes/camelcase.pipe';
 import { AnimatedButtonComponent } from './animated-button/animated-button.component';
 import { ButtonProperties } from 'app/shared/ResourceModels/ButtonProperties';
 import { SendEmailComponent } from './send-email/send-email.component';
-import { TextAreaComponent } from './text-area/text-area.component';
+import { MyAngularMaterialModule } from 'app/shared/angular-material/angularMaterial.module';
 
 @NgModule({
   imports: [
@@ -30,7 +30,8 @@ import { TextAreaComponent } from './text-area/text-area.component';
     HttpModule,
     CommonModule,
     ReactiveFormsModule,
-    NgbModule
+    NgbModule,
+    MyAngularMaterialModule
   ],
   declarations: [
     SpinnerComponent,
@@ -43,8 +44,7 @@ import { TextAreaComponent } from './text-area/text-area.component';
     CloudSpinnerComponent,
     ModalComponent,
     AnimatedButtonComponent,
-    SendEmailComponent,
-    TextAreaComponent
+    SendEmailComponent
   ],
   providers: [
     ReportService,

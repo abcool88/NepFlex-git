@@ -13,6 +13,8 @@ import { AppRoutingModule } from 'app/app-routing.module';
 import { CoreModule } from 'app/core/core.module';
 import {HttpClientModule} from '@angular/common/http';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { MyAngularMaterialModule } from 'app/shared/angular-material/angularMaterial.module';
 
 @NgModule({
   declarations: [
@@ -32,6 +34,8 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
     DesktopModule,
     SharedModule,
     AppRoutingModule,
+    BrowserAnimationsModule,
+    MyAngularMaterialModule
   ],
   providers: [],
   bootstrap: [AppComponent]

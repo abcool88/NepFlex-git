@@ -1,0 +1,24 @@
+<div class="example-container">
+  <mat-form-field *ngIf="textType==='email'">
+    <input matInput placeholder="{{placeholder}}" type="email" (change)="TextChanged($event)" (keyup)="TextChanged($event)" />
+  </mat-form-field>
+
+  <mat-form-field *ngIf="textType==='text'">
+    <input matInput placeholder="{{placeholder}}" type="text" (change)="TextChanged($event)" (keyup)="TextChanged($event)" />
+  </mat-form-field>
+
+  <mat-form-field *ngIf="textType==='number'">
+    <input matInput placeholder="{{placeholder}}" type="number" (change)="TextChanged($event)" (keyup)="TextChanged($event)"
+    />
+  </mat-form-field>
+
+  <mat-form-field *ngIf="textType==='textarea'">
+    <textarea matInput placeholder="{{placeholder}}" (change)="TextChanged($event)" (keyup)="TextChanged($event)"></textarea>
+  </mat-form-field>
+
+  <mat-form-field *ngIf="textType==='select'">
+    <mat-select placeholder="{{placeholder}}">
+      <mat-option value="option">Option</mat-option>
+    </mat-select>
+  </mat-form-field>
+</div>

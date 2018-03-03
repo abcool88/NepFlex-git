@@ -15,12 +15,8 @@ import { TermsOfUseComponent } from '../../desktop/pages/terms-of-use/terms-of-u
   styleUrls: ['./modal.component.scss'],
   encapsulation: ViewEncapsulation.None,
   styles: [`
-    .dark-modal .modal-content {
-      background-color: #292b2c;
-      color: white;
-    }
-    .dark-modal .close {
-      color: white;
+    .modal-content {
+      padding: 3em;
     }
   `]
 })
