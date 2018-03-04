@@ -51,6 +51,12 @@
   @include custom();
   width: 100%;
 }
+i {
+  font-size: 1em;
+  color: #4e2f11;
+  margin-right: 0.5em;
+  width: 1em;
+}
 .detail-about-poster {
   //  @include body-page-container(auto ,42px,#484848,#ffffff);
   @include display-child-flex(0,1,auto,auto);
@@ -76,10 +82,18 @@
   border-bottom: 1px solid #c1c1c1;
 }
 .field-container {
-  & i {
+  & .user-photo-thumbnil {
     font-size: 168px;
     color: #e0e0e0;
   }
+}
+
+.custom-glyphicon {
+  font-size: 2em;
+  color: #e0e0e0;
+  float: left;
+  margin-right: 0.5em;
+  width: 1em;
 }
 .field-title {
   width: 15em;
@@ -117,4 +131,8 @@
     color: #888888;
     font-size: medium;
   }
+}
+
+.description {
+  padding-left: 1em;
 }

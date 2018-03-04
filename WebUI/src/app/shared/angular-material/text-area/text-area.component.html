@@ -1,19 +1,23 @@
 <div class="example-container">
   <mat-form-field *ngIf="textType==='email'">
-    <input matInput placeholder="{{placeholder}}" type="email" (change)="TextChanged($event)" (keyup)="TextChanged($event)" />
+    <input matInput placeholder="{{placeholder}}" value="{{selectedValue}}" type="email" (change)="TextChanged($event)" (keyup)="TextChanged($event)" />
+    <span class="fa fa-times-circle text-clear-button"  *ngIf="showClearButton" (click)="clearInput($event)"></span>
   </mat-form-field>
 
   <mat-form-field *ngIf="textType==='text'">
-    <input matInput placeholder="{{placeholder}}" type="text" (change)="TextChanged($event)" (keyup)="TextChanged($event)" />
+    <input matInput placeholder="{{placeholder}}" value="{{selectedValue}}" type="text" (change)="TextChanged($event)" (keyup)="TextChanged($event)" />
+    <span class="fa fa-times-circle text-clear-button" *ngIf="showClearButton" (click)="clearInput($event)"></span>
   </mat-form-field>
 
   <mat-form-field *ngIf="textType==='number'">
-    <input matInput placeholder="{{placeholder}}" type="number" (change)="TextChanged($event)" (keyup)="TextChanged($event)"
+    <input matInput placeholder="{{placeholder}}" value="{{selectedValue}}" type="number" (change)="TextChanged($event)" (keyup)="TextChanged($event)"
     />
+    <span class="fa fa-times-circle text-clear-button" *ngIf="showClearButton" (click)="clearInput($event)"></span>
   </mat-form-field>
 
   <mat-form-field *ngIf="textType==='textarea'">
-    <textarea matInput placeholder="{{placeholder}}" (change)="TextChanged($event)" (keyup)="TextChanged($event)"></textarea>
+    <textarea matInput placeholder="{{placeholder}}" value="{{selectedValue}}" (change)="TextChanged($event)" (keyup)="TextChanged($event)"></textarea>
+    <span class="fa fa-times-circle text-clear-button" *ngIf="showClearButton" (click)="clearInput($event)"></span>
   </mat-form-field>
 
   <mat-form-field *ngIf="textType==='select'">

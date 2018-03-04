@@ -25,6 +25,7 @@ export class TextAreaComponent implements OnInit, ControlValueAccessor {
   @Input() textType: string;
   @Input() placeholder: string;
   @Output() newData: EventEmitter<any> = new EventEmitter();
+  showClearButton: boolean = false;
   constructor() {}
 
   get selectedValue() {
@@ -37,9 +38,16 @@ export class TextAreaComponent implements OnInit, ControlValueAccessor {
   }
   ngOnInit() {}
   TextChanged(event: { target; value: string }) {
+    this.showClearButton = true;
     const val = event.target.value;
     this.selectedValue = val;
     this.newData.emit(event);
+  }
+  clearInput(event: { target; value: string }) {
+    event.target.value = '';
+    this.selectedValue = event.target.value;
+    this.newData.emit(event);
+    this.showClearButton = false;
   }
   propagateChange = (_: any) => {};
   writeValue(obj: any): void {}

@@ -5,7 +5,15 @@
 
 .example-container > * {
   width: 100%;
+  & input {
+    width: 93%;
+  }
 }
-textarea{
+textarea {
   min-height: 15em;
+  width:93%;
+}
+
+.text-clear-button {
+  color: #e0e0e0;
 }

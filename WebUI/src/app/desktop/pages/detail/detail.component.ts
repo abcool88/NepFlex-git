@@ -15,7 +15,11 @@ export class DetailComponent implements OnInit {
   imagesFound: boolean = false;
   turnLargeLoader: boolean = false;
   turnSmallLoader: boolean = false;
-  detailButttons: ButtonProperties[]=new Array();
+  detailButttons: ButtonProperties[] = new Array();
+  hideItemDetailSection?: boolean = true;
+  hideItemPhotoSection?: boolean = false;
+  hideItemDescriptionSection?: boolean = false;
+  hideItemPosterSection?: boolean = true;
   constructor(
     private detailService: DetailService,
     private route: ActivatedRoute
@@ -24,26 +28,27 @@ export class DetailComponent implements OnInit {
     this.turnSmallLoader = true;
     this.allButtons();
   }
+
   allButtons() {
     this.detailButttons = [
       {
         buttonId: 1,
         buttonLabel: 'Send Email',
         hasPopUp: true,
-        buttonRoute:'',
-        canRoute:false,
-        HasDropDown:false,
+        buttonRoute: '',
+        canRoute: false,
+        HasDropDown: false,
         DropDownList: [{ id: 1, label: '', url: '' }],
-        popUpName:'sendEmail',
+        popUpName: 'sendEmail'
       },
       {
         buttonId: 2,
         buttonLabel: 'All Items From This Poster',
         hasPopUp: true,
-        buttonRoute:'',
-        canRoute:false,
-        HasDropDown:false,
-        DropDownList: [{ id: 1, label: '', url: '' }],
+        buttonRoute: '',
+        canRoute: false,
+        HasDropDown: false,
+        DropDownList: [{ id: 1, label: '', url: '' }]
       }
     ];
   }
@@ -67,5 +72,23 @@ export class DetailComponent implements OnInit {
       this.turnSmallLoader = false;
       console.log(this.itemImages);
     });
+  }
+  hideSection(sectionName: string) {
+    console.log(sectionName);
+
+    switch (sectionName) {
+      case 'ItemDetailSection':
+        this.hideItemDetailSection = !this.hideItemDetailSection;
+        break;
+      case 'ItemPhotoSection':
+        this.hideItemPhotoSection = !this.hideItemPhotoSection;
+        break;
+      case 'ItemDescriptionSection':
+        this.hideItemDescriptionSection = !this.hideItemDescriptionSection;
+        break;
+      case 'ItemPosterSection':
+        this.hideItemPosterSection = !this.hideItemPosterSection;
+        break;
+    }
   }
 }
