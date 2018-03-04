@@ -87,30 +87,55 @@ export class SendEmailComponent implements OnInit {
     }
   }
 
-  getErrorMessage() {
+  getErrorMessage(): string {
     this.showFCError = true;
-    this.senderEmailFCError =
-      this.senderEmailFC.invalid && this.senderEmailFC.hasError('required')
-        ? 'You must enter a value'
-        : this.senderEmailFC.invalid && this.senderEmailFC.hasError('email')
-          ? 'Not a valid email'
-          : '';
-
-    this.sentToEmailFCError =
-      this.sentToEmailFC.invalid && this.sentToEmailFC.hasError('required')
-        ? 'You must enter a value'
-        : this.sentToEmailFC.invalid && this.sentToEmailFC.hasError('email')
-          ? 'Not a valid email'
-          : '';
-
-    this.subjectEmailFCError =
-      this.subjectEmailFC.invalid && this.subjectEmailFC.hasError('required')
-        ? 'You must enter a value'
-        : '';
-
-    this.emailTextFCError =
-      this.emailTextFC.invalid && this.emailTextFC.hasError('required')
-        ? 'You must enter a value'
-        : '';
+    if (this.sendEmailForm.invalid) {
+      if (
+        this.senderEmailFC.invalid &&
+        this.senderEmailFC.hasError('required')
+      ) {
+        this.senderEmailFCError = 'You must enter a value';
+        return;
+      }
+      if (this.senderEmailFC.invalid && this.senderEmailFC.hasError('email')) {
+        this.senderEmailFCError = 'Not a valid email';
+        return;
+      } else {
+        this.senderEmailFCError = '';
+      }
+      if (
+        this.sentToEmailFC.invalid &&
+        this.sentToEmailFC.hasError('required')
+      ) {
+        this.sentToEmailFCError = 'You must enter a value';
+        return;
+      }
+      if (this.sentToEmailFC.invalid && this.sentToEmailFC.hasError('email')) {
+        this.sentToEmailFCError = 'Not a valid email';
+        return;
+      } else {
+        this.sentToEmailFCError = '';
+      }
+      if (
+        this.subjectEmailFC.invalid &&
+        this.subjectEmailFC.hasError('required')
+      ) {
+        this.subjectEmailFCError = 'You must enter a value';
+        return;
+      } else {
+        this.subjectEmailFCError = '';
+      }
+      if (this.emailTextFC.invalid && this.emailTextFC.hasError('required')) {
+        this.emailTextFCError = 'You must enter a value';
+        return;
+      } else {
+        this.emailTextFCError = '';
+      }
+    } else {
+      this.senderEmailFCError = '';
+      this.sentToEmailFCError = '';
+      this.subjectEmailFCError = '';
+      this.emailTextFCError = '';
+    }
   }
 }
