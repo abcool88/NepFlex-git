@@ -24,7 +24,7 @@
     box-shadow: 0 5px 30px rgba(156, 160, 171, 0.25) !important;
 }
 .header-body {
-  @include displayFlex(nowrap, row, flex-start, stretch, stretch);
+  @include displayFlex(nowrap, row, flex-start, center, stretch);
   background: #ffffff;
   color: #8a8888;
   padding: 1em;

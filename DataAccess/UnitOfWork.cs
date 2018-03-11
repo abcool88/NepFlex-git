@@ -30,6 +30,7 @@ namespace DataAccess
         public IItemDescriptionRepository ItemDescriptionRepository { get; private set; }
         public IReportRepository ReportRepository { get; private set; }
         public IDetailRepository DetailRepository { get; private set; }
+        public ISendEmailRepository SendEmailRepository { get; private set; }
 
         public UnitOfWork(IOnlinePasalContext context)
         {
@@ -45,6 +46,7 @@ namespace DataAccess
             ItemDescriptionRepository = new ItemDescriptionRepository(_context);
             ReportRepository = new ReportRepository(_context);
             DetailRepository = new DetailRepository(_context);
+            SendEmailRepository = new SendEmailRepository(_context);
         }
         public List<ValidationResult> GetValidationErrors()
         {
@@ -79,7 +81,7 @@ namespace DataAccess
                     //});
                     isSuccessful = false;
                     throw ex;
-                    
+
                     //swallow these because we have messages in GetValidationErrors
                 }
             }
@@ -92,11 +94,11 @@ namespace DataAccess
         }
         protected virtual void Dispose(bool disposing)
         {
-            if(_disposed)
+            if (_disposed)
             {
                 return;
             }
-            if(disposing)
+            if (disposing)
             {
                 _context.Dispose();
             }

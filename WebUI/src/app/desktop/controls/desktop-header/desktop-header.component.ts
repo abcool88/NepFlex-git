@@ -9,7 +9,6 @@ import { HeadersNavigation } from 'app/shared/ResourceModels/ButtonProperties';
 })
 export class DesktopHeaderComponent implements OnInit {
   @Input() isThisComingFromHomePage: boolean = false;
-  @Input() inputText: string;
   title: string = 'NepaliCraig';
   headersNavigation: HeadersNavigation[] = new Array();
 

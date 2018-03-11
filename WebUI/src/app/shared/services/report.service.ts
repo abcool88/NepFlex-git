@@ -15,8 +15,8 @@ import { Headers, RequestOptions } from '@angular/http';
 export class ReportService {
   private apiUrl_getReport = 'http://localhost/ServiceAPI/api/report';
   private apiUrl_postReport = 'http://localhost/ServiceAPI/api/report/post';
-  headers = new Headers({ 'Content-Type': 'application/json' });
-  options = new RequestOptions({ headers: this.headers });
+  // headers = new Headers({ 'Content-Type': 'application/json' });
+  // options = new RequestOptions({ headers: this.headers });
 
   httpOptions = {
     headers: new HttpHeaders({
@@ -40,7 +40,6 @@ export class ReportService {
   }
 
   private handleError(error: HttpErrorResponse) {
-    debugger;
     if (error.error instanceof ErrorEvent) {
       // A client-side or network error occurred. Handle it accordingly.
       console.error('An error occurred:', error.error.message);

@@ -24,6 +24,7 @@ namespace DependencyResolution
             container.RegisterType<IItemDescriptionService, ItemDescriptionService>();
             container.RegisterType<IReportService, ReportService>();
             container.RegisterType<IDetailService, DetailService>();
+            container.RegisterType<ISendEmailService, SendEmailSevice>();
         }
     }
 }

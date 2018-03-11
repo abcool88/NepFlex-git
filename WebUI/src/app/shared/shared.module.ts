@@ -22,6 +22,8 @@ import { AnimatedButtonComponent } from './animated-button/animated-button.compo
 import { ButtonProperties } from 'app/shared/ResourceModels/ButtonProperties';
 import { SendEmailComponent } from './send-email/send-email.component';
 import { MyAngularMaterialModule } from 'app/shared/angular-material/angularMaterial.module';
+import { SendEmailService } from 'app/shared/services/send-email.service';
+import { HTTPHeader } from './services/http-header';
 
 @NgModule({
   imports: [
@@ -48,13 +50,15 @@ import { MyAngularMaterialModule } from 'app/shared/angular-material/angularMate
   ],
   providers: [
     ReportService,
-    SearchService,,
+    SearchService,
     DetailService,
+    SendEmailService,
     FilteringSearch,
     ButtonProperties,
     OverlayComponent,
     CarouselComponent,
-    HomeService
+    HomeService,
+    HTTPHeader
   ],
   entryComponents:[SendEmailComponent],
   exports: [

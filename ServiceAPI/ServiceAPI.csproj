@@ -149,6 +149,7 @@
     <Compile Include="Controllers\MenuTopController.cs" />
     <Compile Include="Controllers\ReportController.cs" />
     <Compile Include="Controllers\searchController.cs" />
+    <Compile Include="Controllers\SendEmailController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>

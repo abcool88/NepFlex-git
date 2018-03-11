@@ -6,6 +6,8 @@ import {
   Validators
 } from '@angular/forms';
 import { ButtonProperties } from 'app/shared/ResourceModels/ButtonProperties';
+import { SendEmailService } from '../services/send-email.service';
+import { SendEmailProperties } from 'app/shared/ResourceModels/SendEmailDetail';
 
 @Component({
   selector: 'app-send-email',
@@ -30,7 +32,7 @@ export class SendEmailComponent implements OnInit {
     Validators.email
   ]);
   emailTextFC: FormControl = new FormControl('', [Validators.required]);
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder,private sendEmailService:SendEmailService) {
     this.createForm();
   }
 
@@ -78,7 +80,12 @@ export class SendEmailComponent implements OnInit {
     });
   }
   sendEmailNow() {
+    this.getErrorMessage();
     if (this.sendEmailForm.valid) {
+      const val=Object.assign(new SendEmailProperties(),this.sendEmailForm.value)
+      this.sendEmailService.sendEmail(val).subscribe(a=>{
+        alert('email sent');
+      })
       console.log(
         'ONbuttonSaveClick===>',
         'senderEmailForm: ',
@@ -132,6 +139,7 @@ export class SendEmailComponent implements OnInit {
         this.emailTextFCError = '';
       }
     } else {
+      this.showFCError=false;
       this.senderEmailFCError = '';
       this.sentToEmailFCError = '';
       this.subjectEmailFCError = '';

@@ -36,7 +36,6 @@ export class FilterBoxComponent implements OnInit {
   filterBar() {
     this._searchService.getItemDescription().subscribe(x => {
       this.itemDescriptions = x;
-      console.log('this.itemDescriptions: ', this.itemDescriptions);
     });
 
     //   this._searchService.getItemDescription().pipe(

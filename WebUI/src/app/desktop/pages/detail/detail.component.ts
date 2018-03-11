@@ -17,7 +17,7 @@ export class DetailComponent implements OnInit {
   turnSmallLoader: boolean = false;
   detailButttons: ButtonProperties[] = new Array();
   hideItemDetailSection?: boolean = true;
-  hideItemPhotoSection?: boolean = false;
+  hideItemPhotoSection?: boolean = true;
   hideItemDescriptionSection?: boolean = false;
   hideItemPosterSection?: boolean = true;
   constructor(
@@ -70,12 +70,9 @@ export class DetailComponent implements OnInit {
       }
       this.turnLargeLoader = false;
       this.turnSmallLoader = false;
-      console.log(this.itemImages);
     });
   }
   hideSection(sectionName: string) {
-    console.log(sectionName);
-
     switch (sectionName) {
       case 'ItemDetailSection':
         this.hideItemDetailSection = !this.hideItemDetailSection;

@@ -11,7 +11,6 @@ export class OverlayComponent implements OnInit {
   closeModalBox: boolean = false;
 
   constructor() {
-    console.log('showOverlay const', this.showOverlay);
   }
 
   ngOnInit(): void {
@@ -20,7 +19,6 @@ export class OverlayComponent implements OnInit {
   closeButtonClick(): void {
     this.showOverlay = !this.showOverlay;
     this.closeModalBox = this.showOverlay ;
-    console.log('showOverlay', this.showOverlay);
   }
   sendEmail(): void {
     window.open('mailto:nepalicraig@gmail.com?subject= I want ' + this.overlayMessage + '&body= Name:.......... ,%0D%0A PhoneNumber:............ ,%0D%0A Price:.......... ');

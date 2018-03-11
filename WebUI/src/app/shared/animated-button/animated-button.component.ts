@@ -23,12 +23,12 @@ export class AnimatedButtonComponent implements OnInit {
       buttonFunctions.popUpName === 'sendEmail'
     ) {
       this.showPopUpModal = true;
-      console.log('showPopUpModal: ', this.showPopUpModal);
+      //console.log('showPopUpModal: ', this.showPopUpModal);
       this.modalService.open(SendEmailComponent, { windowClass: 'dark-modal' });
     }
 
     if (buttonFunctions.canRoute === true) {
-      console.log('buttonFunctions.buttonRoute: ', buttonFunctions.buttonRoute);
+      //console.log('buttonFunctions.buttonRoute: ', buttonFunctions.buttonRoute);
       this.router.navigate([buttonFunctions.buttonRoute]);
     }
   }

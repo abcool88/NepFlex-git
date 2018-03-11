@@ -14,7 +14,6 @@ export class DropdownComponent implements OnInit {
   constructor(private route: Router) {}
 
   ngOnInit() {
-    console.log(this.dropdownOptions);
   }
   routeDropdownTo(val: string) {
     this.route.navigate([val]);

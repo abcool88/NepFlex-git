@@ -1,4 +1,4 @@
-import { Component, OnInit, SimpleChanges, Input } from '@angular/core';
+import { Component, OnInit, SimpleChanges, Input, Output } from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { SearchResponse } from 'app/shared/ResourceModels/SearchResponse';
 import { FilterByPipe } from 'app/shared/pipes/filter-by.pipe';
@@ -14,7 +14,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 })
 export class SearchBoxComponent implements OnInit {
   @Input() isThisComingFromHomePage: boolean = false;
-  @Input() inputText: string;
+  @Output() inputText: string;
   form: FormGroup;
   openSearchedResultsOverlay: boolean = false;
   turnCancelButtonOn: boolean = false;
@@ -53,7 +53,8 @@ export class SearchBoxComponent implements OnInit {
   searchValueChanged(event: { target; value: string }) {
     this.currentSearchingValue = event.target.value;
     if (this.isThisComingFromHomePage) {
-      this.router.navigate(['/search', this.form.get('searchedText').value]);
+      this.router.navigate(['/list',this.form.get('searchedText').value])
+      //this.router.navigate(['/search', this.form.get('searchedText').value]);
       return;
     }
     if (this.currentSearchingValue) {
@@ -74,5 +75,9 @@ export class SearchBoxComponent implements OnInit {
   }
   turnHomeSearchOverlayOn(val: boolean) {
     this.turnHomePageSpecificOverlayOn = val;
+  }
+
+  keyUp(){
+    this.router.navigate(["/list", this.form.get('searchedText').value])
   }
 }

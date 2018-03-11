@@ -4,7 +4,7 @@
   </div>
   <div class="header-middle-section">
     <!-- isThisComingFromHomePage -->
-    <app-search-box *ngIf="!isThisComingFromHomePage" class="non-home-search-box" [isThisComingFromHomePage]="false" [inputText]="inputText"></app-search-box>
+    <app-search-box *ngIf="!isThisComingFromHomePage" class="non-home-search-box" [isThisComingFromHomePage]="false"></app-search-box>
   </div>
   <div class="header-right-section">
     <div class="list-container" *ngFor='let item of headersNavigation;let i=index'>

@@ -19,7 +19,7 @@ export class HomeSearchOverlayComponent implements OnInit {
       {
         buttonId: 1,
         buttonLabel: 'Search More',
-        buttonRoute: `/search`,
+        buttonRoute: `/list`,
         canRoute: true,
         HasDropDown: false,
         DropDownList: [{ id: 1, label: '', url: '' }]
@@ -27,7 +27,7 @@ export class HomeSearchOverlayComponent implements OnInit {
       {
         buttonId: 2,
         buttonLabel: 'Mixed Items',
-        buttonRoute: `/search/m`,
+        buttonRoute: `/list/m`,
         canRoute: true,
         HasDropDown: false,
         DropDownList: [{ id: 1, label: '', url: '' }]

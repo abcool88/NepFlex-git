@@ -29,7 +29,9 @@ import { ItemContainerComponent } from './item-container/item-container.componen
     InfoBoxComponent,
     SearchBoxComponent,
     DesktopHeaderComponent,
-    DesktopFooterComponent
-  ]
+    DesktopFooterComponent,
+    ItemContainerComponent
+  ],
+  providers:[ItemContainerComponent]
 })
 export class DesktopControlModule {}
