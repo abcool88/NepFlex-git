@@ -31,10 +31,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
@@ -53,24 +53,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Context\OnlinePasalContext.cs">
+    <Compile Include="Context\CooperVisionContext.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>OnlinePasalContext.tt</DependentUpon>
+      <DependentUpon>CooperVisionContext.tt</DependentUpon>
     </Compile>
-    <Compile Include="Mapping\OnlinePasalMapping.cs">
+    <Compile Include="Mapping\CooperVisionMapping.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>OnlinePasalMapping.tt</DependentUpon>
+      <DependentUpon>CooperVisionMapping.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Repositories\DetailRepository.cs" />
-    <Compile Include="Repositories\ItemDescriptionRepository.cs" />
-    <Compile Include="Repositories\MenuTopRepository.cs" />
     <Compile Include="Repositories\ReportRepository.cs" />
     <Compile Include="Repositories\Repository.cs" />
-    <Compile Include="Repositories\SearchRepository.cs" />
-    <Compile Include="Repositories\SendEmailRepository.cs" />
     <Compile Include="UnitOfWork.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -85,13 +80,13 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Context\OnlinePasalContext.tt">
+    <Content Include="Context\CooperVisionContext.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>OnlinePasalContext.cs</LastGenOutput>
+      <LastGenOutput>CooperVisionContext.cs</LastGenOutput>
     </Content>
-    <Content Include="Mapping\OnlinePasalMapping.tt">
+    <Content Include="Mapping\CooperVisionMapping.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>OnlinePasalMapping.cs</LastGenOutput>
+      <LastGenOutput>CooperVisionMapping.cs</LastGenOutput>
     </Content>
   </ItemGroup>
   <ItemGroup>

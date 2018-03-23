@@ -14,7 +14,7 @@ namespace DataAccess.Repositories
     public class Repository<T, TKey> : ReadOnlyRepository<T, TKey>, IRepository<T, TKey> where T : class
     {
         protected readonly DbSet<T> Items;
-        public Repository(IOnlinePasalContext context) : base(context)
+        public Repository(ICooperVisionContext context) : base(context)
         {
             Items = Context.Set<T>();
         }
@@ -73,7 +73,7 @@ namespace DataAccess.Repositories
 
     public class ReadOnlyRepository<T, TKey> : ReadOnlyRepository<T>, IReadOnlyRepository<T, TKey> where T : class
     {
-        public ReadOnlyRepository(IOnlinePasalContext context) : base(context)
+        public ReadOnlyRepository(ICooperVisionContext context) : base(context)
         {
         }
         public virtual T GetById(TKey id)
@@ -85,10 +85,10 @@ namespace DataAccess.Repositories
     }
     public class ReadOnlyRepository<T> : IReadOnlyRepository<T> where T : class
     {
-        protected IOnlinePasalContext Context;
+        protected ICooperVisionContext Context;
         protected DbQuery<T> ReadOnlyItems => Context.Set<T>().AsNoTracking();
 
-        public ReadOnlyRepository(IOnlinePasalContext context)
+        public ReadOnlyRepository(ICooperVisionContext context)
         {
             Context = context;
         }

@@ -12,8 +12,8 @@ namespace NepFlex.DataAccess.Repositories
 {
     public class ReportRepository : Repository<string, int>, IReportRepository
     {
-        private readonly IOnlinePasalContext _context;
-        public ReportRepository(IOnlinePasalContext context) : base(context)
+        private readonly ICooperVisionContext _context;
+        public ReportRepository(ICooperVisionContext context) : base(context)
         {
             _context = context;
         }

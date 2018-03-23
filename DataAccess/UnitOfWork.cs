@@ -1,17 +1,10 @@
 ﻿using Core.Interfaces;
-using NepFlex.Core.Entities.OnlinePasal;
-using Core.Interfaces.Repositories;
-using DataAccess.Repositories;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Data.Entity.Validation;
 using System.Diagnostics;
 using System.Transactions;
-using System.EnterpriseServices;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using NepFlex.DataAccess.Context;
 using NepFlex.DataAccess.Repositories;
 using NepFlex.Core.Interfaces.Repositories;
@@ -21,18 +14,13 @@ namespace DataAccess
     public class UnitOfWork : IUnitOfWork
     {
         private static readonly TraceSource TraceSource = new TraceSource("NepFlex.DataAccess");
-        private IOnlinePasalContext _context;
+        private ICooperVisionContext _context;
         private bool _disposed;
 
         // TODO: Add Repositories
-        public IMenuTopRepository MenuTopRepository { get; private set; }
-        public ISearchRepository SearchRepository { get; private set; }
-        public IItemDescriptionRepository ItemDescriptionRepository { get; private set; }
         public IReportRepository ReportRepository { get; private set; }
-        public IDetailRepository DetailRepository { get; private set; }
-        public ISendEmailRepository SendEmailRepository { get; private set; }
 
-        public UnitOfWork(IOnlinePasalContext context)
+        public UnitOfWork(ICooperVisionContext context)
         {
             _context = context;
             Initialize();
@@ -41,12 +29,7 @@ namespace DataAccess
         private void Initialize()
         {
             // TODO: Add Repositories
-            MenuTopRepository = new MenuTopRepository(_context);
-            SearchRepository = new SearchRepository(_context);
-            ItemDescriptionRepository = new ItemDescriptionRepository(_context);
             ReportRepository = new ReportRepository(_context);
-            DetailRepository = new DetailRepository(_context);
-            SendEmailRepository = new SendEmailRepository(_context);
         }
         public List<ValidationResult> GetValidationErrors()
         {
