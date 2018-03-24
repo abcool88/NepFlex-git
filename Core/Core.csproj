@@ -55,13 +55,14 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>CooperVisionModels.tt</DependentUpon>
     </Compile>
-    <Compile Include="Entities\ResourceModels\ReportedData.cs" />
+    <Compile Include="Entities\ResourceModels\BlogComments.cs" />
+    <Compile Include="Entities\ResourceModels\MyBlogData.cs" />
     <Compile Include="Interfaces\IUnitOfWork.cs" />
-    <Compile Include="Interfaces\Repositories\IReportRepository.cs" />
     <Compile Include="Interfaces\Repositories\IRepository.cs" />
-    <Compile Include="Interfaces\Services\IReportService.cs" />
+    <Compile Include="Interfaces\Repositories\IMyBlogRepository.cs" />
+    <Compile Include="Interfaces\Services\IMyBlogService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Services\ReportService.cs" />
+    <Compile Include="Services\MyBlogService.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Interfaces\Utilities\" />

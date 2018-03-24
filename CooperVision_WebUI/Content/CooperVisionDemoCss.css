@@ -1,0 +1,10 @@
+﻿.blog-custom-style {
+    background-color: #f8f8f8;
+}
+
+.blog-detail {
+    width: 800px;
+    height: 60px;
+    line-height: 20px; /* Height / no. of lines to display */
+    overflow: hidden;
+}

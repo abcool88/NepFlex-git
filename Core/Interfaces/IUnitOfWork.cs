@@ -10,8 +10,7 @@ namespace Core.Interfaces
 {
     public interface IUnitOfWork : IDisposable
     {
-       
-        IReportRepository ReportRepository { get; }
+        IMyBlogRepository MyBlogRepository { get; }
         bool Save();
     }
 }

@@ -17,7 +17,8 @@ namespace DependencyResolution
         {
             container.RegisterType<ICooperVisionContext, CooperVisionContext>(new TransientLifetimeManager(), new InjectionConstructor());
             container.RegisterType<IUnitOfWork, UnitOfWork>(new PerRequestLifetimeManager());
-            container.RegisterType<IReportService, ReportService>();
+            container.RegisterType<IMyBlogService, MyBlogService>();
+
         }
     }
 }

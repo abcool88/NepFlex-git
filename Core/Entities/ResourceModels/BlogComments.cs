@@ -1,0 +1,14 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace NepFlex.Core.Entities.ResourceModels
+{
+    public class BlogComments
+    {
+        public string Comment { get; set; }
+        public DateTime Created_On { get; set; }
+    }
+}

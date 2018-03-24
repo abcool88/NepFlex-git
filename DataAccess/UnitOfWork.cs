@@ -18,7 +18,7 @@ namespace DataAccess
         private bool _disposed;
 
         // TODO: Add Repositories
-        public IReportRepository ReportRepository { get; private set; }
+        public IMyBlogRepository MyBlogRepository { get; private set; }
 
         public UnitOfWork(ICooperVisionContext context)
         {
@@ -29,7 +29,7 @@ namespace DataAccess
         private void Initialize()
         {
             // TODO: Add Repositories
-            ReportRepository = new ReportRepository(_context);
+            MyBlogRepository = new MyBlogRepository(_context);
         }
         public List<ValidationResult> GetValidationErrors()
         {
