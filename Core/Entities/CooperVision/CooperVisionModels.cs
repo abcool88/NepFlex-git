@@ -617,8 +617,8 @@ namespace NepFlex.Core.Entities.CooperVision
         public int CommentId { get; set; } // CommentID (Primary key)
         public int BlogId { get; set; } // BlogID
         public string Comment { get; set; } // Comment (length: 500)
-        public System.DateTime CreatedOn { get; set; } // Created_On
-        public System.DateTime? ModifiedOn { get; set; } // Modified_On
+        public string CreatedOn { get; set; } // Created_On (length: 20)
+        public string ModifiedOn { get; set; } // Modified_On (length: 20)
         public bool Active { get; set; } // Active
 
         // Foreign keys
@@ -630,7 +630,7 @@ namespace NepFlex.Core.Entities.CooperVision
 
         public BlogComment()
         {
-            CreatedOn = System.DateTime.Now;
+            CreatedOn = "CONVERT([varchar](20),getdate(),(100))";
             Active = true;
         }
     }
@@ -642,8 +642,8 @@ namespace NepFlex.Core.Entities.CooperVision
         public int BlogId { get; set; } // BlogID (Primary key)
         public string Title { get; set; } // Title (length: 350)
         public string Detail { get; set; } // Detail
-        public System.DateTime CreatedOn { get; set; } // Created_On
-        public System.DateTime? ModifiedOn { get; set; } // Modified_On
+        public string CreatedOn { get; set; } // Created_On (length: 20)
+        public string ModifiedOn { get; set; } // Modified_On (length: 20)
         public bool Active { get; set; } // Active
 
         // Reverse navigation
@@ -655,7 +655,7 @@ namespace NepFlex.Core.Entities.CooperVision
 
         public MyBlog()
         {
-            CreatedOn = System.DateTime.Now;
+            CreatedOn = "CONVERT([varchar](20),getdate(),(100))";
             Active = true;
             BlogComments = new System.Collections.Generic.List<BlogComment>();
         }
@@ -682,8 +682,8 @@ namespace NepFlex.Core.Entities.CooperVision
             Property(x => x.CommentId).HasColumnName(@"CommentID").HasColumnType("int").IsRequired().HasDatabaseGeneratedOption(System.ComponentModel.DataAnnotations.Schema.DatabaseGeneratedOption.Identity);
             Property(x => x.BlogId).HasColumnName(@"BlogID").HasColumnType("int").IsRequired();
             Property(x => x.Comment).HasColumnName(@"Comment").HasColumnType("nvarchar").IsRequired().HasMaxLength(500);
-            Property(x => x.CreatedOn).HasColumnName(@"Created_On").HasColumnType("datetime").IsRequired();
-            Property(x => x.ModifiedOn).HasColumnName(@"Modified_On").HasColumnType("datetime").IsOptional();
+            Property(x => x.CreatedOn).HasColumnName(@"Created_On").HasColumnType("varchar").IsRequired().IsUnicode(false).HasMaxLength(20);
+            Property(x => x.ModifiedOn).HasColumnName(@"Modified_On").HasColumnType("varchar").IsOptional().IsUnicode(false).HasMaxLength(20);
             Property(x => x.Active).HasColumnName(@"Active").HasColumnType("bit").IsRequired();
 
             // Foreign keys
@@ -708,8 +708,8 @@ namespace NepFlex.Core.Entities.CooperVision
             Property(x => x.BlogId).HasColumnName(@"BlogID").HasColumnType("int").IsRequired().HasDatabaseGeneratedOption(System.ComponentModel.DataAnnotations.Schema.DatabaseGeneratedOption.Identity);
             Property(x => x.Title).HasColumnName(@"Title").HasColumnType("nvarchar").IsRequired().HasMaxLength(350);
             Property(x => x.Detail).HasColumnName(@"Detail").HasColumnType("nvarchar(max)").IsRequired();
-            Property(x => x.CreatedOn).HasColumnName(@"Created_On").HasColumnType("datetime").IsRequired();
-            Property(x => x.ModifiedOn).HasColumnName(@"Modified_On").HasColumnType("datetime").IsOptional();
+            Property(x => x.CreatedOn).HasColumnName(@"Created_On").HasColumnType("varchar").IsRequired().IsUnicode(false).HasMaxLength(20);
+            Property(x => x.ModifiedOn).HasColumnName(@"Modified_On").HasColumnType("varchar").IsOptional().IsUnicode(false).HasMaxLength(20);
             Property(x => x.Active).HasColumnName(@"Active").HasColumnType("bit").IsRequired();
         }
     }
@@ -724,14 +724,14 @@ namespace NepFlex.Core.Entities.CooperVision
         public System.Int32 BlogID { get; set; }
         public System.String Title { get; set; }
         public System.String Detail { get; set; }
-        public System.DateTime Created_On { get; set; }
+        public System.String Created_On { get; set; }
     }
 
     [System.CodeDom.Compiler.GeneratedCode("EF.Reverse.POCO.Generator", "2.31.1.0")]
     public class MyBlogCommentsSReturnModel
     {
         public System.String Comment { get; set; }
-        public System.DateTime Created_On { get; set; }
+        public System.String Created_On { get; set; }
     }
 
     #endregion

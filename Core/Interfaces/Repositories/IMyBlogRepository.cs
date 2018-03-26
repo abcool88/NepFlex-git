@@ -11,6 +11,9 @@ namespace NepFlex.Core.Interfaces.Repositories
     public interface IMyBlogRepository : IRepository<String, int>
     {
         List<MyBlogData> GetMyBlogData();
+        List<MyBlogData> GetMyBlogDetail(int id);
+        List<BlogComments> GetComments(int blogId);
         int SaveMyBlogData(MyBlogData data);
+        int SaveComment(int blogID, BlogComments comment);
     }
 }

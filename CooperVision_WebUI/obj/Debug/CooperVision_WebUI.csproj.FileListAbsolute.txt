@@ -50,6 +50,8 @@ D:\AngularDemo\Projects\NepFlex-git\CooperVision_WebUI\bin\CooperVision_WebUI.dl
 D:\AngularDemo\Projects\NepFlex-git\CooperVision_WebUI\bin\CooperVision_WebUI.dll
 D:\AngularDemo\Projects\NepFlex-git\CooperVision_WebUI\bin\CooperVision_WebUI.pdb
 D:\AngularDemo\Projects\NepFlex-git\CooperVision_WebUI\bin\Antlr3.Runtime.dll
+D:\AngularDemo\Projects\NepFlex-git\CooperVision_WebUI\bin\EntityFramework.dll
+D:\AngularDemo\Projects\NepFlex-git\CooperVision_WebUI\bin\EntityFramework.SqlServer.dll
 D:\AngularDemo\Projects\NepFlex-git\CooperVision_WebUI\bin\Microsoft.AI.Agent.Intercept.dll
 D:\AngularDemo\Projects\NepFlex-git\CooperVision_WebUI\bin\Microsoft.AI.DependencyCollector.dll
 D:\AngularDemo\Projects\NepFlex-git\CooperVision_WebUI\bin\Microsoft.AI.PerfCounterCollector.dll
@@ -69,9 +71,10 @@ D:\AngularDemo\Projects\NepFlex-git\CooperVision_WebUI\bin\System.Web.WebPages.D
 D:\AngularDemo\Projects\NepFlex-git\CooperVision_WebUI\bin\System.Web.WebPages.dll
 D:\AngularDemo\Projects\NepFlex-git\CooperVision_WebUI\bin\System.Web.WebPages.Razor.dll
 D:\AngularDemo\Projects\NepFlex-git\CooperVision_WebUI\bin\WebGrease.dll
-D:\AngularDemo\Projects\NepFlex-git\CooperVision_WebUI\bin\EntityFramework.dll
 D:\AngularDemo\Projects\NepFlex-git\CooperVision_WebUI\bin\NepFlex.Core.pdb
 D:\AngularDemo\Projects\NepFlex-git\CooperVision_WebUI\bin\NepFlex.Core.dll.config
+D:\AngularDemo\Projects\NepFlex-git\CooperVision_WebUI\bin\EntityFramework.xml
+D:\AngularDemo\Projects\NepFlex-git\CooperVision_WebUI\bin\EntityFramework.SqlServer.xml
 D:\AngularDemo\Projects\NepFlex-git\CooperVision_WebUI\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
 D:\AngularDemo\Projects\NepFlex-git\CooperVision_WebUI\bin\System.Web.Helpers.xml
 D:\AngularDemo\Projects\NepFlex-git\CooperVision_WebUI\bin\System.Web.Mvc.xml
@@ -87,7 +90,6 @@ D:\AngularDemo\Projects\NepFlex-git\CooperVision_WebUI\bin\Microsoft.AI.Dependen
 D:\AngularDemo\Projects\NepFlex-git\CooperVision_WebUI\bin\Microsoft.AI.ServerTelemetryChannel.xml
 D:\AngularDemo\Projects\NepFlex-git\CooperVision_WebUI\bin\Microsoft.AI.WindowsServer.xml
 D:\AngularDemo\Projects\NepFlex-git\CooperVision_WebUI\bin\Microsoft.AI.Web.xml
-D:\AngularDemo\Projects\NepFlex-git\CooperVision_WebUI\bin\EntityFramework.xml
 D:\AngularDemo\Projects\NepFlex-git\CooperVision_WebUI\obj\Debug\CooperVision_WebUI.csprojResolveAssemblyReference.cache
 D:\AngularDemo\Projects\NepFlex-git\CooperVision_WebUI\obj\Debug\CooperVision_WebUI.csproj.CoreCompileInputs.cache
 D:\AngularDemo\Projects\NepFlex-git\CooperVision_WebUI\obj\Debug\CooperVision_WebUI.dll

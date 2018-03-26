@@ -10,7 +10,7 @@ using System.Web.Http;
 
 namespace Nepflex.ServiceAPI.Controllers
 {
-    [RoutePrefix("api/MyBlog")]
+    [RoutePrefix("api/blog")]
     public class MyBlogController : ApiController
     {
         private IMyBlogService _blogService;
@@ -20,7 +20,7 @@ namespace Nepflex.ServiceAPI.Controllers
             _blogService = blogService;
         }
 
-        [Route("blogDetail")]
+        [Route("getAll")]
         [HttpGet]
         public IHttpActionResult GetMyBlogData()
         {
@@ -35,13 +35,61 @@ namespace Nepflex.ServiceAPI.Controllers
                 return InternalServerError(ex);
             }
         }
-        [Route("post")]
+
+        [Route("{id}")]
+        [HttpGet]
+        public IHttpActionResult GetMyBlogDetail(int id)
+        {
+            Console.WriteLine("came here in GetMyBlogDetail");
+            try
+            {
+                var results = _blogService.GetMyBlogDetail(id);
+                return Ok(results);
+            }
+            catch (Exception ex)
+            {
+                return InternalServerError(ex);
+            }
+        }
+
+        [Route("getComments/{id}")]
+        [HttpGet]
+        public IHttpActionResult GetComments(int id)
+        {
+            Console.WriteLine("came here in GetComments");
+            try
+            {
+                var results = _blogService.GetComments(id);
+                return Ok(results);
+            }
+            catch (Exception ex)
+            {
+                return InternalServerError(ex);
+            }
+        }
+
+        [Route("createBlog")]
         [HttpPost]
-        public IHttpActionResult SaveReport(MyBlogData reportData)
+        public IHttpActionResult SaveMyBlogData([FromBody] MyBlogData blogData)
         {
             try
             {
-                var result = _blogService.SaveMyBlogData(reportData);
+                var result = _blogService.SaveMyBlogData(blogData);
+                return Ok(result);
+            }
+            catch (Exception ex)
+            {
+                return InternalServerError(ex);
+            }
+        }
+
+        [Route("postComment/{blogID}")]
+        [HttpPost]
+        public IHttpActionResult SaveComment(int blogID, [FromBody] BlogComments comment)
+        {
+            try
+            {
+                var result = _blogService.SaveComment(blogID, comment);
                 return Ok(result);
             }
             catch (Exception ex)

@@ -1,5 +1,6 @@
 ﻿.blog-custom-style {
     background-color: #f8f8f8;
+    padding: 2em;
 }
 
 .blog-detail {
@@ -7,4 +8,30 @@
     height: 60px;
     line-height: 20px; /* Height / no. of lines to display */
     overflow: hidden;
+}
+
+.myblog-title-input {
+    max-width: 65%;
+}
+
+.myblog-detail-input {
+    max-width: 70%;
+    height: 500px;
+}
+
+textarea {
+    min-height: 500px;
+}
+.custom-button{
+    width:20em;
+}
+.custom-commentbox {
+    min-height: 5em;
+}
+.user-comment {
+    border-bottom: 1px solid #E4E4E4;
+    background-color: white;
+}
+hr {
+    border-top:none;
 }

@@ -20,9 +20,22 @@ namespace NepFlex.Core.Services
         {
             return _unitOfWork.MyBlogRepository.GetMyBlogData();
         }
+        public List<MyBlogData> GetMyBlogDetail(int id)
+        {
+            return _unitOfWork.MyBlogRepository.GetMyBlogDetail(id);
+        }
+        public List<BlogComments> GetComments(int blogId)
+        {
+            return _unitOfWork.MyBlogRepository.GetComments(blogId);
+        }
+
         public int SaveMyBlogData(MyBlogData data)
         {
             return _unitOfWork.MyBlogRepository.SaveMyBlogData(data);
+        }
+        public int SaveComment(int blogID, BlogComments comment)
+        {
+            return _unitOfWork.MyBlogRepository.SaveComment(blogID,comment);
         }
     }
 }
