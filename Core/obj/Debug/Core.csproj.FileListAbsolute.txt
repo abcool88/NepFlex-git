@@ -34,6 +34,7 @@ D:\AngularDemo\Projects\NepFlex-git\Core\bin\Debug\EntityFramework.dll
 D:\AngularDemo\Projects\NepFlex-git\Core\bin\Debug\EntityFramework.SqlServer.dll
 D:\AngularDemo\Projects\NepFlex-git\Core\bin\Debug\EntityFramework.xml
 D:\AngularDemo\Projects\NepFlex-git\Core\bin\Debug\EntityFramework.SqlServer.xml
+D:\AngularDemo\Projects\NepFlex-git\Core\obj\Debug\Core.csprojResolveAssemblyReference.cache
 D:\AngularDemo\Projects\NepFlex-git\Core\obj\Debug\Core.csproj.CoreCompileInputs.cache
 D:\AngularDemo\Projects\NepFlex-git\Core\obj\Debug\NepFlex.Core.dll
 D:\AngularDemo\Projects\NepFlex-git\Core\obj\Debug\NepFlex.Core.pdb

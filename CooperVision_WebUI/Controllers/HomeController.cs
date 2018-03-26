@@ -6,12 +6,12 @@ namespace CooperVision_WebUI.Controllers
     {
         public ActionResult Index()
         {
-            return View();
+            return View("Index");
         }
 
         public ActionResult CreateNewBlog()
         {
-            return View();
+            return View("CreateNewBlog");
         }
     }
 }

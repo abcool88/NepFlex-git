@@ -10,7 +10,7 @@ namespace CooperVision_WebUI.Controllers
     {
         public ActionResult BlogDetail(string id)
         {
-            return View();
+            return View("BlogDetail");
         }
     }
 }

@@ -1,0 +1,2 @@
+D:\AngularDemo\Projects\NepFlex-git\CooperVisionUnitTest\obj\Debug\CooperVisionUnitTest.csprojResolveAssemblyReference.cache
+D:\AngularDemo\Projects\NepFlex-git\CooperVisionUnitTest\obj\Debug\CooperVisionUnitTest.csproj.CoreCompileInputs.cache
