@@ -11,6 +11,8 @@ using NepFlex.Core.Interfaces.Repositories;
 using Moq;
 using Nepflex.ServiceAPI.Controllers;
 using NepFlex.Core.Interfaces.Services;
+using System.Web.Http;
+using System.Web.Http.Results;
 
 namespace CooperVision_WebUI.Controllers.Tests
 {
@@ -47,28 +49,6 @@ namespace CooperVision_WebUI.Controllers.Tests
             var controller = new HomeController();
             var result = controller.CreateNewBlog() as ViewResult;
             Assert.AreNotEqual("laskdhfoihf", result.ViewName);
-        }
-
-
-        [TestMethod]
-        public void ThenVerifyTheRightLoginUrlIsReturned()
-        {
-            // Arrange
-            var faqs = new List<MyBlogData>
-    {
-        new MyBlogData {BlogID = 1, Title = "Home", Detail = "Where Do you Live?"},
-        new MyBlogData {BlogID = 2, Title = "Since I was 11", Detail = "When did you start programming?"},
-        new MyBlogData {BlogID = 3, Title = "In Pennsylvania", Detail = "Where were you born?"}
-    };
-            var faqRepository = new Mock<IMyBlogService>();
-            faqRepository.Setup(e => e.GetMyBlogDetail(2)).Returns(faqs);
-            var controller = new MyBlogController(faqRepository.Object);
-            // Act 
-            var result = controller.GetMyBlogDetail(2) as ViewResult;
-            var model = result.Model as FaqViewModel;
-            // Assert
-            Assert.IsNotNull(result);
-            Assert.AreEqual(3, model.FAQs.Count());
         }
     }
 }

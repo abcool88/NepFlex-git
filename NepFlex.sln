@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CooperVision_WebUI", "Coope
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CooperVisionUnitTest", "CooperVisionUnitTest\CooperVisionUnitTest.csproj", "{BCA31B4B-44C1-4182-AFEB-617B901DC88C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServiceAPITests", "ServiceAPITests\ServiceAPITests.csproj", "{4C8DC234-8DCC-4171-9BA9-DA14B8CF92DF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,10 @@ Global
 		{BCA31B4B-44C1-4182-AFEB-617B901DC88C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BCA31B4B-44C1-4182-AFEB-617B901DC88C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BCA31B4B-44C1-4182-AFEB-617B901DC88C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4C8DC234-8DCC-4171-9BA9-DA14B8CF92DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4C8DC234-8DCC-4171-9BA9-DA14B8CF92DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4C8DC234-8DCC-4171-9BA9-DA14B8CF92DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4C8DC234-8DCC-4171-9BA9-DA14B8CF92DF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
