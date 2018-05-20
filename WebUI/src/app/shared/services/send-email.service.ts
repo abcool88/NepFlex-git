@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HTTPHeader } from 'app/shared/services/http-header';
 import { HttpClient } from '@angular/common/http';
 import { SendEmailProperties } from 'app/shared/ResourceModels/SendEmailDetail';
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs';
 
 @Injectable()
 export class SendEmailService {

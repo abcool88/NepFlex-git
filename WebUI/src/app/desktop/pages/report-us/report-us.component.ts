@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ReportService } from 'app/shared/services/report.service';
 import { ReportGetData } from 'app/shared/ResourceModels/ReportGetData';
-import { window } from 'rxjs/operators/window';
+import { window } from 'rxjs/operators';
 import { async } from '@angular/core/testing';
 import { Router } from '@angular/router';
 import { forEach } from '@angular/router/src/utils/collection';

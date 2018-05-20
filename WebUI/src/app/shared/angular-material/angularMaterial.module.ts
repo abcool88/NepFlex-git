@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { TextAreaComponent } from 'app/shared/angular-material/text-area/text-area.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
 import { DesktopModule } from 'app/desktop/desktop.module';
 import { MobileModule } from 'app/mobile/mobile.module';
 import { SharedModule } from 'app/shared/shared.module';
@@ -32,7 +31,7 @@ import { CommonModule } from '@angular/common';
 
     BrowserModule,
     FormsModule,
-    HttpModule,
+    HttpClientModule,
     CommonModule,
     ReactiveFormsModule
   ],

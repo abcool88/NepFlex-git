@@ -10,7 +10,6 @@ import { FilteringSearch } from 'app/shared/ResourceModels/FilteringSearch';
 import { SearchService } from 'app/shared/services/search.service';
 import { ReportService } from 'app/shared/services/report.service';
 import { DefaultValuePipe } from 'app/shared/pipes/default-value.pipe';
-import { HttpModule } from '@angular/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { SpinnerComponent } from 'app/shared/spinner/spinner.component';
 import { CloudSpinnerComponent } from './spinner/cloud-spinner/cloud-spinner.component';
@@ -24,12 +23,13 @@ import { SendEmailComponent } from './send-email/send-email.component';
 import { MyAngularMaterialModule } from 'app/shared/angular-material/angularMaterial.module';
 import { SendEmailService } from 'app/shared/services/send-email.service';
 import { HTTPHeader } from './services/http-header';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule,
+    HttpClientModule,
     CommonModule,
     ReactiveFormsModule,
     NgbModule,
@@ -60,7 +60,7 @@ import { HTTPHeader } from './services/http-header';
     HomeService,
     HTTPHeader
   ],
-  entryComponents:[SendEmailComponent],
+  entryComponents: [SendEmailComponent],
   exports: [
     SpinnerComponent,
     CloudSpinnerComponent,

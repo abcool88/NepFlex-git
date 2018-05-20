@@ -9,7 +9,7 @@ import {
   OnChanges
 } from '@angular/core';
 import { SearchResponse } from 'app/shared/ResourceModels/SearchResponse';
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs';
 import { OrderByPipe } from 'app/shared/pipes/order-by.pipe';
 import { FilterByPipe } from 'app/shared/pipes/filter-by.pipe';
 import { FilteringSearch } from 'app/shared/ResourceModels/FilteringSearch';

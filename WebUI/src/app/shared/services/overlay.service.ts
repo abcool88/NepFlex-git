@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable, Subject } from 'rxjs';
-import 'rxjs/add/operator/distinct'
+
 
 @Injectable()
 export class OverlayService {

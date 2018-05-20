@@ -3,7 +3,7 @@ import { FilteringSearch } from 'app/shared/ResourceModels/FilteringSearch';
 import { ItemDescription } from 'app/shared/ResourceModels/ItemDescription';
 import { SearchService } from 'app/shared/services/search.service';
 import { Component, OnInit, Output, Input, EventEmitter } from '@angular/core';
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 @Component({
   selector: 'app-filter-box',

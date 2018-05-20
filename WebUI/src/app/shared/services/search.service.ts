@@ -1,9 +1,9 @@
-import 'rxjs/add/operator/catch';
-import 'rxjs/add/operator/map';
+
+
 import { SearchResponse } from 'app/shared/ResourceModels/SearchResponse';
 import { ItemDescription } from 'app/shared/ResourceModels/ItemDescription';
 import { HttpClient, HttpResponse } from '@angular/common/http';
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs';
 import { Injectable } from '@angular/core';
 
 @Injectable()

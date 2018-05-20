@@ -7,9 +7,8 @@ import {
   HttpErrorResponse
 } from '@angular/common/http';
 import { ReportGetData } from 'app/shared/ResourceModels/ReportGetData';
-import { Observable } from 'rxjs/Observable';
+import { Observable, throwError } from 'rxjs';
 import { catchError, retry } from 'rxjs/operators';
-import { ErrorObservable } from 'rxjs/observable/ErrorObservable';
 import { Headers, RequestOptions } from '@angular/http';
 @Injectable()
 export class ReportService {
@@ -30,13 +29,12 @@ export class ReportService {
     return this.http.get<ReportGetData[]>(`${this.apiUrl_getReport}`);
   }
 
-  AddReports(val: ReportGetData):Observable<ReportGetData> {
-    return this.http
-      .post<ReportGetData>(
-        `${this.apiUrl_postReport}`,
-        JSON.stringify(val),
-        this.httpOptions
-      )
+  AddReports(val: ReportGetData): Observable<ReportGetData> {
+    return this.http.post<ReportGetData>(
+      `${this.apiUrl_postReport}`,
+      JSON.stringify(val),
+      this.httpOptions
+    );
   }
 
   private handleError(error: HttpErrorResponse) {
@@ -51,8 +49,6 @@ export class ReportService {
       );
     }
     // return an ErrorObservable with a user-facing error message
-    return new ErrorObservable(
-      'Something bad happened; please try again later.'
-    );
+    return throwError('Something bad happened; please try again later.');
   }
 }
