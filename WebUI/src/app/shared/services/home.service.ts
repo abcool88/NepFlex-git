@@ -1,9 +1,6 @@
 import { Injectable } from '@angular/core';
-import { Http, Response } from '@angular/http';
+import { HttpClient, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
-
-
-
 import { MenuTopNav } from '../interfaces/header';
 import { SearchResponse } from 'app/shared/ResourceModels/SearchResponse';
 
@@ -12,7 +9,7 @@ export class HomeService {
   private apiUrl_getSearchResponse = 'https://localhost/ServiceAPI/api/search';
   private apiUrl_getMenuNav = 'https://localhost/ServiceAPI/api/menuTop/getMenu';
 
-  constructor(private http: Http) {}
+  constructor(private http: HttpClient) {}
 
   // getMenuNav(): Observable<MenuTopNav[]> {
   //   return this.http.get(this.apiUrl_getMenuNav).map(this.extractMenuTopNav);

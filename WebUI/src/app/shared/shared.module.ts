@@ -24,6 +24,9 @@ import { MyAngularMaterialModule } from 'app/shared/angular-material/angularMate
 import { SendEmailService } from 'app/shared/services/send-email.service';
 import { HTTPHeader } from './services/http-header';
 import { HttpClientModule } from '@angular/common/http';
+import { FilterByPipe } from './pipes/filter-by.pipe';
+import { OrderByNestedPipe } from './pipes/order-by-nested.pipe';
+import { UniqueValuePipe } from './pipes/unique-value.pipe';
 
 @NgModule({
   imports: [
@@ -39,6 +42,9 @@ import { HttpClientModule } from '@angular/common/http';
     SpinnerComponent,
     DefaultValuePipe,
     OrderByPipe,
+    FilterByPipe,
+    OrderByNestedPipe,
+    UniqueValuePipe,
     CamelCase,
     OverlayComponent,
     CarouselComponent,
@@ -66,6 +72,9 @@ import { HttpClientModule } from '@angular/common/http';
     CloudSpinnerComponent,
     DefaultValuePipe,
     OrderByPipe,
+    FilterByPipe,
+    OrderByNestedPipe,
+    UniqueValuePipe,
     CamelCase,
     OverlayComponent,
     CarouselComponent,
