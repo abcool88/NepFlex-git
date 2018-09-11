@@ -30,3 +30,19 @@
   position: relative !important;
   box-shadow: 0 5px 30px rgba(156, 160, 171, 0.25) !important;
 }
+@media (max-width: 992px){
+  .homepage-container{
+    font-size: 14px !important;
+  }
+  .home-text-info {
+    font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif !important;
+    letter-spacing: -0.8px !important;
+    padding-top: 1rem !important;
+    padding-bottom: 8px !important;
+    font-weight: normal !important;
+    line-height: calc(0.7vw + 48px) !important;
+    background: #00396b;
+    font-size: 22px !important;
+    color: white !important;
+  }
+  }

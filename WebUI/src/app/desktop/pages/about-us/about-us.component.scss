@@ -8,18 +8,19 @@
 }
 .about-us-info {
   @include body-page-container(41% ,42px,#484848,#ffffff);
-  @include display-child-flex(0,1,auto,auto);
+  @include display-child-flex(1,0,auto,auto);
+
 }
 .right-section {
   @include display-child-flex(0,1,auto,auto);
   @include display-parent-flex(column,nowrap,flex-start,flex-start,flex-start);
 }
 .contact-us-info {
-  @include body-page-container(41% ,42px,#484848,#ffffff);
+  @include body-page-container(auto ,42px,#484848,#ffffff);
   @include display-child-flex(0,1,auto,auto);
 }
 .terms-of-service-info {
-  @include body-page-container(41% ,42px,#484848,#ffffff);
+  @include body-page-container(auto ,42px,#484848,#ffffff);
   @include display-child-flex(0,1,auto,auto);
 }
 
@@ -36,4 +37,9 @@
 }
 .title-about-us {
   @include custom-font-style(35px,56px,-0.8px,1px,8px,#6f6f6f,normal);
+}
+@media (max-width: 992px){
+.body-container {
+  padding: 1em;
+}
 }

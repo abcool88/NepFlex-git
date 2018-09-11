@@ -5,7 +5,8 @@
   <mat-error *ngIf="showFCError">{{sentToEmailFCError}}</mat-error>
   <app-text-area data-test-id="sentTo_email" placeholder='Subject/Title' formControlName="subjectEmail" textType='text' (newData)="prepareToSendEmail($event,'subjectEmail')"></app-text-area>
   <mat-error *ngIf="showFCError">{{subjectEmailFCError}}</mat-error>
-  <app-text-area data-test-id="emailText_email" placeholder='Detail/Message' formControlName="emailText" textType='textarea' (newData)="prepareToSendEmail($event,'emailText')"></app-text-area>
+  <app-text-area data-test-id="emailText_email" placeholder='Detail/Message' formControlName="emailText" textType='textarea'
+    (newData)="prepareToSendEmail($event,'emailText')"></app-text-area>
   <mat-error *ngIf="showFCError">{{emailTextFCError}}</mat-error>
   <app-animated-button [buttonCollections]="detailButttons" (click)="sendEmailNow()"></app-animated-button>
 </form>

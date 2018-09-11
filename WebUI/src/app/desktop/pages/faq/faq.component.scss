@@ -1,18 +1,20 @@
 @import '../../../../Style/styles.scss';
-
 .info-blocks {
-  @include display-parent-flex(row,nowrap,flex-start,flex-start,flex-start);
+  @include display-parent-flex(row, nowrap, flex-start, flex-start, flex-start);
 }
+
 .body-container {
   padding: 8em;
 }
+
 .faq-info {
-  @include body-page-container(100% ,42px,#484848,#ffffff);
-  @include display-child-flex(0,1,auto,auto);
+  @include body-page-container(100%, 42px, #484848, #ffffff);
+  @include display-child-flex(0, 1, auto, auto);
 }
+
 .terms-of-service-info {
-  @include body-page-container(41% ,42px,#484848,#ffffff);
-  @include display-child-flex(0,1,auto,auto);
+  @include body-page-container(41%, 42px, #484848, #ffffff);
+  @include display-child-flex(0, 1, auto, auto);
 }
 
 .imgaboutus {
@@ -26,6 +28,13 @@
   z-index: 1;
   margin-left: 35em;
 }
+
 .title-text {
-  @include custom-font-style(35px,56px,-0.8px,1px,8px,#6f6f6f,normal);
+  @include custom-font-style(35px, 56px, -0.8px, 1px, 8px, #6f6f6f, normal);
 }
+
+// @media (max-width: 992px) {
+//   .faq-info {
+//     font-size: 10px;
+//   }
+// }

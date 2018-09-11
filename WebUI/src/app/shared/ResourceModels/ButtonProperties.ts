@@ -15,7 +15,7 @@ export class HeadersNavigation {
   headerRoute?: string;
   canRoute?: boolean;
   hasDropDown?: boolean;
-  dropDownList?:DropDownList[];
+  dropDownList?: DropDownList[];
 }
 
 class DropDownList {

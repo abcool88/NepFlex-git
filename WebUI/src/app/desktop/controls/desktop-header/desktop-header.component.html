@@ -1,9 +1,8 @@
-<div class="header-body">
+<!-- <div class="header-body">
   <div class="header-left-section">
     <div class="logo" (click)="HeaderRoute('home',true)">{{title}}</div>
   </div>
   <div class="header-middle-section">
-    <!-- isThisComingFromHomePage -->
     <app-search-box *ngIf="!isThisComingFromHomePage" class="non-home-search-box" [isThisComingFromHomePage]="false"></app-search-box>
   </div>
   <div class="header-right-section">
@@ -20,4 +19,41 @@
       </app-dropdown>
     </div>
   </div>
-</div>
+</div> -->
+
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="navbar-brand" (click)="HeaderRoute('home',true)">{{title}}</div>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto custom-navbar">
+      <li class="nav-item">
+        <!-- class="non-home-search-box" -->
+        <app-search-box *ngIf="!isThisComingFromHomePage" class="nav-link" [isThisComingFromHomePage]="false"></app-search-box>
+      </li>
+      <li class="nav-item dropdown">
+        <div class="list-container custom-menu-button-smallscreen" *ngFor='let item of headersNavigation;let i=index'>
+          <div *ngIf="!item.hasDropDown" (click)="HeaderRoute(item.headerRoute,item.canRoute)">
+            {{item.header}}
+          </div>
+          <div *ngIf="item.headerId===5">
+            <svg viewBox="0 0 24 24" class="notification-glyphicon">
+              <path d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.9 2 2 2zm6-6v-5c0-3.07-1.64-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.63 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2z"></path>
+            </svg>
+          </div>
+          <app-dropdown *ngIf="item.hasDropDown" [dropdownLabel]="item.header" [dropdownOptions]="item.dropDownList">
+          </app-dropdown>
+        </div>
+        <!-- <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#">Action</a>
+          <a class="dropdown-item" href="#">Another action</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Something else here</a>
+        </div> -->
+      </li>
+    </ul>
+  </div>
+</nav>

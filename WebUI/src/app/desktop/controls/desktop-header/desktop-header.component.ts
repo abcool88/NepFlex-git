@@ -8,7 +8,8 @@ import { HeadersNavigation } from 'app/shared/ResourceModels/ButtonProperties';
   styleUrls: ['./desktop-header.component.scss']
 })
 export class DesktopHeaderComponent implements OnInit {
-  @Input() isThisComingFromHomePage: boolean = false;
+  @Input()
+  isThisComingFromHomePage: boolean = false;
   title: string = 'NepaliCraig';
   headersNavigation: HeadersNavigation[] = new Array();
 
@@ -36,10 +37,10 @@ export class DesktopHeaderComponent implements OnInit {
         headerRoute: 'home',
         canRoute: false,
         hasDropDown: true,
-        dropDownList:([
+        dropDownList: [
           { id: 3, label: 'FAQ', url: 'faq' },
           { id: 4, label: 'Latest Release', url: '' }
-        ])
+        ]
       },
       {
         headerId: 4,

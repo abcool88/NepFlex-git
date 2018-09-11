@@ -1,28 +1,28 @@
 @import "../../styles-desktop/styles.scss";
 @import "../../../shared/styles-shared/styles.scss";
-
-.non-home-search-box{
+.non-home-search-box {
   -webkit-box-flex: 1;
-    -ms-flex: 1 1 auto;
-    flex: 1 1 auto;
-    font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif !important;
-    font-size: 19px !important;
-    line-height: 24px !important;
-    padding-top: 0px !important;
-    padding-bottom: 0px !important;
-    color: #484848 !important;
-    background-color: #ffffff !important;
-    border-radius: 4px !important;
-    border: 1px solid #DBDBDB !important;
-    padding: 0px !important;
-    display: table !important;
-    table-layout: fixed !important;
-    height: 42px !important;
-    width: 100% !important;
-    position: relative !important;
-    -webkit-box-shadow: 0 5px 30px rgba(156, 160, 171, 0.25) !important;
-    box-shadow: 0 5px 30px rgba(156, 160, 171, 0.25) !important;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif !important;
+  font-size: 19px !important;
+  line-height: 24px !important;
+  padding-top: 0px !important;
+  padding-bottom: 0px !important;
+  color: #484848 !important;
+  background-color: #ffffff !important;
+  border-radius: 4px !important;
+  border: 1px solid #DBDBDB !important;
+  padding: 0px !important;
+  display: table !important;
+  table-layout: fixed !important;
+  height: 42px !important;
+  width: 100% !important;
+  position: relative !important;
+  -webkit-box-shadow: 0 5px 30px rgba(156, 160, 171, 0.25) !important;
+  box-shadow: 0 5px 30px rgba(156, 160, 171, 0.25) !important;
 }
+
 .header-body {
   @include displayFlex(nowrap, row, flex-start, center, stretch);
   background: #ffffff;
@@ -34,34 +34,34 @@
   height: 6em;
   border-bottom: 0.2px solid #f9f9f9;
 }
-.header-container{
+
+.header-container {
   @include displayFlex(nowrap, row, flex-start, stretch, stretch);
 }
-.header-left-section{
+
+.header-left-section {
   @include displayFlexChild(0, 1, auto, 0, auto);
   font-family: cursive;
   font-weight: bolder;
   margin-right: 1em;
 }
-.header-middle-section{
+
+.header-middle-section {
   @include displayFlexChild(1, 1, auto, 0, auto);
 }
 
-.header-right-section{
+.header-right-section {
   @include displayFlex(nowrap, row, flex-start, stretch, stretch);
   @include displayFlexChild(0, 1, auto, 0, auto);
 }
-.logo {
-  // @include displayFlexChild(0, 0, 15em, 0, auto);
-  // font-family: cursive;
-  // font-weight: bolder;
-}
-.notification-glyphicon{
+
+.notification-glyphicon {
   fill: #bcb5b9;
   width: 2em;
   height: 2em;
 }
-.list-container{
+
+.list-container {
   margin-right: 1em;
   -webkit-appearance: none !important;
   background: transparent !important;
@@ -76,8 +76,9 @@
   height: 36px !important;
   line-height: 25px !important;
 }
-.list-container:hover{
-  color:#2196F3 !important;
+
+.list-container:hover {
+  color: #2196F3 !important;
   vertical-align: middle !important;
   -moz-box-sizing: border-box !important;
   box-sizing: border-box !important;
@@ -96,4 +97,23 @@
   margin: 0 2px 1px 0;
   padding: 4px;
   color: #4b6ea8;
+}
+
+.custom-navbar {
+  justify-content: flex-end;
+  flex: 1 0 auto;
+}
+@media (max-width: 992px){
+.custom-menu-button-smallscreen{
+  border: 1px solid black !important;
+  margin: 1em !important;
+  margin-right: 1em;
+  background: rgb(113, 89, 65) !important;
+  color: #fff !important;
+  text-align: center !important;
+  text-transform: uppercase;
+  // overflow: hidden;
+  letter-spacing: 0.08em;
+  transition: all 0.3s ease;
+}
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Router } from '@angular/router';
 import { ButtonProperties } from 'app/shared/ResourceModels/ButtonProperties';
 
@@ -8,7 +8,7 @@ import { ButtonProperties } from 'app/shared/ResourceModels/ButtonProperties';
   styleUrls: ['./home-search-overlay.component.scss']
 })
 export class HomeSearchOverlayComponent implements OnInit {
-  homeButtonCollections: ButtonProperties[]=new Array();
+  homeButtonCollections: ButtonProperties[] = new Array();
   constructor(private router: Router) {
     this.ButtonCollections();
   }
