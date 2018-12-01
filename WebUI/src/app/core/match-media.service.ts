@@ -64,7 +64,7 @@ export class MatchMediaService {
     if (typeof callBack === 'function') {
       const mql: MediaQueryList = window.matchMedia(this.rules.phone);
 
-      mql.addListener((xyz: MediaQueryList) => {
+      mql.addListener((xyz: any) => {
         if (xyz.matches) {
           callBack(xyz);
         }
@@ -76,7 +76,7 @@ export class MatchMediaService {
     if (typeof callBack === 'function') {
       const ql: MediaQueryList = window.matchMedia(this.rules.tablet);
 
-      ql.addListener((abc: MediaQueryList) => {
+      ql.addListener((abc: any) => {
         if (abc.matches) {
           callBack(abc);
         }
@@ -88,7 +88,7 @@ export class MatchMediaService {
     if (typeof callBack === 'function') {
       const mql: MediaQueryList = window.matchMedia(this.rules.desktop);
 
-      mql.addListener((mno: MediaQueryList) => {
+      mql.addListener((mno: any) => {
         if (mno.matches) {
           callBack(mno);
         }
@@ -100,7 +100,7 @@ export class MatchMediaService {
     if (typeof callBack === 'function') {
       const mql: MediaQueryList = window.matchMedia(this.rules.portrait);
 
-      mql.addListener((pqr: MediaQueryList) => {
+      mql.addListener((pqr: any) => {
         if (pqr.matches) {
           callBack(pqr);
         }
@@ -112,7 +112,7 @@ export class MatchMediaService {
     if (typeof callBack === 'function') {
       const mql: MediaQueryList = window.matchMedia(this.rules.landscape);
 
-      mql.addListener((stu: MediaQueryList) => {
+      mql.addListener((stu: any) => {
         if (stu.matches) {
           callBack(stu);
         }
