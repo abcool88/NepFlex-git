@@ -1,0 +1,17 @@
+<mat-menu #childMenu="matMenu" [overlapTrigger]="false">
+    <span *ngFor="let child of items">
+      <span *ngIf="child.children && child.children.length > 0">
+        <button mat-menu-item color="primary" class="btn btn-outline-light" [matMenuTriggerFor]="menu.childMenu">
+          <mat-icon>{{child.iconName}}</mat-icon>
+          <span>{{child.displayName}}</span>
+        </button>
+        <app-child-dropdown #menu [items]="child.children"></app-child-dropdown>
+      </span>
+      <span *ngIf="!child.children || child.children.length === 0">
+        <button mat-menu-item routerLink="child.route" class="btn btn-outline-light">
+          <mat-icon>{{child.iconName}}</mat-icon>
+          <span>{{child.displayName}}</span>
+        </button>
+      </span>
+    </span>
+  </mat-menu>

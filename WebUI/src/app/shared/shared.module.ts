@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { OverlayComponent } from './overlay/overlay.component';
 import { CarouselComponent } from './carousel/carousel.component';
-import { DropdownComponent } from './dropdown/dropdown.component';
 import { HomeService } from 'app/shared/services/home.service';
 import { OrderByPipe } from 'app/shared/pipes/order-by.pipe';
 import { FilteringSearch } from 'app/shared/ResourceModels/FilteringSearch';
@@ -20,13 +19,14 @@ import { CamelCase } from 'app/shared/pipes/camelcase.pipe';
 import { AnimatedButtonComponent } from './animated-button/animated-button.component';
 import { ButtonProperties } from 'app/shared/ResourceModels/ButtonProperties';
 import { SendEmailComponent } from './send-email/send-email.component';
-import { MyAngularMaterialModule } from 'app/shared/angular-material/angularMaterial.module';
 import { SendEmailService } from 'app/shared/services/send-email.service';
 import { HTTPHeader } from './services/http-header';
 import { HttpClientModule } from '@angular/common/http';
 import { FilterByPipe } from './pipes/filter-by.pipe';
 import { OrderByNestedPipe } from './pipes/order-by-nested.pipe';
 import { UniqueValuePipe } from './pipes/unique-value.pipe';
+import { SearchStringQuery } from './ResourceModels/SearchStringQuerys';
+import { MyAngularMaterialModule } from './angular-material/angularMaterial.module';
 
 @NgModule({
   imports: [
@@ -48,7 +48,6 @@ import { UniqueValuePipe } from './pipes/unique-value.pipe';
     CamelCase,
     OverlayComponent,
     CarouselComponent,
-    DropdownComponent,
     CloudSpinnerComponent,
     ModalComponent,
     AnimatedButtonComponent,
@@ -61,6 +60,7 @@ import { UniqueValuePipe } from './pipes/unique-value.pipe';
     SendEmailService,
     FilteringSearch,
     ButtonProperties,
+    SearchStringQuery,
     OverlayComponent,
     CarouselComponent,
     HomeService,
@@ -78,7 +78,6 @@ import { UniqueValuePipe } from './pipes/unique-value.pipe';
     CamelCase,
     OverlayComponent,
     CarouselComponent,
-    DropdownComponent,
     ModalComponent,
     AnimatedButtonComponent,
     SendEmailComponent

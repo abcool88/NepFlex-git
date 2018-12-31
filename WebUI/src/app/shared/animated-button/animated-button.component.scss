@@ -1,37 +1,34 @@
 @import '../../../Style/styles.scss';
 
 .animated-button-body {
-  @include display-parent-flex(column,nowrap,flex-start,flex-start,flex-start);
-  background: #4e2f11;
-  color: #0a0a0a;
+  @include display-parent-flex(column, nowrap, flex-start, flex-start, flex-start);
+  background: #f1f1f1;
   z-index: 1;
-  //width: 92.5em;
+  width: 92.5em;
   border-radius: 5px;
-  //min-height: 7em;
-  //max-height: 29em;
-  //width: 100% !important;
-  // top: 54px;
-  -webkit-box-shadow: 0px 0px 8px 1px #a7a7a7;
-  box-shadow: 0px 0px 8px 1px #a7a7a7;
+  min-height: 7em;
+  max-height: 29em;
+  width: 100% !important;
   position: relative;
   overflow: auto;
-  padding: 0.5em;
+  padding: 1em;
   font-size: 11px;
   font-family: sans-serif;
 }
+
 .animated-button-container {
-  @include display-parent-flex(row,nowrap,flex-start,flex-start,flex-start);
+  @include display-parent-flex(row, nowrap, flex-start, flex-start, flex-start);
 }
 
 //---------------
 div.animBtn,
 div.animBtn:visited {
-  @include display-child-flex(1,1,auto,auto);
+  @include display-child-flex(1, 1, auto, auto);
   margin-right: 1em;
   position: relative;
   display: block;
   padding: 14px 15px;
-  background: rgba(255, 255, 255, 0.2);
+  background-color: rgba(108, 110, 212, 1);
   color: #fff;
   text-align: center;
   text-decoration: none;
@@ -40,7 +37,8 @@ div.animBtn:visited {
   letter-spacing: 0.08em;
   text-shadow: 0 0 1px rgba(0, 0, 0, 0.2), 0 1px 0 rgba(0, 0, 0, 0.2);
   transition: all 0.3s ease;
-  @include display-child-flex(1,1,auto,auto);
+  @include display-child-flex(1, 1, auto, auto);
+
   &:after {
     content: '';
     position: absolute;
@@ -52,14 +50,21 @@ div.animBtn:visited {
     z-index: -1;
     transition: all 0.3s ease 0s;
   }
+
   &:hover {
-    color: #333;
+    color: #032dff;
     text-shadow: none;
+    background: #0d11af;
+    transition: all 0.3s ease;
+    z-index: 1;
+    position: relative;
+
     &:after {
       height: 420%;
     }
   }
 }
+
 div.animBtn {
   &.themeA:after {
     transform: translateX(-50%) translateY(-50%) rotate(-45deg);

@@ -2,7 +2,7 @@
   <div class="animated-button-container">
     <div class="animBtn themeA" *ngFor="let item of buttonCollections;let i=index;" (click)="functionalButton(item.buttonId)">
       <div>{{item.buttonLabel}}</div>
-      <app-dropdown *ngIf="item.HasDropDown" [dropdownLabel]="item.DropDownList" [dropdownOptions]="item.DropDownList" [dropdownLabelRoute]="item.DropDownList[i].url">
+      <app-dropdown *ngIf="item.HasDropDown" [dropdownOptions]="item.DropDownList">
       </app-dropdown>
     </div>
   </div>

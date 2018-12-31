@@ -35,5 +35,19 @@ namespace Nepflex.ServiceAPI.Controllers
                 return InternalServerError(ex);
             }
         }
+        [HttpGet]
+        public IHttpActionResult GetSearchKeywordList(string searchText)
+        {
+            Console.WriteLine("came here in search");
+            try
+            {
+                var results = _searchService.GetSearchKeywordList(searchText);
+                return Ok(results);
+            }
+            catch (Exception ex)
+            {
+                return InternalServerError(ex);
+            }
+        }
     }
 }

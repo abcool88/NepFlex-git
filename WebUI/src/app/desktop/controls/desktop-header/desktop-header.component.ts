@@ -21,7 +21,7 @@ export class DesktopHeaderComponent implements OnInit {
         headerRoute: 'aboutus',
         canRoute: true,
         hasDropDown: false,
-        dropDownList: [{ id: 1, label: '', url: '' }]
+        dropDownList: [{ id: 1, displayName: '' }]
       },
       {
         headerId: 2,
@@ -29,7 +29,7 @@ export class DesktopHeaderComponent implements OnInit {
         headerRoute: 'report',
         canRoute: true,
         hasDropDown: false,
-        dropDownList: [{ id: 2, label: '', url: '' }]
+        dropDownList: [{ id: 2, displayName: '' }]
       },
       {
         headerId: 3,
@@ -38,8 +38,8 @@ export class DesktopHeaderComponent implements OnInit {
         canRoute: false,
         hasDropDown: true,
         dropDownList: [
-          { id: 3, label: 'FAQ', url: 'faq' },
-          { id: 4, label: 'Latest Release', url: '' }
+          { id: 3, displayName: 'FAQ', route: 'faq' },
+          { id: 4, displayName: 'Latest Release' }
         ]
       },
       {
@@ -49,8 +49,12 @@ export class DesktopHeaderComponent implements OnInit {
         canRoute: true,
         hasDropDown: true,
         dropDownList: [
-          { id: 5, label: 'Post Items', url: '' },
-          { id: 6, label: 'LogIn', url: '' }
+          { id: 5, displayName: 'Post Items' },
+          {
+            id: 6,
+            displayName: 'LogIn',
+            children: [{ id: 5.1, displayName: 'Log Me In' }]
+          }
         ]
       },
       {
@@ -59,7 +63,12 @@ export class DesktopHeaderComponent implements OnInit {
         headerRoute: 'Notification',
         canRoute: true,
         hasDropDown: true,
-        dropDownList: [{ id: 7, label: 'you have 0 notifications', url: '' }]
+        dropDownList: [
+          {
+            id: 7,
+            displayName: 'you have 0 notifications'
+          }
+        ]
       }
     ];
   }

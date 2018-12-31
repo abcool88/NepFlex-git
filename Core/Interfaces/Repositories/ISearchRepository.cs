@@ -11,5 +11,6 @@ namespace NepFlex.Core.Interfaces.Repositories
     public interface ISearchRepository: IRepository<SearchResponse, int>
     {
         List<SearchResponse> GetSearchResponseList(string searchText);
+        List<string[]> GetSearchKeywordList();
     }
 }

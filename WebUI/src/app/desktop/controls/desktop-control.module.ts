@@ -11,9 +11,15 @@ import { FilterBoxComponent } from './search-box/filter-box/filter-box.component
 import { HomeSearchOverlayComponent } from './home-search-overlay/home-search-overlay.component';
 import { InfoBoxComponent } from './info-box/info-box.component';
 import { ItemContainerComponent } from './item-container/item-container.component';
+import { MyAngularMaterialModule } from 'app/shared/angular-material/angularMaterial.module';
 
 @NgModule({
-  imports: [CommonModule, ReactiveFormsModule, SharedModule],
+  imports: [
+    CommonModule,
+    ReactiveFormsModule,
+    SharedModule,
+    MyAngularMaterialModule
+  ],
   declarations: [
     DesktopHeaderComponent,
     DesktopFooterComponent,
@@ -32,6 +38,6 @@ import { ItemContainerComponent } from './item-container/item-container.componen
     DesktopFooterComponent,
     ItemContainerComponent
   ],
-  providers:[ItemContainerComponent]
+  providers: [ItemContainerComponent]
 })
 export class DesktopControlModule {}

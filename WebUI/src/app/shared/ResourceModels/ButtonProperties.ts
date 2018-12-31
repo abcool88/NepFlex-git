@@ -7,6 +7,7 @@ export class ButtonProperties {
   DropDownList?: [{ id: number; label: string; url: string }];
   hasPopUp?: boolean;
   popUpName?: string;
+  parentEmit?: boolean;
 }
 
 export class HeadersNavigation {
@@ -18,8 +19,14 @@ export class HeadersNavigation {
   dropDownList?: DropDownList[];
 }
 
-class DropDownList {
+export class DropDownList {
   id?: number;
-  label?: string;
-  url?: string;
+  // label?: string;
+  // url?: string;
+  // children?: DropDownList[];
+  displayName: string;
+  disabled?: boolean;
+  iconName?: string;
+  route?: string;
+  children?: DropDownList[];
 }

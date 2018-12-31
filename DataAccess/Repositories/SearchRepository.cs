@@ -21,28 +21,34 @@ namespace NepFlex.DataAccess.Repositories
         public List<SearchResponse> GetSearchResponseList(string searchText)
         {
             var results = _context.ButtonSearchOnClick(searchText);
-            var response= results.Select(a=> new SearchResponse() {
-                Address=a.Address,
-                Brand=a.Brand,
-                Condition=a.Condition,
-                Contact=a.Contact,
-                DateAdded=a.DateAdded,
-                Detail=a.Detail,
-                Email=a.Email,
-                extra_Warranty=a.extra_Warranty,
-                Image=a.Image,
-                Mile_KMPH=a.Mile_KMPH,
-                Modal=a.Modal,
-                Name=a.Name,
-                Other=a.Other,
-                PostID=a.PostID,
-                Price=a.Price,
-                SubCategory=a.SubCategory,
-                Title=a.Title,
-                TopCategory=a.TopCategory,
-                Warranty=a.Warranty
+            var response = results.Select(a => new SearchResponse()
+            {
+                Address = a.Address,
+                Brand = a.Brand,
+                Condition = a.Condition,
+                Contact = a.Contact,
+                DateAdded = a.DateAdded,
+                Detail = a.Detail,
+                Email = a.Email,
+                extra_Warranty = a.extra_Warranty,
+                Image = a.Image,
+                Mile_KMPH = a.Mile_KMPH,
+                Modal = a.Modal,
+                Name = a.Name,
+                Other = a.Other,
+                PostID = a.PostID,
+                Price = a.Price,
+                SubCategory = a.SubCategory,
+                Title = a.Title,
+                TopCategory = a.TopCategory,
+                Warranty = a.Warranty
             }).ToList();
             return response;
+        }
+        public List<string[]> GetSearchKeywordList()
+        {
+            var result = from subCategory in SelectTopCategory
+                return result;
         }
     }
 }

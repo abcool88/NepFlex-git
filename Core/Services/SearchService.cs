@@ -20,5 +20,9 @@ namespace NepFlex.Core.Services
         {
             return _unitOfWork.SearchRepository.GetSearchResponseList(searchText);
         }
+        public List<string[]> GetSearchKeywordList(string searchText)
+        {
+            return _unitOfWork.SearchRepository.GetSearchKeywordList();
+        }
     }
 }
