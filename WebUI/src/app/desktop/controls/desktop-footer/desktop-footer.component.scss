@@ -1,5 +1,6 @@
 @import "../../styles-desktop/styles.scss";
 @import "../../../shared/styles-shared/styles.scss";
+@import '../../../../Style/styles.scss';
 
 .header-body {
   @include displayFlex(nowrap, column, flex-start, stretch, stretch);

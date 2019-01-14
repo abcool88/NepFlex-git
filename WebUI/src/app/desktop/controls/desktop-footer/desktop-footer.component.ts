@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./desktop-footer.component.scss']
 })
 export class DesktopFooterComponent implements OnInit {
-  title: string = 'NTTCN';
+  title: string = 'UpdatedCloud';
   constructor() { }
 
   ngOnInit() {

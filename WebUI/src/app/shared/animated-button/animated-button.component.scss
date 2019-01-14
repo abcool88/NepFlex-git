@@ -2,7 +2,7 @@
 
 .animated-button-body {
   @include display-parent-flex(column, nowrap, flex-start, flex-start, flex-start);
-  background: #f1f1f1;
+  // background: #f1f1f1;
   z-index: 1;
   width: 92.5em;
   border-radius: 5px;
@@ -28,8 +28,8 @@ div.animBtn:visited {
   position: relative;
   display: block;
   padding: 14px 15px;
-  background-color: rgba(108, 110, 212, 1);
-  color: #fff;
+  // background-color: rgba(108, 110, 212, 1);
+  color: #ce7508;
   text-align: center;
   text-decoration: none;
   text-transform: uppercase;
@@ -52,12 +52,13 @@ div.animBtn:visited {
   }
 
   &:hover {
-    color: #032dff;
+    color: #008ba3;
     text-shadow: none;
-    background: #0d11af;
+    background: #ce7508;
     transition: all 0.3s ease;
     z-index: 1;
     position: relative;
+    cursor: pointer;
 
     &:after {
       height: 420%;

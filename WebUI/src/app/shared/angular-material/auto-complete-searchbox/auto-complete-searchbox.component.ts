@@ -9,6 +9,7 @@ import {
 import { Observable } from 'rxjs';
 import { map, startWith } from 'rxjs/operators';
 import { SearchStringQuery } from 'app/shared/ResourceModels/SearchStringQuerys';
+import { ButtonProperties } from 'app/shared/ResourceModels/ButtonProperties';
 
 @Component({
   selector: 'app-auto-complete-searchbox',
@@ -26,6 +27,7 @@ export class AutoCompleteSearchboxComponent implements OnInit {
   filteredSearchStrings: Observable<string[]>;
   searchStringOption: string[] = [''];
   allSearchStringOptions: string[];
+  searchButtton: ButtonProperties[] = new Array();
 
   @ViewChild('searchInput') searchInput: ElementRef<HTMLInputElement>;
   @ViewChild('auto') matAutocomplete: MatAutocomplete;
@@ -82,7 +84,33 @@ export class AutoCompleteSearchboxComponent implements OnInit {
       searchString => searchString.toLowerCase().indexOf(filterValue) === 0
     );
   }
-  ngOnInit(): void {}
+
+  searchButtonOnOff(): boolean {
+    if (this.searchStringOption.length > 0) {
+      return false;
+    } else {
+      return true;
+    }
+  }
+  ngOnInit(): void {
+    this.searchButtton = [
+      {
+        buttonId: 1,
+        buttonLabel: 'Search',
+        hasPopUp: false,
+        buttonRoute: '',
+        canRoute: false,
+        HasDropDown: false,
+        DropDownList: [{ id: 1, label: '', url: '' }],
+        popUpName: '',
+        parentEmit: false
+      }
+    ];
+  }
+  searchBtnClicked(e: Event, isSingleSearch?: boolean) {
+    if (isSingleSearch) {
+    }
+  }
 }
 export interface SearchString {
   name: string;

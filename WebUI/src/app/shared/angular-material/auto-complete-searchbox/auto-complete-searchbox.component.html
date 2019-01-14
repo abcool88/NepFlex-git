@@ -1,19 +1,20 @@
 <mat-form-field class="example-chip-list w-100" *ngIf="multiStringOptions">
-  <div class="custom-search-glyphicon">
+  <div class="custom-search-glyphicon" *ngIf="searchButtonOnOff()">
     <i class="fa fa-search"></i>
   </div>
 
+  <div class="custom-search-glyphicon btn primary-button" *ngIf="!searchButtonOnOff()">
+    <app-animated-button [buttonCollections]="searchButtton" (click)="searchBtnClicked($event,false)"></app-animated-button>
+  </div>
+
   <mat-chip-list #chipList>
-    <mat-chip *ngFor="let fruit of searchStringOption" [selectable]="selectable"
-    [removable]="removable" (removed)="remove(fruit)">
+    <mat-chip *ngFor="let fruit of searchStringOption" [selectable]="selectable" [removable]="removable" (removed)="remove(fruit)">
       {{fruit}}
       <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
     </mat-chip>
 
-    <input id="multiAutoCompleteSearchBox" placeholder="Search keywords:"
-    #searchInput [formControl]="searchStringCtrl"
-      [matAutocomplete]="auto" [matChipInputFor]="chipList"
-      [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+    <input id="multiAutoCompleteSearchBox" placeholder="Search keywords:" #searchInput [formControl]="searchStringCtrl"
+      [matAutocomplete]="auto" [matChipInputFor]="chipList" [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
       [matChipInputAddOnBlur]="addOnBlur" (matChipInputTokenEnd)="add($event)">
   </mat-chip-list>
 
@@ -28,12 +29,15 @@
 
 
 <mat-form-field class="example-full-width w-100" *ngIf="!multiStringOptions">
-  <div class="custom-search-glyphicon">
+  <div class="custom-search-glyphicon" *ngIf="!searchInput.value">
     <i class="fa fa-search"></i>
   </div>
 
-  <input id="singleAutoCompleteSearchBox" placeholder="Search keyword:"
-  #searchInput matInput [formControl]="searchStringCtrl"
+  <div class="custom-search-glyphicon btn primary-button" *ngIf="searchInput.value">
+    <app-animated-button [buttonCollections]="searchButtton" (ParentEmitter)="searchBtnClicked($event,true)"></app-animated-button>
+  </div>
+
+  <input id="singleAutoCompleteSearchBox" placeholder="Search keyword:" #searchInput matInput [formControl]="searchStringCtrl"
     [matAutocomplete]="auto">
   <mat-autocomplete #auto="matAutocomplete">
     <mat-option *ngFor="let option of filteredSearchStrings | async" [value]="option">

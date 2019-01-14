@@ -1,6 +1,22 @@
+
+<form class="form-inline my-2 my-lg-0 col-md-12 p-2 m-auto" [formGroup]="form">
 <app-animated-button [buttonCollections]="searchOptionsButttons" (ParentEmitter)="buttonClicked($event)"></app-animated-button>
+ <app-auto-complete-searchbox [multiStringOptions]="isMultipleSearchStrings" class="w-100"></app-auto-complete-searchbox>
+  <!-- <input class="myform-control mr-sm-2" type="search" formControlName="searchedText" placeholder="find peoples, instruments, bands and more..." aria-label="Search">
+  <button class="btn btn-light"><i class="fa fa-search"></i></button> -->
+</form>
+
+
+<!-- <app-animated-button [buttonCollections]="searchOptionsButttons" (ParentEmitter)="buttonClicked($event)"></app-animated-button>
 <form [formGroup]="form" class="form" autocomplete="off"
 (focusin)="turnHomeSearchOverlayOn(true)">
+
+      <app-auto-complete-searchbox [multiStringOptions]="isMultipleSearchStrings" class="w-100"></app-auto-complete-searchbox>
+</form>
+<app-dropdown *ngIf="isMultipleSearchStrings" [dropdownOptions]="categoryDropdownOptions"></app-dropdown>
+<app-home-search-overlay></app-home-search-overlay> -->
+
+<!-- OLD -->
 <!-- (focusout)="turnHomeSearchOverlayOn(false)" -->
   <!-- <div class="custom-glyphicon">
     <i class="fa fa-search"></i>
@@ -10,14 +26,10 @@
     <!-- <div class="custom-glyphicon" (click)="turnSearchOverlayOn()" *ngIf="turnCancelButtonOn">
       <i class="fa fa-times-circle"  alt="close" title="Close Search"></i> -->
       <!-- </div> -->
-      <app-auto-complete-searchbox [multiStringOptions]="isMultipleSearchStrings" class="w-100"></app-auto-complete-searchbox>
-</form>
-
-<app-dropdown *ngIf="isMultipleSearchStrings" [dropdownOptions]="categoryDropdownOptions"></app-dropdown>
-
 
 <!-- <app-search-results-overlay *ngIf="openSearchedResultsOverlay" [searchText]="inputText"></app-search-results-overlay> -->
-<app-home-search-overlay></app-home-search-overlay>
 <!-- infoBoxTurnOn && -->
 <!-- <app-info-box *ngIf="infoBoxTurnOn && !openSearchedResultsOverlay && !isThisComingFromHomePage" [infoText]="infoPageLabel"></app-info-box> -->
 <!-- (focusout)="turnHomeSearchOverlayOn(false)" -->
+
+
