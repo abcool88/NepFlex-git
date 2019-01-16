@@ -3,10 +3,6 @@
     <i class="fa fa-search"></i>
   </div>
 
-  <div class="custom-search-glyphicon btn primary-button" *ngIf="!searchButtonOnOff()">
-    <app-animated-button [buttonCollections]="searchButtton" (click)="searchBtnClicked($event,false)"></app-animated-button>
-  </div>
-
   <mat-chip-list #chipList>
     <mat-chip *ngFor="let fruit of searchStringOption" [selectable]="selectable" [removable]="removable" (removed)="remove(fruit)">
       {{fruit}}
@@ -14,8 +10,9 @@
     </mat-chip>
 
     <input id="multiAutoCompleteSearchBox" placeholder="Search keywords:" #searchInput [formControl]="searchStringCtrl"
-      [matAutocomplete]="auto" [matChipInputFor]="chipList" [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
-      [matChipInputAddOnBlur]="addOnBlur" (matChipInputTokenEnd)="add($event)">
+    [matAutocomplete]="auto" [matChipInputFor]="chipList" [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+    [matChipInputAddOnBlur]="addOnBlur" (matChipInputTokenEnd)="add($event)">
+    <a *ngIf="!searchButtonOnOff() && multiStringOptions" class="btn btn-primary btn-join" href="#">Search</a>
   </mat-chip-list>
 
   <mat-autocomplete #auto="matAutocomplete" (optionSelected)="selected($event)">
@@ -26,22 +23,19 @@
 </mat-form-field>
 
 
-
-
 <mat-form-field class="example-full-width w-100" *ngIf="!multiStringOptions">
   <div class="custom-search-glyphicon" *ngIf="!searchInput.value">
     <i class="fa fa-search"></i>
   </div>
 
-  <div class="custom-search-glyphicon btn primary-button" *ngIf="searchInput.value">
-    <app-animated-button [buttonCollections]="searchButtton" (ParentEmitter)="searchBtnClicked($event,true)"></app-animated-button>
-  </div>
-
   <input id="singleAutoCompleteSearchBox" placeholder="Search keyword:" #searchInput matInput [formControl]="searchStringCtrl"
     [matAutocomplete]="auto">
+    <a *ngIf="searchInput.value" class="btn btn-primary btn-join float-right" href="#">Search</a>
   <mat-autocomplete #auto="matAutocomplete">
     <mat-option *ngFor="let option of filteredSearchStrings | async" [value]="option">
       {{option}}
     </mat-option>
   </mat-autocomplete>
 </mat-form-field>
+
+

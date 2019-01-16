@@ -26,7 +26,51 @@ import { FilterByPipe } from './pipes/filter-by.pipe';
 import { OrderByNestedPipe } from './pipes/order-by-nested.pipe';
 import { UniqueValuePipe } from './pipes/unique-value.pipe';
 import { SearchStringQuery } from './ResourceModels/SearchStringQuerys';
-import { MyAngularMaterialModule } from './angular-material/angularMaterial.module';
+import { TextAreaComponent } from './text-area/text-area.component';
+import {
+  MatAutocompleteModule,
+  MatBadgeModule,
+  MatBottomSheetModule,
+  MatButtonModule,
+  MatButtonToggleModule,
+  MatCardModule,
+  MatCheckboxModule,
+  MatChipsModule,
+  MatDatepickerModule,
+  MatDialogModule,
+  MatDividerModule,
+  MatExpansionModule,
+  MatGridListModule,
+  MatIconModule,
+  MatInputModule,
+  MatListModule,
+  MatMenuModule,
+  MatNativeDateModule,
+  MatPaginatorModule,
+  MatProgressBarModule,
+  MatProgressSpinnerModule,
+  MatRadioModule,
+  MatRippleModule,
+  MatSelectModule,
+  MatSidenavModule,
+  MatSliderModule,
+  MatSlideToggleModule,
+  MatSnackBarModule,
+  MatSortModule,
+  MatStepperModule,
+  MatTableModule,
+  MatTabsModule,
+  MatToolbarModule,
+  MatTooltipModule,
+  MatTreeModule,
+  MatFormFieldModule,
+  MatOptionModule,
+  MAT_CHIPS_DEFAULT_OPTIONS
+} from '@angular/material';
+import { ENTER, COMMA } from '@angular/cdk/keycodes';
+import { DropdownComponent } from './dropdown/dropdown.component';
+import { ChildDropdownComponent } from './dropdown/child-dropdown/child-dropdown.component';
+import { AutoCompleteSearchboxComponent } from './auto-complete-searchbox/auto-complete-searchbox.component';
 
 @NgModule({
   imports: [
@@ -36,7 +80,45 @@ import { MyAngularMaterialModule } from './angular-material/angularMaterial.modu
     CommonModule,
     ReactiveFormsModule,
     NgbModule,
-    MyAngularMaterialModule
+
+    // angular -material
+    MatAutocompleteModule,
+    MatBadgeModule,
+    MatBottomSheetModule,
+    MatButtonModule,
+    MatButtonToggleModule,
+    MatCardModule,
+    MatCheckboxModule,
+    MatChipsModule,
+    MatDatepickerModule,
+    MatDialogModule,
+    MatDividerModule,
+    MatExpansionModule,
+    MatGridListModule,
+    MatIconModule,
+    MatInputModule,
+    MatListModule,
+    MatMenuModule,
+    MatNativeDateModule,
+    MatPaginatorModule,
+    MatProgressBarModule,
+    MatProgressSpinnerModule,
+    MatRadioModule,
+    MatRippleModule,
+    MatSelectModule,
+    MatSidenavModule,
+    MatSliderModule,
+    MatSlideToggleModule,
+    MatSnackBarModule,
+    MatSortModule,
+    MatStepperModule,
+    MatTableModule,
+    MatTabsModule,
+    MatToolbarModule,
+    MatTooltipModule,
+    MatTreeModule,
+    MatFormFieldModule,
+    MatOptionModule
   ],
   declarations: [
     SpinnerComponent,
@@ -51,7 +133,12 @@ import { MyAngularMaterialModule } from './angular-material/angularMaterial.modu
     CloudSpinnerComponent,
     ModalComponent,
     AnimatedButtonComponent,
-    SendEmailComponent
+    SendEmailComponent,
+    TextAreaComponent,
+    DropdownComponent,
+    ChildDropdownComponent,
+    AnimatedButtonComponent,
+    AutoCompleteSearchboxComponent
   ],
   providers: [
     ReportService,
@@ -64,7 +151,13 @@ import { MyAngularMaterialModule } from './angular-material/angularMaterial.modu
     OverlayComponent,
     CarouselComponent,
     HomeService,
-    HTTPHeader
+    HTTPHeader,
+    {
+      provide: MAT_CHIPS_DEFAULT_OPTIONS,
+      useValue: {
+        separatorKeyCodes: [ENTER, COMMA]
+      }
+    }
   ],
   entryComponents: [SendEmailComponent],
   exports: [
@@ -80,7 +173,12 @@ import { MyAngularMaterialModule } from './angular-material/angularMaterial.modu
     CarouselComponent,
     ModalComponent,
     AnimatedButtonComponent,
-    SendEmailComponent
+    SendEmailComponent,
+    TextAreaComponent,
+    DropdownComponent,
+    ChildDropdownComponent,
+    AnimatedButtonComponent,
+    AutoCompleteSearchboxComponent
   ]
 })
 export class SharedModule {}

@@ -13,7 +13,6 @@ import { CoreModule } from 'app/core/core.module';
 import { HttpClientModule } from '@angular/common/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MyAngularMaterialModule } from 'app/shared/angular-material/angularMaterial.module';
 
 @NgModule({
   declarations: [AppComponent, PagenotfoundComponent, HomeComponent],
@@ -29,8 +28,7 @@ import { MyAngularMaterialModule } from 'app/shared/angular-material/angularMate
     DesktopModule,
     SharedModule,
     AppRoutingModule,
-    BrowserAnimationsModule,
-    MyAngularMaterialModule
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
