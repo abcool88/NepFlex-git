@@ -11,6 +11,7 @@ import { FilterBoxComponent } from './search-box/filter-box/filter-box.component
 import { HomeSearchOverlayComponent } from './home-search-overlay/home-search-overlay.component';
 import { InfoBoxComponent } from './info-box/info-box.component';
 import { ItemContainerComponent } from './item-container/item-container.component';
+import { NewsItemContainerComponent } from './news-item-container/news-item-container.component';
 
 @NgModule({
   imports: [
@@ -26,7 +27,8 @@ import { ItemContainerComponent } from './item-container/item-container.componen
     FilterBoxComponent,
     HomeSearchOverlayComponent,
     InfoBoxComponent,
-    ItemContainerComponent
+    ItemContainerComponent,
+    NewsItemContainerComponent
   ],
   exports: [
     SharedModule,
@@ -34,7 +36,8 @@ import { ItemContainerComponent } from './item-container/item-container.componen
     SearchBoxComponent,
     DesktopHeaderComponent,
     DesktopFooterComponent,
-    ItemContainerComponent
+    ItemContainerComponent,
+    NewsItemContainerComponent
   ],
   providers: [ItemContainerComponent]
 })

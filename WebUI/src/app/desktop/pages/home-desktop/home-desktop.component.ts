@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { OverlayComponent } from 'app/shared/overlay/overlay.component';
 
 @Component({
   selector: 'app-home-desktop',

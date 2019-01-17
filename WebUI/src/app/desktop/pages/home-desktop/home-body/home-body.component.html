@@ -32,8 +32,12 @@
   <div class="container slider-top-text">
     <div class="row">
       <div class="col-md-12 text-center">
-        <h3 class="my-heading home-text-info"> Search and post your items, coupons,<br> articles, events and many more
-          <span class="bg-main">@</span>Updated<span class="bg-main">Cloud</span></h3>
+        <h3 class="my-heading home-text-info">
+          <span class="bg-main">Search,
+          Bid/Ask or Post</span>
+         <br> <span>your items, coupons, articles, events and many more</span>
+          <!-- <span class="bg-main">@</span>Updated<span class="bg-main">Cloud</span> -->
+        </h3>
         <app-search-box class="home-search-box" [isThisComingFromHomePage]="true"></app-search-box>
         <p class="myp-slider text-center">Select From these trending keywords: </p>
         <p class="myp text-center">Auto   |   Education Materials   |   Apartments</p>
@@ -95,85 +99,85 @@
 </section> -->
 
 <!-- section 2 starts -->
+<app-news-item-container [isHomePage]="true" [containerType]="containerType_News"></app-news-item-container>
+
+<!-- section 3 starts -->
 <section class="section2" id="gobottom">
-    <div class="container">
+  <div class="container">
+    <div class="row mbr-justify-content-center">
 
+      <div class="col-lg-6 mbr-col-md-10">
+        <div class="wrap">
+          <div class="ico-wrap">
+            <span class="mbr-iconfont fa-taxi fa"></span>
 
-        <div class="row mbr-justify-content-center">
+          </div>
+          <div class="text-wrap vcenter">
+            <h2 class="mbr-fonts-style mbr-bold mbr-section-title3 display-5">Services We Provide</h2>
+            <p class="mbr-fonts-style text1 mbr-text display-6">See what are our services that we provide.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6 mbr-col-md-10">
+        <div class="wrap">
+          <div class="ico-wrap">
+            <span class="mbr-iconfont fa-users fa"></span>
+          </div>
+          <div class="text-wrap vcenter">
+            <h2 class="mbr-fonts-style mbr-bold mbr-section-title3 display-5">About Us
+            </h2>
+            <p class="mbr-fonts-style text1 mbr-text display-6">who we are? / contact us.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6 mbr-col-md-10">
+        <div class="wrap">
+          <div class="ico-wrap">
+            <span class="mbr-iconfont fa-calendar fa"></span>
+          </div>
+          <div class="text-wrap vcenter">
+            <h2 class="mbr-fonts-style mbr-bold mbr-section-title3 display-5">Events
+            </h2>
+            <p class="mbr-fonts-style text1 mbr-text display-6">See All Posted Events In Your Local Area.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6 mbr-col-md-10">
+        <div class="wrap">
+          <div class="ico-wrap">
+            <span class="mbr-iconfont fa-question fa"></span>
+          </div>
+          <div class="text-wrap vcenter">
+            <h2 class="mbr-fonts-style mbr-bold mbr-section-title3 display-5">FAQ
+            </h2>
+            <p class="mbr-fonts-style text1 mbr-text display-6">Ever Wonder Something, See Our FAQ.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6 mbr-col-md-10">
+        <div class="wrap">
+          <div class="ico-wrap">
+            <span class="mbr-iconfont fa-envelope fa"></span>
+          </div>
+          <div class="text-wrap vcenter">
+            <h2 class="mbr-fonts-style mbr-bold mbr-section-title3 display-5">Send Email</h2>
+            <p class="mbr-fonts-style text1 mbr-text display-6">Send Email To Us.</p>
+          </div>
+        </div>
+      </div>
 
-                <div class="col-lg-6 mbr-col-md-10">
-                    <div class="wrap">
-                        <div class="ico-wrap">
-                            <span class="mbr-iconfont fa-taxi fa"></span>
-
-                        </div>
-                        <div class="text-wrap vcenter">
-                            <h2 class="mbr-fonts-style mbr-bold mbr-section-title3 display-5">Services We Provide</h2>
-                            <p class="mbr-fonts-style text1 mbr-text display-6">See what are our services that we provide.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 mbr-col-md-10">
-                    <div class="wrap">
-                        <div class="ico-wrap">
-                            <span class="mbr-iconfont fa-users fa"></span>
-                        </div>
-                        <div class="text-wrap vcenter">
-                            <h2 class="mbr-fonts-style mbr-bold mbr-section-title3 display-5">About Us
-                            </h2>
-                            <p class="mbr-fonts-style text1 mbr-text display-6">who we are? / contact us.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 mbr-col-md-10">
-                  <div class="wrap">
-                      <div class="ico-wrap">
-                          <span class="mbr-iconfont fa-calendar fa"></span>
-                      </div>
-                      <div class="text-wrap vcenter">
-                          <h2 class="mbr-fonts-style mbr-bold mbr-section-title3 display-5">Events
-                          </h2>
-                          <p class="mbr-fonts-style text1 mbr-text display-6">See All Posted Events In Your Local Area.</p>
-                      </div>
-                  </div>
-              </div>
-                <div class="col-lg-6 mbr-col-md-10">
-                    <div class="wrap">
-                        <div class="ico-wrap">
-                            <span class="mbr-iconfont fa-question fa"></span>
-                        </div>
-                        <div class="text-wrap vcenter">
-                            <h2 class="mbr-fonts-style mbr-bold mbr-section-title3 display-5">FAQ
-                            </h2>
-                            <p class="mbr-fonts-style text1 mbr-text display-6">Ever Wonder Something, See Our FAQ.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 mbr-col-md-10">
-                    <div class="wrap">
-                        <div class="ico-wrap">
-                            <span class="mbr-iconfont fa-envelope fa"></span>
-                        </div>
-                        <div class="text-wrap vcenter">
-                            <h2 class="mbr-fonts-style mbr-bold mbr-section-title3 display-5">Send Email</h2>
-                            <p class="mbr-fonts-style text1 mbr-text display-6">Send Email To Us.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-6 mbr-col-md-10">
-                    <div class="wrap">
-                        <div class="ico-wrap">
-                            <span class="mbr-iconfont fas fa-newspaper"></span>
-                        </div>
-                        <div class="text-wrap vcenter">
-                            <h2 class="mbr-fonts-style mbr-bold mbr-section-title3 display-5">Local News</h2>
-                            <p class="mbr-fonts-style text1 mbr-text display-6">Read Your Local News</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
+      <div class="col-lg-6 mbr-col-md-10">
+        <div class="wrap">
+          <div class="ico-wrap">
+            <span class="mbr-iconfont fas fa-newspaper"></span>
+          </div>
+          <div class="text-wrap vcenter">
+            <h2 class="mbr-fonts-style mbr-bold mbr-section-title3 display-5">Local News</h2>
+            <p class="mbr-fonts-style text1 mbr-text display-6">Read Your Local News</p>
+          </div>
+        </div>
+      </div>
     </div>
 
-    </section>
+  </div>
+</section>

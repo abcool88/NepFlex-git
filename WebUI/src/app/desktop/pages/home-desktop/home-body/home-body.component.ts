@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ContainerType } from 'app/shared/ResourceModels/enumerator';
 
 @Component({
   selector: 'app-home-body',
@@ -6,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home-body.component.scss']
 })
 export class HomeBodyComponent implements OnInit {
-
+  containerType_News = ContainerType.NewsItem;
   constructor() { }
 
   ngOnInit() {
