@@ -70,7 +70,7 @@ import {
 import { ENTER, COMMA } from '@angular/cdk/keycodes';
 import { DropdownComponent } from './dropdown/dropdown.component';
 import { ChildDropdownComponent } from './dropdown/child-dropdown/child-dropdown.component';
-import { AutoCompleteSearchboxComponent } from './auto-complete-searchbox/auto-complete-searchbox.component';
+import { AutoCompleteSearchboxComponent, SearchString } from './auto-complete-searchbox/auto-complete-searchbox.component';
 
 @NgModule({
   imports: [
@@ -151,6 +151,7 @@ import { AutoCompleteSearchboxComponent } from './auto-complete-searchbox/auto-c
     OverlayComponent,
     CarouselComponent,
     HomeService,
+    SearchString,
     HTTPHeader,
     {
       provide: MAT_CHIPS_DEFAULT_OPTIONS,

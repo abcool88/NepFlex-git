@@ -1,7 +1,7 @@
 
 <form class="form-inline my-2 my-lg-0 col-md-12 p-2 m-auto" [formGroup]="form">
-<app-animated-button [buttonCollections]="searchOptionsButttons" (ParentEmitter)="buttonClicked($event)"></app-animated-button>
- <app-auto-complete-searchbox [multiStringOptions]="isMultipleSearchStrings" class="w-100"></app-auto-complete-searchbox>
+<!-- <app-animated-button [buttonCollections]="searchOptionsButttons" (ParentEmitter)="buttonClicked($event)"></app-animated-button> -->
+ <app-auto-complete-searchbox [multiStringOptions]="isMultipleSearchStrings" class="w-100" (ParentButtonEmitter)="searchButton($event)"></app-auto-complete-searchbox>
   <!-- <input class="myform-control mr-sm-2" type="search" formControlName="searchedText" placeholder="find peoples, instruments, bands and more..." aria-label="Search">
   <button class="btn btn-light"><i class="fa fa-search"></i></button> -->
 </form>

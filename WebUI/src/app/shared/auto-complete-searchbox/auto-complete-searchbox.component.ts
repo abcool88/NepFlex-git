@@ -1,5 +1,5 @@
 import { COMMA, ENTER } from '@angular/cdk/keycodes';
-import { Component, ElementRef, ViewChild, OnInit, Input } from '@angular/core';
+import { Component, ElementRef, ViewChild, OnInit, Input, Output, EventEmitter, Injectable } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import {
   MatAutocompleteSelectedEvent,
@@ -10,6 +10,7 @@ import { Observable } from 'rxjs';
 import { map, startWith } from 'rxjs/operators';
 import { SearchStringQuery } from 'app/shared/ResourceModels/SearchStringQuerys';
 import { ButtonProperties } from 'app/shared/ResourceModels/ButtonProperties';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-auto-complete-searchbox',
@@ -25,14 +26,15 @@ export class AutoCompleteSearchboxComponent implements OnInit {
   separatorKeysCodes: number[] = [ENTER, COMMA];
   searchStringCtrl = new FormControl();
   filteredSearchStrings: Observable<string[]>;
-  searchStringOption: string[] = [''];
+  searchStringOption: string[] = [];
   allSearchStringOptions: string[];
   searchButtton: ButtonProperties[] = new Array();
-
+  searchString: SearchString[] = [];
   @ViewChild('searchInput') searchInput: ElementRef<HTMLInputElement>;
   @ViewChild('auto') matAutocomplete: MatAutocomplete;
+  @Output() ParentButtonEmitter: EventEmitter<SearchString[]> = new EventEmitter<SearchString[]>();
 
-  constructor(el: SearchStringQuery) {
+  constructor(el: SearchStringQuery, private router: Router) {
     this.allSearchStringOptions = el.DefaultSearchQueryList;
     this.filteredSearchStrings = this.searchStringCtrl.valueChanges.pipe(
       startWith(null),
@@ -73,8 +75,9 @@ export class AutoCompleteSearchboxComponent implements OnInit {
 
   selected(event: MatAutocompleteSelectedEvent): void {
     this.searchStringOption.push(event.option.viewValue);
-    this.searchInput.nativeElement.value = '';
-    this.searchStringCtrl.setValue(null);
+    if (this.searchStringOption.length > 0) {
+      this.searchButtonOnOff();
+    }
   }
 
   private _filter(value: string): string[] {
@@ -87,9 +90,9 @@ export class AutoCompleteSearchboxComponent implements OnInit {
 
   searchButtonOnOff(): boolean {
     if (this.searchStringOption.length > 0) {
-      return false;
-    } else {
       return true;
+    } else {
+      return false;
     }
   }
   ngOnInit(): void {
@@ -107,11 +110,22 @@ export class AutoCompleteSearchboxComponent implements OnInit {
       }
     ];
   }
-  searchBtnClicked(e: Event, isSingleSearch?: boolean) {
-    if (isSingleSearch) {
+  searchBtnClicked(e: Event) {
+    // console.log(this.searchString, this.searchStringOption);
+    if (this.searchStringOption.length < 2) {
+      this.searchString['name'] = this.searchStringOption;
+      this.ParentButtonEmitter.emit(this.searchString['name']);
+    }
+
+    if (this.searchStringOption.length > 1) {
+      this.searchString['name'] = this.searchStringOption;
+      this.ParentButtonEmitter.emit(this.searchString['name']);
     }
   }
 }
-export interface SearchString {
-  name: string;
+
+@Injectable()
+export class SearchString {
+  name: string[];
+  public constructor() { }
 }

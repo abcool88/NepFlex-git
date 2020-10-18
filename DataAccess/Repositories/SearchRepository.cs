@@ -18,37 +18,55 @@ namespace NepFlex.DataAccess.Repositories
             _context = context;
         }
 
-        public List<SearchResponse> GetSearchResponseList(string searchText)
+        public List<SearchResponse> GetSearchResponseList(string[] searchText)
         {
-            var results = _context.ButtonSearchOnClick(searchText);
-            var response = results.Select(a => new SearchResponse()
+
+            // var query = new string[] { searchText[0] }
+            ;
+            List<string> list = new List<string>(searchText);
+            var searchTitle = searchText[0].Split(',');
+
+            List<SearchResponse> response = new List<SearchResponse>();
+            for (var i = 0; i < searchTitle.Length; i++)
             {
-                Address = a.Address,
-                Brand = a.Brand,
-                Condition = a.Condition,
-                Contact = a.Contact,
-                DateAdded = a.DateAdded,
-                Detail = a.Detail,
-                Email = a.Email,
-                extra_Warranty = a.extra_Warranty,
-                Image = a.Image,
-                Mile_KMPH = a.Mile_KMPH,
-                Modal = a.Modal,
-                Name = a.Name,
-                Other = a.Other,
-                PostID = a.PostID,
-                Price = a.Price,
-                SubCategory = a.SubCategory,
-                Title = a.Title,
-                TopCategory = a.TopCategory,
-                Warranty = a.Warranty
-            }).ToList();
+                var results = _context.ButtonSearchOnClick(searchTitle[i]);
+                if (response == null)
+                {
+                    response = new List<SearchResponse>();
+                }
+                response.Add(new SearchResponse() { SearchText = searchTitle[i] });
+                foreach (var item in results)
+                {
+                    if (response[i].ItemDetail == null)
+                    {
+                        response[i].ItemDetail = new List<ItemsDetails>();
+                    }
+                    response[i].ItemDetail.Add(new ItemsDetails
+                    {
+                        Address = item.Address,
+                        Brand = item.Brand,
+                        Condition = item.Condition,
+                        Contact = item.Contact,
+                        DateAdded = item.DateAdded,
+                        Detail = item.Detail,
+                        Email = item.Email,
+                        extra_Warranty = item.extra_Warranty,
+                        Image = item.Image,
+                        Mile_KMPH = item.Mile_KMPH,
+                        Modal = item.Modal,
+                        Name = item.Name,
+                        Other = item.Other,
+                        PostID = item.PostID,
+                        Price = item.Price,
+                        SubCategory = item.SubCategory,
+                        Title = item.Title,
+                        TopCategory = item.TopCategory,
+                        Warranty = item.Warranty
+                    });
+                }
+            }
+
             return response;
-        }
-        public List<string[]> GetSearchKeywordList()
-        {
-            var result = from subCategory in SelectTopCategory
-                return result;
         }
     }
 }

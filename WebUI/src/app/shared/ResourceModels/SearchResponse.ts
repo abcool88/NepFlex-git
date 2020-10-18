@@ -1,4 +1,4 @@
-export class SearchResponse {
+export class ItemDetails {
   postID: number;
   title: string;
   image: string;
@@ -18,4 +18,9 @@ export class SearchResponse {
   warranty: string;
   extra_Warranty: string;
   dateAdded: Date;
+}
+
+export class SearchResponse {
+  searchText: string;
+  itemDetail: ItemDetails[];
 }

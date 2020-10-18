@@ -1,4 +1,4 @@
-<div class="layoutbox" *ngFor="let item of itemResults | orderBy:'dateAdded';let i=index;">
+<!-- <div class="layoutbox" *ngFor="let item of itemResults | orderBy:'dateAdded';let i=index;">
   <Label ID="Lblprice" Class="LabelPrice">Rs. {{item.price}}</Label>
   <div class="socialbtnNC">
     <p class="facebook" style="width:33%;">
@@ -41,4 +41,74 @@
     <Label ID="lblModal">{{item.modal}}</Label>
     <Label ID="lblMileKMPH" hidden=true>{{item.modal}}</Label>
   </div>
-</div>
+</div> -->
+
+<!-- <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
+<!------ Include the above in your HEAD tag ---------->
+
+<!-- Team -->
+<section id="team" class="pb-5">
+  <div class="container custom-margin">
+    <h5 class="section-title h1">You Searched: {{searchText}} </h5>
+    <!-- <div class="list-header">
+        <div class="header-field-container">
+          <div class="header-field-title"> 
+            <div class="all-results">Total Results({{totalCountOfItem}})</div>
+          </div>
+        </div>
+      </div> -->
+    <div class="row">
+      <!-- Team member -->
+      <div class="col-xs-12 col-sm-6 col-md-4" *ngFor="let results of itemResults | orderBy:'dateAdded';let i=index;">
+        {{results.searchText}}
+        <div *ngFor="let item of results.itemDetail;let j=index;">
+        <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
+          <div class="mainflip">
+            <div class="frontside">
+              <div class="card">
+                <div class="card-body text-center">
+                  <Label ID="Lblprice" Class="LabelPrice">${{item.price}}</Label>
+                  <p><img class=" img-fluid"
+                      src="https://sunlimetech.com/portfolio/boot4menu/assets/imgs/team/img_01.png" alt="card image">
+                  </p>
+                  <h4 class="card-title">{{item.title}}</h4>
+                  <p class="card-text">This is basic card with image on top, title, description and button.</p>
+                  <a href="#" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i></a>
+                </div>
+              </div>
+            </div>
+            <div class="backside">
+              <div class="card">
+                <div class="card-body text-center mt-4">
+                  <h4 class="card-title">{{item.topCategory}} >> {{item.subCategory}}</h4>
+                  <p class="card-text">{{item.detail}}</p>
+                  <ul class="list-inline">
+                    <li class="list-inline-item">
+                      <a class="social-icon text-xs-center"
+                        href="https://facebook.com/sharer.php?u=http://www.nepalicraig.com/Detail.aspx?Id={{item.postID}}"
+                        title="{{item.title}}" target="_blank">
+                        <i class="fa fa-facebook"></i>
+                      </a>
+                    </li>
+                    <li class="list-inline-item">
+                      <a class="social-icon text-xs-center"
+                        href="https://twitter.com/intent/tweet?url=http://www.nepalicraig.com/Detail.aspx?Id={{item.postID}} & text='{{item.title}}' & via=NepaliCraig&hashtags=NepaliCraigPost"
+                        target="_blank">
+                        <i class="fa fa-twitter"></i>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+                <app-animated-button [buttonCollections]="detailButttons" (click)="goToMoreDetails(item.postID)"></app-animated-button>
+              </div>
+            </div>
+          </div>
+        </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>

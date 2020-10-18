@@ -89,11 +89,11 @@ export class SearchResultsOverlayComponent
   }
 
   searching() {
-    this.searchService.getSearchResponse(this.searchText).subscribe(x => {
-      this.TotalCount = x.length;
-      this.searchResponse = x;
-      this.searchResults = x;
-      this.turnLargeLoader = false;
-    });
+    // this.searchService.getSearchResponse(this.searchText).subscribe(x => {
+    //   this.TotalCount = x.length;
+    //   this.searchResponse = x;
+    //   this.searchResults = x;
+    //   this.turnLargeLoader = false;
+    // });
   }
 }

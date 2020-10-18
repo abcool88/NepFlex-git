@@ -11,6 +11,7 @@ export class SearchService {
   private apiUrl_getSearchResponse = 'http://localhost/ServiceAPI/api/search';
   private apiUrl_getItemDescription = 'http://localhost/ServiceAPI/api/ItemDescription';
 
+
   constructor(private httpClient: HttpClient) {}
 
   getItemDescription(): Observable<ItemDescription[]> {
@@ -20,7 +21,7 @@ export class SearchService {
     return a;
   }
 
-  getSearchResponse(val: string): Observable<SearchResponse[]> {
+  getSearchResponse(val: string[]): Observable<SearchResponse[]> {
     const b = this.httpClient.get<SearchResponse[]>(
       `${this.apiUrl_getSearchResponse}/` + val
     );

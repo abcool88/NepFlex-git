@@ -1,8 +1,12 @@
 @import './_variables.scss';
 @import './_mixins.scss';
 
-.hidden{
-  display:none;
+.hidden {
+  display: none;
+}
+
+.fixed-top {
+  background: #f3faff;
 }
 
 .global-desktop-body {

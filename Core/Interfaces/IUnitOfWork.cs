@@ -12,7 +12,6 @@ namespace Core.Interfaces
     {
         IMenuTopRepository MenuTopRepository { get; }
         ISearchRepository SearchRepository { get; }
-        ISearchRepository GetSearchKeywordList { get; }
         IItemDescriptionRepository ItemDescriptionRepository { get; }
         IReportRepository ReportRepository { get; }
         IDetailRepository DetailRepository { get; }

@@ -16,13 +16,9 @@ namespace NepFlex.Core.Services
         {
             _unitOfWork = unitOfWork;
         }
-       public List<SearchResponse> GetSearchResponseList(string searchText)
+       public List<SearchResponse> GetSearchResponseList(string[] searchText)
         {
             return _unitOfWork.SearchRepository.GetSearchResponseList(searchText);
-        }
-        public List<string[]> GetSearchKeywordList(string searchText)
-        {
-            return _unitOfWork.SearchRepository.GetSearchKeywordList();
         }
     }
 }

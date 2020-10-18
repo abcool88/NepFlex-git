@@ -11,7 +11,7 @@ import { map } from 'rxjs/operators';
   styleUrls: ['./filter-box.component.scss']
 })
 export class FilterBoxComponent implements OnInit {
-  @Input() itemDescriptions: ItemDescription[]= new Array();
+  @Input() itemDescriptions: ItemDescription[] = new Array();
   @Input() _selectedValue: string;
   @Output() filteredBy: EventEmitter<any> = new EventEmitter();
   @Output() closeFilterBar: EventEmitter<boolean> = new EventEmitter();
@@ -20,7 +20,7 @@ export class FilterBoxComponent implements OnInit {
   constructor(
     private filtering: FilteringSearch,
     private _searchService: SearchService
-  ) {}
+  ) { }
 
   get selectedValue() {
     return this._selectedValue;
@@ -56,11 +56,11 @@ export class FilterBoxComponent implements OnInit {
     this.filteredBy.emit();
   }
 
-  writeValue(obj: any): void {}
+  writeValue(obj: any): void { }
   registerOnChange(fn: any): void {
     this.propagateChange = fn;
   }
-  registerOnTouched(fn: any): void {}
-  setDisabledState?(isDisabled: boolean): void {}
-  propagateChange = (_: any) => {};
+  registerOnTouched(fn: any): void { }
+  setDisabledState?(isDisabled: boolean): void { }
+  propagateChange = (_: any) => { };
 }

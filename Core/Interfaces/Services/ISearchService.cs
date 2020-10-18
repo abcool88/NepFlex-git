@@ -9,7 +9,6 @@ namespace NepFlex.Core.Interfaces.Services
 {
     public interface ISearchService
     {
-        List<SearchResponse> GetSearchResponseList(string searchText);
-        List<String[]> GetSearchKeywordList();
+        List<SearchResponse> GetSearchResponseList(string[] searchText);
     }
 }

@@ -18,7 +18,7 @@ const routes: Routes = [
   { path: 'faq', component: FaqComponent , pathMatch: 'full'},
   { path: 'home', component: HomeComponent , pathMatch: 'full'},
   { path: 'detail/:itemId', component: DetailComponent, pathMatch: 'full'},
-  { path: 'list/:searchedText', component: ListComponent, pathMatch: 'full'},
+  { path: 'list', component: ListComponent, pathMatch: 'full'},
   { path: 'report', component: ReportUsComponent , pathMatch: 'full'},
   { path: 'aboutus', component: AboutUsComponent , pathMatch: 'full'},
   { path: 'termsofuse', component: TermsOfUseComponent , pathMatch: 'full'},

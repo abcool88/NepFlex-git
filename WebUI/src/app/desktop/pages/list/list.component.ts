@@ -14,6 +14,7 @@ import { SearchResponse } from 'app/shared/ResourceModels/SearchResponse';
 import { SearchService } from 'app/shared/services/search.service';
 import { FilteringSearch } from 'app/shared/ResourceModels/FilteringSearch';
 import { ActivatedRoute } from '@angular/router';
+import { SearchString } from 'app/shared/auto-complete-searchbox/auto-complete-searchbox.component';
 
 @Component({
   selector: 'app-list',
@@ -25,17 +26,20 @@ export class ListComponent implements OnInit, AfterViewInit, OnChanges {
   searchResponse: SearchResponse[] = new Array();
   TotalCount: number;
   turnLargeLoader: boolean = false;
-  searchText: string;
+  searchText: string[];
 
   constructor(
     private route: ActivatedRoute,
     private searchService: SearchService,
-    private filtering: FilteringSearch
+    private filtering: FilteringSearch,
+    private searchStrings: SearchString
   ) {
     this.turnLargeLoader = true;
+    const res = this.searchStrings.name;
+    console.log(res);
   }
   ngAfterViewInit(): void {
-    this.searching();
+    // this.searching();
   }
   ngOnInit() {
     // var pathArray = window.location.pathname.split('/');
@@ -44,8 +48,8 @@ export class ListComponent implements OnInit, AfterViewInit, OnChanges {
     // for (let i = 0; i < pathArray.length; i++) {
     //   newPathname = pathArray[i];
     // }
-    const result = this.route.params.subscribe(params => {
-      this.searchText = params['searchedText'];
+    this.route.params.subscribe(params => {
+      this.searchText = this.searchStrings.name;
       this.searching();
     });
     console.log('this.searchText: ', this.searchText);
@@ -53,7 +57,7 @@ export class ListComponent implements OnInit, AfterViewInit, OnChanges {
   }
 
   ngOnChanges(changes: SimpleChanges) {
-    this.searching();
+    // this.searching();
   }
 
   filterBy() {
@@ -98,11 +102,24 @@ export class ListComponent implements OnInit, AfterViewInit, OnChanges {
   }
 
   searching() {
-    this.searchService.getSearchResponse(this.searchText).subscribe(x => {
-      this.TotalCount = x.length;
-      this.searchResponse = x;
-      this.searchResults = x;
-      this.turnLargeLoader = false;
-    });
+    const res = this.searchStrings.name;
+    console.log(res);
+    if (this.searchText) {
+      if (this.searchText.length >= 1) {
+        // this.searchText.forEach(e => {
+        this.searchService.getSearchResponse(this.searchText).subscribe(x => {
+          this.TotalCount = x.length;
+          this.searchResponse = x;
+          x.forEach(e => {
+            this.searchResults.push(e)
+          });
+          // this.searchResults = x;
+          this.turnLargeLoader = false;
+          console.log('this.searchResults first observation:', this.searchResults);
+        });
+        // });
+      }
+    }
+    console.log('this.searchResults second observation:', this.searchResults);
   }
 }

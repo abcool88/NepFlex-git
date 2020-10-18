@@ -1,4 +1,5 @@
 ﻿using Core.Interfaces;
+using NepFlex.Core.Entities.ResourceModels;
 using NepFlex.Core.Interfaces.Services;
 using System;
 using System.Collections.Generic;
@@ -22,26 +23,12 @@ namespace Nepflex.ServiceAPI.Controllers
 
         [Route("{searchText}")]
         [HttpGet]
-        public IHttpActionResult GetSearchResponseList(string searchText)
+        public IHttpActionResult GetSearchResponseList([FromUri] string[] searchText)
         {
             Console.WriteLine("came here in search");
             try
             {
                 var results = _searchService.GetSearchResponseList(searchText);
-                return Ok(results);
-            }
-            catch (Exception ex)
-            {
-                return InternalServerError(ex);
-            }
-        }
-        [HttpGet]
-        public IHttpActionResult GetSearchKeywordList(string searchText)
-        {
-            Console.WriteLine("came here in search");
-            try
-            {
-                var results = _searchService.GetSearchKeywordList(searchText);
                 return Ok(results);
             }
             catch (Exception ex)

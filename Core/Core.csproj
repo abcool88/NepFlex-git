@@ -64,6 +64,7 @@
     <Compile Include="Entities\ResourceModels\MenuTopContainer.cs" />
     <Compile Include="Entities\ResourceModels\MenuTopNav.cs" />
     <Compile Include="Entities\ResourceModels\ReportedData.cs" />
+    <Compile Include="Entities\ResourceModels\SearchedKeywordResults.cs" />
     <Compile Include="Entities\ResourceModels\SearchResponse.cs" />
     <Compile Include="Entities\ResourceModels\SendEmailRequest.cs" />
     <Compile Include="Interfaces\IUnitOfWork.cs" />
