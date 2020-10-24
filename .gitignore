@@ -3,3 +3,8 @@
 ################################################################################
 
 /.vs/NepFlex/v15/Server/sqlite3
+/Core/obj/Debug
+/DataAccess/obj/Debug
+/DependencyResolution/obj/Debug
+/ServiceAPI/obj/Debug
+/WebUI/obj/Debug
