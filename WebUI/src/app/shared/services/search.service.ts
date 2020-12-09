@@ -21,7 +21,7 @@ export class SearchService {
     return a;
   }
 
-  getSearchResponse(val: string[]): Observable<SearchResponse[]> {
+  getSearchResponse(val: string): Observable<SearchResponse[]> {
     const b = this.httpClient.get<SearchResponse[]>(
       `${this.apiUrl_getSearchResponse}/` + val
     );

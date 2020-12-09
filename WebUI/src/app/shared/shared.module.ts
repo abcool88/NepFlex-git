@@ -71,6 +71,7 @@ import { ENTER, COMMA } from '@angular/cdk/keycodes';
 import { DropdownComponent } from './dropdown/dropdown.component';
 import { ChildDropdownComponent } from './dropdown/child-dropdown/child-dropdown.component';
 import { AutoCompleteSearchboxComponent, SearchString } from './auto-complete-searchbox/auto-complete-searchbox.component';
+import { TabLayoutComponent } from './tab-layout/tab-layout.component';
 
 @NgModule({
   imports: [
@@ -138,7 +139,8 @@ import { AutoCompleteSearchboxComponent, SearchString } from './auto-complete-se
     DropdownComponent,
     ChildDropdownComponent,
     AnimatedButtonComponent,
-    AutoCompleteSearchboxComponent
+    AutoCompleteSearchboxComponent,
+    TabLayoutComponent
   ],
   providers: [
     ReportService,
@@ -179,7 +181,8 @@ import { AutoCompleteSearchboxComponent, SearchString } from './auto-complete-se
     DropdownComponent,
     ChildDropdownComponent,
     AnimatedButtonComponent,
-    AutoCompleteSearchboxComponent
+    AutoCompleteSearchboxComponent,
+    TabLayoutComponent
   ]
 })
 export class SharedModule {}

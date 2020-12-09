@@ -26,7 +26,7 @@ export class ListComponent implements OnInit, AfterViewInit, OnChanges {
   searchResponse: SearchResponse[] = new Array();
   TotalCount: number;
   turnLargeLoader: boolean = false;
-  searchText: string[];
+  searchText: string;
 
   constructor(
     private route: ActivatedRoute,

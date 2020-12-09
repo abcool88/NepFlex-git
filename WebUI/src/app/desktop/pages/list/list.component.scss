@@ -12,6 +12,10 @@
 //   @media (min-width: 1200px)
 // .container {
     max-width: 92%;
+    max-width: 92%;
+    top: 5rem;
+    position: relative;
+    margin-bottom: 10rem;
 // }
 }
 .list-header {
@@ -42,10 +46,13 @@
 }
 .info-blocks {
   @include display-parent-flex(row,nowrap,flex-start,flex-start,flex-start);
-  //border-radius: 4px !important;
-  //border: 1px solid #dbdbdb !important;
   box-shadow: 0 5px 30px rgba(156, 160, 171, 0.25) !important;
   background: #f9f9f9;
   overflow-y: scroll;
   overflow-x: hidden;
+  width: 100%;
+}
+
+.photo-section{
+  width: 100%;
 }

@@ -349,7 +349,8 @@ E:\GIT_Nepflex\ServiceAPI\bin\System.Web.Mvc.xml
 E:\GIT_Nepflex\ServiceAPI\bin\System.Net.Http.Formatting.xml
 E:\GIT_Nepflex\ServiceAPI\bin\System.Web.Http.xml
 E:\GIT_Nepflex\ServiceAPI\bin\System.Web.Http.WebHost.xml
-E:\GIT_Nepflex\ServiceAPI\obj\Debug\ServiceAPI.csprojResolveAssemblyReference.cache
+E:\GIT_Nepflex\ServiceAPI\obj\Debug\ServiceAPI.csprojAssemblyReference.cache
 E:\GIT_Nepflex\ServiceAPI\obj\Debug\ServiceAPI.csproj.CoreCompileInputs.cache
+E:\GIT_Nepflex\ServiceAPI\obj\Debug\ServiceAPI.csproj.CopyComplete
 E:\GIT_Nepflex\ServiceAPI\obj\Debug\Nepflex.ServiceAPI.dll
 E:\GIT_Nepflex\ServiceAPI\obj\Debug\Nepflex.ServiceAPI.pdb

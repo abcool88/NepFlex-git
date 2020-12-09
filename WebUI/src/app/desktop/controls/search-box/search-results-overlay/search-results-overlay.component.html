@@ -4,7 +4,8 @@
     <div class="all-results">Total Results({{TotalCount}})</div>
     <app-spinner [showLargeLoader]="turnLargeLoader"></app-spinner>
     <div *ngIf="!turnLargeLoader">
-      <app-item-container *ngIf="TotalCount!==0" [itemResults]="searchResults"></app-item-container>
+      <!-- <app-item-container *ngIf="TotalCount!==0" [itemResults]="searchResults"></app-item-container> -->
+      <app-tab-layout *ngIf="TotalCount!==0" [tabResults]="searchResults"></app-tab-layout>
       <div *ngIf="TotalCount===0" class="try-again-label"> please try again</div>
     </div>
   </div>

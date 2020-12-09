@@ -4,6 +4,7 @@ import { ButtonProperties } from 'app/shared/ResourceModels/ButtonProperties';
 import { Router } from '@angular/router';
 import { renderComponent } from '@angular/core/src/render3';
 
+
 @Component({
   selector: 'app-item-container',
   templateUrl: './item-container.component.html',
@@ -31,6 +32,8 @@ export class ItemContainerComponent implements OnInit {
    //   a.itemDetail
     //  a.searchText
     });
+
+
   }
 
   allButtons() {
@@ -51,3 +54,4 @@ export class ItemContainerComponent implements OnInit {
     this.router.navigate(['/detail', id.toString()]);
   }
 }
+

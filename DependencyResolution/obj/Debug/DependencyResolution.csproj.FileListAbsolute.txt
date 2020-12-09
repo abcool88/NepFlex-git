@@ -155,7 +155,8 @@ E:\GIT_Nepflex\DependencyResolution\bin\Debug\System.Web.WebPages.xml
 E:\GIT_Nepflex\DependencyResolution\bin\Debug\System.Web.WebPages.Deployment.xml
 E:\GIT_Nepflex\DependencyResolution\bin\Debug\System.Web.WebPages.Razor.xml
 E:\GIT_Nepflex\DependencyResolution\obj\Debug\DependencyResolution.csproj.App.config
-E:\GIT_Nepflex\DependencyResolution\obj\Debug\DependencyResolution.csprojResolveAssemblyReference.cache
+E:\GIT_Nepflex\DependencyResolution\obj\Debug\DependencyResolution.csprojAssemblyReference.cache
 E:\GIT_Nepflex\DependencyResolution\obj\Debug\DependencyResolution.csproj.CoreCompileInputs.cache
+E:\GIT_Nepflex\DependencyResolution\obj\Debug\DependencyResolution.csproj.CopyComplete
 E:\GIT_Nepflex\DependencyResolution\obj\Debug\DependencyResolution.dll
 E:\GIT_Nepflex\DependencyResolution\obj\Debug\DependencyResolution.pdb

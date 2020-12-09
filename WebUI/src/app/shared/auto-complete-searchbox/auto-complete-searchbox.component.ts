@@ -126,6 +126,6 @@ export class AutoCompleteSearchboxComponent implements OnInit {
 
 @Injectable()
 export class SearchString {
-  name: string[];
+  name: string;
   public constructor() { }
 }

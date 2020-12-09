@@ -1,4 +1,4 @@
-@import '../../../../Style/styles.scss';
+@import '../../../Style/styles.scss';
 
 .list-header {
   @include display-child-flex(0, 1, auto, auto);
@@ -35,7 +35,7 @@
 }
 
 #team {
-  background: #eee !important;
+  background: #008ba3 !important;
 }
 
 .btn-primary:hover,
@@ -159,4 +159,16 @@ section .section-title {
   width: 120px;
   height: 120px;
   border-radius: 50%;
+}
+
+.custom-item-body {
+  flex: 0 0 100%;
+  max-width: 100%;
+}
+
+.custom-item-container {
+  // margin-bottom: 3rem !important;
+  width: 19%;
+  float: LEFT;
+  margin: 0.5REM;
 }

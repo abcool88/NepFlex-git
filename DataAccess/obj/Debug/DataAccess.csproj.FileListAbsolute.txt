@@ -40,7 +40,8 @@ E:\GIT_Nepflex\DataAccess\bin\Debug\NepFlex.Core.dll.config
 E:\GIT_Nepflex\DataAccess\bin\Debug\EntityFramework.xml
 E:\GIT_Nepflex\DataAccess\bin\Debug\EntityFramework.SqlServer.xml
 E:\GIT_Nepflex\DataAccess\bin\Debug\Newtonsoft.Json.xml
-E:\GIT_Nepflex\DataAccess\obj\Debug\DataAccess.csprojResolveAssemblyReference.cache
+E:\GIT_Nepflex\DataAccess\obj\Debug\DataAccess.csprojAssemblyReference.cache
 E:\GIT_Nepflex\DataAccess\obj\Debug\DataAccess.csproj.CoreCompileInputs.cache
+E:\GIT_Nepflex\DataAccess\obj\Debug\DataAccess.csproj.CopyComplete
 E:\GIT_Nepflex\DataAccess\obj\Debug\NepFlex.DataAccess.dll
 E:\GIT_Nepflex\DataAccess\obj\Debug\NepFlex.DataAccess.pdb
