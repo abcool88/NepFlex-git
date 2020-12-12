@@ -17,7 +17,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 @NgModule({
   declarations: [AppComponent, PagenotfoundComponent, HomeComponent],
   imports: [
-    NgbModule.forRoot(),
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
@@ -28,7 +27,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     DesktopModule,
     SharedModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]
