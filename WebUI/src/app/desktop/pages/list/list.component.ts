@@ -42,12 +42,6 @@ export class ListComponent implements OnInit, AfterViewInit, OnChanges {
     // this.searching();
   }
   ngOnInit() {
-    // var pathArray = window.location.pathname.split('/');
-    // var secondLevelLocation = pathArray[-1];
-    // var newPathname = '';
-    // for (let i = 0; i < pathArray.length; i++) {
-    //   newPathname = pathArray[i];
-    // }
     this.route.params.subscribe(params => {
       this.searchText = this.searchStrings.name;
       this.searching();
