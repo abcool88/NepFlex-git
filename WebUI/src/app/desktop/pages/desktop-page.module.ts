@@ -13,7 +13,6 @@ import { FaqComponent } from './faq/faq.component';
 import { ReportUsComponent } from './report-us/report-us.component';
 import { DetailComponent } from './detail/detail.component';
 import { ListComponent } from './list/list.component';
-import { LoginComponent } from './home-desktop/login/login.component';
 
 @NgModule({
     imports: [
@@ -32,8 +31,7 @@ import { LoginComponent } from './home-desktop/login/login.component';
         FaqComponent,
         ReportUsComponent,
         DetailComponent,
-        ListComponent,
-        LoginComponent
+        ListComponent
     ],
     exports: [HomeDesktopComponent]
 })

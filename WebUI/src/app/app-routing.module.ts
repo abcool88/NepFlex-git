@@ -12,7 +12,7 @@ import { ReportUsComponent } from 'app/desktop/pages/report-us/report-us.compone
 import { componentFactoryName } from '@angular/compiler';
 import { DetailComponent } from './desktop/pages/detail/detail.component';
 import { ListComponent } from './desktop/pages/list/list.component';
-import { LoginComponent } from './desktop/pages/home-desktop/login/login.component';
+import { ErrorStateMatcher, ShowOnDirtyErrorStateMatcher } from '@angular/material/core';
 
 const routes: Routes = [
   { path: '', component: HomeComponent},
@@ -23,7 +23,6 @@ const routes: Routes = [
   { path: 'report', component: ReportUsComponent , pathMatch: 'full'},
   { path: 'aboutus', component: AboutUsComponent , pathMatch: 'full'},
   { path: 'termsofuse', component: TermsOfUseComponent , pathMatch: 'full'},
-  { path: 'login', component: LoginComponent, pathMatch: 'full' },
   // { path: 'search/:searchedText', component: SearchComponent , pathMatch: 'full'},
   // { path: 'search', component: SearchComponent , pathMatch: 'full'},
   { path: 'home/:windowView', component: HomeComponent , pathMatch: 'full'},
@@ -34,6 +33,6 @@ const routes: Routes = [
 @NgModule({
   imports: [BrowserModule, FormsModule, RouterModule.forRoot(routes, { relativeLinkResolution: 'legacy' })],
   exports: [RouterModule],
-  providers: []
+  providers: [{provide: ErrorStateMatcher, useClass: ShowOnDirtyErrorStateMatcher}]
 })
 export class AppRoutingModule {}

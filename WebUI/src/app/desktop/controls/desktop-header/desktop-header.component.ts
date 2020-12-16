@@ -1,5 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Router } from '@angular/router';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { LoginComponent } from 'app/shared/login/login.component';
 import { HeadersNavigation } from 'app/shared/ResourceModels/ButtonProperties';
 
 @Component({
@@ -12,8 +14,9 @@ export class DesktopHeaderComponent implements OnInit {
   isThisComingFromHomePage: boolean = false;
   title: string = 'NepaliCraig';
   headersNavigation: HeadersNavigation[] = new Array();
+  showPopUpModal = false;
 
-  constructor(private router: Router) {
+  constructor(private router: Router, private modalService: NgbModal) {
     this.headersNavigation = [
       {
         headerId: 1,
@@ -73,10 +76,16 @@ export class DesktopHeaderComponent implements OnInit {
     ];
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void { }
   HeaderRoute(routeTo: string, routingEnabled: boolean): void {
     if (routingEnabled) {
       this.router.navigate([routeTo]);
     }
+  }
+
+  loginPopUp() {
+    this.showPopUpModal = true;
+    // console.log('showPopUpModal: ', this.showPopUpModal);
+    this.modalService.open(LoginComponent, { windowClass: 'dark-modal' });
   }
 }

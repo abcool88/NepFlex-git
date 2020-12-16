@@ -67,6 +67,7 @@ import { DropdownComponent } from './dropdown/dropdown.component';
 import { ChildDropdownComponent } from './dropdown/child-dropdown/child-dropdown.component';
 import { AutoCompleteSearchboxComponent, SearchString } from './auto-complete-searchbox/auto-complete-searchbox.component';
 import { TabLayoutComponent } from './tab-layout/tab-layout.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   imports: [
@@ -135,7 +136,8 @@ import { TabLayoutComponent } from './tab-layout/tab-layout.component';
     ChildDropdownComponent,
     AnimatedButtonComponent,
     AutoCompleteSearchboxComponent,
-    TabLayoutComponent
+    TabLayoutComponent,
+    LoginComponent
   ],
   providers: [
     ReportService,
@@ -177,7 +179,8 @@ import { TabLayoutComponent } from './tab-layout/tab-layout.component';
     ChildDropdownComponent,
     AnimatedButtonComponent,
     AutoCompleteSearchboxComponent,
-    TabLayoutComponent
+    TabLayoutComponent,
+    LoginComponent
   ]
 })
 export class SharedModule {}
