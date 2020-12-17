@@ -13,6 +13,7 @@ import { componentFactoryName } from '@angular/compiler';
 import { DetailComponent } from './desktop/pages/detail/detail.component';
 import { ListComponent } from './desktop/pages/list/list.component';
 import { ErrorStateMatcher, ShowOnDirtyErrorStateMatcher } from '@angular/material/core';
+import { RegisterUserComponent } from './desktop/register-user/register-user.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent},
@@ -21,8 +22,9 @@ const routes: Routes = [
   { path: 'detail/:itemId', component: DetailComponent, pathMatch: 'full'},
   { path: 'list', component: ListComponent, pathMatch: 'full'},
   { path: 'report', component: ReportUsComponent , pathMatch: 'full'},
-  { path: 'aboutus', component: AboutUsComponent , pathMatch: 'full'},
-  { path: 'termsofuse', component: TermsOfUseComponent , pathMatch: 'full'},
+  { path: 'about-us', component: AboutUsComponent , pathMatch: 'full'},
+  { path: 'terms-of-use', component: TermsOfUseComponent , pathMatch: 'full'},
+  { path: 'register', component: RegisterUserComponent , pathMatch: 'full'},
   // { path: 'search/:searchedText', component: SearchComponent , pathMatch: 'full'},
   // { path: 'search', component: SearchComponent , pathMatch: 'full'},
   { path: 'home/:windowView', component: HomeComponent , pathMatch: 'full'},

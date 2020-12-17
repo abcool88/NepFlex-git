@@ -68,6 +68,8 @@ import { ChildDropdownComponent } from './dropdown/child-dropdown/child-dropdown
 import { AutoCompleteSearchboxComponent, SearchString } from './auto-complete-searchbox/auto-complete-searchbox.component';
 import { TabLayoutComponent } from './tab-layout/tab-layout.component';
 import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
+import { RouteTo } from './interfaces/local-router';
 
 @NgModule({
   imports: [
@@ -137,7 +139,8 @@ import { LoginComponent } from './login/login.component';
     AnimatedButtonComponent,
     AutoCompleteSearchboxComponent,
     TabLayoutComponent,
-    LoginComponent
+    LoginComponent,
+    RegisterComponent
   ],
   providers: [
     ReportService,
@@ -151,6 +154,7 @@ import { LoginComponent } from './login/login.component';
     CarouselComponent,
     HomeService,
     SearchString,
+    RouteTo,
     HTTPHeader,
     {
       provide: MAT_CHIPS_DEFAULT_OPTIONS,
@@ -180,7 +184,8 @@ import { LoginComponent } from './login/login.component';
     AnimatedButtonComponent,
     AutoCompleteSearchboxComponent,
     TabLayoutComponent,
-    LoginComponent
+    LoginComponent,
+    RegisterComponent
   ]
 })
 export class SharedModule {}

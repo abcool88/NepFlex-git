@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Router } from '@angular/router';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { RouteTo } from 'app/shared/interfaces/local-router';
 import { LoginComponent } from 'app/shared/login/login.component';
 import { HeadersNavigation } from 'app/shared/ResourceModels/ButtonProperties';
 
@@ -16,7 +16,7 @@ export class DesktopHeaderComponent implements OnInit {
   headersNavigation: HeadersNavigation[] = new Array();
   showPopUpModal = false;
 
-  constructor(private router: Router, private modalService: NgbModal) {
+  constructor(private routeLink: RouteTo, private modalService: NgbModal) {
     this.headersNavigation = [
       {
         headerId: 1,
@@ -77,10 +77,16 @@ export class DesktopHeaderComponent implements OnInit {
   }
 
   ngOnInit(): void { }
-  HeaderRoute(routeTo: string, routingEnabled: boolean): void {
-    if (routingEnabled) {
-      this.router.navigate([routeTo]);
-    }
+
+  // HeaderRoute(routeTo: string, routingEnabled: boolean): void {
+  //   if (routingEnabled) {
+  //     this.router.navigate([routeTo]);
+  //   }
+  // }
+
+  RouteTo(routeTo: string, routingEnabled = true): void {
+    console.log('now routing: ', routeTo);
+    this.routeLink.RouteTo(routeTo, routingEnabled);
   }
 
   loginPopUp() {

@@ -12,6 +12,11 @@
 .global-desktop-body {
   @include display-parent-flex(row, nowrap, flex-start, flex-start, flex-start);
 }
+.global-desktop-body-column {
+  @include display-parent-flex(column, nowrap, flex-start, flex-start, flex-start);
+  height: 100% !important;
+  position: absolute;
+}
 
 .global-desktop-header {
   @include display-child-flex(0, 1, auto, auto);
