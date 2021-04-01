@@ -1,16 +1,16 @@
 <form class="example-form container">
     <mat-form-field class="example-full-width">
-      <mat-label>Company (disabled)</mat-label>
-      <input matInput disabled value="Google">
+      <mat-label>Company</mat-label>
+      <input matInput placeholder="enter company only if you have">
     </mat-form-field>
   
     <table class="example-full-width" cellspacing="0"><tr>
       <td><mat-form-field class="example-full-width">
-        <mat-label>First name</mat-label>
+        <mat-label>First Name</mat-label>
         <input matInput>
       </mat-form-field></td>
       <td><mat-form-field class="example-full-width">
-        <mat-label>Long Last Name That Will Be Truncated</mat-label>
+        <mat-label>Last Name</mat-label>
         <input matInput>
       </mat-form-field></td>
     </tr></table>
@@ -18,7 +18,7 @@
     <p>
       <mat-form-field class="example-full-width">
         <mat-label>Address</mat-label>
-        <textarea matInput placeholder="Ex. 100 Main St">1600 Amphitheatre Pkwy</textarea>
+        <textarea matInput placeholder="Ex. 100 Main St"></textarea>
       </mat-form-field>
       <mat-form-field class="example-full-width">
         <mat-label>Address 2</mat-label>
@@ -41,5 +41,23 @@
         <mat-hint align="end">{{postalCode.value.length}} / 5</mat-hint>
       </mat-form-field></td>
     </tr></table>
+
+    <mat-form-field class="example-full-width">
+      <mat-label>Email</mat-label>
+      <input type="email" matInput [formControl]="emailFormControl" placeholder="Ex. pat@example.com">
+      <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+        Please enter a valid email address
+      </mat-error>
+      <mat-error *ngIf="emailFormControl.hasError('required')">
+        Email is <strong>required</strong>
+      </mat-error>
+    </mat-form-field>
+    
+    <mat-form-field class="example-full-width">
+      <mat-label>Telephone</mat-label>
+      <span matPrefix>+1 &nbsp;</span>
+      <input type="tel" matInput placeholder="123-456-7890">
+      <mat-icon matSuffix>mode_edit</mat-icon>
+    </mat-form-field>
   </form>
   
