@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators, FormGroupDirective, NgForm } from '@angular/forms';
 import { ErrorStateMatcher } from '@angular/material/core';
+import { RouteTo } from '../interfaces/local-router';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -19,7 +20,7 @@ export class LoginComponent implements OnInit {
     username: ['', Validators.required],
     password: ['', Validators.required]
   })
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder, private routeLink: RouteTo) { }
 
   ngOnInit(): void {
   }
@@ -36,6 +37,11 @@ export class LoginComponent implements OnInit {
       this.passwordType = 'password';
       this.hide = true;
     }
+  }
+
+  RouteTo(routeTo: string, routingEnabled = true): void {
+    console.log('now routing: ', routeTo);
+    this.routeLink.RouteTo(routeTo, routingEnabled);
   }
 
 }

@@ -25,58 +25,10 @@
             <button type="button" class="btn btn-info btn-md" (click)="validateForrm($event)">submit</button>
           </div>
           <div id="register-link" class="text-right">
-            <a href="#" class="text-info">Register here</a>
+            <a href="register" class="text-info">Register here</a>
           </div>
         </form>
       </div>
     </div>
   </div>
 </div>
-
-
-<!-- <form class="example-form"> -->
-<!-- <div id="login">
-  <h3 class="text-center text-white">Login form</h3>
-  <div class="container">
-    <div id="login-row" class="row justify-content-center align-items-center">
-      <div id="login-box" class="col-md-12">
-        <form id="login-form" class="form" [formGroup]="form">
-          <h3 class="text-center text-info">Login</h3>
-          <div class="form-group">
-
-            <mat-form-field class="example-full-width">
-              <mat-label>Email</mat-label>
-              <input type="email" matInput [formControl]="emailFormControl" [errorStateMatcher]="matcher"
-                placeholder="Ex. pat@example.com">
-              <mat-hint>Username or Email</mat-hint>
-              <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
-                Something wrong with username or email
-              </mat-error>
-              <mat-error *ngIf="emailFormControl.hasError('required')">
-                Username or email is <strong>required</strong>
-              </mat-error>
-            </mat-form-field>
-          </div>
-          <div class="form-group">
-            <mat-form-field class="example-full-width">
-              <mat-label>Enter your password</mat-label>
-              <input matInput [type]="hide ? 'password' : 'text'">
-              <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
-                [attr.aria-pressed]="hide">
-                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
-              </button>
-            </mat-form-field>
-          </div>
-          <div class="form-group">
-            <label for="remember-me" class="text-info"><span>Remember me</span> <span><input id="remember-me"
-                  name="remember-me" type="checkbox"></span></label><br>
-            <button type="button" class="btn btn-info btn-md" (click)="validateForrm($event)">submit</button>
-          </div>
-          <div id="register-link" class="text-right">
-            <a href="#" class="text-info">Register here</a>
-          </div>
-        </form>
-      </div>
-    </div>
-  </div>
-</div> -->
