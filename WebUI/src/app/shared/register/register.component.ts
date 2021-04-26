@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroupDirective, NgForm, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, FormGroupDirective, NgForm, Validators } from '@angular/forms';
 import { ErrorStateMatcher } from '@angular/material/core';
 import { RouteTo } from '../interfaces/local-router';
 import { ButtonProperties } from '../ResourceModels/ButtonProperties';
@@ -10,13 +10,12 @@ import { ButtonProperties } from '../ResourceModels/ButtonProperties';
   styleUrls: ['./register.component.scss']
 })
 export class RegisterComponent implements OnInit {
+  registerForm: FormGroup;
   detailButttons: ButtonProperties[] = new Array();
   showFCError: boolean = false;
+  hide = true;
+  passwordType = 'password';
   matcher = new MyErrorStateMatcher();
-  emailFormControl = new FormControl('', [
-    Validators.required,
-    Validators.email,
-  ]);
 
   companyFC: FormControl = new FormControl('', [Validators.required]);
   firstnameFC: FormControl = new FormControl('', [Validators.required]);
@@ -26,7 +25,7 @@ export class RegisterComponent implements OnInit {
   cityFC: FormControl = new FormControl('', [Validators.required]);
   stateFC: FormControl = new FormControl('', [Validators.required]);
   zipcodeFC: FormControl = new FormControl('', [Validators.required]);
-  emailFC: FormControl = new FormControl('', [Validators.required]);
+  emailFC: FormControl = new FormControl('', [Validators.required, Validators.email]);
   phonenumberFC: FormControl = new FormControl('', [Validators.required]);
   usernameFC: FormControl = new FormControl('', [Validators.required]);
   passwordFC: FormControl = new FormControl('', [Validators.required]);
@@ -44,22 +43,10 @@ export class RegisterComponent implements OnInit {
   usernameFCError: string;
   passwordFCError: string;
 
-  form = this.fb.group({
-    company: this.companyFC,
-    firstname: this.firstnameFC,
-    lastname: this.lastnameFC,
-    address: this.addressFC,
-    address2: this.address2FC,
-    city: this.cityFC,
-    state: this.stateFC,
-    zipcode: this.zipcodeFC,
-    email: this.emailFC,
-    phonenumber: this.phonenumberFC,
-    username: this.usernameFC,
-    password: this.passwordFC
-  })
 
-  constructor(private fb: FormBuilder, private routeLink: RouteTo) { }
+  constructor(private fb: FormBuilder, private routeLink: RouteTo) {
+    this.createForm();
+  }
 
   ngOnInit(): void {
     this.allButtons();
@@ -78,46 +65,100 @@ export class RegisterComponent implements OnInit {
       }
     ];
   }
+  passwordShowField(e: Event) {
+    if (this.hide) {
+      this.passwordType = 'text';
+      this.hide = false;
+    } else {
+      this.passwordType = 'password';
+      this.hide = true;
+    }
+  }
+
+  createForm() {
+    this.registerForm = this.fb.group({
+      company: this.companyFC,
+      firstname: this.firstnameFC,
+      lastname: this.lastnameFC,
+      address: this.addressFC,
+      address2: this.address2FC,
+      city: this.cityFC,
+      state: this.stateFC,
+      zipcode: this.zipcodeFC,
+      email: this.emailFC,
+      phonenumber: this.phonenumberFC,
+      username: this.usernameFC,
+      password: this.passwordFC
+    })
+  }
+
+  onchangeform(
+    event: { target; value: string },
+    formControlName: string
+  ) {
+    const val = event.target.value;
+    this.registerForm.get(formControlName).patchValue(val);
+    this.validateForrm();
+    // console.log(
+    //   'senderEmailVal: ',
+    //   val,
+    //   'formControlName: ',
+    //   formControlName,
+    //   'senderEmailForm: ',
+
+    //   this.sendEmailForm.get(formControlName).value
+    // );
+  }
+
   validateForrm() {
     this.showFCError = true;
-    if (this.form.invalid) {
+    if (this.registerForm.invalid) {
       if (
         this.companyFC.invalid &&
         this.companyFC.hasError('required')
       ) {
-        this.companyFCError = 'You must enter a value';
+        this.companyFCError = 'You must enter your company name';
         return;
+      } else {
+        this.companyFCError = '';
       }
+
       if (this.emailFC.invalid && this.emailFC.hasError('email')) {
         this.emailFCError = 'Not a valid email';
         return;
       } else {
         this.emailFCError = '';
       }
+
       if (
         this.firstnameFC.invalid &&
         this.firstnameFC.hasError('required')
       ) {
-        this.firstnameFCError = 'You must enter a value';
+        this.firstnameFCError = 'You must enter your firstname';
         return;
+      } else {
+        this.firstnameFCError = '';
       }
+
       if (this.lastnameFC.invalid && this.lastnameFC.hasError('required')) {
-        this.lastnameFCError = 'Not a valid email';
+        this.lastnameFCError = 'You must enter your lastname';
         return;
       } else {
         this.lastnameFCError = '';
       }
+
       if (
         this.usernameFC.invalid &&
         this.usernameFC.hasError('required')
       ) {
-        this.usernameFCError = 'You must enter a value';
+        this.usernameFCError = 'You must create a username';
         return;
       } else {
         this.usernameFCError = '';
       }
+
       if (this.passwordFC.invalid && this.passwordFC.hasError('required')) {
-        this.passwordFCError = 'You must enter a value';
+        this.passwordFCError = 'You must create a new password';
         return;
       } else {
         this.passwordFCError = '';
@@ -144,39 +185,16 @@ export class RegisterComponent implements OnInit {
 
   registerNow() {
     this.validateForrm();
-    if (this.form.valid) {
+    if (this.registerForm.valid) {
       console.log('FORM IS VALID');
       // const val = Object.assign(
-      //   new SendEmailProperties(),
-      //   this.sendEmailForm.value
+      //   new registerFormProperties(),
+      //   this.registerForm.value
       // );
-      // this.sendEmailService.sendEmail(val).subscribe(a => {
-      //   alert('email sent');
+      // this.registerService.register(val).subscribe(a => {
+      //   alert('registered');
       // });
-      // console.log(
-      //   'ONbuttonSaveClick===>',
-      //   'senderEmailForm: ',
-      //   this.sendEmailForm
-      // );
     }
-  }
-
-  prepareToSendEmail(
-    event: { target; value: string },
-    formControlName: string
-  ) {
-    const val = event.target.value;
-    this.form.get(formControlName).patchValue(val);
-    this.validateForrm();
-    // console.log(
-    //   'senderEmailVal: ',
-    //   val,
-    //   'formControlName: ',
-    //   formControlName,
-    //   'senderEmailForm: ',
-
-    //   this.sendEmailForm.get(formControlName).value
-    // );
   }
 }
 /** Error when invalid control is dirty, touched, or submitted. */

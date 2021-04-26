@@ -14,5 +14,23 @@
   td {
     padding-right: 8px;
   }
+  .pass_show:before {
+    font-family: 'FontAwesome';
+    position: relative;
+    content: "\f06e";
+  }
   
+  .pass_hide:before {
+    font-family: 'FontAwesome';
+    position: relative;
+    content: "\f070";
+  }
+  
+  .custom-search-glyphicon {
+    width: 1em;
+    margin: 0px;
+    float: right;
+    color: #0404047d;
+    cursor: pointer;
+  }
   
